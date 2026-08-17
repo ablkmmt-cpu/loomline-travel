@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Preview 03 — Form Redesign</title>
+<style>
+  :root{
+    --deep:#10231f; --deep2:#183a32; --dark:#071612;
+    --ivory:#fff8ed; --ink:#151515; --gold:#d6ad68;
+    --gold2:#e7c672; --gold-dark:#b88a44; --line:rgba(16,35,31,.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#efe6d6;font-family:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;color:var(--ink)}
+  .ribbon{background:var(--dark);color:#f6ecd9;font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:9px 22px;display:flex;justify-content:space-between;font-weight:600}
+  .ribbon b{color:var(--gold2)}
+  .stage{max-width:1180px;margin:0 auto;padding:36px 24px 64px;display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+  .col-h{font-family:Georgia,serif;font-size:22px;color:var(--deep);margin:6px 0 14px}
+  .col-sub{font-size:12.5px;color:#8a8172;line-height:1.6;margin-bottom:16px}
+  .card{background:var(--ivory);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 14px 36px rgba(7,22,18,.10)}
+  label{display:block;margin-bottom:14px}
+  label > span{display:flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--deep);margin-bottom:6px}
+  label small{font-weight:500;color:#8a8172}
+  input,select,textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:11px;font-size:14px;font-family:inherit;background:#fffdf7;color:var(--ink)}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold-dark)}
+  .prefill{display:inline-flex;align-items:center;gap:8px;background:#e9e0cf;border:1px dashed var(--gold-dark);border-radius:99px;padding:7px 14px;font-size:12.5px;color:var(--deep);margin-bottom:16px;font-weight:600}
+  .prefill b{color:#a15c3c}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .chip{font-size:12.5px;padding:7px 13px;border-radius:99px;border:1.5px solid var(--line);background:#fffdf7;color:#4f483c;cursor:pointer}
+  .chip.on{background:var(--deep);color:var(--gold2);border-color:var(--deep);font-weight:700}
+  .trust{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 6px}
+  .badge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;color:var(--deep);background:#e9e0cf;padding:6px 11px;border-radius:99px}
+  .badge .ic{color:#2e7d5b;font-size:13px}
+  .submit{width:100%;padding:15px;border:none;border-radius:12px;background:var(--deep);color:var(--ivory);font-size:15px;font-weight:700;cursor:pointer;margin-top:6px}
+  .tiny{font-size:11.5px;color:#8a8172;text-align:center;margin-top:12px;line-height:1.6}
+  .tiny a{color:var(--deep);font-weight:700}
+  /* success panel */
+  .success{border:1.5px solid #2e7d5b;background:#f2f8f4;border-radius:16px;padding:22px;margin-top:18px}
+  .success .t{font-family:Georgia,serif;font-size:18px;color:#1e6b4c;display:flex;align-items:center;gap:8px}
+  .steps{margin-top:14px;display:grid;gap:10px}
+  .step{display:flex;gap:12px;font-size:13px;color:#4f483c;line-height:1.5}
+  .step b{color:var(--deep)}
+  .step .n{width:24px;height:24px;border-radius:50%;background:#2e7d5b;color:#fff;font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none}
+  .sla{background:var(--gold2);color:var(--deep);font-weight:800;font-size:12.5px;padding:9px 14px;border-radius:10px;margin-top:14px;text-align:center}
+  .whatsapp{margin-top:10px;display:block;text-align:center;padding:12px;border-radius:11px;background:#25D366;color:#fff;font-weight:700;font-size:13.5px;text-decoration:none}
+  .vs{position:absolute;left:50%;top:52%;transform:translate(-50%,-50%);background:var(--dark);color:var(--gold2);font-size:12px;font-weight:800;letter-spacing:.08em;padding:8px 12px;border-radius:99px;z-index:2;box-shadow:0 6px 18px rgba(0,0,0,.3)}
+  .stage{position:relative}
+  .badge-old{display:inline-block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;background:#a15c3c;color:#fff;padding:4px 10px;border-radius:99px;margin-bottom:10px}
+  .badge-new{display:inline-block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;background:#2e7d5b;color:#fff;padding:4px 10px;border-radius:99px;margin-bottom:10px}
+</style>
+</head>
+<body>
+<div class="ribbon"><span>Preview 03 · 方案示意，非线上页面</span><b>表单区优化：左=现状 · 右=优化后</b></div>
+<div class="stage">
+  <!-- LEFT: current -->
+  <div>
+    <span class="badge-old">Current</span>
+    <h3 class="col-h">现在的表单</h3>
+    <p class="col-sub">问题：上下文丢失（从成都页来的询盘看不出是成都）、无回复预期、无信任提示、全靠用户打字。</p>
+    <div class="card">
+      <label><span>Name <b style="color:#a15c3c">*</b></span><input placeholder="Your name" /></label>
+      <label><span>Email <b style="color:#a15c3c">*</b></span><input placeholder="you@example.com" /></label>
+      <label><span>What kind of help do you need? <b style="color:#a15c3c">*</b></span>
+        <select><option>Not sure yet</option><option>Self-Guided Trip Support</option><option>Custom Tour Package</option></select></label>
+      <label><span>Estimated travel date <small>Optional</small></span><input placeholder="Month / Day / Year" /></label>
+      <label><span>WhatsApp <small>Optional</small></span><input placeholder="WhatsApp number" /></label>
+      <label><span>Tell us about your trip <small>Optional</small></span><textarea rows="3" placeholder="Trip length, group size, cities, budget..."></textarea></label>
+      <button class="submit">Start With Your Trip</button>
+      <p class="tiny">收到询盘时：只有姓名/邮箱/一句话描述，<b>不知道用户来自哪个页面、对什么感兴趣</b>，必须再问一轮。</p>
+    </div>
+  </div>
+
+  <!-- RIGHT: optimized -->
+  <div>
+    <span class="badge-new">Optimized</span>
+    <h3 class="col-h">优化后的表单</h3>
+    <p class="col-sub">带来源上下文 + 结构化快捷选项 + 回复预期 + 隐私与时效信任提示。</p>
+    <div class="card">
+      <div class="prefill">📍 已识别来源：<b>Chengdu &amp; Pandas 标准线路 (CD-05)</b> <span style="color:#8a8172">（隐藏字段自动携带，用户无需操作）</span></div>
+      <label><span>Name <b style="color:#a15c3c">*</b></span><input placeholder="Your name" /></label>
+      <label><span>Email <b style="color:#a15c3c">*</b></span><input placeholder="you@example.com" /></label>
+      <label><span>How many travelers? <small>点选即可</small></span>
+        <div class="chips"><span class="chip on">2 人</span><span class="chip">1 人</span><span class="chip">3-4 人</span><span class="chip">家庭带娃</span><span class="chip">4+ 人</span></div></label>
+      <label><span>Rough budget per person <small>Optional</small></span>
+        <div class="chips"><span class="chip">经济 ¥2-4k</span><span class="chip on">舒适 ¥4-6k</span><span class="chip">高档 ¥6k+</span></div></label>
+      <label><span>WhatsApp <small>最快回复通道</small></span><input placeholder="WhatsApp number (recommended)" /></label>
+      <label><span>Anything else? <small>Optional</small></span><textarea rows="2" placeholder="日期、节奏、想去的城市……（不填也行）"></textarea></label>
+      <div class="trust">
+        <span class="badge"><span class="ic">⏱</span> 24h 内回复</span>
+        <span class="badge"><span class="ic">🔒</span> 询盘保密</span>
+        <span class="badge"><span class="ic">✓</span> 无义务</span>
+      </div>
+      <button class="submit">Send My Trip Details</button>
+      <p class="tiny">提交即代表同意 <a>隐私政策</a> · 我们不会发送垃圾邮件</p>
+
+      <div class="success">
+        <div class="t">✓ Thanks — 收到你的询盘</div>
+        <div class="steps">
+          <div class="step"><span class="n">1</span><span><b>我们会在 24 小时内阅读</b>（通常是几小时）</span></div>
+          <div class="step"><span class="n">2</span><span><b>回复你的邮箱/WhatsApp</b>：初稿路线或报价</span></div>
+          <div class="step"><span class="n">3</span><span>你确认后，<b>再进入预订</b>，全程无压力</span></div>
+        </div>
+        <div class="sla">⏱ 期望回复时间：24 小时内 · 通常更快</div>
+        <a class="whatsapp">💬 想更快？直接 WhatsApp 我们</a>
+      </div>
+      <p class="tiny" style="margin-top:10px">（上图为提交成功后的反馈面板示意）</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>

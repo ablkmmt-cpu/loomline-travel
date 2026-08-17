@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Preview 04 — FAQ Section</title>
+<style>
+  :root{
+    --deep:#10231f; --deep2:#183a32; --dark:#071612;
+    --ivory:#fff8ed; --ink:#151515; --gold:#d6ad68;
+    --gold2:#e7c672; --gold-dark:#b88a44; --line:rgba(16,35,31,.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#efe6d6;font-family:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;color:var(--ink)}
+  .ribbon{background:var(--dark);color:#f6ecd9;font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:9px 22px;display:flex;justify-content:space-between;font-weight:600}
+  .ribbon b{color:var(--gold2)}
+  .stage{max-width:980px;margin:0 auto;padding:44px 24px 60px}
+  .heading{text-align:center;margin-bottom:34px}
+  .heading .k{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dark);font-weight:700}
+  .heading h2{font-family:Georgia,serif;font-size:32px;color:var(--deep);margin-top:8px}
+  .heading p{color:#5c5448;font-size:14px;margin-top:8px}
+  .faq{display:grid;gap:10px}
+  details{background:var(--ivory);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  summary{list-style:none;display:flex;align-items:center;gap:12px;padding:17px 20px;cursor:pointer;font-weight:700;font-size:15px;color:var(--deep)}
+  summary::-webkit-details-marker{display:none}
+  summary .q{width:26px;height:26px;border-radius:8px;background:var(--deep);color:var(--gold2);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center;flex:none}
+  summary .arr{margin-left:auto;color:var(--gold-dark);font-size:18px;transition:transform .2s}
+  details[open] .arr{transform:rotate(90deg)}
+  details .a{padding:0 20px 18px 58px;font-size:13.5px;color:#5c5448;line-height:1.75}
+  .strip{display:flex;gap:14px;margin-top:34px;flex-wrap:wrap;justify-content:center}
+  .card{flex:1;min-width:200px;background:var(--ivory);border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center}
+  .card .ic{font-size:22px}
+  .card b{display:block;font-size:14px;color:var(--deep);margin-top:8px}
+  .card p{font-size:12px;color:#8a8172;margin-top:4px;line-height:1.5}
+  .note{margin-top:26px;font-size:12px;color:#8a8172;text-align:center;line-height:1.7}
+  .note b{color:var(--deep)}
+</style>
+</head>
+<body>
+<div class="ribbon"><span>Preview 04 · 方案示意，非线上页面</span><b>首页新增 FAQ 区（同时输出 FAQPage Schema 吃 SEO）</b></div>
+<div class="stage">
+  <div class="heading">
+    <p class="k">Before You Ask Us</p>
+    <h2>常见问题 FAQ</h2>
+    <p>回答首次来华旅行者最大的疑虑 —— 信任 + 长尾搜索流量双收</p>
+  </div>
+  <div class="faq">
+    <details open>
+      <summary><span class="q">?</span> 来中国旅游安全吗？一个人/两人自由行可以吗？<span class="arr">›</span></summary>
+      <div class="a">中国的主要旅游城市治安良好，公共交通便捷。我们在行程中提供本地协助（WhatsApp/微信随时可联系），遇到任何问题都可以找我们；建议购买旅行保险。</div>
+    </details>
+    <details>
+      <summary><span class="q">?</span> 需要签证吗？你们能帮忙吗？<span class="arr">›</span></summary>
+      <div class="a">取决于你的护照国家与停留时长。多数欧美护照可办理旅游签证（L 签），部分国家有免签/过境免签政策。我们提供签证材料清单与指导，并提醒你办理时间。</div>
+    </details>
+    <details>
+      <summary><span class="q">?</span> 在中国怎么付款？没有微信/支付宝怎么办？<span class="arr">›</span></summary>
+      <div class="a">国际信用卡（Visa/Mastercard）在大城市酒店、连锁餐厅和线上平台基本可用；部分小店只收移动支付。我们会提前帮你绑定好支付方式，或为你准备现金方案。</div>
+    </details>
+    <details>
+      <summary><span class="q">?</span> 不会中文，能自己玩得转吗？<span class="arr">›</span></summary>
+      <div class="a">可以。标准线路包含中文领队/英文领队可选；自助旅行者我们提供打车、点餐、问路的翻译协助，行前发你一份「不会中文生存手册」。</div>
+    </details>
+    <details>
+      <summary><span class="q">?</span> 标准线路和定制产品有什么区别？<span class="arr">›</span></summary>
+      <div class="a">标准线路是打磨过的固定行程 + 透明人均价，最快下单；定制产品按你的日期、城市、节奏和预算重新设计，24 小时内出初稿。标准线路也可以小幅调整。</div>
+    </details>
+    <details>
+      <summary><span class="q">?</span> 预订需要付多少钱？可以退款吗？<span class="arr">›</span></summary>
+      <div class="a">标准线路可全额预订；定制产品 30% 定金锁定日期，尾款出发前 7 天付清。出发前一定期限内可退款（具体以条款为准），报价前我们都会先说清楚。</div>
+    </details>
+  </div>
+  <div class="strip">
+    <div class="card"><div class="ic">🛡️</div><b>退款保障</b><p>明确条款，预订前讲清</p></div>
+    <div class="card"><div class="ic">💬</div><b>本地团队</b><p>成都基地，微信/WhatsApp 直达</p></div>
+    <div class="card"><div class="ic">🔍</div><b>无隐藏费用</b><p>报价即最终价</p></div>
+    <div class="card"><div class="ic">⭐</div><b>真实评价</b><p>Google Reviews 可查</p></div>
+  </div>
+  <p class="note">技术备注：该区块用 <b>FAQPage 结构化数据</b> 输出，问题本身即用户真实搜索词（is China safe、china visa、pay in china…），可显著提升搜索结果里的富摘要展示率。</p>
+</div>
+</body>
+</html>

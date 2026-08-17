@@ -1,0 +1,1012 @@
+:root {
+  --pine: #10231f;
+  --pine-dark: #071612;
+  --ivory: #f6f0e4;
+  --paper: #fbf7ee;
+  --gold: #c79a4b;
+  --gold-pale: #dfc68f;
+  --ink: #17201d;
+  --muted: #6e6b62;
+  --line: rgba(23, 32, 29, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main h1,
+main h2 {
+  min-width: 0;
+  max-width: 100%;
+  white-space: nowrap;
+  text-wrap: nowrap;
+}
+
+.fit-title {
+  width: 100%;
+  display: block;
+  line-height: 1.12 !important;
+  white-space: nowrap !important;
+  text-wrap: nowrap !important;
+}
+
+.tea-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+  min-height: 84px;
+  display: grid;
+  grid-template-columns: minmax(180px, 320px) 1fr minmax(170px, 320px);
+  align-items: center;
+  gap: 32px;
+  padding: 20px clamp(22px, 5vw, 68px);
+  border-bottom: 1px solid rgba(255, 248, 237, 0.08);
+  color: #fff8ea;
+  background: linear-gradient(180deg, rgba(7, 22, 18, 0.78), rgba(7, 22, 18, 0.12));
+  backdrop-filter: blur(12px);
+}
+
+.tea-brand {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tea-brand-emblem {
+  width: clamp(36px, 3.2vw, 54px);
+  height: clamp(36px, 3.2vw, 54px);
+  object-fit: contain;
+}
+
+.tea-brand-wordmark {
+  width: clamp(128px, 11vw, 190px);
+  min-width: 0;
+  height: auto;
+}
+
+.tea-nav nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(30px, 4.4vw, 68px);
+}
+
+.tea-nav nav a {
+  color: rgba(255, 248, 237, 0.76);
+  font-size: 14px;
+  font-weight: 800;
+  transition: color 180ms ease;
+}
+
+.tea-nav nav a:hover {
+  color: #fff8ea;
+}
+
+.tea-nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+  padding: 12px 22px;
+  border: 1px solid rgba(255, 248, 237, 0.32);
+  border-radius: 999px;
+  color: rgba(255, 248, 237, 0.92);
+  background: rgba(255, 248, 237, 0.06);
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+  transition: transform 180ms ease, color 180ms ease, background 180ms ease, border-color 180ms ease;
+  touch-action: manipulation;
+}
+
+.tea-nav-cta:hover {
+  transform: translateY(-2px);
+  color: #10231f;
+  border-color: #d6ad68;
+  background: #d6ad68;
+}
+
+.tea-hero {
+  position: relative;
+  height: clamp(540px, 78svh, 760px);
+  min-height: 540px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  isolation: isolate;
+  color: #fff8ea;
+}
+
+.tea-hero > img {
+  position: absolute;
+  inset: -4%;
+  z-index: -3;
+  width: 108%;
+  height: 108%;
+  object-fit: cover;
+  object-position: var(--hero-position, 56% center);
+  filter: saturate(0.82) contrast(1.03) brightness(0.82);
+  transform: scale(1.01);
+}
+
+.tea-hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(180deg, rgba(4, 11, 9, 0.3) 0%, rgba(4, 11, 9, 0.05) 34%, rgba(4, 11, 9, 0.62) 100%),
+    linear-gradient(90deg, rgba(5, 15, 12, 0.72) 0%, rgba(5, 15, 12, 0.18) 54%, rgba(5, 15, 12, 0.3) 100%);
+}
+
+.tea-hero-content {
+  width: min(1180px, calc(100% - 44px));
+  padding-top: 82px;
+  text-align: left;
+}
+
+.tea-hero-content p,
+.tea-story-heading p,
+.tea-flow-intro > p,
+.tea-takeaway-copy > p,
+.tea-cities-heading > p {
+  margin: 0 0 18px;
+  color: var(--gold-pale);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.19em;
+  text-transform: uppercase;
+}
+
+.tea-hero h1 {
+  margin: 0;
+  font-family: "Noto Serif SC", "Cinzel", serif;
+  font-size: clamp(52px, 7.2vw, 116px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.tea-hero-content > span {
+  display: block;
+  margin-top: 26px;
+  color: rgba(255, 248, 234, 0.76);
+  font-family: "Noto Serif SC", serif;
+  font-size: clamp(18px, 2vw, 28px);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tea-scroll-cue {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  display: grid;
+  justify-items: center;
+  gap: 9px;
+  color: rgba(255, 248, 234, 0.66);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+
+.tea-scroll-cue i {
+  width: 1px;
+  height: 28px;
+  background: linear-gradient(var(--gold-pale), transparent);
+}
+
+.tea-story {
+  width: min(1120px, calc(100% - 44px));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 0.88fr);
+  grid-template-areas: "text visual";
+  gap: clamp(54px, 7vw, 96px);
+  align-items: center;
+  margin: 0 auto;
+  padding: clamp(92px, 10vw, 152px) 0 clamp(70px, 8vw, 110px);
+}
+
+.tea-story-text {
+  grid-area: text;
+  display: grid;
+  align-content: center;
+  gap: clamp(34px, 4vw, 52px);
+  min-width: 0;
+}
+
+@media (min-width: 861px) {
+  .tea-story {
+    padding: clamp(78px, 7vw, 108px) 0 clamp(48px, 5vw, 70px);
+  }
+
+  .tea-story-text {
+    gap: clamp(26px, 3vw, 38px);
+  }
+}
+
+.tea-story-heading {
+  padding-top: 0;
+}
+
+.tea-story h2,
+.tea-flow h2,
+.tea-takeaway h2,
+.tea-cities h2 {
+  margin: 0;
+  font-family: "Noto Serif SC", "Cinzel", serif;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.tea-story h2 {
+  max-width: 520px;
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1.12;
+}
+
+.tea-story-copy {
+  display: grid;
+  gap: 30px;
+  align-self: start;
+  padding-bottom: 0;
+}
+
+.tea-story-copy p {
+  margin: 0;
+  color: #353833;
+  font-size: clamp(15px, 1.2vw, 18px);
+  line-height: 1.72;
+}
+
+.tea-story-visual {
+  position: relative;
+  grid-area: visual;
+  height: clamp(460px, 42vw, 560px);
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 4px 74px 4px 4px;
+  background: #d7cdbd;
+  box-shadow: 0 30px 80px rgba(36, 29, 20, 0.14);
+}
+
+.tea-story-visual > img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+  object-position: var(--story-position, center);
+  transition: transform 700ms ease;
+}
+
+.tea-story-visual::after {
+  content: "";
+  position: absolute;
+  inset: 45% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(7, 22, 18, 0.78));
+  pointer-events: none;
+}
+
+.tea-story-visual figcaption {
+  position: absolute;
+  right: 30px;
+  bottom: 28px;
+  left: 30px;
+  z-index: 1;
+  padding-top: 16px;
+  border-top: 1px solid rgba(223, 198, 143, 0.54);
+  color: #fff8ea;
+}
+
+.tea-story-visual figcaption span {
+  color: var(--gold-pale);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.tea-story-visual figcaption p {
+  margin: 7px 0 0;
+  font-family: "Noto Serif SC", serif;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.tea-story-points {
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.tea-story-points li {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  color: #4d4b44;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.tea-story-points span {
+  color: var(--gold);
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.tea-facts {
+  width: min(1240px, calc(100% - 44px));
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 0 auto clamp(100px, 11vw, 160px);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.tea-fact {
+  min-height: 158px;
+  display: grid;
+  align-content: center;
+  gap: 8px;
+  padding: 26px clamp(18px, 2.4vw, 36px);
+  border-right: 1px solid var(--line);
+}
+
+.tea-fact:last-child {
+  border-right: 0;
+}
+
+.tea-fact span {
+  color: var(--gold);
+  font-family: "Cinzel", serif;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.tea-fact p {
+  margin: 0;
+  color: #8b877c;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.tea-fact strong {
+  font-family: "Noto Serif SC", serif;
+  font-size: clamp(18px, 1.6vw, 23px);
+  line-height: 1.25;
+}
+
+.tea-flow {
+  display: grid;
+  grid-template-columns: minmax(290px, 0.78fr) minmax(0, 1.22fr);
+  gap: clamp(54px, 8vw, 128px);
+  padding: clamp(86px, 9vw, 134px) max(22px, calc((100vw - 1180px) / 2));
+  color: #fff8ea;
+  background:
+    radial-gradient(circle at 14% 12%, rgba(199, 154, 75, 0.12), transparent 28%),
+    linear-gradient(145deg, #173a31, #071612 62%, #10231f);
+}
+
+.tea-flow-intro {
+  position: sticky;
+  top: 44px;
+  height: fit-content;
+}
+
+.tea-flow h2 {
+  font-size: clamp(32px, 3.6vw, 52px);
+  line-height: 1.12;
+}
+
+.tea-flow-intro > span {
+  max-width: 440px;
+  display: block;
+  margin-top: 26px;
+  color: rgba(255, 248, 234, 0.58);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.tea-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid rgba(223, 198, 143, 0.25);
+}
+
+.tea-steps li {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr) auto;
+  gap: 24px;
+  align-items: start;
+  padding: 34px 0;
+  border-bottom: 1px solid rgba(223, 198, 143, 0.25);
+}
+
+.tea-step-number {
+  color: var(--gold-pale);
+  font-family: "Cinzel", serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.tea-steps h3 {
+  margin: 0 0 10px;
+  font-family: "Noto Serif SC", serif;
+  font-size: clamp(20px, 2vw, 27px);
+}
+
+.tea-steps p {
+  max-width: 560px;
+  margin: 0;
+  color: rgba(255, 248, 234, 0.59);
+  font-size: 14px;
+  line-height: 1.66;
+}
+
+.tea-steps time {
+  color: var(--gold-pale);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.tea-takeaway {
+  width: min(1180px, calc(100% - 44px));
+  display: grid;
+  grid-template-columns: minmax(0, 1.04fr) minmax(0, 0.96fr);
+  gap: clamp(52px, 8vw, 120px);
+  align-items: center;
+  margin: 0 auto;
+  padding: clamp(100px, 11vw, 170px) 0;
+}
+
+.tea-takeaway-art {
+  position: relative;
+  min-height: 560px;
+  overflow: hidden;
+  border-radius: 3px 72px 3px 3px;
+  background: var(--pine);
+}
+
+.tea-takeaway-art::after {
+  content: attr(data-glyph);
+  position: absolute;
+  right: 22px;
+  bottom: -32px;
+  color: rgba(255, 248, 234, 0.14);
+  font-family: "Noto Serif SC", serif;
+  font-size: 180px;
+  font-weight: 900;
+}
+
+.tea-takeaway-art img {
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  object-fit: cover;
+  object-position: var(--takeaway-position, 77% center);
+  filter: brightness(0.74) saturate(0.8);
+  transform: scale(1.32);
+}
+
+.tea-takeaway h2 {
+  font-size: clamp(34px, 3.7vw, 54px);
+  line-height: 1.12;
+}
+
+.tea-takeaway ul {
+  display: grid;
+  gap: 0;
+  margin: 34px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.tea-takeaway li {
+  position: relative;
+  padding: 18px 16px 18px 30px;
+  border-bottom: 1px solid var(--line);
+  color: #514f48;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.tea-takeaway li::before {
+  content: "";
+  position: absolute;
+  top: 25px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+}
+
+.tea-cities {
+  padding: clamp(90px, 9vw, 130px) 22px clamp(76px, 8vw, 108px);
+  text-align: center;
+  background: #eee5d7;
+}
+
+.tea-cities-cta {
+  width: min(980px, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 36px;
+  margin: 58px auto 0;
+  padding-top: 34px;
+  border-top: 1px solid rgba(23, 32, 29, 0.17);
+  text-align: left;
+}
+
+.tea-cities-cta > p {
+  max-width: 620px;
+  margin: 0;
+  color: #56534c;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.tea-cities-heading {
+  width: min(760px, 100%);
+  margin: 0 auto;
+}
+
+.tea-cities h2 {
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: 1.12;
+}
+
+.tea-cities-heading > span {
+  display: block;
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.tea-city-list {
+  width: min(980px, 100%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 44px auto 0;
+}
+
+.tea-city-list span {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 22px;
+  border: 1px solid rgba(23, 32, 29, 0.18);
+  border-radius: 999px;
+  background: rgba(251, 247, 238, 0.58);
+  font-family: "Noto Serif SC", serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.tea-city-note {
+  margin: 22px 0 0;
+  color: #8d887c;
+  font-size: 12px;
+}
+
+.tea-booking-button {
+  min-width: 230px;
+  min-height: 62px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+  padding: 0 14px 0 26px;
+  border-radius: 999px;
+  color: #17110a;
+  background: linear-gradient(180deg, #e4c47f, #bd9148);
+  font-size: 14px;
+  font-weight: 700;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.tea-booking-button i {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff8ea;
+  background: var(--pine);
+  font-style: normal;
+}
+
+.tea-booking-button svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  fill: currentColor;
+}
+
+.tea-booking-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.25);
+}
+
+.tea-footer {
+  min-height: 110px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 24px clamp(22px, 5vw, 72px);
+  border-top: 1px solid rgba(223, 198, 143, 0.17);
+  color: rgba(255, 248, 234, 0.58);
+  background: #050d0b;
+  font-size: 12px;
+}
+
+.tea-footer > a:first-child {
+  color: #fff8ea;
+  font-family: "Noto Serif SC", serif;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.tea-footer p {
+  margin: 0;
+}
+
+.tea-footer > a:last-child {
+  justify-self: end;
+}
+
+.tea-mobile-cta {
+  display: none;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 860px) {
+  .tea-hero {
+    height: min(760px, 92svh);
+    min-height: 600px;
+  }
+
+  .tea-hero > img {
+    object-position: 64% center;
+  }
+
+  .tea-hero-shade {
+    background:
+      linear-gradient(180deg, rgba(4, 11, 9, 0.34) 0%, rgba(4, 11, 9, 0.08) 38%, rgba(4, 11, 9, 0.78) 100%),
+      linear-gradient(90deg, rgba(5, 15, 12, 0.54), rgba(5, 15, 12, 0.12));
+  }
+
+  .tea-hero-content {
+    width: calc(100% - 40px);
+    align-self: end;
+    padding: 0 0 104px;
+  }
+
+  .tea-hero h1 {
+    font-size: clamp(38px, 11vw, 58px);
+  }
+
+  .tea-hero-content > span {
+    max-width: none;
+    margin-top: 18px;
+    font-size: clamp(10px, 3.15vw, 13px);
+    line-height: 1.35;
+    white-space: nowrap;
+  }
+
+  .tea-scroll-cue {
+    display: none;
+  }
+
+  .tea-story {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "heading"
+      "visual"
+      "copy";
+    gap: 34px;
+    padding-top: 80px;
+  }
+
+  .tea-story-text {
+    display: contents;
+  }
+
+  .tea-story-heading {
+    grid-area: heading;
+    padding-top: 0;
+  }
+
+  .tea-story h2 {
+    font-size: clamp(27px, 7.5vw, 40px);
+  }
+
+  .tea-story-visual,
+  .tea-story-visual > img {
+    height: auto;
+    min-height: min(118vw, 560px);
+  }
+
+  .tea-story-visual {
+    border-radius: 4px 52px 4px 4px;
+  }
+
+  .tea-story-copy {
+    grid-area: copy;
+    gap: 24px;
+    padding-bottom: 0;
+  }
+
+  .tea-facts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-bottom: 84px;
+  }
+
+  .tea-fact:nth-child(2) {
+    border-right: 0;
+  }
+
+  .tea-fact:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .tea-flow {
+    grid-template-columns: 1fr;
+    gap: 46px;
+    padding: 78px 22px;
+  }
+
+  .tea-flow-intro {
+    position: static;
+  }
+
+  .tea-takeaway {
+    grid-template-columns: 1fr;
+    gap: 52px;
+    padding: 86px 0;
+  }
+
+  .tea-takeaway-art,
+  .tea-takeaway-art img {
+    min-height: min(114vw, 540px);
+  }
+
+  .tea-takeaway-copy {
+    padding: 0 4px;
+  }
+
+  .tea-cities-cta {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 0;
+    margin-top: 42px;
+    padding-top: 28px;
+    text-align: center;
+  }
+
+  .tea-cities-cta .tea-booking-button {
+    display: none;
+  }
+
+  .tea-footer {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    padding-bottom: 94px;
+  }
+
+  .tea-footer > a:last-child {
+    justify-self: start;
+  }
+
+  .tea-mobile-cta {
+    position: fixed;
+    right: 14px;
+    bottom: max(14px, env(safe-area-inset-bottom));
+    left: 14px;
+    z-index: 30;
+    min-height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border: 1px solid rgba(255, 248, 234, 0.34);
+    border-radius: 999px;
+    color: #17110a;
+    background: linear-gradient(180deg, #e4c47f, #bd9148);
+    font-size: 13px;
+    font-weight: 750;
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.3);
+  }
+
+  .tea-mobile-cta svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+  }
+}
+
+@media (max-width: 760px) {
+  .tea-nav {
+    min-height: 102px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: 40px auto;
+    align-items: center;
+    gap: 10px 14px;
+    padding: 14px clamp(14px, 4.6vw, 20px) 12px;
+  }
+
+  .tea-brand {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    min-width: 0;
+    gap: 9px;
+    height: 40px;
+  }
+
+  .tea-brand-emblem {
+    width: 36px;
+    height: 36px;
+    flex: 0 0 auto;
+  }
+
+  .tea-brand-wordmark {
+    width: clamp(102px, 30vw, 122px);
+  }
+
+  .tea-nav nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: center;
+    gap: clamp(12px, 4vw, 22px);
+  }
+
+  .tea-nav nav a {
+    font-size: 10px;
+  }
+
+  .tea-nav-cta {
+    align-self: center;
+    justify-self: end;
+    grid-column: 2;
+    grid-row: 1;
+    height: 34px;
+    padding: 8px clamp(10px, 3vw, 14px);
+    font-size: clamp(9px, 2.45vw, 11px);
+    line-height: 1;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tea-story-visual:hover > img {
+    transform: scale(1.025);
+  }
+}
+
+@media (max-width: 520px) {
+  .tea-brand-wordmark {
+    width: 116px;
+  }
+
+  .tea-nav-cta {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .tea-hero-content p {
+    font-size: 9px;
+  }
+
+  .tea-story,
+  .tea-facts,
+  .tea-takeaway {
+    width: calc(100% - 36px);
+  }
+
+  .tea-story-copy p {
+    font-size: 15px;
+  }
+
+  .tea-fact {
+    min-height: 142px;
+    padding: 22px 15px;
+  }
+
+  .tea-fact strong {
+    font-size: 17px;
+  }
+
+  .tea-steps li {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .tea-steps time {
+    grid-column: 2;
+    margin-top: -8px;
+  }
+
+  .tea-takeaway-art {
+    border-radius: 3px 48px 3px 3px;
+  }
+
+  .tea-city-list {
+    gap: 8px;
+  }
+
+  .tea-city-list span {
+    min-height: 43px;
+    padding: 0 17px;
+    font-size: 14px;
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

@@ -1,0 +1,969 @@
+:root {
+  --shanghai-ivory: #f7f2e8;
+  --shanghai-paper: #fffdf8;
+  --shanghai-ink: #171713;
+  --shanghai-copy: #5f5a52;
+  --shanghai-green: #10231f;
+  --shanghai-green-light: #183a32;
+  --shanghai-gold: #d6ad68;
+  --shanghai-gold-light: #e7c672;
+  --shanghai-red: #93463b;
+  --shanghai-line: #ded3c3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--shanghai-ink);
+  background: var(--shanghai-ivory);
+  font-family: "Inter", sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.shanghai-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  color: #fff8ed;
+  background: rgba(7, 22, 18, 0.96);
+  border-bottom: 1px solid rgba(214, 173, 104, 0.2);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.shanghai-header-inner {
+  width: min(1320px, 100%);
+  min-height: 82px;
+  display: grid;
+  grid-template-columns: minmax(190px, 310px) 1fr minmax(180px, 310px);
+  align-items: center;
+  gap: 30px;
+  margin: 0 auto;
+  padding: 16px clamp(22px, 4.5vw, 60px);
+}
+
+.shanghai-brand,
+.shanghai-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+
+.shanghai-brand-emblem {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+
+.shanghai-brand-wordmark {
+  width: 154px;
+  min-width: 0;
+}
+
+.shanghai-nav {
+  display: flex;
+  justify-content: center;
+  gap: clamp(26px, 4vw, 58px);
+  color: rgba(255, 248, 237, 0.76);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.shanghai-nav a,
+.shanghai-footer a {
+  transition: color 180ms ease, opacity 180ms ease;
+}
+
+.shanghai-nav-cta {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: end;
+  padding: 0 20px;
+  border: 1px solid rgba(214, 173, 104, 0.66);
+  border-radius: 999px;
+  color: #fff8ed;
+  background: rgba(255, 248, 237, 0.04);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.shanghai-breadcrumb-wrap {
+  background: var(--shanghai-paper);
+  border-bottom: 1px solid rgba(148, 116, 69, 0.12);
+}
+
+.shanghai-breadcrumb {
+  width: min(1240px, calc(100% - 48px));
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+  color: #8c8377;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.shanghai-breadcrumb a {
+  color: #4f625c;
+}
+
+.shanghai-hero {
+  padding: 28px 24px 0;
+  background: var(--shanghai-paper);
+}
+
+.shanghai-hero-media {
+  position: relative;
+  width: min(1240px, 100%);
+  aspect-ratio: 16 / 5;
+  min-height: 320px;
+  max-height: 400px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--shanghai-green);
+  box-shadow: 0 22px 56px rgba(55, 40, 24, 0.14);
+}
+
+.shanghai-hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(7, 15, 13, 0.08);
+  pointer-events: none;
+}
+
+.shanghai-hero-media picture,
+.shanghai-hero-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.shanghai-hero-media img {
+  object-fit: cover;
+  object-position: center 58%;
+}
+
+.shanghai-content-width {
+  width: min(1080px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.shanghai-intro {
+  padding: clamp(64px, 7vw, 94px) 0 clamp(58px, 6vw, 80px);
+}
+
+.shanghai-eyebrow {
+  margin: 0;
+  color: #a1783c;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.shanghai-intro h1 {
+  max-width: 100%;
+  margin: 17px 0 0;
+  color: var(--shanghai-green);
+  font-family: "Noto Serif SC", "Cinzel", serif;
+  font-size: clamp(38px, 4vw, 62px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.shanghai-intro-copy {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(34px, 5vw, 72px);
+  margin-top: clamp(32px, 4vw, 48px);
+}
+
+.shanghai-intro-copy p {
+  margin: 0;
+  color: var(--shanghai-copy);
+  font-size: clamp(15px, 1.3vw, 17px);
+  font-weight: 400;
+  line-height: 1.82;
+}
+
+.shanghai-divider {
+  width: min(860px, calc(100% - 72px));
+  height: 1px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, transparent, var(--shanghai-line) 12%, var(--shanghai-line) 88%, transparent);
+}
+
+.shanghai-places,
+.shanghai-taste,
+.shanghai-time {
+  padding: clamp(58px, 6vw, 82px) 0;
+}
+
+.shanghai-section-heading {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  align-items: end;
+  gap: 22px;
+  margin-bottom: 34px;
+}
+
+.shanghai-section-heading-compact {
+  margin-bottom: 28px;
+}
+
+.shanghai-section-index {
+  margin: 0;
+  color: var(--shanghai-red);
+  font-family: "Cinzel", serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.shanghai-section-heading h2 {
+  margin: 7px 0 0;
+  color: var(--shanghai-ink);
+  font-family: "Noto Serif SC", "Cinzel", serif;
+  font-size: clamp(30px, 3.2vw, 46px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.shanghai-place-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px 18px;
+}
+
+.shanghai-place {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(151, 119, 71, 0.22);
+  border-radius: 6px;
+  background: var(--shanghai-paper);
+  box-shadow: 0 14px 34px rgba(61, 45, 27, 0.07);
+  transition: border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.shanghai-place figure {
+  aspect-ratio: 4 / 3;
+  margin: 0;
+  overflow: hidden;
+  background: var(--shanghai-green);
+}
+
+.shanghai-place figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms cubic-bezier(0.2, 0.7, 0.2, 1), filter 300ms ease;
+}
+
+.shanghai-place-copy {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  padding: 20px 20px 22px;
+}
+
+.shanghai-place-copy > span {
+  grid-row: 1 / 3;
+  padding-top: 4px;
+  color: #aa8145;
+  font-family: "Cinzel", serif;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.shanghai-place h3 {
+  margin: 0 0 8px;
+  color: var(--shanghai-green);
+  font-family: "Noto Serif SC", "Cinzel", serif;
+  font-size: 20px;
+  font-weight: 900;
+  line-height: 1.15;
+  letter-spacing: 0;
+}
+
+.shanghai-place p {
+  margin: 0;
+  color: #716a60;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.shanghai-taste-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(300px, 0.75fr);
+  margin-left: 80px;
+  overflow: hidden;
+  border: 1px solid rgba(151, 119, 71, 0.22);
+  border-radius: 6px;
+  background: var(--shanghai-green);
+  box-shadow: 0 20px 48px rgba(40, 30, 19, 0.12);
+}
+
+.shanghai-food-media {
+  min-width: 0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  margin: 0;
+  background: var(--shanghai-paper);
+}
+
+.shanghai-food-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 390px;
+  object-fit: cover;
+}
+
+.shanghai-food-media figcaption {
+  padding: 15px 20px;
+  color: #7b6f60;
+  background: var(--shanghai-paper);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.shanghai-food-list {
+  display: grid;
+  align-content: center;
+  padding: 22px 28px;
+}
+
+.shanghai-food-list > div {
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr);
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(231, 198, 114, 0.16);
+}
+
+.shanghai-food-list > div:last-child {
+  border-bottom: 0;
+}
+
+.shanghai-food-list span {
+  grid-row: 1 / 3;
+  padding-top: 3px;
+  color: var(--shanghai-gold);
+  font-family: "Cinzel", serif;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.shanghai-food-list strong {
+  color: #fff8ed;
+  font-family: "Noto Serif SC", "Cinzel", serif;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+.shanghai-food-list small {
+  margin-top: 4px;
+  color: rgba(255, 248, 237, 0.54);
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+.shanghai-food-list .is-featured strong {
+  color: var(--shanghai-gold-light);
+}
+
+.shanghai-time-answer {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(32px, 5vw, 72px);
+  padding-left: 80px;
+}
+
+.shanghai-duration {
+  align-self: stretch;
+  padding: 22px clamp(24px, 3vw, 42px) 22px 0;
+  border-right: 1px solid var(--shanghai-line);
+}
+
+.shanghai-duration strong {
+  display: block;
+  color: var(--shanghai-green);
+  font-family: "Noto Serif SC", "Cinzel", serif;
+  font-size: clamp(72px, 8vw, 112px);
+  font-weight: 900;
+  line-height: 0.82;
+  white-space: nowrap;
+}
+
+.shanghai-duration > span {
+  display: block;
+  margin-top: 15px;
+  color: var(--shanghai-red);
+  font-family: "Cinzel", serif;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.shanghai-duration p {
+  margin: 22px 0 0;
+  color: #766f65;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.shanghai-itinerary-link {
+  width: fit-content;
+  min-height: 52px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 26px;
+  padding: 0 22px 0 25px;
+  border: 1px solid var(--shanghai-green);
+  border-radius: 999px;
+  color: #fff8ed;
+  background: var(--shanghai-green);
+  box-shadow: 0 12px 26px rgba(10, 39, 32, 0.16);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  transition: color 220ms ease, background 220ms ease, border-color 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+  touch-action: manipulation;
+}
+
+.shanghai-itinerary-link::after {
+  content: "\2197";
+  color: var(--shanghai-gold-light);
+  font-size: 17px;
+  line-height: 1;
+  transition: transform 220ms ease;
+}
+
+.shanghai-time-plan {
+  display: grid;
+  align-content: center;
+}
+
+.shanghai-time-plan > div {
+  position: relative;
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr);
+  gap: 18px;
+  padding: 20px 0 20px 22px;
+  border-bottom: 1px solid var(--shanghai-line);
+}
+
+.shanghai-time-plan > div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 27px;
+  width: 7px;
+  height: 7px;
+  border: 1px solid var(--shanghai-gold);
+  transform: rotate(45deg);
+}
+
+.shanghai-time-plan > div:last-child {
+  border-bottom: 0;
+}
+
+.shanghai-time-plan span {
+  color: var(--shanghai-green);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.shanghai-time-plan p {
+  margin: 0;
+  color: var(--shanghai-copy);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.62;
+}
+
+.shanghai-conversion {
+  padding: clamp(74px, 8vw, 112px) 24px;
+  color: #fff8ed;
+  background:
+    linear-gradient(120deg, rgba(214, 173, 104, 0.08), transparent 38%),
+    linear-gradient(180deg, #183a32, #0b211b);
+  border-top: 1px solid rgba(214, 173, 104, 0.22);
+}
+
+.shanghai-conversion-inner {
+  width: min(860px, 100%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.shanghai-conversion h2 {
+  margin: 13px 0 0;
+  color: #fff8ed;
+  font-family: "Noto Serif SC", "Cinzel", serif;
+  font-size: clamp(31px, 4vw, 56px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.shanghai-conversion h2 span {
+  display: block;
+}
+
+.shanghai-conversion-inner > p:not(.shanghai-eyebrow) {
+  width: min(650px, 100%);
+  margin: 22px auto 0;
+  color: rgba(255, 248, 237, 0.7);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.shanghai-conversion a {
+  min-width: 310px;
+  min-height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 32px;
+  padding: 0 13px 0 24px;
+  border: 1px solid var(--shanghai-gold-light);
+  border-radius: 999px;
+  color: var(--shanghai-green);
+  background: linear-gradient(90deg, #fff8ed 0 50%, var(--shanghai-gold-light) 50% 100%);
+  background-position: 100% 0;
+  background-size: 202% 100%;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background-position 380ms cubic-bezier(0.2, 0.7, 0.2, 1), border-color 240ms ease, box-shadow 240ms ease;
+  touch-action: manipulation;
+}
+
+.shanghai-cta-arrow {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 32px;
+  border-radius: 50%;
+  color: #fff8ed;
+  background: var(--shanghai-green);
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 300ms ease, background 240ms ease;
+}
+
+.shanghai-footer {
+  color: #fff8ed;
+  background: #071612;
+  border-top: 1px solid rgba(214, 173, 104, 0.16);
+}
+
+.shanghai-footer-inner {
+  width: min(1240px, calc(100% - 48px));
+  min-height: 170px;
+  display: grid;
+  grid-template-columns: minmax(190px, 0.8fr) minmax(260px, 1.2fr) auto;
+  align-items: center;
+  gap: 44px;
+  margin: 0 auto;
+}
+
+.shanghai-footer-brand img:first-child {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.shanghai-footer-brand img:last-child {
+  width: 136px;
+}
+
+.shanghai-footer p {
+  margin: 0;
+  color: rgba(255, 248, 237, 0.54);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.shanghai-footer nav {
+  display: flex;
+  gap: 28px;
+  color: rgba(255, 248, 237, 0.68);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .shanghai-nav a:hover,
+  .shanghai-footer a:hover {
+    color: var(--shanghai-gold-light);
+  }
+
+  .shanghai-nav-cta:hover {
+    color: var(--shanghai-green);
+    background: var(--shanghai-gold-light);
+    transform: translateY(-2px);
+  }
+
+  .shanghai-place:hover {
+    border-color: rgba(214, 173, 104, 0.72);
+    box-shadow: 0 22px 46px rgba(61, 45, 27, 0.13);
+  }
+
+  .shanghai-place:hover figure img {
+    filter: saturate(0.92) contrast(1.03);
+    transform: scale(1.045);
+  }
+
+  .shanghai-conversion a:hover {
+    background-position: 0 0;
+    border-color: #fff8ed;
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.24), 0 0 0 4px rgba(231, 198, 114, 0.1);
+  }
+
+  .shanghai-conversion a:hover .shanghai-cta-arrow {
+    background: var(--shanghai-red);
+    transform: rotate(90deg);
+  }
+
+  .shanghai-itinerary-link:hover {
+    color: var(--shanghai-green);
+    background: var(--shanghai-gold-light);
+    border-color: var(--shanghai-gold);
+    box-shadow: 0 15px 32px rgba(129, 93, 42, 0.24);
+    transform: translateY(-3px);
+  }
+
+  .shanghai-itinerary-link:hover::after {
+    color: var(--shanghai-green);
+    transform: translate(2px, -2px);
+  }
+}
+
+.shanghai-nav-cta:active,
+.shanghai-conversion a:active,
+.shanghai-itinerary-link:active {
+  transform: translateY(0) scale(0.985);
+}
+
+@media (max-width: 900px) {
+  .shanghai-header-inner {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px 20px;
+    padding: 13px 20px 12px;
+  }
+
+  .shanghai-nav {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: space-around;
+    gap: 14px;
+    font-size: 11px;
+  }
+
+  .shanghai-nav-cta {
+    min-height: 36px;
+    padding: 0 14px;
+    font-size: 10px;
+  }
+
+  .shanghai-intro-copy {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .shanghai-place-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .shanghai-taste-showcase {
+    grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+    margin-left: 0;
+  }
+
+  .shanghai-time-answer {
+    padding-left: 0;
+  }
+
+  .shanghai-footer-inner {
+    grid-template-columns: 1fr 1fr;
+    padding: 38px 0;
+  }
+
+  .shanghai-footer nav {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .shanghai-header-inner {
+    padding-inline: 16px;
+  }
+
+  .shanghai-brand {
+    gap: 8px;
+  }
+
+  .shanghai-brand-emblem {
+    width: 34px;
+    height: 34px;
+  }
+
+  .shanghai-brand-wordmark {
+    width: 112px;
+  }
+
+  .shanghai-nav {
+    gap: 7px;
+    font-size: clamp(9px, 2.6vw, 11px);
+  }
+
+  .shanghai-breadcrumb {
+    width: calc(100% - 32px);
+    min-height: 50px;
+    font-size: 11px;
+  }
+
+  .shanghai-hero {
+    padding: 14px 14px 0;
+  }
+
+  .shanghai-hero-media {
+    aspect-ratio: 16 / 9;
+    min-height: 0;
+    border-radius: 4px;
+  }
+
+  .shanghai-content-width {
+    width: calc(100% - 36px);
+  }
+
+  .shanghai-intro {
+    padding: 52px 0 46px;
+  }
+
+  .shanghai-intro h1 {
+    margin-top: 13px;
+    font-size: 34px;
+  }
+
+  .shanghai-intro-copy {
+    margin-top: 28px;
+  }
+
+  .shanghai-intro-copy p {
+    font-size: 14px;
+    line-height: 1.72;
+  }
+
+  .shanghai-divider {
+    width: calc(100% - 54px);
+  }
+
+  .shanghai-places,
+  .shanghai-taste,
+  .shanghai-time {
+    padding: 50px 0;
+  }
+
+  .shanghai-section-heading {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+  }
+
+  .shanghai-section-index {
+    font-size: 12px;
+  }
+
+  .shanghai-section-heading h2 {
+    font-size: 29px;
+  }
+
+  .shanghai-place-grid {
+    gap: 10px;
+  }
+
+  .shanghai-place-copy {
+    grid-template-columns: 24px minmax(0, 1fr);
+    padding: 14px 13px 16px;
+  }
+
+  .shanghai-place h3 {
+    margin-bottom: 6px;
+    font-size: clamp(14px, 4vw, 17px);
+  }
+
+  .shanghai-place p {
+    font-size: 11px;
+    line-height: 1.48;
+  }
+
+  .shanghai-taste-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .shanghai-food-media img {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .shanghai-food-media figcaption {
+    padding: 12px 15px;
+    font-size: 11px;
+  }
+
+  .shanghai-food-list {
+    padding: 9px 18px;
+  }
+
+  .shanghai-food-list > div {
+    padding: 13px 0;
+  }
+
+  .shanghai-food-list strong {
+    font-size: 15px;
+  }
+
+  .shanghai-time-answer {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding-left: 0;
+  }
+
+  .shanghai-duration {
+    padding: 4px 0 28px;
+    border-right: 0;
+    border-bottom: 1px solid var(--shanghai-line);
+  }
+
+  .shanghai-duration strong {
+    font-size: 72px;
+  }
+
+  .shanghai-duration > span {
+    margin-top: 12px;
+    font-size: 15px;
+  }
+
+  .shanghai-duration p {
+    width: min(290px, 100%);
+    margin-top: 16px;
+    font-size: 12px;
+  }
+
+  .shanghai-itinerary-link {
+    min-height: 50px;
+    margin-top: 22px;
+    padding-inline: 22px;
+    font-size: 13px;
+  }
+
+  .shanghai-time-plan > div {
+    grid-template-columns: 70px minmax(0, 1fr);
+    gap: 10px;
+    padding: 17px 0 17px 18px;
+  }
+
+  .shanghai-time-plan > div::before {
+    top: 24px;
+  }
+
+  .shanghai-time-plan p {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .shanghai-conversion {
+    padding: 66px 20px;
+  }
+
+  .shanghai-conversion h2 {
+    font-size: 31px;
+  }
+
+  .shanghai-conversion-inner > p:not(.shanghai-eyebrow) {
+    font-size: 14px;
+  }
+
+  .shanghai-conversion a {
+    width: min(100%, 310px);
+    min-width: 0;
+    min-height: 54px;
+    gap: 10px;
+    padding: 0 11px 0 18px;
+    font-size: 13px;
+  }
+
+  .shanghai-footer-inner {
+    width: calc(100% - 36px);
+    grid-template-columns: 1fr;
+    gap: 22px;
+    padding: 40px 0;
+  }
+
+  .shanghai-footer nav {
+    grid-column: auto;
+    flex-wrap: wrap;
+    gap: 14px 24px;
+  }
+}
+
+@media (max-width: 360px) {
+  .shanghai-brand-wordmark {
+    width: 100px;
+  }
+
+  .shanghai-nav-cta {
+    padding: 0 11px;
+    font-size: 9px;
+  }
+
+  .shanghai-place-copy {
+    grid-template-columns: 21px minmax(0, 1fr);
+    padding-inline: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
