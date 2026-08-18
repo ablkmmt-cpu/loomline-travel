@@ -410,7 +410,7 @@ const page = (e) => `<!doctype html>
     </section>
 
     <!-- ② 事实条 -->
-    <div class="facts"><b>${e.duration}</b><span class="sep"></span><b>成都 Chengdu</b><span class="sep"></span>More cities coming soon<span class="sep"></span>Best for ${e.bestFor}<span class="sep"></span>English host</div>
+    <div class="facts"><b>${e.duration}</b><span class="sep"></span><b>Chengdu</b><span class="sep"></span>More cities coming soon<span class="sep"></span>Best for ${e.bestFor}<span class="sep"></span>English host</div>
 
     <!-- ③ 收益点 -->
     <section class="wrap">
