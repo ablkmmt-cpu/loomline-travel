@@ -154,3 +154,21 @@
 
 - 公司地址尚未提供：已留注释占位（如 `Rm 502, No.12 Xinhua Avenue, Chengdu`），提供后直接填入
 - 广告词为推荐稿，备选见协作讨论记录；换词只需改 `footer-main.html` 一行
+
+---
+
+## 2026-08-18 · 联系页链接修复 + 页脚收尾（第五批）
+
+### 修复
+
+| 问题 | 根因 | 修复 |
+|---|---|---|
+| **contact.html 无法跳回主页**（logo/导航/页脚所有链接失效） | `stamp.mjs` 的 `render()` 用 `base === ""` 判断首页，把同为根目录的 contact.html 链接剥成 `#top`/`#services` 等无效锚点 | 改为按 `page.file === "index.html"` 判断，仅首页做 `#` 还原；contact.html 保留 `index.html#...` |
+
+### 修改
+
+| 文件 | 改动 |
+|---|---|
+| `components/footer-main.html` | ① 邮箱链接文案改为 **"Email us"**（不再直接展示邮箱地址）；② **Policies 独立成列放到 Follow us 右侧**（身份+联系 / Explore / Follow us / Policies 四列） |
+| `assets/site-chrome.css` | 栅格回到 4 列（紧凑宽度）；`.footer-policies` 恢复为独立列样式 |
+| `tools/stamp.mjs` | render() 首页判断修复 |

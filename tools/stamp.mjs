@@ -64,7 +64,9 @@ const canon = (html) =>
 
 const render = (component, page) => {
   let out = component.replaceAll("{{ARIA}}", page.aria).replaceAll("{{BASE}}", page.base);
-  if (page.base === "") out = out.replaceAll("index.html#", "#"); // 首页还原 "#top" 形式
+  // 仅首页（index.html）把 "index.html#" 还原为 "#top" 形式；根目录的其它页面
+  //（如 contact.html）必须保留 "index.html#..." 才能跳回首页
+  if (page.file === "index.html") out = out.replaceAll("index.html#", "#");
   return out;
 };
 
