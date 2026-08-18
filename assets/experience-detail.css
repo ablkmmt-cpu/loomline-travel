@@ -16,8 +16,6 @@ body{background:
     font-family:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;color:var(--ink);}
 .cn{font-family:'Songti SC','STSong','Noto Serif SC',serif}
 .kai{font-family:'Kaiti SC','STKaiti','KaiTi',cursive}
-.crumb{width:min(1180px,100%);margin:0 auto;padding:16px clamp(18px,4vw,60px);font-size:12px;color:#8a8172;background:rgba(245,239,226,.6)}
-.crumb a{color:var(--ink-soft);text-decoration:none}
 /* ---------- 印章 ---------- */
 
   /* ---------- 按钮 ---------- */

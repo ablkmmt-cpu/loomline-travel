@@ -391,7 +391,6 @@ const page = (e) => `<!doctype html>
   <body class="experience-page">
     <!-- @@HEADER@@ -->
 
-    <div class="crumb"><a href="../../index.html#top">Home</a> / <a href="../../index.html#experiences">Experiences</a> / <b>${e.name} · Chengdu</b></div>
 
     <!-- ① Hero -->
     <section class="hero">
