@@ -67,7 +67,7 @@
   /* ---------- 版心（加宽留白） ---------- */
   .wrap{width:min(1040px,100%);margin:0 auto;padding:0 clamp(22px,5vw,72px)}
   .wide{width:min(1180px,100%);margin:0 auto;padding:0 clamp(22px,5vw,72px)}
-  section.wrap{padding:80px 0}
+  section.wrap{padding:40px 0}
   .sec-head{display:flex;align-items:flex-start;gap:22px;margin-bottom:12px}
   .sec-head .t .k{color:#8f6b2e;font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:800}
   .sec-head .t h2{font-family:Georgia,'Songti SC',serif;font-size:clamp(28px,3.4vw,42px);color:var(--ink);font-weight:500;margin-top:10px;line-height:1.24;letter-spacing:.01em}
@@ -87,11 +87,13 @@
   .orn{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:clamp(24px,3vw,36px);color:rgba(143,107,46,.6)}
   .orn span{width:min(140px,22vw);height:1px;background:rgba(143,107,46,.38)}
   .orn i{font-style:normal;font-size:11px;color:rgba(159,45,43,.65)}
-  .band{margin:80px 0;position:relative;padding:clamp(72px,9vw,110px) clamp(24px,7vw,96px);overflow:hidden;color:#efe6d3;background:radial-gradient(80% 120% at 18% 0%, rgba(49,90,77,.55), transparent 60%),linear-gradient(160deg,#1A4036,#0D241E 72%);border-top:1px solid rgba(201,160,94,.22);border-bottom:1px solid rgba(201,160,94,.22)}
-  .band::before{content:"";position:absolute;inset:0;background:radial-gradient(460px 240px at 82% 78%, rgba(201,160,94,.09), transparent 60%)}
-  .band .in{position:relative;z-index:1;max-width:860px;margin:0 auto;text-align:center}
-  .band .q{font-family:Georgia,'Songti SC',serif;font-style:italic;font-size:clamp(23px,3.1vw,36px);line-height:1.65;color:#f5efe2}
-  .band .cn-mark{display:block;font-family:'Kaiti SC',serif;font-style:normal;font-size:clamp(14px,1.6vw,18px);color:#e2c391;letter-spacing:.34em;margin-top:22px}
+  .band{margin:40px 0;position:relative;min-height:400px;display:grid;align-items:center;overflow:hidden;color:#efe6d3;border-top:1px solid rgba(201,160,94,.22);border-bottom:1px solid rgba(201,160,94,.22)}
+  .band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(13,36,30,.96) 0%, rgba(15,45,37,.86) 30%, rgba(18,56,46,.42) 58%, rgba(18,56,46,.05) 100%)}
+
+  .band .in{position:relative;z-index:1;width:min(1040px,100%);margin:0 auto;padding:clamp(56px,7vw,88px) clamp(22px,5vw,72px);text-align:left}
+  .band .q{font-family:Georgia,'Songti SC',serif;font-style:italic;font-size:clamp(23px,3.1vw,36px);line-height:1.6;color:#f5efe2;max-width:540px}
+  .band .cn-mark{display:block;font-family:'Kaiti SC',serif;font-style:normal;font-size:clamp(14px,1.6vw,18px);color:#e2c391;letter-spacing:.34em;margin-top:20px}
   .band .seal{margin-top:26px}
 
   /* ---------- ⑤ 流程 ---------- */
@@ -143,7 +145,7 @@
   .pair-row i{font-style:normal;color:var(--hair)}
 
   /* ---------- ⑩ Next step ---------- */
-  .next{padding:80px 0 96px}
+  .next{padding:40px 0 64px}
   .next-in{background:linear-gradient(160deg,#1A4036,#0D241E 72%);border-radius:8px;border:1px solid rgba(201,160,94,.26);padding:52px clamp(28px,5vw,68px);color:#efe6d3;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;position:relative;overflow:hidden}
   .next-in::before{content:"";position:absolute;inset:0;background:radial-gradient(520px 260px at 90% 20%, rgba(201,160,94,.09), transparent 60%)}
   .next-in > *{position:relative;z-index:1}
