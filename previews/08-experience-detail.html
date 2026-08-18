@@ -52,15 +52,15 @@
   .hero{position:relative;min-height:580px;display:flex;align-items:flex-end;overflow:hidden;color:#f5efe2}
   .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,38,32,.45),rgba(16,38,32,.08) 44%,rgba(16,38,32,.92))}
-  .hero .vt{position:absolute;top:clamp(100px,13vh,140px);right:clamp(28px,7vw,100px);z-index:2;writing-mode:vertical-rl;font-family:'Kaiti SC','STKaiti',serif;font-size:clamp(36px,5vw,60px);color:rgba(245,239,226,.94);letter-spacing:.24em;text-shadow:0 2px 26px rgba(0,0,0,.4)}
-  .hero .in{position:relative;z-index:1;width:min(1180px,100%);margin:0 auto;padding:56px clamp(18px,4vw,60px) 60px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:end}
+  .hero .watermark{position:absolute;top:clamp(104px,13vh,144px);right:clamp(28px,7vw,100px);z-index:2;font-family:'Kaiti SC','STKaiti',serif;font-size:clamp(34px,4.6vw,60px);color:rgba(245,239,226,.13);letter-spacing:.2em;text-shadow:0 2px 20px rgba(0,0,0,.25);user-select:none;pointer-events:none}
+  .hero .in{position:relative;z-index:1;width:min(1180px,100%);margin:0 auto;padding:56px clamp(18px,4vw,60px) 60px}
   .hero .title-zone .k{color:#e2c391;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:800}
   .hero h1{font-family:Georgia,'Songti SC',serif;font-size:clamp(46px,6.8vw,84px);font-weight:500;margin-top:14px;letter-spacing:.01em}
-  .hero .sub{color:rgba(245,239,226,.85);font-size:16.5px;margin-top:14px;max-width:600px;line-height:1.75}
+  .hero .sub{color:rgba(245,239,226,.85);font-size:17.5px;margin-top:14px;max-width:600px;line-height:1.75}
   .hero .acts{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
 
   /* ---------- ② 事实条 ---------- */
-  .facts{width:min(1180px,100%);margin:0 auto;padding:30px clamp(18px,4vw,60px);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);text-align:center;color:var(--ink-soft);font-size:13.5px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}
+  .facts{width:min(1180px,100%);margin:0 auto;padding:30px clamp(18px,4vw,60px);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);text-align:center;color:var(--ink-soft);font-size:14.5px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}
   .facts .sep{width:1px;height:14px;background:rgba(159,45,43,.5)}
   .facts b{color:var(--ink);font-weight:800}
 
@@ -71,7 +71,7 @@
   .sec-head{display:flex;align-items:flex-start;gap:22px;margin-bottom:12px}
   .sec-head .t .k{color:#8f6b2e;font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:800}
   .sec-head .t h2{font-family:Georgia,'Songti SC',serif;font-size:clamp(28px,3.4vw,42px);color:var(--ink);font-weight:500;margin-top:10px;line-height:1.24;letter-spacing:.01em}
-  .lead{color:var(--ink-soft);font-size:15.5px;line-height:1.95;margin-top:24px;max-width:700px}
+  .lead{color:var(--ink-soft);font-size:16.5px;line-height:1.9;margin-top:24px;max-width:700px}
   .orn{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:clamp(24px,3vw,36px);color:rgba(143,107,46,.6)}
   .orn span{width:min(140px,22vw);height:1px;background:rgba(143,107,46,.38)}
   .orn i{font-style:normal;font-size:11px;color:rgba(159,45,43,.65)}
@@ -81,9 +81,9 @@
   .benefit:first-of-type{border-top:1px solid var(--hair);margin-top:40px}
   .benefit .no{display:flex;flex-direction:column;align-items:center;gap:6px}
   .benefit .no .ar{font-family:Georgia,serif;font-size:24px;color:rgba(27,22,18,.32);font-weight:400;line-height:1}
-  .benefit .no .cn{font-size:12px;color:var(--red);letter-spacing:.12em;font-weight:700}
-  .benefit b{font-size:16.5px;color:var(--ink);display:block;font-weight:750}
-  .benefit p{font-size:13.5px;color:var(--ink-soft);line-height:1.75;margin-top:6px;max-width:620px}
+  .benefit .no .cn{font-size:12.5px;color:var(--red);letter-spacing:.12em;font-weight:700}
+  .benefit b{font-size:17.5px;color:var(--ink);display:block;font-weight:750}
+  .benefit p{font-size:14.5px;color:var(--ink-soft);line-height:1.75;margin-top:6px;max-width:620px}
   .benefit .mark{width:30px;height:30px;border:1px solid rgba(159,45,43,.4);border-radius:50%;display:grid;place-items:center;font-size:13px;color:var(--red);flex:0 0 auto}
 
   /* ---------- ④ 水墨引用带 ---------- */
@@ -99,10 +99,10 @@
   .timeline::before{content:"";position:absolute;top:17px;left:5%;right:5%;height:1px;background:rgba(27,22,18,.2)}
   .tm{position:relative}
   .tm .no{width:35px;height:35px;border-radius:50%;background:var(--red);color:#f8f1e2;display:grid;place-items:center;font-size:12px;font-weight:800;position:relative;z-index:1;box-shadow:0 4px 12px rgba(159,45,43,.32)}
-  .tm b{font-size:15.5px;color:var(--ink);display:block;margin-top:18px;font-weight:750}
-  .tm b .cn{color:var(--red);font-size:13px;font-weight:700;margin-right:7px}
-  .tm p{font-size:13px;color:var(--ink-soft);line-height:1.75;margin-top:8px}
-  .tm .take{font-size:12px;color:#8f6b2e;font-weight:700;margin-top:10px;letter-spacing:.02em}
+  .tm b{font-size:16.5px;color:var(--ink);display:block;margin-top:18px;font-weight:750}
+  .tm b .cn{color:var(--red);font-size:14px;font-weight:700;margin-right:7px}
+  .tm p{font-size:14px;color:var(--ink-soft);line-height:1.75;margin-top:8px}
+  .tm .take{font-size:13px;color:#8f6b2e;font-weight:700;margin-top:10px;letter-spacing:.02em}
 
   /* ---------- ⑥ 包含与预订 ---------- */
   .include{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(44px,6vw,88px);align-items:start}
@@ -110,52 +110,52 @@
   .doc::before{content:"";position:absolute;inset:8px;border:1px solid rgba(27,22,18,.14);border-radius:3px;pointer-events:none}
   .col-h{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#8f6b2e;font-weight:800;margin-bottom:16px}
   .inc-list{list-style:none}
-  .inc-list li{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--hair);font-size:13.5px;color:var(--ink-soft);line-height:1.7;position:relative}
+  .inc-list li{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--hair);font-size:14.5px;color:var(--ink-soft);line-height:1.7;position:relative}
   .inc-list li::before{content:"✓";color:var(--red);font-weight:900;flex:0 0 auto}
-  .book p{font-size:13.5px;color:var(--ink-soft);line-height:1.85}
-  .book .note2{font-size:12.5px;color:#8f6b2e;font-weight:700;margin-top:14px;line-height:1.75}
+  .book p{font-size:14.5px;color:var(--ink-soft);line-height:1.85}
+  .book .note2{font-size:13px;color:#8f6b2e;font-weight:700;margin-top:14px;line-height:1.75}
   .book .btn{margin-top:26px}
 
   /* ---------- ⑦ 成都体验 ---------- */
   .chengdu{padding-top:clamp(76px,9vw,116px)}
-  .spread{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,80px);align-items:center;margin-top:44px}
+  .spread{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center;margin-top:44px}
   .spread .pic{border-radius:6px;overflow:hidden;border:1px solid rgba(27,22,18,.14)}
-  .spread .pic img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3}
+  .spread .pic img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:1/1}
   .spread ul{list-style:none;margin-top:30px}
   .spread li{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--hair);align-items:flex-start}
   .spread li::before{content:"→";color:var(--red);font-weight:800;flex:0 0 auto;margin-top:2px}
-  .spread li b{font-size:15px;color:var(--ink);display:block}
-  .spread li p{font-size:13px;color:var(--ink-soft);line-height:1.7;margin-top:4px}
+  .spread li b{font-size:16px;color:var(--ink);display:block}
+  .spread li p{font-size:14px;color:var(--ink-soft);line-height:1.7;margin-top:4px}
 
   /* ---------- ⑧ Coming soon ---------- */
   .soon{padding-top:clamp(64px,8vw,104px)}
   .triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:46px}
-  .tc{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:3/4;color:#efe6d3;filter:saturate(.1) brightness(.9);border:1px solid rgba(159,45,43,.5)}
-  .tc img{width:100%;height:100%;object-fit:cover;display:block}
+  .tc{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:3/4;color:#efe6d3;border:1px solid rgba(159,45,43,.5)}
+  .tc img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.12) brightness(.92)}
   .tc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(20,28,25,.85))}
   .tc .badge{position:absolute;top:14px;left:14px;z-index:1;background:var(--red);color:#f3e7d6;font-size:10.5px;font-weight:800;letter-spacing:.1em;padding:5px 10px;border-radius:4px}
   .tc .t{position:absolute;left:20px;right:20px;bottom:18px;z-index:1}
   .tc b{font-family:Georgia,'Songti SC',serif;font-size:19px;font-weight:600;color:#E8A9A2}
-  .tc p{font-size:12px;color:rgba(239,230,211,.72);line-height:1.55;margin-top:5px}
+  .tc p{font-size:13px;color:rgba(239,230,211,.72);line-height:1.55;margin-top:5px}
 
   /* ---------- ⑨ 相关推荐 ---------- */
   .pair{padding-top:clamp(64px,8vw,96px)}
-  .pair-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;font-size:13.5px;margin-top:30px}
+  .pair-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;font-size:14.5px;margin-top:30px}
   .pair-row .lb{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#8f6b2e;font-weight:800;margin-right:10px}
   .pair-row a{color:var(--red);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(159,45,43,.35);padding-bottom:2px}
   .pair-row i{font-style:normal;color:var(--hair)}
 
   /* ---------- ⑩ Next step ---------- */
-  .next{padding:clamp(64px,8vw,96px) 0 clamp(72px,9vw,112px)}
+  .next{padding:clamp(64px,8vw,96px) 0 clamp(88px,10vw,136px)}
   .next-in{background:linear-gradient(160deg,#1A4036,#0D241E 72%);border-radius:8px;border:1px solid rgba(201,160,94,.26);padding:52px clamp(28px,5vw,68px);color:#efe6d3;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;position:relative;overflow:hidden}
   .next-in::before{content:"";position:absolute;inset:0;background:radial-gradient(520px 260px at 90% 20%, rgba(201,160,94,.09), transparent 60%)}
   .next-in > *{position:relative;z-index:1}
   .next-in h2{font-family:Georgia,'Songti SC',serif;font-size:clamp(23px,2.9vw,34px);font-weight:500;color:#f5efe2}
-  .next-in p{color:rgba(239,230,211,.74);font-size:13.5px;margin-top:14px;max-width:540px;line-height:1.75}
+  .next-in p{color:rgba(239,230,211,.74);font-size:14.5px;margin-top:14px;max-width:540px;line-height:1.75}
   .next-in .acts{display:flex;gap:14px;flex-wrap:wrap}
 
   /* ---------- 页脚 ---------- */
-  footer{background:#0D241E;color:rgba(239,230,211,.7);padding:48px clamp(22px,6vw,92px) 28px;border-top:1px solid rgba(201,160,94,.28)}
+  footer{background:#0D241E;color:rgba(239,230,211,.7);padding:56px clamp(22px,6vw,92px) 28px;border-top:1px solid rgba(201,160,94,.5)}
   .f-main{width:min(1180px,100%);margin:0 auto;display:grid;grid-template-columns:1.3fr .5fr .6fr .55fr;gap:clamp(32px,5vw,80px);align-items:start}
   .f-brand{display:flex;align-items:center;gap:10px;color:#f5efe2;font-weight:800}
   .f-brand .e{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#9a7436);display:grid;place-items:center;color:var(--green);font-weight:900}
@@ -180,7 +180,7 @@
 <!-- ① Hero -->
 <section class="hero">
   <img src="../assets/experience-tea-food.png" alt="" />
-  <div class="vt kai">一盏茶</div>
+  <div class="watermark kai">成都·Chengdu</div>
   <div class="in">
     <div class="title-zone">
       <p class="k">Hands-on cultural experience · Chengdu</p>
@@ -191,7 +191,6 @@
         <a class="btn btn-ghost" href="https://wa.me/message/CNMUYNRK4BKGJ1" target="_blank" rel="noreferrer">Chat on WhatsApp</a>
       </div>
     </div>
-    <div class="seal rect kai" style="margin-bottom:10px">成都</div>
   </div>
 </section>
 
@@ -207,7 +206,6 @@
 <!-- ③ 收益点 -->
 <section class="wrap">
   <div class="sec-head">
-    <div class="seal sm kai">获</div>
     <div class="t">
       <p class="k">What you take away</p>
       <h2>Brew once. Understand China a little better.</h2>
@@ -223,25 +221,23 @@
 <section class="band">
   <div class="in">
     <p class="q">“Tea is how Chengdu slows down —<br/>and after this session, it's how you will too.”</p>
-    <span class="cn-mark kai">茶 · 成都 · 一盏</span>
-    <div class="seal rect kai">茶</div>
+    <span class="cn-mark">Tea · Chengdu · One Cup</span>
   </div>
 </section>
 
 <!-- ⑤ 流程 -->
 <section class="wrap">
   <div class="sec-head">
-    <div class="seal sm kai">序</div>
     <div class="t">
       <p class="k">Four moments</p>
       <h2>One tea table, from first pour to last.</h2>
     </div>
   </div>
   <div class="timeline">
-    <div class="tm"><div class="no">01</div><b><span class="cn kai">壹</span>Arrive &amp; settle</b><p>Meet your host, take your seat, get familiar with the teaware.</p><div class="take">→ 无需任何基础</div></div>
-    <div class="tm"><div class="no">02</div><b><span class="cn kai">贰</span>Meet the leaves</b><p>Compare aroma, color, origin, and character of teas picked for you.</p><div class="take">→ 找到你的茶</div></div>
-    <div class="tm"><div class="no">03</div><b><span class="cn kai">叁</span>Brew with a gaiwan</b><p>Practice water, timing, grip, and pouring across infusions.</p><div class="take">→ 回家能复刻</div></div>
-    <div class="tm"><div class="no">04</div><b><span class="cn kai">肆</span>Tea, snacks &amp; talk</b><p>Local pairings and the questions that make teahouses feel easy.</p><div class="take">→ 茶馆不再有门槛</div></div>
+    <div class="tm"><div class="no">01</div><b><span class="cn kai">壹</span>Arrive &amp; settle</b><p>Meet your host, take your seat, get familiar with the teaware.</p><div class="take">→ No experience needed</div></div>
+    <div class="tm"><div class="no">02</div><b><span class="cn kai">贰</span>Meet the leaves</b><p>Compare aroma, color, origin, and character of teas picked for you.</p><div class="take">→ Find your tea</div></div>
+    <div class="tm"><div class="no">03</div><b><span class="cn kai">叁</span>Brew with a gaiwan</b><p>Practice water, timing, grip, and pouring across infusions.</p><div class="take">→ Brew it again at home</div></div>
+    <div class="tm"><div class="no">04</div><b><span class="cn kai">肆</span>Tea, snacks &amp; talk</b><p>Local pairings and the questions that make teahouses feel easy.</p><div class="take">→ Teahouses, minus the mystery</div></div>
   </div>
 <div class="orn" aria-hidden="true"><span></span><i>◆</i><span></span></div>
 
@@ -272,7 +268,6 @@
 <!-- ⑦ 成都体验 -->
 <section class="wrap wide chengdu">
   <div class="sec-head">
-    <div class="seal sm kai">行</div>
     <div class="t">
       <p class="k">In Chengdu</p>
       <h2>Tea, placed inside your Chengdu day.</h2>
@@ -295,7 +290,6 @@
 <!-- ⑧ Coming soon -->
 <section class="wrap wide soon">
   <div class="sec-head">
-    <div class="seal sm kai">待</div>
     <div class="t">
       <p class="k">Coming soon</p>
       <h2>The same seat, in more cities.</h2>
@@ -311,7 +305,6 @@
 <!-- ⑨ 相关推荐 -->
 <section class="wrap pair">
   <div class="sec-head">
-    <div class="seal sm kai">联</div>
     <div class="t"><p class="k">Pair it with</p><h2>More of Chengdu, one table at a time.</h2></div>
   </div>
   <div class="pair-row"><span class="lb">Try also in Chengdu</span><a href="../../experiences/sichuan-mahjong/index.html">Mahjong</a><i>·</i><a href="../../experiences/traditional-wellness/index.html">Wellness</a><i>·</i><a href="../../experiences/pottery-workshop/index.html">Pottery</a><i>·</i><a href="../../destinations/chengdu/index.html">Chengdu city guide</a></div>
