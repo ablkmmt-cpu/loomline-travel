@@ -90,7 +90,14 @@ const replaceKind = (html, kind, page) => {
   const marker = kind === "header" ? HEADER_MARKER : FOOTER_MARKER;
   const re = new RegExp(`${escapeRe(marker)}\\s*<${kind} class="[^"]*"[^>]*>[\\s\\S]*?<\\/${kind}>`);
   const m = re.exec(html);
-  if (!m) return { html, err: `${page.file}: 未找到 ${kind} 块（标记后无 <${kind} class=...>）` };
+  if (!m) {
+    // 标记存在但标记后无块：新页面引导——在标记处插入渲染后的组件
+    if (html.includes(marker)) {
+      const { content } = componentFor(kind, "main", "");
+      return { html: html.replace(escapeRe(marker), `${marker}\n${render(content, page)}`), err: null };
+    }
+    return { html, err: `${page.file}: 缺少 ${marker} 标记` };
+  }
 
   const cls = /class="([^"]*)"/.exec(m[0].slice(m[0].indexOf(`<${kind}`)))?.[1] || "";
   const { content } = componentFor(kind, variantOf(kind, cls), m[0]);

@@ -103,3 +103,36 @@
 - **OG 图片** 是占位图（预览 06 的品牌 OG 模板尚未落地）；`og:url` / sitemap 使用占位域名，上线前统一替换
 - 页脚 Policies 组目前仅 Privacy Policy（弹窗）；**Terms / Refunds & Cancellation 政策页**建成后在此追加链接（退改条款待业务方确认）
 - 页面级 BreadcrumbList Schema 未做（属目的地页产品化改造范围）
+
+---
+
+## 2026-08-18 · 联系页 /contact.html + 页脚三栏升级（第三批）
+
+**范围**：新增联系页；页脚 Contact & Follow 竖排化、Policies 独立成列。
+
+### 新增
+
+| 文件 | 说明 |
+|---|---|
+| `contact.html` | 独立联系页：深色 hero + 左侧表单（现表单迁移并升级）+ 右侧 WhatsApp/信任栏；`?interest=` / `?type=` 参数预填上下文 |
+| `contact.css` | 联系页布局样式（hero / 双栏 / 快捷点选 chips / 信任徽章 / 右侧栏卡片） |
+| `contact.js` | 读取 URL 参数预填 interest/support_type、来源页面（referrer）记录 |
+
+### 修改
+
+| 文件 | 改动 |
+|---|---|
+| `components/footer-main.html` | ① Contact & Follow 全部**竖排**，社媒图标后带平台名（TikTok/Facebook/Instagram/YouTube）；② **Policies 独立成列**，与 Explore / Contact 并列（隐私入口从 Contact 栏内移入 Policy 列） |
+| `assets/site-chrome.css` | footer 栅格 3 列 → **4 列**；社媒竖排填充图标样式；Policies 列样式 |
+| `components/header-main.html` | 全站 header CTA `#trip-plan-check` → **`contact.html`**（首页内页 CTA 保留跳首页表单） |
+| `services/self-guided|custom-tour/index.html` | sg-button CTA → contact.html |
+| `tools/pages.json` | 注册 contact.html（21 页） |
+| `tools/stamp.mjs` | 新页面引导：标记存在但无块时自动插入渲染后的组件（新页面只需放标记） |
+| `sitemap.xml` | 含 /contact/（URL 规则修正） |
+
+### 说明
+
+- 表单逻辑复用 `script.js`（全量空值守卫，联系页可安全加载）；日历复用 `form-date.js`；成功/失败面板复用现有 `form-feedback` 机制
+- 表单升级点：人数/预算快捷 chips、3 个信任徽章（24h 回复/保密/无义务）、提交下方法律注记、上下文隐藏字段（interest/referrer）
+- 首页表单**保留不动**（落地页转化点）；联系页是全站 CTA 落点，两入口并存
+- 右侧栏为 sticky（桌面端）；WhatsApp 为主通道大按钮

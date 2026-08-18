@@ -1,0 +1,354 @@
+/* ============================================================
+   contact.css — 联系页 /contact.html 专用样式
+   依赖：site-chrome.css（页头/页脚/弹窗）、styles.css（表单/日历/社媒基础样式）
+   ============================================================ */
+
+.contact-page {
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 84% 8%, rgba(196, 150, 72, 0.12), transparent 34%),
+    linear-gradient(180deg, #fbf8f1 0%, #f4efe6 100%);
+}
+
+/* ---------- Hero（深色，承接透明页头） ---------- */
+
+.contact-hero {
+  position: relative;
+  min-height: clamp(320px, 46vh, 440px);
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 120px clamp(18px, 5vw, 72px) clamp(64px, 6vw, 96px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(185, 139, 66, 0.22), transparent 46%),
+    linear-gradient(160deg, #1d443a 0%, #10231f 46%, #071612 100%);
+}
+
+.contact-kicker {
+  margin: 0 0 18px;
+  color: #d6ad68;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.contact-hero h1 {
+  margin: 0;
+  color: #fff8ed;
+  font-family: "Noto Serif SC", "Cinzel", serif;
+  font-size: clamp(34px, 5.4vw, 64px);
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.contact-subtitle {
+  margin: 22px auto 0;
+  color: rgba(255, 248, 237, 0.7);
+  font-size: clamp(14px, 1.7vw, 18px);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* ---------- 布局：表单 + 右栏 ---------- */
+
+.contact-layout {
+  width: min(1180px, 100%);
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(300px, 0.85fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: start;
+  margin: 0 auto;
+  padding: clamp(48px, 6vw, 88px) clamp(18px, 5vw, 72px) clamp(72px, 8vw, 120px);
+}
+
+.contact-form-panel {
+  min-width: 0;
+}
+
+/* 上下文提示条（?interest= 预填后显示） */
+.contact-context {
+  margin: 0 0 22px;
+  padding: 13px 18px;
+  border: 1px solid rgba(185, 139, 66, 0.4);
+  border-radius: 12px;
+  color: #6d5526;
+  background: rgba(255, 250, 238, 0.9);
+  font-size: 13.5px;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+/* ---------- 快捷点选 chips ---------- */
+
+.quick-chips {
+  display: block;
+  margin: 0 0 22px;
+  padding: 0;
+  border: 0;
+}
+
+.quick-chips legend {
+  margin-bottom: 10px;
+  color: #14231e;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.quick-chips legend small {
+  color: rgba(21, 21, 21, 0.45);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.quick-chips label {
+  position: relative;
+  display: inline-flex;
+  margin: 0 10px 10px 0;
+  cursor: pointer;
+}
+
+.quick-chips input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.quick-chips span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 9px 16px;
+  border: 1px solid rgba(21, 21, 21, 0.16);
+  border-radius: 999px;
+  color: rgba(21, 21, 21, 0.72);
+  background: rgba(255, 253, 248, 0.85);
+  font-size: 13px;
+  font-weight: 650;
+  transition: color 180ms ease, border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.quick-chips label:hover span {
+  border-color: rgba(185, 139, 66, 0.55);
+}
+
+.quick-chips input:checked + span {
+  color: #fff8ed;
+  border-color: #183a32;
+  background: #183a32;
+}
+
+.quick-chips input:focus-visible + span {
+  outline: 2px solid rgba(185, 139, 66, 0.6);
+  outline-offset: 2px;
+}
+
+/* ---------- 信任徽章 ---------- */
+
+.contact-trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 6px 0 18px;
+}
+
+.contact-trust-badges span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(21, 21, 21, 0.62);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.contact-trust-badges span::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #c79b50;
+}
+
+/* ---------- 隐私注记 ---------- */
+
+.contact-privacy-note {
+  margin: 14px 0 0;
+  color: rgba(21, 21, 21, 0.5);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.contact-privacy-note button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #8c652c;
+  font: inherit;
+  font-weight: 750;
+  text-decoration: underline;
+  text-decoration-color: rgba(140, 101, 44, 0.34);
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+/* ---------- 右栏 ---------- */
+
+.contact-rail {
+  position: sticky;
+  top: 24px;
+  display: grid;
+  gap: 18px;
+}
+
+.contact-whatsapp-card,
+.contact-sla-card,
+.contact-steps {
+  border: 1px solid rgba(21, 21, 21, 0.09);
+  border-radius: 18px;
+  background: rgba(255, 253, 248, 0.86);
+  box-shadow: 0 10px 30px rgba(35, 31, 24, 0.06);
+  padding: 22px 24px;
+}
+
+.contact-whatsapp-card > p {
+  margin: 0 0 14px;
+  color: #10231f;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.contact-whatsapp-btn {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  width: 100%;
+  padding: 0 22px;
+  border: 1px solid #183a32;
+  border-radius: 999px;
+  color: #fff8ed;
+  background: #183a32;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.contact-whatsapp-btn:hover,
+.contact-whatsapp-btn:focus-visible {
+  background: #10231f;
+  transform: translateY(-2px);
+}
+
+.contact-whatsapp-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: #e8c97d;
+}
+
+.contact-whatsapp-note {
+  display: block;
+  margin-top: 12px;
+  color: rgba(21, 21, 21, 0.45);
+  font-size: 12px;
+  text-align: center;
+}
+
+.contact-sla-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #10231f;
+  font-size: 17px;
+  font-weight: 850;
+}
+
+.contact-sla-card p {
+  margin: 0;
+  color: rgba(21, 21, 21, 0.6);
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+
+.contact-steps > p {
+  margin: 0 0 14px;
+  color: #d6ad68;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.contact-steps ol {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding-left: 20px;
+  color: rgba(21, 21, 21, 0.72);
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+.contact-steps li::marker {
+  color: #c79b50;
+  font-weight: 800;
+}
+
+.contact-social > p {
+  margin: 0 0 12px;
+  color: #d6ad68;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.contact-social .about-social-links {
+  gap: 8px;
+}
+
+.contact-social .about-social-links a {
+  width: 42px;
+  height: 42px;
+}
+
+/* ---------- 响应式 ---------- */
+
+@media (max-width: 900px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-rail {
+    position: static;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-whatsapp-card {
+    grid-column: 1 / -1;
+  }
+
+  .contact-social {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .contact-hero {
+    min-height: 300px;
+    padding-top: 104px;
+  }
+
+  .contact-rail {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-chips span {
+    min-height: 36px;
+    padding: 8px 13px;
+    font-size: 12px;
+  }
+}

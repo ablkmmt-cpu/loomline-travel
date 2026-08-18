@@ -7,6 +7,13 @@
     "footer": "main"
   },
   {
+    "file": "contact.html",
+    "base": "",
+    "aria": "Trip To China home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
     "file": "destinations/beijing/index.html",
     "base": "../../",
     "aria": "TripToChina home",
