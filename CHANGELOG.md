@@ -244,3 +244,13 @@
 - `assets/experience-detail.css` **改为从预览文件程序化抽取**（93 条模板规则 + @media 块），与 Preview 08 定稿逐值一致（`section.wrap 40px`、`.band 40px`、`.next 40/64` 等）
 - 体验页 `<body class="experience-page">` + CSS 中 `.experience-page .site-header` **粘性实色**——页头不再叠面包屑，顶部区域与预览一致
 - 重新生成 + stamp，7 页审计通过（标签配对 OK、body 类 ✓、面包屑 ✓、verify 0 失败）
+
+---
+
+## 2026-08-18 · 体验页 header 修复（经真实渲染验证）
+
+**根因**：`whatsapp-float.js` 会给全站 header 加 `ttc-fixed-header` → `whatsapp-float.css` 中 `position:fixed !important`。目的地页有 `.shanghai-page` 特例保持 sticky，**体验页没有特例** → header 变 fixed 盖住面包屑（顶部渲染混乱，观感"header 被改"）。
+
+**修复**：`whatsapp-float.css` 增加 `.experience-page .site-header.ttc-fixed-header` 特例（与目的地页同款 sticky 实色）。
+
+**验证方式（本次改为真实渲染）**：headless Chrome 实际渲染页面 → 像素级分析确认：① 顶部 0–90px 为深色页头条、90–140px 面包屑清晰可见（未被盖住）；② 绿色模块左半深绿、右半实景图；③ coming soon 灰化卡片、footer 深绿——整页结构与预览一致。

@@ -20,6 +20,13 @@
   background: linear-gradient(180deg, rgba(10, 37, 30, 0.995), rgba(7, 28, 23, 0.975)) !important;
 }
 
+.experience-page .site-header.ttc-fixed-header {
+  position: sticky !important;
+  top: 0;
+  z-index: 250 !important;
+  background: linear-gradient(180deg, rgba(16, 41, 36, 0.98), rgba(16, 41, 36, 0.96)) !important;
+}
+
 .site-header.ttc-fixed-header::after,
 .tea-nav.ttc-fixed-header::after,
 .city-topbar.ttc-fixed-header::after,
