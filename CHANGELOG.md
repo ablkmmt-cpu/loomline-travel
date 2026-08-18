@@ -136,3 +136,21 @@
 - 表单升级点：人数/预算快捷 chips、3 个信任徽章（24h 回复/保密/无义务）、提交下方法律注记、上下文隐藏字段（interest/referrer）
 - 首页表单**保留不动**（落地页转化点）；联系页是全站 CTA 落点，两入口并存
 - 右侧栏为 sticky（桌面端）；WhatsApp 为主通道大按钮
+
+---
+
+## 2026-08-18 · 页脚布局调整（第四批）
+
+**范围**：页脚三栏重构（收回 4 列布局）。
+
+### 修改
+
+| 文件 | 改动 |
+|---|---|
+| `components/footer-main.html` | ① 身份栏：新广告词 **"China, minus the guesswork."** + 联系方式（WhatsApp / Email）从原 Contact 栏移入 + 公司地址占位注释；② 原 "Contact & Follow" 改为 **"Follow us"**（4 平台竖排图标+平台名）；③ **Policies 不再独立成列**，作为 Follow us 栏内的子区块（隐私入口随栏收纳），Footer 由 4 列收回 3 列 |
+| `assets/site-chrome.css` | 栅格回 3 列；新增 `.footer-follow` / `.footer-contact-links` 样式；**Instagram 图标修正**（外框+圆环为描边、圆点为实心，此前被填充规则画成实心方块） |
+
+### 说明
+
+- 公司地址尚未提供：已留注释占位（如 `Rm 502, No.12 Xinhua Avenue, Chengdu`），提供后直接填入
+- 广告词为推荐稿，备选见协作讨论记录；换词只需改 `footer-main.html` 一行

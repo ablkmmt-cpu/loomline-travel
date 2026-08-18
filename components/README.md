@@ -7,7 +7,7 @@
 | 组件 | 用途 | 用到它的页面 |
 |---|---|---|
 | `header-main.html` | 统一页头（全站唯一版式） | 全站 20 页 |
-| `footer-main.html` | 统一页脚（三栏 + 底栏：Explore / Contact & Follow / 版权） | 全站 20 页 |
+| `footer-main.html` | 统一页脚（三栏 + 底栏：身份/联系 / Explore / Follow us + Policies） | 全站 21 页 |
 | `privacy-modal.html` | 隐私政策弹窗 | 全站 20 页 |
 
 > 历史版本：header-shanghai / header-tea / footer-shanghai / footer-tea / footer-sg 五个变体已随"归并"删除，全站统一为 main 版式。

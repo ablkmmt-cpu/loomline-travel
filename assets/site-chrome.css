@@ -194,8 +194,8 @@
 
 .footer-main {
   display: grid;
-  grid-template-columns: minmax(280px, 1.35fr) minmax(140px, 0.5fr) minmax(180px, 0.65fr) minmax(150px, 0.55fr);
-  gap: clamp(40px, 6vw, 96px);
+  grid-template-columns: minmax(300px, 1.35fr) minmax(150px, 0.55fr) minmax(220px, 0.75fr);
+  gap: clamp(44px, 6.5vw, 104px);
   align-items: start;
   padding-bottom: clamp(58px, 6vw, 84px);
 }
@@ -227,27 +227,32 @@
 
 .footer-identity > p {
   max-width: 410px;
-  margin: 28px 0 0;
-  color: rgba(255, 248, 237, 0.66);
+  margin: 26px 0 0;
+  color: rgba(255, 248, 237, 0.72);
   font-size: clamp(17px, 1.6vw, 22px);
   font-weight: 600;
   line-height: 1.55;
 }
 
+/* 身份栏联系方式（WhatsApp / Email，地址待补充） */
+.footer-contact-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 26px;
+}
+
 .footer-navigation,
-.footer-contact {
+.footer-follow {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 14px;
 }
 
-#feedback {
-  scroll-margin-top: 28px;
-}
-
 .footer-navigation > p,
-.footer-contact > p {
+.footer-follow > p {
   margin: 0 0 8px;
   color: #d6ad68;
   font-size: 11px;
@@ -341,20 +346,32 @@
   stroke: none;
 }
 
-/* 社媒链接（竖排，图标+平台名）：图标为填充型，与描边型图标区分 */
-.footer-social-link svg path,
-.footer-social-link svg rect,
-.footer-social-link svg circle {
+/* 社媒链接（竖排，图标+平台名）：
+   抖音/FB/YT 为填充型 path；Instagram 为描边型（外框+圆环+实心点） */
+.footer-social-link svg path {
   fill: currentColor;
   stroke: none;
 }
 
-/* 政策链接组（Privacy / Terms / Refunds 等，独立一列，与 Explore / Contact 并列） */
+.footer-social-link svg rect,
+.footer-social-link svg circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+.footer-social-link svg .social-dot {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* 政策链接组（Follow us 栏内的子区块） */
 .footer-policies {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 14px;
+  margin-top: 30px;
 }
 
 .footer-policies > p {
@@ -461,11 +478,6 @@
 
   .footer-identity {
     grid-column: auto;
-  }
-
-  .footer-feedback {
-    width: 100%;
-    min-width: 0;
   }
 
   .footer-bottom {
