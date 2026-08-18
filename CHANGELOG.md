@@ -212,3 +212,24 @@
 - **双按钮统一**：金色主按钮「Add to my trip →」跳表单 / 描边「Chat on WhatsApp」；Hero、决策卡、底部三处同款
 - **决策区无价格**："随行程确认 + 一价透明承诺"话术 + 咨询按钮（供应商落地前不摆价）
 - Hero 水印与按钮同高；事实条单行元信息
+
+---
+
+## 2026-08-18 · 全部 7 个体验详情页按定稿模板重建
+
+**范围**：experiences/* 7 页（tea-culture / traditional-wellness / yunnan-tie-dye / pottery-workshop / seal-carving / imperial-dinner-show / sichuan-mahjong）全部按 Preview 08 定稿模板重建。
+
+**实现方式（新增工具）**：
+- `assets/experience-detail.css` — 体验页模板共享样式（红墙绿瓦、统一节奏、分隔符、绿色模块、coming soon 等）
+- `tools/gen-experiences.mjs` — 数据驱动生成器：7 个体验的内容（时长/收益/流程/包含/成都场景/coming soon/相关推荐）集中在数据里，改文案 → `node tools/gen-experiences.mjs` → `node tools/stamp.mjs` 即可重出页面
+- 页面保留 `@@HEADER@@/@@FOOTER@@/@@ANALYTICS@@` 标记，页头/页脚/隐私弹窗仍由 stamp 统一渲染
+
+**内容调整（成都先行）**：
+- 全部标"成都 Chengdu · More cities coming soon"（灰图 + 红徽章，不可点）
+- 扎染定位从云南改为**四川扎染**；晚餐秀定位为**成都变脸晚餐秀**
+- 决策区无价格（"随行程确认 + 一价透明承诺"话术）
+- 双按钮统一（表单 + WhatsApp）；全英文正文（序号与水印除外）
+
+**旧文件**：`experiences/tea-culture/tea-culture.css`、`tea-culture.js` 已无页面引用（可留作参考或后续删除）。
+
+**验证**：7 页标签配对 OK、stamp verify 0 失败、幂等、无旧样式残留。
