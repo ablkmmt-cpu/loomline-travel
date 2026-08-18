@@ -88,14 +88,14 @@
   .divider .line{width:min(120px,20vw);height:1px;background:linear-gradient(90deg,transparent,rgba(143,107,46,.5))}
   .divider .line:last-child{background:linear-gradient(90deg,rgba(143,107,46,.5),transparent)}
   .divider .mark{width:7px;height:7px;transform:rotate(45deg);background:rgba(159,45,43,.6);box-shadow:0 0 0 3px rgba(159,45,43,.1)}
-  .band{margin:40px 0;position:relative;min-height:400px;display:grid;align-items:center;overflow:hidden;color:#efe6d3;border-top:1px solid rgba(201,160,94,.22);border-bottom:1px solid rgba(201,160,94,.22)}
-  .band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-  .band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg, rgba(13,36,30,.96) 0%, rgba(15,45,37,.86) 30%, rgba(18,56,46,.42) 58%, rgba(18,56,46,.05) 100%)}
+  .band{margin:40px 0;position:relative;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;color:#efe6d3;border-top:1px solid rgba(201,160,94,.22);border-bottom:1px solid rgba(201,160,94,.22);background:#0D241E}
+  .band .panel{display:grid;place-items:center;padding:clamp(52px,6vw,84px) clamp(24px,5vw,60px);background:radial-gradient(80% 120% at 20% 0%, rgba(49,90,77,.5), transparent 62%),linear-gradient(160deg,#1A4036,#0D241E 78%)}
+  .band .media{position:relative;min-height:340px}
+  .band .media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 
-  .band .in{position:relative;z-index:1;width:min(1040px,100%);margin:0 auto;padding:clamp(56px,7vw,88px) clamp(22px,5vw,72px);text-align:left}
-  .band .q{font-family:Georgia,'Songti SC',serif;font-style:italic;font-size:clamp(23px,3.1vw,36px);line-height:1.6;color:#f5efe2;max-width:540px}
-  .band .cn-mark{display:block;font-family:'Kaiti SC',serif;font-style:normal;font-size:clamp(14px,1.6vw,18px);color:#e2c391;letter-spacing:.34em;margin-top:20px}
-  .band .seal{margin-top:26px}
+  .band .in{text-align:center}
+  .band .q{font-family:Georgia,'Songti SC',serif;font-style:italic;font-size:clamp(22px,2.9vw,34px);line-height:1.65;color:#f5efe2}
+  .band .cn-mark{display:block;font-family:'Kaiti SC',serif;font-style:normal;font-size:clamp(14px,1.6vw,18px);color:#e2c391;letter-spacing:.34em;margin-top:22px}
 
   /* ---------- ⑤ 流程 ---------- */
   .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:44px;margin-top:52px;position:relative}
@@ -165,6 +165,11 @@
   .f-col a{display:block;color:rgba(239,230,211,.68);text-decoration:none;font-size:13px;line-height:2.1}
   .f-bottom{width:min(1180px,100%);margin:36px auto 0;padding-top:20px;border-top:1px solid rgba(201,160,94,.22);display:flex;justify-content:space-between;font-size:12px;color:rgba(239,230,211,.46)}
   .note{width:min(1180px,100%);margin:0 auto;padding:30px clamp(18px,4vw,60px) 10px;font-size:11.5px;color:#8a8172;line-height:1.7}
+  @media (max-width: 760px) {
+    .band{grid-template-columns:1fr}
+    .band .media{min-height:220px;order:-1}
+    .band .panel{padding:44px 24px}
+  }
 </style>
 </head>
 <body>
@@ -219,10 +224,13 @@
 
 <!-- ④ 水墨引用带 -->
 <section class="band">
-  <div class="in">
-    <p class="q">“Tea is how Chengdu slows down —<br/>and after this session, it's how you will too.”</p>
-    <span class="cn-mark">Tea · Chengdu · One Cup</span>
+  <div class="panel">
+    <div class="in">
+      <p class="q">“Tea is how Chengdu slows down —<br/>and after this session, it's how you will too.”</p>
+      <span class="cn-mark">Tea · Chengdu · One Cup</span>
+    </div>
   </div>
+  <div class="media"><img src="../assets/destinations/destination-chengdu-04.jpg" alt="" /></div>
 </section>
 
 <!-- ⑤ 流程 -->
