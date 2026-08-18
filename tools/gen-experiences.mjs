@@ -388,7 +388,7 @@ const page = (e) => `<!doctype html>
     <link rel="stylesheet" href="../../assets/experience-detail.css?v=1" />
   <!-- @@ANALYTICS@@ -->
   </head>
-  <body>
+  <body class="experience-page">
     <!-- @@HEADER@@ -->
 
     <div class="crumb"><a href="../../index.html#top">Home</a> / <a href="../../index.html#experiences">Experiences</a> / <b>${e.name} · Chengdu</b></div>

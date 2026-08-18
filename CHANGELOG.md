@@ -233,3 +233,14 @@
 **旧文件**：`experiences/tea-culture/tea-culture.css`、`tea-culture.js` 已无页面引用（可留作参考或后续删除）。
 
 **验证**：7 页标签配对 OK、stamp verify 0 失败、幂等、无旧样式残留。
+
+---
+
+## 2026-08-18 · 体验页重建纠错（第 2 版）
+
+**问题**：上一版 `experience-detail.css` 系凭记忆手写（抄了旧版节奏），与定稿预览不一致；且体验页 header 默认绝对定位叠在面包屑上，导致顶部区域渲染混乱、观感上"header 被改"。
+
+**修复**：
+- `assets/experience-detail.css` **改为从预览文件程序化抽取**（93 条模板规则 + @media 块），与 Preview 08 定稿逐值一致（`section.wrap 40px`、`.band 40px`、`.next 40/64` 等）
+- 体验页 `<body class="experience-page">` + CSS 中 `.experience-page .site-header` **粘性实色**——页头不再叠面包屑，顶部区域与预览一致
+- 重新生成 + stamp，7 页审计通过（标签配对 OK、body 类 ✓、面包屑 ✓、verify 0 失败）

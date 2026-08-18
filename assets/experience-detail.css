@@ -1,43 +1,33 @@
 /* ============================================================
-   experience-detail.css — 体验详情页模板样式（成都先行版）
-   ------------------------------------------------------------
-   来源：previews/08-experience-detail.html 定稿模板
+   experience-detail.css — 体验详情页模板样式（从 Preview 08 定稿抽取）
    依赖：site-chrome.css（页头/页脚/隐私弹窗）
-   用法：全部体验页（experiences/*/index.html）共用；
-        页面正文由 tools/gen-experiences.mjs 按数据生成。
-   配色：红墙绿瓦（宫墙红 #9F2D2B / 琉璃绿 #14332C / 宣纸白 #F6F0E3）
+   页面正文由 tools/gen-experiences.mjs 生成。
    ============================================================ */
 
-:root{
-  --red:#9F2D2B; --red-deep:#8A2422; --green:#14332C; --gold:#C9A05E;
-  --paper:#F6F0E3; --paper2:#EEE5D2; --ink:#1B1612; --ink-soft:#4D453A;
-  --hair:rgba(27,22,18,.15); --line:rgba(27,22,18,.28);
-}
+:root{--red:#9F2D2B; --red-deep:#8A2422; --green:#14332C; --gold:#C9A05E;
+    --paper:#F6F0E3; --paper2:#EEE5D2; --ink:#1B1612; --ink-soft:#4D453A;
+    --hair:rgba(27,22,18,.15); --line:rgba(27,22,18,.28);}
 *{box-sizing:border-box;margin:0;padding:0}
-body{
-  background:
-    radial-gradient(1300px 640px at 85% -6%, rgba(201,160,94,.08), transparent 60%),
-    radial-gradient(1000px 560px at -12% 42%, rgba(159,45,43,.05), transparent 55%),
-    repeating-linear-gradient(0deg, rgba(27,22,18,.012) 0 1px, transparent 1px 3px),
-    linear-gradient(180deg, var(--paper) 0%, var(--paper2) 100%);
-  font-family:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;color:var(--ink);
-}
+body{background:
+      radial-gradient(1300px 640px at 85% -6%, rgba(201,160,94,.08), transparent 60%),
+      radial-gradient(1000px 560px at -12% 42%, rgba(159,45,43,.05), transparent 55%),
+      repeating-linear-gradient(0deg, rgba(27,22,18,.012) 0 1px, transparent 1px 3px),
+      linear-gradient(180deg, var(--paper) 0%, var(--paper2) 100%);
+    font-family:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;color:var(--ink);}
 .cn{font-family:'Songti SC','STSong','Noto Serif SC',serif}
 .kai{font-family:'Kaiti SC','STKaiti','KaiTi',cursive}
-
-/* ---------- 面包屑 ---------- */
 .crumb{width:min(1180px,100%);margin:0 auto;padding:16px clamp(18px,4vw,60px);font-size:12px;color:#8a8172;background:rgba(245,239,226,.6)}
 .crumb a{color:var(--ink-soft);text-decoration:none}
+/* ---------- 印章 ---------- */
 
-/* ---------- 按钮（统一：1=表单 2=WhatsApp） ---------- */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:4px;font-size:13.5px;font-weight:800;text-decoration:none;transition:transform .18s ease, box-shadow .18s ease;letter-spacing:.01em}
+  /* ---------- 按钮 ---------- */
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:4px;font-size:13.5px;font-weight:800;text-decoration:none;transition:transform .18s ease, box-shadow .18s ease;letter-spacing:.01em}
 .btn:hover{transform:translateY(-2px)}
 .btn-primary{background:var(--red);color:#f8f1e2;box-shadow:0 8px 22px rgba(159,45,43,.3)}
 .btn-primary:hover{background:var(--red-deep);box-shadow:0 12px 28px rgba(159,45,43,.38)}
 .btn-ghost{border:1px solid rgba(245,239,226,.55);color:#f5efe2;background:rgba(20,51,44,.25);backdrop-filter:blur(4px)}
-
 /* ---------- ① Hero ---------- */
-.hero{position:relative;min-height:580px;display:flex;align-items:flex-end;overflow:hidden;color:#f5efe2}
+  .hero{position:relative;min-height:580px;display:flex;align-items:flex-end;overflow:hidden;color:#f5efe2}
 .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,38,32,.45),rgba(16,38,32,.08) 44%,rgba(16,38,32,.92))}
 .hero .watermark{position:absolute;bottom:clamp(72px,8vw,92px);right:clamp(28px,7vw,100px);z-index:2;font-family:'Kaiti SC','STKaiti',serif;font-size:clamp(34px,4.6vw,60px);color:rgba(245,239,226,.13);letter-spacing:.2em;text-shadow:0 2px 20px rgba(0,0,0,.25);user-select:none;pointer-events:none}
@@ -46,28 +36,19 @@ body{
 .hero h1{font-family:Georgia,'Songti SC',serif;font-size:clamp(46px,6.8vw,84px);font-weight:500;margin-top:14px;letter-spacing:.01em}
 .hero .sub{color:rgba(245,239,226,.85);font-size:17.5px;margin-top:14px;max-width:600px;line-height:1.75}
 .hero .acts{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
-
 /* ---------- ② 事实条 ---------- */
-.facts{width:min(1180px,100%);margin:0 auto;padding:30px clamp(18px,4vw,60px);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);text-align:center;color:var(--ink-soft);font-size:14.5px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}
+  .facts{width:min(1180px,100%);margin:0 auto;padding:30px clamp(18px,4vw,60px);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);text-align:center;color:var(--ink-soft);font-size:14.5px;font-weight:600;display:flex;align-items:center;justify-content:center;gap:18px;flex-wrap:wrap}
 .facts .sep{width:1px;height:14px;background:rgba(159,45,43,.5)}
 .facts b{color:var(--ink);font-weight:800}
-
-/* ---------- 版心 ---------- */
-.wrap{width:min(1040px,100%);margin:0 auto;padding:0 clamp(22px,5vw,72px)}
-section{padding-top:clamp(76px,9vw,120px)}
+/* ---------- 版心（加宽留白） ---------- */
+  .wrap{width:min(1040px,100%);margin:0 auto;padding:0 clamp(22px,5vw,72px)}
+section.wrap{padding:40px 0}
 .sec-head{display:flex;align-items:flex-start;gap:22px;margin-bottom:12px}
 .sec-head .t .k{color:#8f6b2e;font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:800}
 .sec-head .t h2{font-family:Georgia,'Songti SC',serif;font-size:clamp(28px,3.4vw,42px);color:var(--ink);font-weight:500;margin-top:10px;line-height:1.24;letter-spacing:.01em}
 .lead{color:var(--ink-soft);font-size:16.5px;line-height:1.9;margin-top:24px;max-width:700px}
-
-/* ---------- 分隔符（独立居中，上下等距） ---------- */
-.divider{display:flex;align-items:center;justify-content:center;gap:16px;margin:0 auto}
-.divider .line{width:min(120px,20vw);height:1px;background:linear-gradient(90deg,transparent,rgba(143,107,46,.5))}
-.divider .line:last-child{background:linear-gradient(90deg,rgba(143,107,46,.5),transparent)}
-.divider .mark{width:7px;height:7px;transform:rotate(45deg);background:rgba(159,45,43,.6);box-shadow:0 0 0 3px rgba(159,45,43,.1)}
-
 /* ---------- ③ 收益点 ---------- */
-.benefit{display:grid;grid-template-columns:64px 1fr auto;gap:28px;align-items:center;padding:32px 6px;border-bottom:1px solid var(--hair)}
+  .benefit{display:grid;grid-template-columns:64px 1fr auto;gap:28px;align-items:center;padding:32px 6px;border-bottom:1px solid var(--hair)}
 .benefit:first-of-type{border-top:1px solid var(--hair);margin-top:40px}
 .benefit .no{display:flex;flex-direction:column;align-items:center;gap:6px}
 .benefit .no .ar{font-family:Georgia,serif;font-size:24px;color:rgba(27,22,18,.32);font-weight:400;line-height:1}
@@ -75,8 +56,11 @@ section{padding-top:clamp(76px,9vw,120px)}
 .benefit b{font-size:17.5px;color:var(--ink);display:block;font-weight:750}
 .benefit p{font-size:14.5px;color:var(--ink-soft);line-height:1.75;margin-top:6px;max-width:620px}
 .benefit .mark{width:30px;height:30px;border:1px solid rgba(159,45,43,.4);border-radius:50%;display:grid;place-items:center;font-size:13px;color:var(--red);flex:0 0 auto}
-
-/* ---------- ④ 绿色引用模块（左绿面板居中文字 + 右图） ---------- */
+/* ---------- ④ 水墨引用带 ---------- */
+  .divider{display:flex;align-items:center;justify-content:center;gap:16px;margin:0 auto}
+.divider .line{width:min(120px,20vw);height:1px;background:linear-gradient(90deg,transparent,rgba(143,107,46,.5))}
+.divider .line:last-child{background:linear-gradient(90deg,rgba(143,107,46,.5),transparent)}
+.divider .mark{width:7px;height:7px;transform:rotate(45deg);background:rgba(159,45,43,.6);box-shadow:0 0 0 3px rgba(159,45,43,.1)}
 .band{margin:40px 0;position:relative;display:grid;grid-template-columns:1fr 1fr;overflow:hidden;color:#efe6d3;border-top:1px solid rgba(201,160,94,.22);border-bottom:1px solid rgba(201,160,94,.22);background:#0D241E}
 .band .panel{display:grid;place-items:center;padding:clamp(52px,6vw,84px) clamp(24px,5vw,60px);background:radial-gradient(80% 120% at 20% 0%, rgba(49,90,77,.5), transparent 62%),linear-gradient(160deg,#1A4036,#0D241E 78%)}
 .band .media{position:relative;min-height:340px}
@@ -84,9 +68,8 @@ section{padding-top:clamp(76px,9vw,120px)}
 .band .in{text-align:center}
 .band .q{font-family:Georgia,'Songti SC',serif;font-style:italic;font-size:clamp(22px,2.9vw,34px);line-height:1.65;color:#f5efe2}
 .band .cn-mark{display:block;font-family:'Kaiti SC',serif;font-style:normal;font-size:clamp(14px,1.6vw,18px);color:#e2c391;letter-spacing:.34em;margin-top:22px}
-
-/* ---------- ⑤ 流程：文字时间线 ---------- */
-.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:44px;margin-top:52px;position:relative}
+/* ---------- ⑤ 流程 ---------- */
+  .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:44px;margin-top:52px;position:relative}
 .timeline::before{content:"";position:absolute;top:17px;left:5%;right:5%;height:1px;background:rgba(27,22,18,.2)}
 .tm{position:relative}
 .tm .no{width:35px;height:35px;border-radius:50%;background:var(--red);color:#f8f1e2;display:grid;place-items:center;font-size:12px;font-weight:800;position:relative;z-index:1;box-shadow:0 4px 12px rgba(159,45,43,.32)}
@@ -94,9 +77,8 @@ section{padding-top:clamp(76px,9vw,120px)}
 .tm b .cn{color:var(--red);font-size:14px;font-weight:700;margin-right:7px}
 .tm p{font-size:14px;color:var(--ink-soft);line-height:1.75;margin-top:8px}
 .tm .take{font-size:13px;color:#8f6b2e;font-weight:700;margin-top:10px;letter-spacing:.02em}
-
 /* ---------- ⑥ 包含与预订 ---------- */
-.include{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(44px,6vw,88px);align-items:start}
+  .include{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(44px,6vw,88px);align-items:start}
 .doc{border:1px solid var(--line);border-radius:6px;background:rgba(248,242,228,.72);padding:34px 34px 28px;position:relative}
 .doc::before{content:"";position:absolute;inset:8px;border:1px solid rgba(27,22,18,.14);border-radius:3px;pointer-events:none}
 .col-h{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#8f6b2e;font-weight:800;margin-bottom:16px}
@@ -104,11 +86,9 @@ section{padding-top:clamp(76px,9vw,120px)}
 .inc-list li{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--hair);font-size:14.5px;color:var(--ink-soft);line-height:1.7;position:relative}
 .inc-list li::before{content:"✓";color:var(--red);font-weight:900;flex:0 0 auto}
 .book p{font-size:14.5px;color:var(--ink-soft);line-height:1.85}
-.book .note2{font-size:13px;color:#8f6b2e;font-weight:700;margin-top:14px;line-height:1.75}
 .book .btn{margin-top:26px}
-
-/* ---------- ⑦ 成都体验：图文交错 ---------- */
-.spread{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center;margin-top:44px}
+/* ---------- ⑦ 成都体验 ---------- */
+  .spread{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,80px);align-items:center;margin-top:44px}
 .spread .pic{border-radius:6px;overflow:hidden;border:1px solid rgba(27,22,18,.14)}
 .spread .pic img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:1/1}
 .spread ul{list-style:none;margin-top:30px}
@@ -116,9 +96,8 @@ section{padding-top:clamp(76px,9vw,120px)}
 .spread li::before{content:"→";color:var(--red);font-weight:800;flex:0 0 auto;margin-top:2px}
 .spread li b{font-size:16px;color:var(--ink);display:block}
 .spread li p{font-size:14px;color:var(--ink-soft);line-height:1.7;margin-top:4px}
-
-/* ---------- ⑧ Coming soon：灰化三联 ---------- */
-.triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:46px}
+/* ---------- ⑧ Coming soon ---------- */
+  .triptych{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:46px}
 .tc{position:relative;border-radius:6px;overflow:hidden;aspect-ratio:3/4;color:#efe6d3;border:1px solid rgba(159,45,43,.5)}
 .tc img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.12) brightness(.92)}
 .tc::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(20,28,25,.85))}
@@ -126,15 +105,13 @@ section{padding-top:clamp(76px,9vw,120px)}
 .tc .t{position:absolute;left:20px;right:20px;bottom:18px;z-index:1}
 .tc b{font-family:Georgia,'Songti SC',serif;font-size:19px;font-weight:600;color:rgba(239,230,211,.85)}
 .tc p{font-size:13px;color:rgba(239,230,211,.72);line-height:1.55;margin-top:5px}
-
 /* ---------- ⑨ 相关推荐 ---------- */
-.pair-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;font-size:14.5px;margin-top:30px}
+  .pair-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;font-size:14.5px;margin-top:30px}
 .pair-row .lb{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#8f6b2e;font-weight:800;margin-right:10px}
 .pair-row a{color:var(--red);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(159,45,43,.35);padding-bottom:2px}
 .pair-row i{font-style:normal;color:var(--hair)}
-
 /* ---------- ⑩ Next step ---------- */
-.next{padding-top:clamp(56px,7vw,88px);padding-bottom:64px}
+  .next{padding:40px 0 64px}
 .next-in{background:linear-gradient(160deg,#1A4036,#0D241E 72%);border-radius:8px;border:1px solid rgba(201,160,94,.26);padding:52px clamp(28px,5vw,68px);color:#efe6d3;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;position:relative;overflow:hidden}
 .next-in::before{content:"";position:absolute;inset:0;background:radial-gradient(520px 260px at 90% 20%, rgba(201,160,94,.09), transparent 60%)}
 .next-in > *{position:relative;z-index:1}
@@ -142,16 +119,15 @@ section{padding-top:clamp(76px,9vw,120px)}
 .next-in p{color:rgba(239,230,211,.74);font-size:14.5px;margin-top:14px;max-width:540px;line-height:1.75}
 .next-in .acts{display:flex;gap:14px;flex-wrap:wrap}
 
-/* ---------- 响应式 ---------- */
 @media (max-width: 760px) {
-  .band{grid-template-columns:1fr}
-  .band .media{min-height:220px;order:-1}
-  .band .panel{padding:44px 24px}
-  .timeline{grid-template-columns:1fr 1fr;gap:28px}
-  .timeline::before{display:none}
-  .include{grid-template-columns:1fr}
-  .spread{grid-template-columns:1fr}
-  .triptych{grid-template-columns:1fr}
-  .hero{min-height:480px}
-  .hero .watermark{display:none}
+    .band{grid-template-columns:1fr}
+    .band .media{min-height:220px;order:-1}
+    .band .panel{padding:44px 24px}
+  }
+
+/* 体验页页头：粘性实色（叠在面包屑上会导致文字不可读） */
+.experience-page .site-header{
+  position:sticky;top:0;
+  background:linear-gradient(180deg, rgba(16,41,36,.98), rgba(16,41,36,.96));
+  border-bottom:1px solid rgba(201,160,94,.22);
 }
