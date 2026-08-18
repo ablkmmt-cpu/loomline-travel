@@ -268,3 +268,15 @@
 
 - **Policies 移出 Follow us，恢复为独立并列列**（footer-main 四列：身份 / Explore / Follow us / Policies），修复上一轮去图标时误嵌套
 - **Contact us 标注样式与列标题（Explore 等）完全一致**：11px / 800 / 0.16em 字距 / 大写 / #d6ad68（仅保留 26px 上边距用于与 tagline 分隔）
+
+---
+
+## 2026-08-18 · 页脚 Contact us 样式对齐 + 三列等宽（经渲染验证）
+
+**根因**：`.footer-identity > p`（tagline 规则，优先级 0,1,1）覆盖了 `.footer-contact-label`（0,1,0）——Contact us 一直以 tagline 的 17-22px 浅色大字渲染，从未生效过 11px 金色样式。
+
+**修复**：
+- tagline 规则选择器 `.footer-identity > p` → `.footer-tagline`（不再泄漏覆盖 Contact us）
+- footer 栅格右侧三列改**等宽**（0.65fr × 3），间隔均匀
+
+**渲染验证（像素级）**：Contact us 与 Explore/Follow/Policies 标题同为金色、文本高度同为 7px；三列左边缘 445/705/965（各 260px 等距）。

@@ -200,7 +200,7 @@
 
 .footer-main {
   display: grid;
-  grid-template-columns: minmax(280px, 1.3fr) minmax(130px, 0.5fr) minmax(160px, 0.6fr) minmax(150px, 0.55fr);
+  grid-template-columns: minmax(280px, 1.4fr) minmax(150px, 0.65fr) minmax(150px, 0.65fr) minmax(150px, 0.65fr);
   gap: clamp(40px, 5.5vw, 88px);
   align-items: start;
   padding-bottom: clamp(58px, 6vw, 84px);
@@ -231,7 +231,7 @@
   object-fit: contain;
 }
 
-.footer-identity > p {
+.footer-tagline {
   max-width: 410px;
   margin: 26px 0 0;
   color: rgba(255, 248, 237, 0.72);
@@ -469,7 +469,7 @@
     width: 164px;
   }
 
-  .footer-identity > p {
+  .footer-tagline {
     max-width: 330px;
     margin-top: 22px;
     font-size: 16px;
