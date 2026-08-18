@@ -280,3 +280,12 @@
 - footer 栅格右侧三列改**等宽**（0.65fr × 3），间隔均匀
 
 **渲染验证（像素级）**：Contact us 与 Explore/Follow/Policies 标题同为金色、文本高度同为 7px；三列左边缘 445/705/965（各 260px 等距）。
+
+---
+
+## 2026-08-18 · 页脚链接间距统一 + 三列右移（经渲染验证）
+
+- **三列右移**：身份列加宽（grid 身份 1.5fr / 其余三列等宽 0.65fr），Explore/Follow/Policies 整体右移（渲染实测标题左缘 445→620）
+- **链接行距统一**：根因是 `.footer-feedback-link` 的 `min-height:44px`（Contact/Follow 栏每行被撑高）——已移除，四列链接统一为 14px / 行高 1.6 / 间距 12px；渲染实测各列行起始间隔 ≈32-36px 一致
+- **WhatsApp→Email 间隙**：由 44px+ 降到与其他链接相同（~34px）
+- chrome.css 版本 v4→v5
