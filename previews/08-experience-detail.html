@@ -3,14 +3,15 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Preview 08 · 体验详情页新布局（试点：Tea Culture）</title>
+<title>Preview 08 · 体验详情页新布局 v2（Tea Culture）</title>
 <style>
-  :root{--deep:#10231f;--dark:#071612;--ivory:#fff8ed;--gold:#d6ad68;--gold2:#e7c672;--ink:#151515;--paper:#f4efe6;--line:rgba(16,35,31,.12)}
+  :root{--deep:#10231f;--dark:#071612;--ivory:#fff8ed;--gold:#d6ad68;--gold2:#e7c672;--ink:#151515;--muted:#6f6658;--hair:rgba(16,35,31,.14)}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{background:#efe6d6;font-family:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;color:var(--ink)}
+  body{background:#faf6ee;font-family:'Inter',-apple-system,'Helvetica Neue',Arial,sans-serif;color:var(--ink)}
   .ribbon{background:#8a3b2a;color:#fff;font-size:11.5px;letter-spacing:.05em;padding:8px 20px;display:flex;gap:14px;align-items:center}
   .ribbon b{background:rgba(255,255,255,.18);border-radius:6px;padding:2px 8px;font-size:10.5px}
   .ribbon span{opacity:.85}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,60px)}
 
   /* ---------- 页头 ---------- */
   header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px clamp(22px,5vw,68px);background:linear-gradient(180deg,rgba(7,22,18,.92),rgba(7,22,18,.55));color:var(--ivory)}
@@ -18,88 +19,82 @@
   .brand .e{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#d6ad68,#a97c3c);display:grid;place-items:center;color:#10231f;font-weight:900}
   nav{display:flex;gap:clamp(20px,3vw,42px);font-size:13px;font-weight:600;color:rgba(255,248,237,.78)}
   nav a{color:inherit;text-decoration:none}
-  .cta{padding:10px 18px;border:1px solid rgba(255,248,237,.36);border-radius:999px;font-size:12.5px;font-weight:700;color:var(--ivory);text-decoration:none}
   .crumb{width:min(1180px,100%);margin:0 auto;padding:16px clamp(18px,4vw,60px);font-size:12px;color:#8a8172;background:#faf6ee}
   .crumb a{color:#4f625c;text-decoration:none}
 
+  /* ---------- 统一按钮（全页一致：1=表单 2=WhatsApp） ---------- */
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-size:13.5px;font-weight:800;text-decoration:none;transition:transform .18s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-primary{background:var(--gold2);color:#10231f}
+  .btn-ghost{border:1px solid rgba(255,248,237,.5);color:var(--ivory)}
+  .btn-ghost-dark{border:1px solid rgba(16,35,31,.35);color:var(--deep)}
+
   /* ---------- ① Hero ---------- */
-  .hero{position:relative;min-height:430px;display:flex;align-items:flex-end;overflow:hidden;color:var(--ivory)}
+  .hero{position:relative;min-height:440px;display:flex;align-items:flex-end;overflow:hidden;color:var(--ivory)}
   .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,22,18,.38),rgba(7,22,18,.06) 42%,rgba(7,22,18,.85))}
-  .hero .in{position:relative;z-index:1;width:min(1180px,100%);margin:0 auto;padding:36px clamp(18px,4vw,60px) 42px}
+  .hero .in{position:relative;z-index:1;width:min(1180px,100%);margin:0 auto;padding:36px clamp(18px,4vw,60px) 44px}
   .hero .k{color:var(--gold2);font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:800}
   .hero h1{font-family:Georgia,serif;font-size:clamp(40px,6vw,68px);font-weight:600;margin-top:8px}
-  .hero .sub{color:rgba(255,248,237,.82);font-size:16px;margin-top:8px;max-width:560px}
-  .hero .acts{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-size:13.5px;font-weight:800;text-decoration:none}
-  .btn-gold{background:var(--gold2);color:#10231f}
-  .btn-line{border:1px solid rgba(255,248,237,.5);color:var(--ivory)}
+  .hero .sub{color:rgba(255,248,237,.82);font-size:16px;margin-top:8px;max-width:560px;line-height:1.6}
+  .hero .acts{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
 
-  /* ---------- ② Fact strip ---------- */
-  .fit{width:min(1180px,100%);margin:-34px auto 0;position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:0 clamp(18px,4vw,60px)}
-  .fit .f{background:var(--ivory);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:0 14px 34px rgba(35,31,24,.08)}
-  .fit .l{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#b88a44;font-weight:800}
-  .fit .v{font-size:15.5px;font-weight:800;color:var(--deep);margin-top:6px;line-height:1.4}
-  .fit .d{font-size:12px;color:#6f6658;margin-top:3px}
+  /* ---------- ② 事实条（单行元信息，无卡片） ---------- */
+  .facts{width:min(1180px,100%);margin:0 auto;padding:26px clamp(18px,4vw,60px);border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);text-align:center;color:var(--muted);font-size:13.5px;font-weight:600}
+  .facts i{font-style:normal;color:var(--gold);margin:0 12px}
+  .facts b{color:var(--deep);font-weight:800}
 
-  /* ---------- ③ 收益点 ---------- */
-  .why{width:min(1180px,100%);margin:0 auto;padding:54px clamp(18px,4vw,60px) 12px}
-  .k{color:#b88a44;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:800}
-  .why h2{font-family:Georgia,serif;font-size:clamp(26px,3.4vw,40px);color:var(--deep);margin-top:8px;font-weight:600}
-  .why p{color:#5c5448;font-size:14.5px;line-height:1.75;margin-top:12px;max-width:760px}
-  .hl{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
-  .hl .h{background:var(--ivory);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;gap:12px;align-items:flex-start}
-  .hl .i{width:36px;height:36px;flex:0 0 auto;border-radius:10px;background:#e8dcc4;display:grid;place-items:center;font-size:17px}
-  .hl b{font-size:13.5px;color:var(--deep);display:block}
-  .hl span{font-size:12px;color:#6f6658;line-height:1.5}
+  /* ---------- ③ 收益点（编辑体，细分割线） ---------- */
+  section.sec{width:min(980px,100%);margin:0 auto;padding:clamp(56px,7vw,88px) clamp(18px,4vw,60px) 0}
+  .k{color:#b88a44;font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
+  h2.serif{font-family:Georgia,serif;font-size:clamp(26px,3.4vw,40px);color:var(--deep);margin-top:10px;font-weight:600;line-height:1.2}
+  .lead{color:#5c5448;font-size:15px;line-height:1.8;margin-top:18px;max-width:720px}
+  .benefit{display:grid;grid-template-columns:56px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--hair)}
+  .benefit:first-of-type{border-top:1px solid var(--hair);margin-top:30px}
+  .benefit .i{width:42px;height:42px;border:1px solid rgba(155,116,57,.35);border-radius:50%;display:grid;place-items:center;font-size:18px;color:#9b7439}
+  .benefit b{font-size:15.5px;color:var(--deep);display:block}
+  .benefit p{font-size:13.5px;color:var(--muted);line-height:1.7;margin-top:5px;max-width:640px}
 
-  /* ---------- ④ 流程（收益化） ---------- */
-  .moments{width:min(1180px,100%);margin:0 auto;padding:34px clamp(18px,4vw,60px) 8px}
-  .sec-h h2{font-family:Georgia,serif;font-size:clamp(24px,3vw,34px);color:var(--deep);font-weight:600}
-  .m-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:20px}
-  .mc{background:var(--ivory);border:1px solid var(--line);border-radius:16px;padding:18px 18px 20px;position:relative}
-  .mc .no{position:absolute;top:-12px;left:16px;background:var(--deep);color:var(--gold2);font-size:11px;font-weight:900;padding:4px 10px;border-radius:8px}
-  .mc b{font-size:14px;color:var(--deep);display:block;margin-top:8px}
-  .mc p{font-size:12px;color:#5c5448;line-height:1.6;margin-top:6px}
-  .mc .take{font-size:11px;color:#9b7439;font-weight:700;margin-top:8px;line-height:1.45}
+  /* ---------- ④ 流程（时间线，无卡片） ---------- */
+  .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:40px;position:relative}
+  .timeline::before{content:"";position:absolute;top:15px;left:6%;right:6%;height:1px;background:var(--hair)}
+  .tm{position:relative}
+  .tm .dot{width:31px;height:31px;border-radius:50%;background:var(--deep);color:var(--gold2);display:grid;place-items:center;font-size:12px;font-weight:900;position:relative;z-index:1}
+  .tm b{font-size:14.5px;color:var(--deep);display:block;margin-top:12px}
+  .tm p{font-size:12.5px;color:var(--muted);line-height:1.65;margin-top:6px}
+  .tm .take{font-size:11.5px;color:#9b7439;font-weight:700;margin-top:8px;line-height:1.5}
 
-  /* ---------- ⑤ 决策卡 ---------- */
-  .decide{width:min(1180px,100%);margin:0 auto;padding:34px clamp(18px,4vw,60px) 8px}
-  .decide-card{display:grid;grid-template-columns:1.4fr .9fr;gap:0;background:var(--ivory);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:20px;box-shadow:0 16px 40px rgba(35,31,24,.08)}
-  .decide-card .list{padding:26px 28px;display:grid;grid-template-columns:1fr 1fr;gap:16px 26px}
-  .decide-card .li b{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#b88a44;display:block;font-weight:800}
-  .decide-card .li span{font-size:13.5px;color:var(--deep);font-weight:650;line-height:1.5;display:block;margin-top:4px}
-  .decide-card .act{background:linear-gradient(150deg,#1d443a,#10231f 75%);padding:28px;display:flex;flex-direction:column;justify-content:center;gap:14px;color:var(--ivory)}
-  .decide-card .act .price{font-family:Georgia,serif;font-size:30px;color:var(--gold2)}
-  .decide-card .act .price small{font-size:12px;color:rgba(255,248,237,.6);font-family:'Inter',sans-serif}
-  .decide-card .act p{font-size:12px;color:rgba(255,248,237,.7);line-height:1.6}
+  /* ---------- ⑤ 包含与预订（无价格，随行程确认） ---------- */
+  .include{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(36px,6vw,80px);align-items:start;margin-top:40px}
+  .col-h{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#b88a44;font-weight:800;margin-bottom:16px}
+  .inc-list{list-style:none}
+  .inc-list li{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--hair);font-size:13.5px;color:#5c5448;line-height:1.6}
+  .inc-list li::before{content:"✓";color:var(--gold);font-weight:900;flex:0 0 auto}
+  .book{border-top:1px solid var(--hair);padding-top:22px}
+  .book p{font-size:13.5px;color:var(--muted);line-height:1.75}
+  .book .note2{font-size:12px;color:#9b7439;font-weight:700;margin-top:10px;line-height:1.6}
+  .book .btn{margin-top:20px}
 
-  /* ---------- ⑥ 城市×行程 ---------- */
-  .fit2{width:min(1180px,100%);margin:0 auto;padding:34px clamp(18px,4vw,60px) 8px}
-  .city-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
-  .cr{background:var(--ivory);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-  .cr .img{height:110px}
-  .cr .img img{width:100%;height:100%;object-fit:cover}
-  .cr .bd{padding:16px 18px}
-  .cr b{font-size:14.5px;color:var(--deep)}
-  .cr p{font-size:12px;color:#5c5448;line-height:1.6;margin-top:6px}
+  /* ---------- ⑥ 城市×行程（编辑体列表） ---------- */
+  .city-list{margin-top:34px}
+  .city-row{display:grid;grid-template-columns:140px 1fr;gap:24px;align-items:center;padding:20px 0;border-bottom:1px solid var(--hair)}
+  .city-row .img{height:82px;border-radius:10px;overflow:hidden}
+  .city-row .img img{width:100%;height:100%;object-fit:cover}
+  .city-row b{font-family:Georgia,serif;font-size:17px;color:var(--deep);font-weight:600}
+  .city-row p{font-size:13px;color:var(--muted);line-height:1.65;margin-top:5px;max-width:640px}
 
-  /* ---------- ⑦ 相关推荐 ---------- */
-  .relate{width:min(1180px,100%);margin:0 auto;padding:34px clamp(18px,4vw,60px) 8px}
-  .r-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
-  .rc2{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:16/9;color:var(--ivory)}
-  .rc2 img{width:100%;height:100%;object-fit:cover}
-  .rc2::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(7,22,18,.85))}
-  .rc2 .t{position:absolute;left:16px;bottom:12px;z-index:1}
-  .rc2 b{font-size:14.5px;display:block}
-  .rc2 span{font-size:11.5px;color:rgba(255,248,237,.7)}
+  /* ---------- ⑦ 相关推荐（纯文本链接） ---------- */
+  .pair{margin-top:34px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:13.5px}
+  .pair .lb{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#b88a44;font-weight:800;margin-right:8px}
+  .pair a{color:#8c652c;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(140,101,44,.3);padding-bottom:2px}
+  .pair i{font-style:normal;color:var(--hair)}
 
-  /* ---------- ⑧ Next step ---------- */
-  .next{width:min(1180px,100%);margin:0 auto;padding:40px clamp(18px,4vw,60px) 64px}
-  .next-card{background:linear-gradient(150deg,#1d443a,#10231f 70%);border-radius:22px;padding:36px clamp(22px,4vw,48px);color:var(--ivory);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-  .next-card h2{font-family:Georgia,serif;font-size:clamp(20px,2.6vw,30px);font-weight:600}
-  .next-card p{color:rgba(255,248,237,.72);font-size:13.5px;margin-top:8px;max-width:520px;line-height:1.6}
-  .next-card .acts{display:flex;gap:10px;flex-wrap:wrap}
+  /* ---------- ⑧ Next step（与 Hero 同款双按钮） ---------- */
+  .next{width:min(1180px,100%);margin:56px auto 0;padding:clamp(48px,6vw,72px) clamp(18px,4vw,60px) clamp(56px,7vw,88px)}
+  .next-in{background:linear-gradient(150deg,#1d443a,#10231f 70%);border-radius:22px;padding:44px clamp(26px,4vw,56px);color:var(--ivory);display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+  .next-in h2{font-family:Georgia,serif;font-size:clamp(21px,2.8vw,32px);font-weight:600}
+  .next-in p{color:rgba(255,248,237,.72);font-size:13.5px;margin-top:10px;max-width:520px;line-height:1.65}
+  .next-in .acts{display:flex;gap:12px;flex-wrap:wrap}
 
   /* ---------- 页脚 ---------- */
   footer{background:#071612;color:rgba(255,248,237,.7);padding:46px clamp(22px,6vw,92px) 26px;border-top:1px solid rgba(218,177,101,.28)}
@@ -115,12 +110,12 @@
 </style>
 </head>
 <body>
-<div class="ribbon"><b>Preview 08 · 方案示意，非线上页面</b><span>体验详情页新布局 · 试点：Tea Culture（不含城市限定分类）</span></div>
+<div class="ribbon"><b>Preview 08 v2 · 方案示意，非线上页面</b><span>体验详情页 · 中段去模块化 · 无价格版 · 按钮统一</span></div>
 
 <header>
   <a class="brand"><span class="e">囍</span>TripToChina</a>
   <nav><a>Services</a><a>Destinations</a><a>Experiences</a><a>About Us</a></nav>
-  <a class="cta">Start With Your Trip</a>
+  <a class="cta" style="padding:10px 18px;border:1px solid rgba(255,248,237,.36);border-radius:999px;font-size:12.5px;font-weight:700;color:var(--ivory);text-decoration:none">Start With Your Trip</a>
 </header>
 <div class="crumb"><a>Home</a> / <a>Experiences</a> / <b>Tea Culture</b></div>
 
@@ -132,88 +127,84 @@
     <h1>Tea Culture</h1>
     <p class="sub">Not a lecture. A quiet seat at the tea table — learn to brew with a gaiwan and read the room like a local.</p>
     <div class="acts">
-      <a class="btn btn-gold">Add to my trip →</a>
-      <a class="btn btn-line">Ask about it</a>
+      <a class="btn btn-primary" href="#book">Add to my trip →</a>
+      <a class="btn btn-ghost" href="https://wa.me/message/CNMUYNRK4BKGJ1" target="_blank" rel="noreferrer">Chat on WhatsApp</a>
     </div>
   </div>
 </section>
 
-<!-- ② Fact strip -->
-<section class="fit">
-  <div class="f"><div class="l">Duration</div><div class="v">70–90 minutes</div><div class="d">半日行程里的从容一段</div></div>
-  <div class="f"><div class="l">Cities</div><div class="v">Chengdu · Hangzhou · Beijing · …</div><div class="d">按你的路线就近安排</div></div>
-  <div class="f"><div class="l">Best for</div><div class="v">First-timers · Tea lovers</div><div class="d">无需任何茶知识</div></div>
-  <div class="f"><div class="l">Language</div><div class="v">English host</div><div class="d">中文茶桌也能自如</div></div>
-</section>
+<!-- ② 事实条：单行元信息 -->
+<div class="facts"><b>70–90 min</b><i>·</i><b>Chengdu · Hangzhou · Beijing</b><i>·</i>Best for first-timers &amp; tea lovers<i>·</i>English host</div>
 
 <!-- ③ 收益点 -->
-<section class="why">
+<section class="sec">
   <p class="k">What you take away</p>
-  <h2>Brew once. Understand China a little better.</h2>
-  <p>Most visitors watch tea from the menu side. This is the other side of the table — a hands-on session where the teaware, the etiquette, and the slow pace stop being mysterious.</p>
-  <div class="hl">
-    <div class="h"><div class="i">🫖</div><div><b>Brew with a gaiwan — for real</b><span>Watch once, then do it yourself: water, timing, grip, and how flavor changes across infusions.</span></div></div>
-    <div class="h"><div class="i">🍵</div><div><b>Read any teahouse like a local</b><span>Ordering, refills, snacks, and the unspoken rules — comfortable in Chinese teahouses afterward.</span></div></div>
-    <div class="h"><div class="i">🎁</div><div><b>Tea you can actually take home</b><span>Learn which teas suit you, what to buy, and how to brew them when you're back.</span></div></div>
+  <h2 class="serif">Brew once. Understand China a little better.</h2>
+  <p class="lead">Most visitors watch tea from the menu side. This is the other side of the table — a hands-on session where the teaware, the etiquette, and the slow pace stop being mysterious.</p>
+  <div class="benefit"><div class="i">🫖</div><div><b>Brew with a gaiwan — for real</b><p>Watch once, then do it yourself: water, timing, grip, and how flavor changes across infusions.</p></div></div>
+  <div class="benefit"><div class="i">🍵</div><div><b>Read any teahouse like a local</b><p>Ordering, refills, snacks, and the unspoken rules — comfortable in Chinese teahouses afterward.</p></div></div>
+  <div class="benefit"><div class="i">🎁</div><div><b>Tea you can actually take home</b><p>Learn which teas suit you, what to buy, and how to brew them when you're back.</p></div></div>
+</section>
+
+<!-- ④ 流程：时间线 -->
+<section class="sec">
+  <p class="k">Four moments</p>
+  <h2 class="serif">One tea table, from first pour to last.</h2>
+  <div class="timeline">
+    <div class="tm"><div class="dot">01</div><b>Arrive &amp; settle</b><p>Meet your host, take your seat, get familiar with the teaware.</p><div class="take">→ 无需任何基础</div></div>
+    <div class="tm"><div class="dot">02</div><b>Meet the leaves</b><p>Compare aroma, color, origin, and character of teas picked for you.</p><div class="take">→ 找到你的茶</div></div>
+    <div class="tm"><div class="dot">03</div><b>Brew with a gaiwan</b><p>Practice water, timing, grip, and pouring across infusions.</p><div class="take">→ 回家能复刻</div></div>
+    <div class="tm"><div class="dot">04</div><b>Tea, snacks &amp; talk</b><p>Local pairings and the questions that make teahouses feel easy.</p><div class="take">→ 茶馆不再有门槛</div></div>
   </div>
 </section>
 
-<!-- ④ 流程（收益化） -->
-<section class="moments">
-  <div class="sec-h"><h2>Four moments, one tea table</h2></div>
-  <div class="m-grid">
-    <div class="mc"><span class="no">01</span><b>Arrive &amp; settle</b><p>Meet your host, take your seat, and get familiar with the teaware.</p><div class="take">→ 无需任何基础，来了就会</div></div>
-    <div class="mc"><span class="no">02</span><b>Meet the leaves</b><p>Compare aroma, color, origin, and character of the teas picked for you.</p><div class="take">→ 找到你的茶，而不是最贵的茶</div></div>
-    <div class="mc"><span class="no">03</span><b>Brew with a gaiwan</b><p>Practice water, timing, grip, and pouring across several infusions.</p><div class="take">→ 回家也能复刻这一杯</div></div>
-    <div class="mc"><span class="no">04</span><b>Tea, snacks &amp; talk</b><p>Local pairings and the practical questions that make teahouses feel easy.</p><div class="take">→ 明天起，茶馆不再有门槛</div></div>
-  </div>
-</section>
-
-<!-- ⑤ 决策卡 -->
-<section class="decide">
-  <div class="sec-h"><h2>What's included</h2></div>
-  <div class="decide-card">
-    <div class="list">
-      <div class="li"><b>Included</b><span>Teaware &amp; tea samples · Local snacks · English-speaking host · Tea to take home</span></div>
-      <div class="li"><b>Duration</b><span>70–90 minutes, morning or afternoon</span></div>
-      <div class="li"><b>Group</b><span>2–6 people · private option available</span></div>
-      <div class="li"><b>Booking</b><span>Reserve 48h ahead · one free date change</span></div>
+<!-- ⑤ 包含与预订：无价格，随行程确认 -->
+<section class="sec" id="book">
+  <p class="k">What's included</p>
+  <h2 class="serif">Everything for the session, nothing you have to arrange.</h2>
+  <div class="include">
+    <div>
+      <div class="col-h">Included</div>
+      <ul class="inc-list">
+        <li>Teaware &amp; tea samples for the session</li>
+        <li>Local tea snacks &amp; pairings</li>
+        <li>English-speaking tea host</li>
+        <li>Tea to take home</li>
+        <li>70–90 minutes, morning or afternoon</li>
+      </ul>
     </div>
-    <div class="act">
-      <div class="price">¥XXX <small>per person · 价格示意</small></div>
-      <p>或作为你定制行程的一部分安排，无需单独预订。</p>
-      <a class="btn btn-gold" style="align-self:flex-start">Reserve this experience →</a>
+    <div class="book">
+      <div class="col-h">How to book</div>
+      <p>Tea sessions are matched to your route — city, schedule, and pace. Availability and pricing are confirmed together with your itinerary.</p>
+      <p class="note2">No fixed price listed yet: we source each session locally, so you always get the right venue at the right rate.</p>
+      <a class="btn btn-primary btn-ghost-dark" href="../../contact.html" style="border-color:rgba(16,35,31,.35);color:#10231f">Ask about this experience →</a>
     </div>
   </div>
 </section>
 
 <!-- ⑥ 城市×行程 -->
-<section class="fit2">
-  <div class="sec-h"><h2>How it fits your route</h2></div>
-  <div class="city-row">
-    <div class="cr"><div class="img"><img src="../assets/destinations/destination-chengdu-04.jpg" alt="" /></div><div class="bd"><b>Chengdu</b><p>People's Park teahouse after the panda morning — the classic first-timer pairing.</p></div></div>
-    <div class="cr"><div class="img"><img src="../assets/tea-culture-hands.png" alt="" /></div><div class="bd"><b>Hangzhou</b><p>Longjing tea country: the session moves into the fields where the leaves grow.</p></div></div>
-    <div class="cr"><div class="img"><img src="../assets/destinations/destination-beijing-06.jpg" alt="" /></div><div class="bd"><b>Beijing</b><p>A heritage teahouse as a quiet afternoon between imperial sights.</p></div></div>
+<section class="sec">
+  <p class="k">Along your route</p>
+  <h2 class="serif">Tea fits differently in different cities.</h2>
+  <div class="city-list">
+    <div class="city-row"><div class="img"><img src="../assets/destinations/destination-chengdu-04.jpg" alt="" /></div><div><b>Chengdu</b><p>People's Park teahouse after the panda morning — the classic first-timer pairing.</p></div></div>
+    <div class="city-row"><div class="img"><img src="../assets/tea-culture-hands.png" alt="" /></div><div><b>Hangzhou</b><p>Longjing tea country: the session moves into the fields where the leaves grow.</p></div></div>
+    <div class="city-row"><div class="img"><img src="../assets/destinations/destination-beijing-06.jpg" alt="" /></div><div><b>Beijing</b><p>A heritage teahouse as a quiet afternoon between imperial sights.</p></div></div>
   </div>
 </section>
 
-<!-- ⑦ 相关推荐 -->
-<section class="relate">
-  <div class="sec-h"><h2>Pair it with</h2></div>
-  <div class="r-grid">
-    <div class="rc2"><img src="../assets/experience-mahjong.png" alt="" /><div class="t"><b>Mahjong</b><span>Same slow-table spirit, Chengdu style</span></div></div>
-    <div class="rc2"><img src="../assets/experience-pottery.png" alt="" /><div class="t"><b>Pottery</b><span>Another hands-on craft to take home</span></div></div>
-    <div class="rc2"><img src="../assets/destinations/destination-chengdu-01.jpg" alt="" /><div class="t"><b>Chengdu city guide</b><span>See what else to do in the city</span></div></div>
-  </div>
+<!-- ⑦ 相关推荐：纯文本 -->
+<section class="sec">
+  <div class="pair"><span class="lb">Pair it with</span><a>Mahjong</a><i>·</i><a>Pottery</a><i>·</i><a>Wellness</a><i>·</i><a>Chengdu city guide</a></div>
 </section>
 
-<!-- ⑧ Next step -->
+<!-- ⑧ Next step：与 Hero 同款双按钮 -->
 <section class="next">
-  <div class="next-card">
-    <div><h2>Add tea to the trip you're planning.</h2><p>Tell us your cities and dates — we'll match the right tea session to your route and pace.</p></div>
+  <div class="next-in">
+    <div><h2>Add tea to the trip you're planning.</h2><p>Tell us your cities and dates — we'll match the right tea session to your route and confirm everything together.</p></div>
     <div class="acts">
-      <a class="btn btn-gold">Add to my trip →</a>
-      <a class="btn btn-line">Chat on WhatsApp</a>
+      <a class="btn btn-primary" href="#book">Add to my trip →</a>
+      <a class="btn btn-ghost" href="https://wa.me/message/CNMUYNRK4BKGJ1" target="_blank" rel="noreferrer">Chat on WhatsApp</a>
     </div>
   </div>
 </section>
@@ -228,6 +219,6 @@
   <div class="f-bottom"><span>© 2026 TripToChina</span><span>Back to top ↑</span></div>
 </footer>
 
-<p class="note">说明：本图示意体验页新布局的 8 段结构（Hero+CTA提前 → 决策事实条 → 收益点 → 流程收益化 → 决策卡 → 城市×行程 → 相关推荐 → 双出口）。价格为示意占位。不含"城市限定/通用"分类——特殊标注（如"仅限成都"）按需在事实条中单独添加。</p>
+<p class="note">v2 调整说明：① 中段全部去卡片化——事实条改单行元信息、收益/流程/城市改编辑体（细分割线+衬线标题+时间线），去掉了浮起的圆角盒子；② 决策区不摆价格，改为"随行程确认 + 本地供应商逐次报价"的说明 + 咨询按钮；③ 首屏与底部按钮统一：金色主按钮「Add to my trip →」跳表单 / 描边次按钮「Chat on WhatsApp」跳 WhatsApp，文案、样式、顺序完全一致。</p>
 </body>
 </html>
