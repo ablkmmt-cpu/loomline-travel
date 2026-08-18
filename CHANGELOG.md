@@ -172,3 +172,26 @@
 | `components/footer-main.html` | ① 邮箱链接文案改为 **"Email us"**（不再直接展示邮箱地址）；② **Policies 独立成列放到 Follow us 右侧**（身份+联系 / Explore / Follow us / Policies 四列） |
 | `assets/site-chrome.css` | 栅格回到 4 列（紧凑宽度）；`.footer-policies` 恢复为独立列样式 |
 | `tools/stamp.mjs` | render() 首页判断修复 |
+
+---
+
+## 2026-08-18 · 根治：styles.css 残留页脚规则导致 Policies 位置错乱（第六批）
+
+### 根因（重要）
+
+首页加载 `styles.css`（在 `site-chrome.css` **之后**），而 styles.css 里残留着旧版**三列** `.footer-main` 栅格等页头/页脚/弹窗规则。同优先级下后加载者生效，导致：
+- 首页 footer 一直被 styles.css 的三列布局覆盖 → 第四列 Policies 被挤到**下一行**（用户反复看到的"policy 在下面"）
+- 此前多次调整 chrome.css 均被 styles.css 覆盖，故问题反复出现
+
+### 修复
+
+| 文件 | 改动 |
+|---|---|
+| `styles.css` | **剥离全部残留的页头/页脚/隐私弹窗规则**（约 13.3KB：`.site-header` 系、`.footer-*` 系、`.privacy-*` 系、相关 hover/移动端块）。`site-chrome.css` 从此是这些样式的**唯一来源**，不再存在被覆盖的路径 |
+| 全站 21 页 | 缓存版本号提升：`site-chrome.css?v=1→v=2`、`styles.css?v=old-refine-54→v=old-refine-55`（强制浏览器拉取新样式，避免本地缓存导致仍看到旧布局） |
+
+### 验证
+
+- styles.css 花括号平衡、关键样式（hero/section-heading/trip-form/faq 等）无损
+- stamp verify 0 失败、幂等
+- styles.css 中 footer 规则残留 = 0；首页/联系页均走 chrome.css 四列栅格
