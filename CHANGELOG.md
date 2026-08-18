@@ -261,3 +261,10 @@
 
 - 页脚所有链接**去掉前置图标**（WhatsApp/邮箱/社媒/隐私按钮改为纯文字链接）
 - 身份栏 WhatsApp / 邮箱上方新增 **"Contact us"** 小标题标注
+
+---
+
+## 2026-08-18 · 页脚修正（Explore / Follow us / Policies 三列并列）
+
+- **Policies 移出 Follow us，恢复为独立并列列**（footer-main 四列：身份 / Explore / Follow us / Policies），修复上一轮去图标时误嵌套
+- **Contact us 标注样式与列标题（Explore 等）完全一致**：11px / 800 / 0.16em 字距 / 大写 / #d6ad68（仅保留 26px 上边距用于与 tagline 分隔）
