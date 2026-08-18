@@ -254,3 +254,10 @@
 **修复**：`whatsapp-float.css` 增加 `.experience-page .site-header.ttc-fixed-header` 特例（与目的地页同款 sticky 实色）。
 
 **验证方式（本次改为真实渲染）**：headless Chrome 实际渲染页面 → 像素级分析确认：① 顶部 0–90px 为深色页头条、90–140px 面包屑清晰可见（未被盖住）；② 绿色模块左半深绿、右半实景图；③ coming soon 灰化卡片、footer 深绿——整页结构与预览一致。
+
+---
+
+## 2026-08-18 · 页脚微调
+
+- 页脚所有链接**去掉前置图标**（WhatsApp/邮箱/社媒/隐私按钮改为纯文字链接）
+- 身份栏 WhatsApp / 邮箱上方新增 **"Contact us"** 小标题标注
