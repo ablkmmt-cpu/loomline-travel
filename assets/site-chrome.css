@@ -385,6 +385,24 @@
   fill: currentColor;
 }
 
+/* 政策链接组（Privacy / Terms / Refunds 等，位于右侧栏） */
+.footer-policies {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.footer-policies > p {
+  margin: 0 0 8px;
+  color: #d6ad68;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
 .footer-bottom {
   min-height: 62px;
   display: flex;
@@ -393,16 +411,6 @@
   gap: 24px;
   padding-top: 24px;
   border-top: 1px solid rgba(218, 177, 101, 0.22);
-}
-
-.footer-bottom-actions {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-}
-
-.footer-bottom-actions .footer-feedback-link {
-  min-height: auto;
 }
 
 .footer-bottom p {
@@ -500,11 +508,6 @@
   .footer-bottom {
     flex-direction: column;
     gap: 14px;
-  }
-
-  .footer-bottom-actions {
-    width: 100%;
-    justify-content: space-between;
   }
 }
 

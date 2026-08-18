@@ -73,3 +73,33 @@
 - FAQ 区建设（页脚 FAQ 链接目前指向占位锚点 `#faq`）
 - 信任证据插槽（`TRUST-PROOF-SLOT`）与邮箱捕获插槽（`LEAD-MAGNET-SLOT`）尚未埋入
 - 埋点（`@@ANALYTICS@@` 槽已预留，等待 GA4/Meta/TikTok 真实 ID 落地）
+
+---
+
+## 2026-08-18 · FAQ 区 + 插槽 + SEO 基建 + 页脚政策组（第二批）
+
+**范围**：首页 FAQ 区、结构化数据、SEO 基建、页脚政策组调整。
+
+### 新增
+
+| 文件 | 说明 |
+|---|---|
+| `sitemap.xml` | 全站 20 页 URL（域名占位 `https://www.triptochina.com/`，上线前替换为真实域名） |
+| `robots.txt` | 允许全站 + Sitemap 声明 |
+
+### 修改
+
+| 文件 | 改动 |
+|---|---|
+| `index.html` | ① 新增 **FAQ 区**（`#faq`，6 条问答，原生 `<details>` accordion，零 JS）；② head 新增 **TravelAgency + FAQPage 两组 JSON-LD**；③ 埋入 `TRUST-PROOF-SLOT` / `LEAD-MAGNET-SLOT` 两个插槽注释；④ 补 OG 标签 |
+| `styles.css` | 新增 FAQ 区样式（浅色区 + 卡片式 accordion，含移动端与换行修正） |
+| `components/footer-main.html` | **隐私政策移出底栏**，归入右侧栏新增 **Policies 组**（结构预留 Terms / Refunds 链接位）；底栏仅剩版权 + Back to top |
+| `assets/site-chrome.css` | 新增 `.footer-policies` 样式；删除底栏 actions 旧规则 |
+| 全站 20 页 | `<head>` 注入 **OG / Twitter / canonical 标签**（og:title/description 取自各页 title/description，og:image 暂用 `assets/graetwall.png` 占位） |
+
+### 说明与待办
+
+- **FAQ Q6（退款）** 暂用通用文案（"报价单会写明可退/可改条款"），真实退改条款确认后替换正文与 FAQPage Schema 对应字段
+- **OG 图片** 是占位图（预览 06 的品牌 OG 模板尚未落地）；`og:url` / sitemap 使用占位域名，上线前统一替换
+- 页脚 Policies 组目前仅 Privacy Policy（弹窗）；**Terms / Refunds & Cancellation 政策页**建成后在此追加链接（退改条款待业务方确认）
+- 页面级 BreadcrumbList Schema 未做（属目的地页产品化改造范围）
