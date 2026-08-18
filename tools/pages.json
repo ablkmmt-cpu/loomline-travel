@@ -1,22 +1,142 @@
 [
-  { "file": "index.html", "base": "", "aria": "Trip To China home", "header": "main", "footer": "main" },
-  { "file": "destinations/beijing/index.html", "base": "../../", "aria": "TripToChina home", "header": "shanghai", "footer": "shanghai" },
-  { "file": "destinations/chengdu/index.html", "base": "../../", "aria": "TripToChina home", "header": "shanghai", "footer": "shanghai" },
-  { "file": "destinations/chongqing/index.html", "base": "../../", "aria": "TripToChina home", "header": "shanghai", "footer": "shanghai" },
-  { "file": "destinations/guilin/index.html", "base": "../../", "aria": "TripToChina home", "header": "shanghai", "footer": "shanghai" },
-  { "file": "destinations/shanghai/index.html", "base": "../../", "aria": "TripToChina home", "header": "shanghai", "footer": "shanghai" },
-  { "file": "destinations/tibet/index.html", "base": "../../", "aria": "TripToChina home", "header": "shanghai", "footer": "shanghai" },
-  { "file": "destinations/xian/index.html", "base": "../../", "aria": "TripToChina home", "header": "shanghai", "footer": "shanghai" },
-  { "file": "destinations/xinjiang/index.html", "base": "../../", "aria": "TripToChina home", "header": "shanghai", "footer": "shanghai" },
-  { "file": "destinations/yunnan/index.html", "base": "../../", "aria": "TripToChina home", "header": "shanghai", "footer": "shanghai" },
-  { "file": "destinations/zhangjiajie/index.html", "base": "../../", "aria": "TripToChina home", "header": "shanghai", "footer": "shanghai" },
-  { "file": "experiences/imperial-dinner-show/index.html", "base": "../../", "aria": "Trip To China home", "header": "tea", "footer": "tea" },
-  { "file": "experiences/pottery-workshop/index.html", "base": "../../", "aria": "Trip To China home", "header": "tea", "footer": "tea" },
-  { "file": "experiences/seal-carving/index.html", "base": "../../", "aria": "Trip To China home", "header": "tea", "footer": "tea" },
-  { "file": "experiences/sichuan-mahjong/index.html", "base": "../../", "aria": "Trip To China home", "header": "tea", "footer": "tea" },
-  { "file": "experiences/tea-culture/index.html", "base": "../../", "aria": "Trip To China home", "header": "tea", "footer": "tea" },
-  { "file": "experiences/traditional-wellness/index.html", "base": "../../", "aria": "Trip To China home", "header": "tea", "footer": "tea" },
-  { "file": "experiences/yunnan-tie-dye/index.html", "base": "../../", "aria": "Trip To China home", "header": "tea", "footer": "tea" },
-  { "file": "services/custom-tour/index.html", "base": "../../", "aria": "TripToChina home", "header": "main", "footer": "sg" },
-  { "file": "services/self-guided/index.html", "base": "../../", "aria": "TripToChina home", "header": "main", "footer": "sg" }
+  {
+    "file": "index.html",
+    "base": "",
+    "aria": "Trip To China home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "destinations/beijing/index.html",
+    "base": "../../",
+    "aria": "TripToChina home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "destinations/chengdu/index.html",
+    "base": "../../",
+    "aria": "TripToChina home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "destinations/chongqing/index.html",
+    "base": "../../",
+    "aria": "TripToChina home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "destinations/guilin/index.html",
+    "base": "../../",
+    "aria": "TripToChina home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "destinations/shanghai/index.html",
+    "base": "../../",
+    "aria": "TripToChina home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "destinations/tibet/index.html",
+    "base": "../../",
+    "aria": "TripToChina home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "destinations/xian/index.html",
+    "base": "../../",
+    "aria": "TripToChina home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "destinations/xinjiang/index.html",
+    "base": "../../",
+    "aria": "TripToChina home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "destinations/yunnan/index.html",
+    "base": "../../",
+    "aria": "TripToChina home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "destinations/zhangjiajie/index.html",
+    "base": "../../",
+    "aria": "TripToChina home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "experiences/imperial-dinner-show/index.html",
+    "base": "../../",
+    "aria": "Trip To China home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "experiences/pottery-workshop/index.html",
+    "base": "../../",
+    "aria": "Trip To China home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "experiences/seal-carving/index.html",
+    "base": "../../",
+    "aria": "Trip To China home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "experiences/sichuan-mahjong/index.html",
+    "base": "../../",
+    "aria": "Trip To China home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "experiences/tea-culture/index.html",
+    "base": "../../",
+    "aria": "Trip To China home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "experiences/traditional-wellness/index.html",
+    "base": "../../",
+    "aria": "Trip To China home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "experiences/yunnan-tie-dye/index.html",
+    "base": "../../",
+    "aria": "Trip To China home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "services/custom-tour/index.html",
+    "base": "../../",
+    "aria": "TripToChina home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "services/self-guided/index.html",
+    "base": "../../",
+    "aria": "TripToChina home",
+    "header": "main",
+    "footer": "main"
+  }
 ]

@@ -3,21 +3,28 @@
  * TripToChina 站点打标脚本（stamp.mjs）
  *
  * 作用：
- *  - --migrate  一次性迁移：把 20 个页面的页头/页脚抽取为 components/ 下的共享组件，
- *               在页面原位置留下 @@HEADER@@ / @@FOOTER@@ 标记，并预留 @@ANALYTICS@@ 埋点槽。
- *  - （默认）    打标：把标记处的组件内容渲染回所有页面（幂等，可反复执行）。
- *  - --verify   校验：检查所有页面的标记、组件、埋点槽是否齐全。
+ *  - （默认）打标：把 components/ 下的共享组件渲染回所有页面（组件 → 页面传播，幂等）。
+ *  - --verify   校验：检查所有页面的标记、组件是否齐全。
  *  - --dry-run  只报告将发生的变化，不写文件。
+ *  - --migrate  一次性迁移（旧版命令，已由类名推断替代，保留以防需要重跑）。
+ *
+ * 标记体系（三个，均幂等）：
+ *  - <!-- @@HEADER@@ -->   站点页头（components/header-main.html）
+ *  - <!-- @@FOOTER@@ -->   站点页脚（components/footer-main.html）
+ *  - <!-- @@PRIVACY@@ -->  隐私弹窗（components/privacy-modal.html）
  *
  * 设计要点：
- *  - 组件从真实页面抽取（以第一个使用该变体的页面为准），
- *    渲染回页面时与原始块做字节级对比，保证"零视觉、零内容变化"。
+ *  - 组件文件存在时以组件为唯一来源渲染回页面；不存在时从页面抽取生成。
+ *  - 页头/页脚块按"标记后第一个 <kind class=...>...</kind>"匹配（非贪婪），
+ *    因此页面正文中其它 <header>/<footer> 元素（如隐私弹窗内的 header、
+ *    服务页正文的 section header）不会被误吞。
+ *  - 隐私弹窗独立于页脚组件，通过自身标记插入，避免嵌套匹配问题。
+ *  - 变体由页面当前类名推断（site-header→main / shanghai-header→shanghai /
+ *    tea-nav→tea；footer 同理），pages.json 的 header/footer 字段仅供记录。
  *  - {{BASE}} 占位符处理相对路径（首页 "" / 子页 "../../"），{{ARIA}} 处理品牌 aria 文案差异。
- *  - 幂等：重复执行不会重复插入标记或组件。
  *
  * 用法：
- *   node tools/stamp.mjs --migrate    # 首次：抽取组件 + 插入标记 + 埋点槽
- *   node tools/stamp.mjs              # 之后：组件改动后同步到全站
+ *   node tools/stamp.mjs            # 组件改动后同步到全站
  *   node tools/stamp.mjs --verify
  *   node tools/stamp.mjs --dry-run
  */
@@ -29,13 +36,22 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const COMPONENTS_DIR = join(ROOT, "components");
 const PAGES = JSON.parse(readFileSync(join(ROOT, "tools", "pages.json"), "utf8"));
 
-const HEADER_CLASS = { main: "site-header", shanghai: "shanghai-header", tea: "tea-nav" };
-const FOOTER_CLASS = { main: "site-footer", shanghai: "shanghai-footer", tea: "tea-footer", sg: "sg-footer" };
-
 const args = process.argv.slice(2);
-const MODE = args.includes("--migrate") ? "migrate" : args.includes("--verify") ? "verify" : args.includes("--dry-run") ? "dry-run" : "stamp";
+const MODE = args.includes("--migrate")
+  ? "migrate"
+  : args.includes("--verify")
+    ? "verify"
+    : args.includes("--dry-run")
+      ? "dry-run"
+      : "stamp";
+
+const HEADER_MARKER = "<!-- @@HEADER@@ -->";
+const FOOTER_MARKER = "<!-- @@FOOTER@@ -->";
+const PRIVACY_MARKER = "<!-- @@PRIVACY@@ -->";
 
 /* ---------- 工具 ---------- */
+
+const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 const canon = (html) =>
   html
@@ -52,42 +68,66 @@ const render = (component, page) => {
   return out;
 };
 
-const componentPath = (kind, variant) => join(COMPONENTS_DIR, `${kind}-${variant}.html`);
-const markerOf = (kind) => `@@${kind.toUpperCase()}@@`;
+// 读取组件：存在则以文件为准（组件 → 页面）；不存在则从页面块生成
+const componentFor = (kind, variant, pageBlock) => {
+  const cpath = join(COMPONENTS_DIR, `${kind}-${variant}.html`);
+  if (existsSync(cpath)) return { cpath, content: readFileSync(cpath, "utf8") };
+  mkdirSync(dirname(cpath), { recursive: true });
+  writeFileSync(cpath, canon(pageBlock), "utf8");
+  return { cpath, content: canon(pageBlock) };
+};
 
-const findBlock = (html, kind, variant) => {
-  const cls = kind === "header" ? HEADER_CLASS[variant] : FOOTER_CLASS[variant];
-  const re = new RegExp(`<${kind} class="${cls}"[^>]*>[\\s\\S]*?<\\/${kind}>`);
+const variantOf = (kind, cls) => {
+  const map =
+    kind === "header"
+      ? { "site-header": "main", "shanghai-header": "shanghai", "tea-nav": "tea" }
+      : { "site-footer": "main", "shanghai-footer": "shanghai", "tea-footer": "tea", "sg-footer": "sg" };
+  return map[cls] || "main";
+};
+
+// 替换 页头/页脚：标记后第一个 <kind class="...">...</kind>（非贪婪）
+const replaceKind = (html, kind, page) => {
+  const marker = kind === "header" ? HEADER_MARKER : FOOTER_MARKER;
+  const re = new RegExp(`${escapeRe(marker)}\\s*<${kind} class="[^"]*"[^>]*>[\\s\\S]*?<\\/${kind}>`);
   const m = re.exec(html);
-  return m ? { block: m[0], cls } : null;
+  if (!m) return { html, err: `${page.file}: 未找到 ${kind} 块（标记后无 <${kind} class=...>）` };
+
+  const cls = /class="([^"]*)"/.exec(m[0].slice(m[0].indexOf(`<${kind}`)))?.[1] || "";
+  const { content } = componentFor(kind, variantOf(kind, cls), m[0]);
+  const markerLine = m[0].slice(0, m[0].indexOf(`<${kind} `));
+  return { html: html.replace(m[0], markerLine + render(content, page)), err: null };
 };
 
-const insertMarkerLine = (html, kind, variant) => {
-  if (html.includes(`<!-- @@${kind.toUpperCase()}@@ -->`)) return html;
-  const cls = kind === "header" ? HEADER_CLASS[variant] : FOOTER_CLASS[variant];
-  const tagMatch = new RegExp(`<${kind} class="${cls}"[^>]*>`).exec(html);
-  if (!tagMatch) throw new Error(`找不到 ${kind} class="${cls}"`);
-  const tagStart = tagMatch.index;
-  const lineStart = html.lastIndexOf("\n", tagStart) + 1;
-  const indent = html.slice(lineStart, tagStart);
-  const marker = `${indent}<!-- @@${kind.toUpperCase()}@@ -->\n`;
-  return html.slice(0, lineStart) + marker + html.slice(lineStart);
+// 隐私弹窗：清理历史遗留 → 确保标记 → 标记处渲染组件
+const ensurePrivacy = (html, page) => {
+  // 1) 移除所有既有弹窗块（无论是否带标记），直到 <script 或 </body> 之前
+  html = html.replace(
+    /<div class="privacy-modal" data-privacy-modal[^>]*>[\s\S]*?(\n\s*)(?=<script|<\/body>)/,
+    (m, ws) => ws
+  );
+  // 2) 无标记则插入（</body> 前）
+  if (!html.includes(PRIVACY_MARKER)) {
+    const bi = html.lastIndexOf("</body>");
+    if (bi === -1) return { html, err: `${page.file}: 找不到 </body>` };
+    const lineStart = html.lastIndexOf("\n", bi) + 1;
+    html = html.slice(0, lineStart) + `    ${PRIVACY_MARKER}\n` + html.slice(lineStart);
+  }
+  // 3) 标记处渲染组件（组件文件缺失时仅保留标记，不报错）
+  const cpath = join(COMPONENTS_DIR, "privacy-modal.html");
+  if (existsSync(cpath)) {
+    const content = readFileSync(cpath, "utf8");
+    html = html.replace(
+      new RegExp(`${escapeRe(PRIVACY_MARKER)}\\s*`),
+      `${PRIVACY_MARKER}\n${render(content, page)}\n`
+    );
+  }
+  // 4) 归一化连续空白行（≥3 个换行收敛为 2），保证幂等
+  html = html.replace(/\n{3,}/g, "\n\n");
+  return { html, err: null };
 };
-
-const ensureAnalyticsSlot = (html) => {
-  if (html.includes("@@ANALYTICS@@")) return html;
-  const headEnd = html.indexOf("</head>");
-  if (headEnd === -1) throw new Error("找不到 </head>");
-  const lineStart = html.lastIndexOf("\n", headEnd) + 1;
-  const indent = html.slice(lineStart, headEnd);
-  const marker = `${indent}<!-- @@ANALYTICS@@ -->\n`;
-  return html.slice(0, lineStart) + marker + html.slice(lineStart);
-};
-
 /* ---------- 主流程 ---------- */
 
 const report = { ok: [], warn: [], err: [] };
-const warnings = [];
 
 for (const page of PAGES) {
   const file = join(ROOT, page.file);
@@ -95,70 +135,51 @@ for (const page of PAGES) {
   const original = html;
 
   for (const kind of ["header", "footer"]) {
-    const variant = page[kind];
-    const found = findBlock(html, kind, variant);
-    if (!found) {
-      report.err.push(`${page.file}: 未找到 ${kind}(${variant}) 块`);
+    const r = replaceKind(html, kind, page);
+    if (r.err) {
+      report.err.push(r.err);
       continue;
     }
-    const component = canon(found.block);
+    html = r.html;
+  }
 
-    // 组件文件不存在则从本页抽取生成；存在则核对一致性
-    const cpath = componentPath(kind, variant);
-    if (!existsSync(cpath)) {
-      mkdirSync(dirname(cpath), { recursive: true });
-      writeFileSync(cpath, component, "utf8");
-      report.ok.push(`生成组件 ${kind}-${variant}.html（取自 ${page.file}）`);
-    } else if (readFileSync(cpath, "utf8") !== component) {
-      warnings.push(`${page.file} 的 ${kind} 与组件 ${kind}-${variant}.html 不一致（可能该页有自定义差异）`);
-    }
+  const p = ensurePrivacy(html, page);
+  if (p.err) {
+    report.err.push(p.err);
+  } else {
+    html = p.html;
+  }
 
-    // 字节级一致性断言：渲染后的组件必须等于页面原始块（组件被人工修改后此警告属预期）
-    const rendered = render(component, page);
-    if (rendered !== found.block) {
-      const a = rendered.split("\n").map((l) => l.trim());
-      const b = found.block.split("\n").map((l) => l.trim());
-      const diff = a.find((l, i) => l !== b[i]) ?? "(行数不同)";
-      warnings.push(`${page.file} ${kind}: 渲染结果与原始块不一致（首个差异行: ${diff}）`);
-    }
-
-    // 迁移模式：插入标记（原块保留）；stamp/dry-run：用组件渲染结果替换标记+块
-    if (MODE === "migrate") {
-      html = insertMarkerLine(html, kind, variant);
-    } else {
-      const cls = kind === "header" ? HEADER_CLASS[variant] : FOOTER_CLASS[variant];
-      const re = new RegExp(`<!-- @@${kind.toUpperCase()}@@ -->\\s*<${kind} class="${cls}">[\\s\\S]*?<\\/${kind}>`);
-      html = html.replace(re, (match) => {
-        const markerLine = match.slice(0, match.indexOf(`<${kind} class=`));
-        return markerLine + render(component, page);
-      });
+  // 埋点槽（幂等）
+  if (MODE === "stamp" || MODE === "dry-run" || MODE === "migrate") {
+    if (!html.includes("@@ANALYTICS@@")) {
+      const headEnd = html.indexOf("</head>");
+      if (headEnd !== -1) {
+        const lineStart = html.lastIndexOf("\n", headEnd) + 1;
+        html = html.slice(0, lineStart) + `  <!-- @@ANALYTICS@@ -->\n` + html.slice(lineStart);
+      }
     }
   }
 
-  // 埋点槽（所有模式都确保存在，幂等）
-  if (MODE === "migrate" || MODE === "stamp" || MODE === "dry-run") html = ensureAnalyticsSlot(html);
-
-  if (MODE === "migrate" || MODE === "stamp") {
+  if (MODE === "stamp" || MODE === "migrate") {
     if (html !== original) writeFileSync(file, html, "utf8");
     report.ok.push(`${page.file} 已处理`);
   } else if (MODE === "dry-run") {
-    report.ok.push(`${page.file}（dry-run，未写入）`);
+    report.ok.push(`${page.file}（dry-run${html !== original ? "，有变更" : "，无变更"}）`);
   }
 }
 
-// verify 模式：检查标记与组件是否齐全
 if (MODE === "verify") {
   for (const page of PAGES) {
     const html = readFileSync(join(ROOT, page.file), "utf8");
     const checks = [];
     for (const kind of ["header", "footer"]) {
-      const variant = page[kind];
-      const cls = kind === "header" ? HEADER_CLASS[variant] : FOOTER_CLASS[variant];
-      const hasMarker = html.includes(`<!-- @@${kind.toUpperCase()}@@ -->`);
-      const hasBlock = new RegExp(`<${kind} class="${cls}"[^>]*>`).test(html);
-      const compOk = existsSync(componentPath(kind, variant));
-      checks.push(`${kind}:${hasMarker && hasBlock && compOk ? "✓" : "✗"}`);
+      const marker = kind === "header" ? HEADER_MARKER : FOOTER_MARKER;
+      const hasMarker = html.includes(marker);
+      const hasBlock = new RegExp(`<${kind} class="[^"]*"[^>]*>`).test(html);
+      checks.push(`${kind}:${hasMarker && hasBlock ? "✓" : "✗"}`);
     }
+    checks.push(`privacy:${html.includes(PRIVACY_MARKER) && html.includes('class="privacy-modal"') ? "✓" : "✗"}`);
     checks.push(`analytics:${html.includes("@@ANALYTICS@@") ? "✓" : "✗"}`);
     console.log(`${checks.join("  ")}  ${page.file}`);
   }
@@ -167,8 +188,8 @@ if (MODE === "verify") {
 }
 
 console.log(`模式: ${MODE}`);
-for (const w of warnings) console.log(`  ⚠ ${w}`);
-for (const r of report.err) console.log(`  ✗ ${r}`);
+for (const w of report.warn) console.log(`  ⚠ ${w}`);
+for (const e of report.err) console.log(`  ✗ ${e}`);
 for (const r of report.ok.slice(0, 25)) console.log(`  ✓ ${r}`);
-console.log(`\n完成：${report.ok.length} 条正常，${warnings.length} 条警告，${report.err.length} 条错误。`);
+console.log(`\n完成：${report.ok.length} 条正常，${report.err.length} 条错误。`);
 if (report.err.length) process.exit(1);
