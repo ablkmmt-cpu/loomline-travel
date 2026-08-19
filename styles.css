@@ -4579,17 +4579,28 @@ main h2 {
   margin-left: 6px;
 }
 
+.cta-info {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #6b6355;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
 .cta-row {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
   margin-top: auto;
   padding-top: 20px;
+  flex-wrap: wrap;
 }
 
 .cta-row .btn {
-  flex: 1;
+  flex: none;
   text-align: center;
-  padding: 14px 10px;
+  padding: 14px 26px;
   border-radius: 12px;
   font-weight: 700;
   font-size: 14.5px;
