@@ -297,3 +297,15 @@
 - 身份列加宽 `minmax(420px,1.7fr)` → 三列整体右移
 - 栅格间隙 `clamp(40px,5.5vw,88px)` → `clamp(24px,3vw,48px)` → 三列互相靠拢
 - 渲染实测：标题左缘 732 / 940 / 1146（间距 208/206，均匀），此前 620/876/~1138（间距 256）
+
+---
+
+## 2026-08-18 · 合作伙伴招募页正式上线（partner.html）
+
+- **新增 `partner.html`**（根目录）：中英双语 + 页头语言切换（中文/EN，默认中文），按 Preview 09 定稿文案与设计（同行者叙事 / 精选网络 / 四步流程 / 合作表单）
+- **新增 `partner.css`**：页面样式（含 `.partner-page` 粘性页头）
+- **页脚 Explore 栏**新增 **Partnerships** 链接（全站 22 页同步）
+- **表单**：与全站共用 Formspree 端点 `mkolnbzl`，`_subject: "New Business Cooperation inquiry"` 区分来源（不另开通道）
+- pages.json 注册（22 页）；sitemap 更新含 /partner/
+- whatsapp-float.css 增加 `.partner-page` 粘性特例
+- 渲染验证：中文/英文两版内容切换正常（h1 区像素差异确认）、页头深色正常

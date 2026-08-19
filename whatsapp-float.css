@@ -20,7 +20,8 @@
   background: linear-gradient(180deg, rgba(10, 37, 30, 0.995), rgba(7, 28, 23, 0.975)) !important;
 }
 
-.experience-page .site-header.ttc-fixed-header {
+.experience-page .site-header.ttc-fixed-header,
+.partner-page .site-header.ttc-fixed-header {
   position: sticky !important;
   top: 0;
   z-index: 250 !important;
