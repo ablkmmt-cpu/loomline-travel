@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@500;600;700;800&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/site-chrome.css?v=5" />
-    <link rel="stylesheet" href="partner.css?v=1" />
+    <link rel="stylesheet" href="partner.css?v=2" />
   <!-- @@ANALYTICS@@ -->
   </head>
   <body class="partner-page" data-lang="zh">
@@ -48,7 +48,7 @@
         <button type="button" data-lang="zh" class="on">中文</button>
         <button type="button" data-lang="en">EN</button>
       </div>
-      <p class="k"><span class="zh">Partnerships · 商业合作</span><span class="en">Work With Us</span></p>
+      <p class="k"><span class="zh">与我们合作 · 商业合作</span><span class="en">Work With Us</span></p>
       <h1 class="cn"><span class="zh">与 TripToChina 合作</span><span class="en">Partnerships</span></h1>
       <p class="lead">
         <span class="zh-block">TripToChina 致力于为外国游客提供高品质的中国旅行体验。我们相信，打动人心的旅程，来自对品质的共同坚持——这也是我们选择伙伴时唯一的标准。如果你与我们一样——热爱中国、对品质有要求、相信真实的在地体验能打动人心，我们很愿意与你相识。</span>
@@ -107,17 +107,17 @@
             <label>Website<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
           </div>
 
-          <div class="fg"><label><span class="zh">你的姓名</span><span class="en">Your name</span> <b>*</b></label><input type="text" name="name" required placeholder="姓名 / Name" /></div>
-          <div class="fg"><label><span class="zh">电子邮件</span><span class="en">Email</span> <b>*</b></label><input type="email" name="email" required placeholder="you@example.com" /></div>
-          <div class="fg"><label><span class="zh">微信或 WhatsApp（选填）</span><span class="en">WeChat or WhatsApp (optional)</span></label><input type="text" name="wechat_whatsapp" placeholder="微信号 / WeChat ID" /></div>
-          <div class="fg"><label><span class="zh">公司 / 组织名称</span><span class="en">Company / organization</span> <b>*</b></label><input type="text" name="company" required placeholder="公司或组织名称 / Organization" /></div>
-          <div class="fg"><label><span class="zh">主要服务区域</span><span class="en">Service area</span></label><input type="text" name="service_area" placeholder="如：成都及周边、四川全省、全国可接 / e.g. Chengdu & surrounds, Sichuan, all of China" /></div>
+          <div class="fg"><label><span class="zh">你的姓名</span><span class="en">Your name</span> <b>*</b></label><input type="text" name="name" required data-placeholder-zh="姓名" data-placeholder-en="Your name" placeholder="姓名" /></div>
+          <div class="fg"><label><span class="zh">电子邮件</span><span class="en">Email</span> <b>*</b></label><input type="email" name="email" required data-placeholder-zh="you@example.com" data-placeholder-en="you@example.com" placeholder="you@example.com" /></div>
+          <div class="fg"><label><span class="zh">微信或 WhatsApp（选填）</span><span class="en">WeChat or WhatsApp (optional)</span></label><input type="text" name="wechat_whatsapp" data-placeholder-zh="微信号" data-placeholder-en="WeChat ID" placeholder="微信号" /></div>
+          <div class="fg"><label><span class="zh">公司 / 组织名称</span><span class="en">Company / organization</span> <b>*</b></label><input type="text" name="company" required data-placeholder-zh="公司或组织名称" data-placeholder-en="Organization" placeholder="公司或组织名称" /></div>
+          <div class="fg"><label><span class="zh">主要服务区域</span><span class="en">Service area</span></label><input type="text" name="service_area" data-placeholder-zh="如：成都及周边、四川全省、全国可接" data-placeholder-en="e.g. Chengdu & surrounds, Sichuan, all of China" placeholder="如：成都及周边、四川全省、全国可接" /></div>
           <div class="fg full"><label><span class="zh">我们可以如何合作</span><span class="en">How we might work together</span></label>
-            <textarea name="cooperation_how" placeholder="例如：你所在的领域、擅长的体验或服务，或希望与 TripToChina 共同探索的方向。描述得越清楚，我们越能判断彼此的契合度。 / e.g. your field, the experiences or services you do best, or a direction you'd like to explore with TripToChina. The clearer the better."></textarea>
+            <textarea name="cooperation_how" data-placeholder-zh="例如：你所在的领域、擅长的体验或服务，或希望与 TripToChina 共同探索的方向。描述得越清楚，我们越能判断彼此的契合度。" data-placeholder-en="e.g. your field, the experiences or services you do best, or a direction you'd like to explore with TripToChina. The clearer the better." placeholder="例如：你所在的领域、擅长的体验或服务，或希望与 TripToChina 共同探索的方向。描述得越清楚，我们越能判断彼此的契合度。"></textarea>
             <span class="ph"><span class="zh-block">描述你擅长的领域与合作方向，越清晰越便于我们判断契合度。</span><span class="en-block">Describe your strengths and direction — the clearer, the easier the fit is to judge.</span></span>
           </div>
           <div class="fg full"><label><span class="zh">希望合作的场景</span><span class="en">Where you'd like to collaborate</span></label>
-            <textarea name="cooperation_where" placeholder="例如：为客人提供在地体验、承接特定行程环节，或与我们共同开发新的旅行产品。 / e.g. offering local experiences to guests, covering part of an itinerary, or developing a new travel product together."></textarea>
+            <textarea name="cooperation_where" data-placeholder-zh="例如：为客人提供在地体验、承接特定行程环节，或与我们共同开发新的旅行产品。" data-placeholder-en="e.g. offering local experiences to guests, covering part of an itinerary, or developing a new travel product together." placeholder="例如：为客人提供在地体验、承接特定行程环节，或与我们共同开发新的旅行产品。"></textarea>
             <span class="ph"><span class="zh-block">告诉我们你希望与 TripToChina 在哪些场景下合作。</span><span class="en-block">Tell us where you'd like to work with TripToChina.</span></span>
           </div>
           <div class="submit-row">
@@ -204,6 +204,9 @@
           body.setAttribute("data-lang", lang);
           document.documentElement.setAttribute("lang", lang === "zh" ? "zh-CN" : "en");
           buttons.forEach(function (b) { b.classList.toggle("on", b.dataset.lang === lang); });
+          document.querySelectorAll("[data-placeholder-zh]").forEach(function (el) {
+            el.setAttribute("placeholder", el.getAttribute("data-placeholder-" + lang));
+          });
         }
         buttons.forEach(function (b) {
           b.addEventListener("click", function () { setLang(b.dataset.lang); });
