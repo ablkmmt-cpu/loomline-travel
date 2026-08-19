@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Preview 10 · 首页服务双卡（红墙绿瓦版）</title>
+<style>
+  :root{
+    --red:#9F2D2B; --red-deep:#8A2422; --green:#14332C; --gold:#C9A05E;
+    --paper:#F6F0E3; --paper2:#EEE5D2; --ink:#1B1612; --ink-soft:#4D453A;
+    --hair:rgba(27,22,18,.15); --line:rgba(27,22,18,.28);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:
+      radial-gradient(1300px 640px at 85% -6%, rgba(201,160,94,.08), transparent 60%),
+      radial-gradient(1000px 560px at -12% 42%, rgba(159,45,43,.05), transparent 55%),
+      linear-gradient(180deg, var(--paper) 0%, var(--paper2) 100%);
+    font-family:'Inter','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:var(--ink);
+    min-height:100vh;
+  }
+  .cn{font-family:'Songti SC','STSong','Noto Serif SC',serif}
+  .ribbon{background:var(--red-deep);color:#f3e7d6;font-size:11.5px;letter-spacing:.05em;padding:8px 20px;display:flex;gap:14px;align-items:center}
+  .ribbon b{background:rgba(255,255,255,.16);border-radius:4px;padding:2px 8px;font-size:10.5px}
+
+  /* ---------- 区块容器（模拟首页服务区） ---------- */
+  .section{width:min(1180px,100%);margin:0 auto;padding:clamp(72px,8vw,110px) clamp(22px,5vw,72px) clamp(88px,9vw,120px)}
+  .sec-head{text-align:center;margin-bottom:clamp(44px,5vw,64px)}
+  .sec-head .k{color:#8f6b2e;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:800}
+  .sec-head h2{font-family:'Songti SC',serif;font-size:clamp(28px,3.6vw,46px);font-weight:700;margin-top:12px;line-height:1.2}
+  .sec-head p{color:var(--ink-soft);font-size:15px;margin-top:16px}
+
+  /* ---------- 双卡 ---------- */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,3vw,44px)}
+  .card{position:relative;border:1px solid var(--line);border-radius:8px;background:rgba(249,244,232,.9);overflow:hidden;display:flex;flex-direction:column}
+  .card::before{content:"";position:absolute;inset:8px;border:1px solid rgba(27,22,18,.12);border-radius:5px;pointer-events:none;z-index:1}
+  .card .img{position:relative;height:clamp(190px,20vw,250px);overflow:hidden}
+  .card .img img{width:100%;height:100%;object-fit:cover;display:block}
+  .card .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,51,44,.02),rgba(20,51,44,.28))}
+  .card .seal{position:absolute;top:20px;left:20px;z-index:2;background:var(--red);color:var(--paper);font-family:'Kaiti SC','STKaiti',serif;font-size:17px;font-weight:700;width:46px;height:46px;display:grid;place-items:center;border-radius:7px;transform:rotate(-3deg);box-shadow:0 3px 12px rgba(138,36,34,.3)}
+  .card .no-ar{position:absolute;top:22px;right:20px;z-index:2;color:rgba(245,239,226,.85);font-family:Georgia,serif;font-size:15px;letter-spacing:.08em}
+
+  .card .bd{padding:clamp(24px,2.6vw,34px);display:flex;flex-direction:column;gap:14px;flex:1;position:relative;z-index:1}
+  .card .k2{color:var(--red);font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
+  .card h3{font-family:'Songti SC',serif;font-size:clamp(22px,2.4vw,30px);font-weight:700;color:var(--ink)}
+  .card .desc{color:var(--ink-soft);font-size:14px;line-height:1.8}
+  .card .meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding-top:4px}
+  .card .meta span{font-size:12.5px;font-weight:700;color:var(--ink)}
+  .card .meta i{font-style:normal;font-size:10px;color:var(--gold)}
+  .card .meta em{font-style:normal;font-size:11px;color:var(--ink-soft);border:1px solid var(--hair);border-radius:5px;padding:3px 8px}
+  .card .foot{margin-top:auto;padding-top:18px;border-top:1px dashed var(--hair);display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .price{font-family:Georgia,serif;font-size:22px;color:#9b7439}
+  .price small{font-size:11px;color:var(--ink-soft);font-family:'Inter',sans-serif}
+  .price-note{font-size:11.5px;color:#8a8172}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:4px;font-size:13.5px;font-weight:800;text-decoration:none;transition:transform .18s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-red{background:var(--red);color:#f8f1e2;box-shadow:0 8px 20px rgba(159,45,43,.28)}
+  .btn-outline{border:1.5px solid var(--line);color:var(--ink)}
+  .btn-gold{background:linear-gradient(180deg,#e2c391,#c8a05a);color:#2b2418;box-shadow:0 8px 20px rgba(140,101,44,.22)}
+
+  .note{width:min(1040px,100%);margin:0 auto;padding:0 clamp(22px,5vw,72px) 40px;font-size:11.5px;color:#8a8172;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="ribbon"><b>Preview 10 · 方案示意，非线上页面</b><span>首页服务双卡 · 红墙绿瓦版（标准路线 / 定制）</span></div>
+
+<section class="section">
+  <div class="sec-head">
+    <p class="k">Two ways to travel · 两种方式</p>
+    <h2 class="cn">Choose How You Travel China</h2>
+    <p>Start with a proven route, or build a journey entirely around you.</p>
+  </div>
+
+  <div class="grid">
+    <!-- 卡 01 · 标准路线 -->
+    <article class="card">
+      <div class="img">
+        <img src="../assets/service-classic-journeys.png" alt="" />
+        <span class="seal cn">壹</span>
+        <span class="no-ar">01</span>
+      </div>
+      <div class="bd">
+        <p class="k2">Standard Routes · 标准路线</p>
+        <h3 class="cn">Classic China Journeys</h3>
+        <p class="desc">Proven routes with clear pacing — ready to personalize. Beijing · Xi'an · Guilin and more, planned to the day.</p>
+        <div class="meta">
+          <span>Beijing</span><i>◆</i><span>Xi'an</span><i>◆</i><span>Guilin</span>
+          <em>Classic route</em>
+        </div>
+        <div class="foot">
+          <div><div class="price">From ¥3,680 <small>pp</small></div><div class="price-note">双人起订 · 含酒店/门票/专车 · 可升级定制</div></div>
+          <a class="btn btn-red" href="#">Explore Standard Routes →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 卡 02 · 定制 -->
+    <article class="card">
+      <div class="img">
+        <img src="../assets/service-tailor-made.png" alt="" />
+        <span class="seal cn" style="background:var(--green)">贰</span>
+        <span class="no-ar">02</span>
+      </div>
+      <div class="bd">
+        <p class="k2">Tailor-Made · 定制</p>
+        <h3 class="cn">Tailor-Made China Trip</h3>
+        <p class="desc">A private China trip designed around your dates, interests, and pace — with our local team behind every day.</p>
+        <div class="meta">
+          <span>Your pace</span><i>◆</i><span>Your interests</span><i>◆</i><span>Your dates</span>
+          <em>Built around you</em>
+        </div>
+        <div class="foot">
+          <div><div class="price-note">按方案报价 · 24h 内回复初稿</div></div>
+          <a class="btn btn-gold" href="#">Build My China Trip →</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<p class="note">说明：① 双卡沿用红墙绿瓦——宣纸底卡片 + 细双线文书框 + 印章编号（壹/贰 + 阿拉伯 01/02）；② 标准路线卡露出价格起点（示意 ¥3,680，真实价格待定），定制卡走"按方案报价"；③ 主按钮：标准=朱砂红，定制=琉璃金描边金底；④ 卡片图片与链接沿用现有（services/self-guided、services/custom-tour）。改文案/布局随时说。</p>
+</body>
+</html>
