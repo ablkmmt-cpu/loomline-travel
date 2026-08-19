@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Preview 09 · 合作伙伴招募页（与 TripToChina 合作）</title>
+<title>Preview 09 · 合作伙伴招募页（中英双语）</title>
 <style>
   :root{
     --red:#9F2D2B; --red-deep:#8A2422; --green:#14332C; --gold:#C9A05E;
@@ -19,29 +19,39 @@
     font-family:'Inter','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:var(--ink);
   }
   .cn{font-family:'Songti SC','STSong','Noto Serif SC',serif}
+  /* 语言切换：默认中文；body[data-lang=en] 显示英文 */
+  .en{display:none}
+  body[data-lang="en"] .en{display:inline}
+  body[data-lang="en"] .zh{display:none}
+  body[data-lang="en"] .en-block{display:block}
+  body[data-lang="en"] .zh-block{display:none}
+
   .ribbon{background:var(--red-deep);color:#f3e7d6;font-size:11.5px;letter-spacing:.05em;padding:8px 20px;display:flex;gap:14px;align-items:center}
   .ribbon b{background:rgba(255,255,255,.16);border-radius:4px;padding:2px 8px;font-size:10.5px}
 
-  /* ---------- 页头（站点统一） ---------- */
-  header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:16px clamp(22px,5vw,68px);background:linear-gradient(180deg,rgba(16,41,36,.98),rgba(16,41,36,.96));color:#f5efe2;position:sticky;top:0;border-bottom:1px solid rgba(201,160,94,.22)}
+  /* ---------- 页头（站点统一 + 语言切换） ---------- */
+  header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px clamp(22px,5vw,68px);background:linear-gradient(180deg,rgba(16,41,36,.98),rgba(16,41,36,.96));color:#f5efe2;position:sticky;top:0;border-bottom:1px solid rgba(201,160,94,.22);z-index:10}
   .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;color:#f5efe2;text-decoration:none}
   .brand .e{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#9a7436);display:grid;place-items:center;color:var(--green);font-weight:900}
-  nav{display:flex;gap:clamp(20px,3vw,42px);font-size:13px;font-weight:600;color:rgba(245,239,226,.78)}
-  nav a{color:inherit;text-decoration:none}
+  .head-right{display:flex;align-items:center;gap:16px}
+  .lang-toggle{display:flex;align-items:center;border:1px solid rgba(245,239,226,.4);border-radius:4px;overflow:hidden}
+  .lang-toggle button{background:transparent;border:0;color:rgba(245,239,226,.65);font-size:12px;font-weight:700;padding:7px 12px;cursor:pointer;font-family:inherit}
+  .lang-toggle button.on{background:var(--gold);color:var(--green)}
   .cta{padding:10px 18px;border:1px solid rgba(245,239,226,.36);border-radius:4px;font-size:12.5px;font-weight:700;color:#f5efe2;text-decoration:none}
 
   /* ---------- 页头区 ---------- */
   .page-head{width:min(1040px,100%);margin:0 auto;padding:clamp(64px,8vw,96px) clamp(22px,5vw,72px) 12px;text-align:center}
   .page-head .k{color:#8f6b2e;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:800}
-  .page-head h1{font-family:'Songti SC',serif;font-size:clamp(32px,4.4vw,54px);font-weight:700;margin-top:14px;line-height:1.2}
-  .page-head .lead{color:var(--ink-soft);font-size:16px;line-height:2;margin-top:22px;max-width:720px;margin-left:auto;margin-right:auto}
+  .page-head h1{font-family:'Songti SC',serif;font-size:clamp(32px,4.4vw,54px);font-weight:700;margin-top:14px;line-height:1.25}
+  .page-head .lead{color:var(--ink-soft);font-size:16px;line-height:2;margin-top:22px;max-width:740px;margin-left:auto;margin-right:auto}
+  body[data-lang="en"] .page-head .lead{line-height:1.8}
 
   section.sec{width:min(1040px,100%);margin:0 auto;padding:clamp(56px,7vw,84px) clamp(22px,5vw,72px) 8px}
   .sec-h{font-family:'Songti SC',serif;font-size:clamp(24px,3vw,34px);font-weight:700;color:var(--ink);display:flex;align-items:center;gap:16px}
   .sec-h::before{content:"";width:26px;height:2px;background:var(--red);flex:0 0 auto}
-  .sec-sub{color:var(--ink-soft);font-size:14.5px;line-height:1.9;margin-top:14px;max-width:760px}
+  .sec-sub{color:var(--ink-soft);font-size:14.5px;line-height:1.9;margin-top:14px;max-width:780px}
 
-  /* ---------- 伙伴类型三列 ---------- */
+  /* ---------- 同行者三列 ---------- */
   .types{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
   .type{border:1px solid var(--line);border-radius:6px;background:rgba(248,242,228,.72);padding:26px 24px;position:relative}
   .type::before{content:"";position:absolute;inset:7px;border:1px solid rgba(27,22,18,.12);border-radius:3px;pointer-events:none}
@@ -49,11 +59,11 @@
   .type b{font-size:17px;color:var(--ink);display:block;margin-top:8px}
   .type p{font-size:13.5px;color:var(--ink-soft);line-height:1.8;margin-top:8px}
 
-  /* ---------- 不只是供应商（绿面板） ---------- */
+  /* ---------- 精选网络面板 ---------- */
   .value{margin-top:34px;background:linear-gradient(160deg,#1A4036,#0D241E 78%);border-radius:8px;border:1px solid rgba(201,160,94,.26);padding:clamp(34px,4vw,52px) clamp(26px,4vw,56px);color:#efe6d3}
   .value .k2{color:#e2c391;font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:800}
   .value h3{font-family:'Songti SC',serif;font-size:clamp(22px,2.6vw,30px);font-weight:700;color:#f5efe2;margin-top:12px}
-  .value p{color:rgba(239,230,211,.82);font-size:14.5px;line-height:1.9;margin-top:14px;max-width:760px}
+  .value p{color:rgba(239,230,211,.82);font-size:14.5px;line-height:1.9;margin-top:14px;max-width:780px}
 
   /* ---------- 合作方式四步 ---------- */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:34px;position:relative}
@@ -75,7 +85,7 @@
   .fg.full{grid-column:1/-1}
   .fg label{font-size:13px;font-weight:700;color:var(--ink)}
   .fg label b{color:var(--red)}
-  .fg input,.fg textarea,.fg select{
+  .fg input,.fg textarea{
     border:1px solid var(--line);border-radius:4px;background:#fdf9ef;color:var(--ink);
     font-family:inherit;font-size:13.5px;padding:11px 13px;outline:none;
   }
@@ -85,9 +95,9 @@
   .submit-row{display:flex;align-items:center;gap:20px;margin-top:30px;flex-wrap:wrap;position:relative;z-index:1}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 30px;border-radius:4px;font-size:14px;font-weight:800;text-decoration:none;background:var(--red);color:#f8f1e2;box-shadow:0 8px 22px rgba(159,45,43,.3);border:0;cursor:pointer}
   .btn:hover{background:var(--red-deep)}
-  .submit-note{font-size:12.5px;color:var(--ink-soft);line-height:1.8;max-width:480px}
+  .submit-note{font-size:12.5px;color:var(--ink-soft);line-height:1.8;max-width:500px}
 
-  /* ---------- 页脚（站点统一） ---------- */
+  /* ---------- 页脚 ---------- */
   footer{background:#0D241E;color:rgba(239,230,211,.7);padding:clamp(56px,7vw,88px) clamp(22px,6vw,92px) 28px;border-top:1px solid rgba(201,160,94,.5);margin-top:clamp(56px,7vw,80px)}
   .f-main{width:min(1180px,100%);margin:0 auto;display:grid;grid-template-columns:minmax(420px,1.7fr) minmax(130px,.5fr) minmax(130px,.5fr) minmax(130px,.5fr);gap:clamp(24px,3vw,48px);align-items:start}
   .f-brand{display:flex;align-items:center;gap:10px;color:#f5efe2;font-weight:800}
@@ -102,78 +112,84 @@
   .note{width:min(1040px,100%);margin:0 auto;padding:28px clamp(22px,5vw,72px) 8px;font-size:11.5px;color:#8a8172;line-height:1.7}
 </style>
 </head>
-<body>
-<div class="ribbon"><b>Preview 09 · 方案示意，非线上页面</b><span>合作伙伴招募页 · 与 TripToChina 合作 · 入口将加入页脚 Explore 栏</span></div>
+<body data-lang="zh">
+<div class="ribbon"><b>Preview 09 v3 · 方案示意，非线上页面</b><span>合作伙伴招募页 · 中英双语 + 语言切换 · 入口将加入页脚 Explore 栏</span></div>
 
 <header>
   <a class="brand"><span class="e">囍</span>TripToChina</a>
-  <nav><a>Services</a><a>Destinations</a><a>Experiences</a><a>About Us</a></nav>
-  <a class="cta">Start With Your Trip</a>
+  <div class="head-right">
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-lang="zh" class="on">中文</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+    <a class="cta">Start With Your Trip</a>
+  </div>
 </header>
 
 <!-- 页头 -->
 <section class="page-head">
-  <p class="k">Partner with us · 合作招募</p>
-  <h1 class="cn">与 TripToChina 合作</h1>
-  <p class="lead">TripToChina 致力于为外国游客提供高品质的中国旅行体验。我们相信，打动人心的旅程，来自对品质的共同坚持——这也是我们选择伙伴时唯一的标准。<br/>如果你与我们一样——热爱中国、对品质有要求、相信真实的在地体验能打动人心，我们很愿意与你相识。</p>
+  <p class="k"><span class="zh">Partner with us · 合作招募</span><span class="en">Partner With TripToChina</span></p>
+  <h1 class="cn"><span class="zh">与 TripToChina 合作</span><span class="en">Partner With TripToChina</span></h1>
+  <p class="lead"><span class="zh-block">TripToChina 致力于为外国游客提供高品质的中国旅行体验。我们相信，打动人心的旅程，来自对品质的共同坚持——这也是我们选择伙伴时唯一的标准。如果你与我们一样——热爱中国、对品质有要求、相信真实的在地体验能打动人心，我们很愿意与你相识。</span><span class="en-block">TripToChina builds high-quality China travel experiences for visitors from abroad. We believe journeys that move people come from a shared commitment to quality — that is the only standard we use when choosing partners. If you love China, care about quality, and believe real local experiences can move people, we would love to meet you.</span></p>
 </section>
 
-<!-- 我们在找什么样的伙伴 -->
+<!-- 我们寻找的同行者 -->
 <section class="sec">
-  <h2 class="sec-h cn">我们寻找的同行者</h2>
+  <h2 class="sec-h cn"><span class="zh">我们寻找的同行者</span><span class="en">The People We Work With</span></h2>
+  <p class="sec-sub"><span class="zh-block">我们首先寻找认同——对品质的理解、对客人的态度、对长期合作的想法。领域是其次的。我们珍视的同行者，通常来自以下方向：</span><span class="en-block">We look for alignment first — how you understand quality, how you treat guests, and how you think about long-term work. The field comes second. The people we value most usually come from these directions:</span></p>
   <div class="types">
-    <div class="type"><span class="no">壹 · 文化</span><b class="cn">文化空间与手作</b><p>茶馆、工坊、画廊、私人厨房、非遗体验馆——那些把客人真正带进中国日常的地方。</p></div>
-    <div class="type"><span class="no">贰 · 服务</span><b class="cn">服务与运营团队</b><p>与我们共同保障行程顺畅与从容的伙伴，让每一次抵达都安心。</p></div>
-    <div class="type"><span class="no">叁 · 连接</span><b class="cn">机构与社区</b><p>学校、文化机构、商会与海外社区，让旅行与更多场景和人群相连。</p></div>
+    <div class="type"><span class="no">壹 · 文化</span><b class="cn"><span class="zh">文化空间与手作</span><span class="en">Cultural Spaces &amp; Crafts</span></b><p><span class="zh-block">茶馆、工坊、画廊、私人厨房、非遗体验馆——那些把客人真正带进中国日常的地方。</span><span class="en-block">Teahouses, workshops, galleries, private kitchens, heritage studios — places that bring guests into everyday China.</span></p></div>
+    <div class="type"><span class="no">贰 · 服务</span><b class="cn"><span class="zh">服务与运营团队</span><span class="en">Service &amp; Operations Teams</span></b><p><span class="zh-block">与我们共同保障行程顺畅与从容的伙伴，让每一次抵达都安心。</span><span class="en-block">Partners who help us keep journeys smooth and unhurried, so every arrival feels safe and easy.</span></p></div>
+    <div class="type"><span class="no">叁 · 连接</span><b class="cn"><span class="zh">机构与社区</span><span class="en">Institutions &amp; Communities</span></b><p><span class="zh-block">学校、文化机构、商会与海外社区，让旅行与更多场景和人群相连。</span><span class="en-block">Schools, cultural institutions, associations, and overseas communities — connecting travel to more people and moments.</span></p></div>
   </div>
 </section>
 
-<!-- 不只是供应商 -->
+<!-- 精选网络 -->
 <section class="sec">
   <div class="value">
-    <p class="k2">Not an open platform · 精选网络</p>
-    <h3 class="cn">不只是"供应商"</h3>
-    <p>我们希望建立的是<strong style="color:#f5efe2">精选网络，而不是开放平台</strong>。TripToChina 有自己的产品体系、在地团队与服务标准——与伙伴合作，是为了让体验更深、服务更稳，而不是简单转介订单。<br/>每一次合作，都经过认真的沟通与筛选。因为品质是我们对客人的承诺，也是我们对彼此的承诺。</p>
+    <p class="k2"><span class="zh">Not an open platform · 精选网络</span><span class="en">A Curated Network</span></p>
+    <h3 class="cn"><span class="zh">不只是"供应商"</span><span class="en">More Than a Supplier</span></h3>
+    <p><span class="zh-block">我们希望建立的是<strong style="color:#f5efe2">精选网络，而不是开放平台</strong>。TripToChina 有自己的产品体系、在地团队与服务标准——与伙伴合作，是为了让体验更深、服务更稳，而不是简单转介订单。每一次合作，都经过认真的沟通与筛选。因为品质是我们对客人的承诺，也是我们对彼此的承诺。</span><span class="en-block">We aim for a <strong style="color:#f5efe2">curated network, not an open platform</strong>. TripToChina has its own product system, local team, and service standards — we partner with people to make experiences deeper and service steadier, not to pass on bookings. Every partnership goes through careful conversation and selection. Quality is our promise to guests, and our promise to each other.</span></p>
   </div>
 </section>
 
 <!-- 合作方式 -->
 <section class="sec">
-  <h2 class="sec-h cn">合作方式</h2>
-  <p class="sec-sub">我们首先寻找认同——对品质的理解、对客人的态度、对长期合作的想法。领域是其次的。我们珍视的同行者，通常来自以下方向：</p>
+  <h2 class="sec-h cn"><span class="zh">合作方式</span><span class="en">How It Works</span></h2>
+  <p class="sec-sub"><span class="zh-block">如果双方契合，通常的协作路径是：</span><span class="en-block">When there's a fit, the path usually looks like this:</span></p>
   <div class="steps">
-    <div class="st"><div class="no">01</div><b>填写表单</b><p>告诉我们你是谁、能提供什么。</p></div>
-    <div class="st"><div class="no">02</div><b>初步沟通</b><p>我们与你取得联系，了解彼此。</p></div>
-    <div class="st"><div class="no">03</div><b>确认契合度</b><p>评估合作方向与品质标准。</p></div>
-    <div class="st"><div class="no">04</div><b>建立合作</b><p>明确方式，开始共同服务客人。</p></div>
+    <div class="st"><div class="no">01</div><b><span class="zh">填写表单</span><span class="en">Share your details</span></b><p><span class="zh-block">告诉我们你是谁、能提供什么。</span><span class="en-block">Tell us who you are and what you do.</span></p></div>
+    <div class="st"><div class="no">02</div><b><span class="zh">初步沟通</span><span class="en">An initial conversation</span></b><p><span class="zh-block">我们与你取得联系，了解彼此。</span><span class="en-block">We reach out and get to know each other.</span></p></div>
+    <div class="st"><div class="no">03</div><b><span class="zh">确认契合度</span><span class="en">Checking the fit</span></b><p><span class="zh-block">评估合作方向与品质标准。</span><span class="en-block">We look at direction and quality standards.</span></p></div>
+    <div class="st"><div class="no">04</div><b><span class="zh">建立合作</span><span class="en">Building the partnership</span></b><p><span class="zh-block">明确方式，开始共同服务客人。</span><span class="en-block">We define how to work and start serving guests together.</span></p></div>
   </div>
-  <p class="reply-note">我们会认真阅读每一份表单，并定期联系选定的伙伴。<b>回复时间通常在 1–2 周内。</b></p>
+  <p class="reply-note"><span class="zh-block">我们会认真阅读每一份表单，并定期联系选定的伙伴。<b>回复时间通常在 1–2 周内。</b></span><span class="en-block">We read every form carefully and reach out to selected partners regularly. <b>Replies usually come within 1–2 weeks.</b></span></p>
 </section>
 
 <!-- 合作伙伴表单 -->
 <section class="sec">
-  <h2 class="sec-h cn">合作伙伴表单</h2>
-  <p class="sec-sub">请填写以下信息，我们会尽快与你联系。</p>
+  <h2 class="sec-h cn"><span class="zh">合作伙伴表单</span><span class="en">Partner Form</span></h2>
+  <p class="sec-sub"><span class="zh-block">请填写以下信息，我们会尽快与你联系。</span><span class="en-block">Please share your details and we'll be in touch.</span></p>
   <div class="form-wrap">
-    <div class="fh cn">基本信息</div>
-    <div class="fs">带 <b style="color:var(--red)">*</b> 为必填项</div>
+    <div class="fh cn"><span class="zh">基本信息</span><span class="en">Basic information</span></div>
+    <div class="fs"><span class="zh-block">带 <b style="color:var(--red)">*</b> 为必填项</span><span class="en-block">Fields marked <b style="color:var(--red)">*</b> are required</span></div>
     <form class="form-grid">
-      <div class="fg"><label>你的姓名 <b>*</b></label><input type="text" placeholder="姓名" /></div>
-      <div class="fg"><label>电子邮件 <b>*</b></label><input type="email" placeholder="you@example.com" /></div>
-      <div class="fg"><label>微信或 WhatsApp <small style="font-weight:500;color:#8a8172">（选填）</small></label><input type="text" placeholder="微信号 / 手机号" /></div>
-      <div class="fg"><label>公司 / 组织名称 <b>*</b></label><input type="text" placeholder="公司或组织名称" /></div>
-      <div class="fg"><label>主要服务区域</label><input type="text" placeholder="如：成都及周边、四川全省、全国可接" /></div>
-      <div class="fg full"><label>我们可以如何合作</label>
-        <textarea placeholder="例如：你所在的领域、擅长的体验或服务，或希望与 TripToChina 共同探索的方向。描述得越清楚，我们越能判断彼此的契合度。"></textarea>
-        <span class="ph">描述你擅长的领域与合作方向，越清晰越便于我们判断契合度。</span>
+      <div class="fg"><label><span class="zh">你的姓名</span><span class="en">Your name</span> <b>*</b></label><input type="text" placeholder="姓名 / Name" /></div>
+      <div class="fg"><label><span class="zh">电子邮件</span><span class="en">Email</span> <b>*</b></label><input type="email" placeholder="you@example.com" /></div>
+      <div class="fg"><label><span class="zh">微信或 WhatsApp（选填）</span><span class="en">WeChat or WhatsApp (optional)</span></label><input type="text" placeholder="微信号 / WeChat ID" /></div>
+      <div class="fg"><label><span class="zh">公司 / 组织名称</span><span class="en">Company / organization</span> <b>*</b></label><input type="text" placeholder="公司或组织名称 / Organization" /></div>
+      <div class="fg"><label><span class="zh">主要服务区域</span><span class="en">Service area</span></label><input type="text" placeholder="如：成都及周边、四川全省、全国可接 / e.g. Chengdu & surrounds, Sichuan, all of China" /></div>
+      <div class="fg full"><label><span class="zh">我们可以如何合作</span><span class="en">How we might work together</span></label>
+        <textarea placeholder="例如：你所在的领域、擅长的体验或服务，或希望与 TripToChina 共同探索的方向。描述得越清楚，我们越能判断彼此的契合度。 / e.g. your field, the experiences or services you do best, or a direction you'd like to explore with TripToChina. The clearer the better."></textarea>
+        <span class="ph"><span class="zh-block">描述你擅长的领域与合作方向，越清晰越便于我们判断契合度。</span><span class="en-block">Describe your strengths and direction — the clearer, the easier the fit is to judge.</span></span>
       </div>
-      <div class="fg full"><label>希望合作的场景</label>
-        <textarea placeholder="例如：为客人提供在地体验、承接特定行程环节，或与我们共同开发新的旅行产品。"></textarea>
-        <span class="ph">告诉我们你希望与 TripToChina 在哪些场景下合作。</span>
+      <div class="fg full"><label><span class="zh">希望合作的场景</span><span class="en">Where you'd like to collaborate</span></label>
+        <textarea placeholder="例如：为客人提供在地体验、承接特定行程环节，或与我们共同开发新的旅行产品。 / e.g. offering local experiences to guests, covering part of an itinerary, or developing a new travel product together."></textarea>
+        <span class="ph"><span class="zh-block">告诉我们你希望与 TripToChina 在哪些场景下合作。</span><span class="en-block">Tell us where you'd like to work with TripToChina.</span></span>
       </div>
       <div class="submit-row">
-        <button class="btn" type="submit">提交表单 →</button>
-        <span class="submit-note">提交后我们将认真审核，并与合适的伙伴进一步沟通，感谢你的耐心。</span>
+        <button class="btn" type="submit"><span class="zh">提交表单 →</span><span class="en">Submit →</span></button>
+        <span class="submit-note"><span class="zh-block">提交后我们将认真审核，并与合适的伙伴进一步沟通，感谢你的耐心。</span><span class="en-block">We'll review every submission carefully and follow up with partners we feel fit. Thank you for your patience.</span></span>
       </div>
     </form>
   </div>
@@ -195,6 +211,20 @@
   <div class="f-bottom"><span>© 2026 TripToChina</span><span>Back to top ↑</span></div>
 </footer>
 
-<p class="note">v2 文案说明：① 弱化"我们在找什么资源"的采购式表述（去掉导游/车队/地接社/车辆/门票等细节清单）——页面客户可见，避免"我方无资源、倒卖人头"的观感；② 改为"品质标准为先的同行者叙事"：先谈认同与标准，再谈领域；③ 强调 TripToChina 自有产品体系与团队，合作是"更深更稳"而非"转介订单"；④ 表单字段"可以提供资源"改为"我们可以如何合作"。仍为预览，接 Formspree 等细节待定。<\/p>
+<p class="note">v3 说明：中英双语，页头右上「中文 / EN」切换（默认中文，可改）；所有文案双份，切换即时生效；表单占位符同样双语。仍为预览，上线时接入 Formspree 等通道。改文案/默认语言随时说。</p>
+
+<script>
+  (function () {
+    var body = document.body;
+    var buttons = document.querySelectorAll(".lang-toggle button");
+    function setLang(lang) {
+      body.setAttribute("data-lang", lang);
+      buttons.forEach(function (b) { b.classList.toggle("on", b.dataset.lang === lang); });
+    }
+    buttons.forEach(function (b) {
+      b.addEventListener("click", function () { setLang(b.dataset.lang); });
+    });
+  })();
+</script>
 </body>
 </html>
