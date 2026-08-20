@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Preview 12 · 成都城市详情页（07 首屏 × 现有内容融合）</title>
+<style>
+  :root{
+    --red:#9F2D2B; --red-deep:#8A2422; --green:#14332C; --gold:#C9A05E; --gold2:#e7c672;
+    --paper:#F6F0E3; --paper2:#EEE5D2; --ink:#1B1612; --ink-soft:#4D453A;
+    --hair:rgba(27,22,18,.15); --line:rgba(27,22,18,.28);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:
+      radial-gradient(1300px 640px at 85% -6%, rgba(201,160,94,.08), transparent 60%),
+      radial-gradient(1000px 560px at -12% 42%, rgba(159,45,43,.05), transparent 55%),
+      linear-gradient(180deg, var(--paper) 0%, var(--paper2) 100%);
+    font-family:'Inter','PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif;color:var(--ink);
+  }
+  .cn{font-family:'Songti SC','STSong','Noto Serif SC',serif}
+  .kai{font-family:'Kaiti SC','STKaiti','KaiTi',cursive}
+  .ribbon{background:var(--red-deep);color:#f3e7d6;font-size:11.5px;letter-spacing:.05em;padding:8px 20px;display:flex;gap:14px;align-items:center}
+  .ribbon b{background:rgba(255,255,255,.16);border-radius:4px;padding:2px 8px;font-size:10.5px}
+
+  header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:14px clamp(22px,5vw,68px);background:linear-gradient(180deg,rgba(16,41,36,.98),rgba(16,41,36,.96));color:#f5efe2;position:sticky;top:0;border-bottom:1px solid rgba(201,160,94,.22);z-index:10}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:17px;color:#f5efe2;text-decoration:none}
+  .brand .e{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#9a7436);display:grid;place-items:center;color:var(--green);font-weight:900}
+  nav{display:flex;gap:clamp(20px,3vw,42px);font-size:13px;font-weight:600;color:rgba(245,239,226,.78)}
+  nav a{color:inherit;text-decoration:none}
+  .cta{padding:10px 18px;border:1px solid rgba(245,239,226,.36);border-radius:4px;font-size:12.5px;font-weight:700;color:#f5efe2;text-decoration:none}
+
+  /* ---------- ① 首屏（07） ---------- */
+  .hero{position:relative;min-height:520px;display:flex;align-items:flex-end;overflow:hidden;color:#f5efe2}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,38,32,.4),rgba(16,38,32,.06) 44%,rgba(16,38,32,.88))}
+  .hero .watermark{position:absolute;bottom:clamp(72px,8vw,92px);right:clamp(28px,7vw,100px);z-index:2;font-family:'Kaiti SC',serif;font-size:clamp(34px,4.6vw,60px);color:rgba(245,239,226,.13);letter-spacing:.2em}
+  .hero .in{position:relative;z-index:1;width:min(1180px,100%);margin:0 auto;padding:52px clamp(18px,4vw,60px) 56px}
+  .hero .k{color:#e2c391;font-size:11px;letter-spacing:.28em;text-transform:uppercase;font-weight:800}
+  .hero h1{font-family:Georgia,'Songti SC',serif;font-size:clamp(44px,6.4vw,76px);font-weight:500;margin-top:10px}
+  .hero .sub{color:rgba(245,239,226,.85);font-size:16px;margin-top:10px;max-width:600px;line-height:1.7}
+  .hero .acts{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:4px;font-size:13.5px;font-weight:800;text-decoration:none;transition:transform .18s ease}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-red{background:var(--red);color:#f8f1e2;box-shadow:0 8px 22px rgba(159,45,43,.3)}
+  .btn-ghost{border:1px solid rgba(245,239,226,.5);color:#f5efe2;background:rgba(20,51,44,.25)}
+  .fit{width:min(1180px,100%);margin:-30px auto 0;position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:0 clamp(18px,4vw,60px)}
+  .fit .f{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px 18px;box-shadow:0 10px 26px rgba(35,31,24,.07)}
+  .fit .l{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#8f6b2e;font-weight:800}
+  .fit .v{font-size:15px;font-weight:800;color:var(--ink);margin-top:6px}
+  .fit .d{font-size:11.5px;color:var(--ink-soft);margin-top:3px}
+
+  /* ---------- 通用分节 ---------- */
+  section.sec{width:min(1040px,100%);margin:0 auto;padding:clamp(56px,7vw,88px) clamp(22px,5vw,72px) 0}
+  .sec-h{font-family:'Songti SC',serif;font-size:clamp(24px,3vw,34px);font-weight:700;color:var(--ink);display:flex;align-items:center;gap:16px}
+  .sec-h::before{content:"";width:26px;height:2px;background:var(--red);flex:0 0 auto}
+
+  /* ---------- ② Highlights（现有方案：6 卡网格） ---------- */
+  .hl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+  .hl{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:4/3;color:#efe6d3}
+  .hl img{width:100%;height:100%;object-fit:cover;display:block}
+  .hl::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 42%,rgba(13,36,30,.86))}
+  .hl .no{position:absolute;top:12px;left:14px;z-index:1;font-family:'Songti SC',serif;font-size:11px;color:#e2c391;letter-spacing:.1em;font-weight:700}
+  .hl .t{position:absolute;left:16px;right:16px;bottom:13px;z-index:1}
+  .hl b{font-family:'Songti SC',serif;font-size:15.5px;display:block}
+  .hl p{font-size:11.5px;color:rgba(239,230,211,.75);margin-top:4px;line-height:1.55}
+
+  /* ---------- ③ Chengdu flavors（现有方案保留） ---------- */
+  .fl-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .fl{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:99px;background:rgba(248,242,228,.72);padding:10px 18px;font-size:13.5px;font-weight:700;color:var(--ink)}
+  .fl i{font-style:normal;font-family:'Songti SC',serif;font-size:11px;color:var(--red);letter-spacing:.08em}
+  .fl-desc{margin-top:14px;font-size:13px;color:var(--ink-soft);line-height:1.8;max-width:720px}
+
+  /* ---------- ④ How long to stay（现有方案 + 行程改线路链接） ---------- */
+  .stay{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,4vw,56px);align-items:start;margin-top:28px}
+  .stay .sum{font-size:13.5px;color:var(--ink-soft);line-height:1.85;margin-bottom:18px}
+  .opt{display:grid;grid-template-columns:84px 1fr;gap:16px;padding:14px 4px;border-bottom:1px solid var(--hair);align-items:start}
+  .opt .days{font-family:Georgia,serif;font-size:20px;color:var(--red);font-weight:600;line-height:1.1}
+  .opt .days small{display:block;font-size:10.5px;color:var(--ink-soft);font-family:'Inter',sans-serif;font-weight:600;letter-spacing:.04em}
+  .opt p{font-size:13px;color:var(--ink-soft);line-height:1.7}
+  .stay .routes{border:1px solid var(--line);border-radius:8px;background:rgba(248,242,228,.72);padding:20px 22px;position:relative}
+  .stay .routes::before{content:"";position:absolute;inset:6px;border:1px solid rgba(27,22,18,.1);border-radius:4px;pointer-events:none}
+  .stay .routes .rh{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#8f6b2e;font-weight:800;margin-bottom:8px}
+  .r-link{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 2px;border-bottom:1px dashed var(--hair);text-decoration:none}
+  .r-link:last-of-type{border-bottom:none}
+  .r-link .rl{min-width:0}
+  .r-link .rl b{font-size:14px;color:var(--ink);display:block}
+  .r-link .rl span{font-size:11.5px;color:var(--ink-soft)}
+  .r-link .rp{font-family:Georgia,serif;font-size:15px;color:#9b7439;flex:none}
+  .r-link .rp small{display:block;font-size:10px;color:var(--ink-soft);font-family:'Inter',sans-serif}
+  .r-link .go{color:var(--red);font-weight:800;font-size:13px;flex:none}
+
+  /* ---------- ⑤ Practical notes（07） ---------- */
+  .tip{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:16px 4px;border-bottom:1px solid var(--hair);align-items:start}
+  .tip .n{font-size:13px;font-weight:800;color:var(--ink)}
+  .tip p{font-size:13px;color:var(--ink-soft);line-height:1.7}
+
+  /* ---------- ⑥ Next step（07） ---------- */
+  .next{margin:clamp(48px,6vw,72px) 0 0;background:linear-gradient(150deg,#1A4036,#0D241E 78%);border-radius:8px;border:1px solid rgba(201,160,94,.28);padding:clamp(34px,4vw,48px) clamp(28px,4vw,52px);color:#efe6d3;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+  .next h2{font-family:'Songti SC',serif;font-size:clamp(22px,2.6vw,30px);font-weight:700;color:#f5efe2}
+  .next p{color:rgba(239,230,211,.78);font-size:13.5px;margin-top:10px;max-width:540px;line-height:1.8}
+  .next .acts{display:flex;gap:12px;flex-wrap:wrap}
+
+  /* ---------- 页脚 ---------- */
+  footer{background:#0D241E;color:rgba(239,230,211,.7);padding:clamp(56px,7vw,88px) clamp(22px,6vw,92px) 28px;border-top:1px solid rgba(201,160,94,.5);margin-top:clamp(56px,7vw,80px)}
+  .f-main{width:min(1180px,100%);margin:0 auto;display:grid;grid-template-columns:minmax(420px,1.7fr) minmax(130px,.5fr) minmax(130px,.5fr) minmax(130px,.5fr);gap:clamp(24px,3vw,48px);align-items:start}
+  .f-brand{display:flex;align-items:center;gap:10px;color:#f5efe2;font-weight:800}
+  .f-brand .e{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#9a7436);display:grid;place-items:center;color:var(--green);font-weight:900}
+  .f-tag{margin-top:14px;font-size:14.5px;color:rgba(239,230,211,.66);font-weight:600}
+  .f-label{margin:26px 0 8px;color:var(--gold);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+  .f-con{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+  .f-col h4{color:var(--gold);font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+  .f-col a{display:block;color:rgba(239,230,211,.72);text-decoration:none;font-size:14px;font-weight:600;line-height:1.6}
+  .f-bottom{width:min(1180px,100%);margin:36px auto 0;padding-top:20px;border-top:1px solid rgba(201,160,94,.22);display:flex;justify-content:space-between;font-size:12px;color:rgba(239,230,211,.46)}
+  .note{width:min(1040px,100%);margin:0 auto;padding:28px clamp(22px,5vw,72px) 8px;font-size:11.5px;color:#8a8172;line-height:1.7}
+</style>
+</head>
+<body>
+<div class="ribbon"><b>Preview 12 · 方案示意，非线上页面</b><span>成都城市详情页 · 07 首屏 × 现有内容融合版</span></div>
+
+<header>
+  <a class="brand"><span class="e">囍</span>TripToChina</a>
+  <nav><a>Services</a><a>Destinations</a><a>Experiences</a><a>About Us</a></nav>
+  <a class="cta">Start With Your Trip</a>
+</header>
+
+<!-- ① 首屏（07）：Hero + FIT STRIP -->
+<section class="hero">
+  <img src="../assets/destinations/destination-chengdu-hero.jpg" alt="" />
+  <div class="watermark kai">成都·Chengdu</div>
+  <div class="in">
+    <p class="k">Sichuan · pandas · food</p>
+    <h1>Chengdu</h1>
+    <p class="sub">Pandas, teahouses, and a food scene that runs all day — a city that rewards slow travel.</p>
+    <div class="acts">
+      <a class="btn btn-red" href="#">Plan this city →</a>
+      <a class="btn btn-ghost" href="#">Ask on WhatsApp</a>
+    </div>
+  </div>
+</section>
+<div class="fit">
+  <div class="f"><div class="l">Best days</div><div class="v">3–5 days</div><div class="d">市区 3 天，加周边 4–5 天</div></div>
+  <div class="f"><div class="l">Best season</div><div class="v">Spring &amp; autumn</div><div class="d">熊猫活跃、气候宜人</div></div>
+  <div class="f"><div class="l">Best for</div><div class="v">Food · Pandas · First-timers</div><div class="d">节奏轻松、吃喝为主</div></div>
+  <div class="f"><div class="l">Pairs with</div><div class="v">Xi'an · Shanghai</div><div class="d">高铁衔接顺畅</div></div>
+</div>
+
+<!-- ② Highlights（现有方案：6 卡） -->
+<section class="sec">
+  <h2 class="sec-h cn">Must-see places</h2>
+  <div class="hl-grid">
+    <div class="hl"><img src="../assets/destinations/destination-chengdu-01.jpg" alt="" /><span class="no">01</span><div class="t"><b>Panda Base</b><p>See giant pandas early in the day when they are most active.</p></div></div>
+    <div class="hl"><img src="../assets/destinations/destination-chengdu-04.jpg" alt="" /><span class="no">02</span><div class="t"><b>People's Park</b><p>Drink gaiwan tea and watch the city slow down around you.</p></div></div>
+    <div class="hl"><img src="../assets/destinations/destination-chengdu-03.jpg" alt="" /><span class="no">03</span><div class="t"><b>Wuhou Shrine</b><p>History, red walls, and bamboo linked to the Three Kingdoms.</p></div></div>
+    <div class="hl"><img src="../assets/destinations/destination-chengdu-06.jpg" alt="" /><span class="no">04</span><div class="t"><b>Jinli Ancient Street</b><p>An atmospheric evening walk beside Wuhou Shrine.</p></div></div>
+    <div class="hl"><img src="../assets/destinations/destination-chengdu-02.jpg" alt="" /><span class="no">05</span><div class="t"><b>Dujiangyan</b><p>A two-thousand-year-old irrigation system still shaping Sichuan.</p></div></div>
+    <div class="hl"><img src="../assets/destinations/destination-chengdu-05.jpg" alt="" /><span class="no">06</span><div class="t"><b>Mount Qingcheng</b><p>The birthplace of Taoism, a green escape an hour from the city.</p></div></div>
+  </div>
+</section>
+
+<!-- ③ Chengdu flavors（现有方案保留） -->
+<section class="sec">
+  <h2 class="sec-h cn">Chengdu flavors</h2>
+  <div class="fl-row">
+    <span class="fl"><i>01</i>Sichuan hotpot</span>
+    <span class="fl"><i>02</i>Dan dan noodles</span>
+    <span class="fl"><i>03</i>Bobo chicken</span>
+    <span class="fl"><i>04</i>Chuan chuan</span>
+    <span class="fl"><i>05</i>Egg-baked cake</span>
+  </div>
+  <p class="fl-desc">从红油火锅到担担面，再到串串和钵钵鸡——成都的味道是一整天的事。我们会带你避开游客店，走本地人的路线。</p>
+</section>
+
+<!-- ④ How long to stay（现有方案 + 行程改线路链接） -->
+<section class="sec">
+  <h2 class="sec-h cn">How long to stay</h2>
+  <div class="stay">
+    <div>
+      <p class="sum">Three days cover the city and pandas; four or five leave room for Sichuan's best nearby day trips.</p>
+      <div class="opt"><div class="days">3<small>days</small></div><p>See the pandas, drink tea in People's Park, visit Wuhou Shrine, and follow one considered Sichuan food route.</p></div>
+      <div class="opt"><div class="days">4<small>days</small></div><p>Add Dujiangyan or Mount Qingcheng while keeping the city itself relaxed.</p></div>
+      <div class="opt"><div class="days">5<small>days</small></div><p>Slow down further: a second food route, a teahouse afternoon, and one open day.</p></div>
+    </div>
+    <div class="routes">
+      <div class="rh">Ready routes for these days · 标准线路</div>
+      <a class="r-link" href="#"><div class="rl"><b>Chengdu &amp; Pandas — 5D4N</b><span>熊猫基地 · 三星堆 · 宽窄巷子</span></div><div class="rp">¥3,680<small>pp</small></div><div class="go">行程 →</div></a>
+      <a class="r-link" href="#"><div class="rl"><b>Chengdu + Jiuzhaigou — 6D5N</b><span>成都 + 九寨沟山水线</span></div><div class="rp">¥5,980<small>pp</small></div><div class="go">行程 →</div></a>
+      <a class="r-link" href="#"><div class="rl"><b>Chengdu Food &amp; Culture — 3D2N</b><span>川菜 · 茶馆 · 市井精华</span></div><div class="rp">¥2,680<small>pp</small></div><div class="go">行程 →</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ⑤ Practical notes（07） -->
+<section class="sec">
+  <h2 class="sec-h cn">Practical notes</h2>
+  <div style="margin-top:24px">
+    <div class="tip"><div class="n">Getting there</div><p>双流/天府双机场；高铁 1.5h 到西安、3h 到重庆、7h 到上海。</p></div>
+    <div class="tip"><div class="n">Getting around</div><p>地铁覆盖主要景点，市区打车便宜；熊猫基地建议早出发。</p></div>
+    <div class="tip"><div class="n">Where to stay</div><p>春熙路/太古里周边最方便；想安静可选锦江区临河一带。</p></div>
+    <div class="tip"><div class="n">Eating</div><p>微辣起步、循序渐进；我们可带你避开游客店的本地馆子清单。</p></div>
+  </div>
+</section>
+
+<!-- ⑥ Next step（07） -->
+<section class="sec" style="padding-bottom:0">
+  <div class="next">
+    <div><h2 class="cn">Make Chengdu part of your China trip.</h2><p>Send us your dates and pace — we'll fit Chengdu into a smooth route with Xi'an, Shanghai, or anywhere else you're going.</p></div>
+    <div class="acts">
+      <a class="btn btn-red" href="#">Plan this city →</a>
+      <a class="btn btn-ghost" href="#">Chat on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-main">
+    <div><div class="f-brand"><span class="e">囍</span>TripToChina</div><div class="f-tag">See real China, skip the guesswork.</div><p class="f-label">Contact us</p><div class="f-con"><a>Chat on WhatsApp</a><a>Email us</a></div></div>
+    <div class="f-col"><h4>Explore</h4><a>Services</a><a>Destinations</a><a>Experiences</a><a>About Us</a><a>FAQ</a><a>Partnerships</a></div>
+    <div class="f-col"><h4>Follow us</h4><a>TikTok</a><a>Facebook</a><a>Instagram</a><a>YouTube</a></div>
+    <div class="f-col"><h4>Policies</h4><a>Privacy Policy</a></div>
+  </div>
+  <div class="f-bottom"><span>© 2026 TripToChina</span><span>Back to top ↑</span></div>
+</footer>
+
+<p class="note">融合说明：① 首屏 = 07（Hero 全幅 + 水印 + 双 CTA + 决策事实条）；② Highlights = 现有方案（6 景点卡网格，保留原图与文案）；③ Chengdu flavors = 现有方案保留（火锅/担担面/钵钵鸡/串串/蛋烘糕）；④ How long to stay = 现有方案（3/4/5 天建议），右侧行程改为**标准线路链接**（跳转行程详情页）；⑤ Practical notes = 07；⑥ 转化入口 = 07 双出口。线路价格/链接为示意。</p>
+</body>
+</html>
