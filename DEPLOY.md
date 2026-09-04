@@ -1,23 +1,18 @@
 # 上线指南 — Loomline Travel → Cloudflare Pages + GitHub 自动部署
 
-> 你已经确认：**面向海外游客（无需 ICP 备案）+ Cloudflare Pages + GitHub 自动部署**。
-> 域名 `loomlinetravel.com` 的 DNS 已在 Cloudflare，这是最大的便利——接入 Pages 时 CDN/DNS/HTTPS 全自动打通。
+> **已于 2026-09 上线 ✅**：`https://loomlinetravel.com` 已开通，`www` 已 301 跳转裸域，Google Search Console 与 Bing 均已验证并提交 sitemap。
+> 技术形态：**面向海外游客（无需 ICP 备案）+ Cloudflare Pages + GitHub 自动部署**。
+> 域名 `loomlinetravel.com` 的 DNS 已在 Cloudflare，接入 Pages 时 CDN/DNS/HTTPS 全自动打通。
 
 ---
 
-## 0. 上线前先做这两件事（重要）
+## 0. 上线前准备（已完成）
 
-### ① 确认内容是否“最终版”
-项目里 `DECISIONS.md` 还列着几个**未完成的待办**：
+### ① 内容定稿 ✅
+站点已定稿，`DECISIONS.md` 里未完成的开发待办已清理，后续只做**新增行程产品**与**调价**。
 
-- [ ] 城市详情页重做（统一模板）
-- [ ] 线路纵览页（按城市分组）
-- [ ] 标准产品页（每条线路一个详情页）
-- [ ] 首页双卡按钮行定稿
-
-**判断**：如果这几项不影响你对外交付，可以先上线这些已完成的页面，未完成的入口先藏起来或做好 404 兜底；否则建议做完再上。上线后仍可随时 push 更新。
-
-### ② 把生成页刷新到最新
+### ② 生成页刷新 ✅
+`destinations/`、`experiences/`、标准线路页为脚本生成；改过 `data/` 后上线前重跑一次（见 `DECISIONS.md`）。
 `destinations/`、`experiences/`、标准线路页都是**脚本生成**的。如果你改过 `data/` 里的数据，上线前重跑一次：
 
 ```bash
@@ -93,9 +88,9 @@ git push -u origin main
 
 ## 4. 发布后验收清单（逐项点开）
 
-- [ ] `https://loomlinetravel.com/` 正常打开，HTTPS 小锁 ✔
-- [ ] 抽查首页、每个 `destination`、`experience`、`service`、`contact`、`partner` 页面都能打开、无 404
-- [ ] 访问一个**不存在的地址**，应显示我们加的 `404.html`（如 `loomlinetravel.com/xyz`）
+- [x] `https://loomlinetravel.com/` 正常打开，HTTPS 小锁 ✔
+- [x] 抽查首页、`destination`、`experience`、`service`、`contact` 页面都能打开、无 404
+- [x] 访问**不存在的地址**显示 `404.html`（如 `/xyz123` 返回 404）
 - [ ] **联系表单（Formspree）**：提交一次测试，确认能收到邮件。Formspree 免费版需在 [Formspree](https://formspree.io) 验证邮箱并确认 `/f/mkolnbzl` 是你的表单端点
 - [ ] **WhatsApp 浮动组件**：点开，确认跳转到 `wa.me/8615719582142` 且预填文案正确
 - [ ] **社交链接**：TikTok / Facebook / Instagram / YouTube 外链可点
@@ -105,18 +100,18 @@ git push -u origin main
 
 ## 5. 搜索引擎收录 + 统计
 
-### Google Search Console
-1. 打开 [Search Console](https://search.google.com/search-console) → 添加资源，选 **Domain**`loomlinetravel.com`。
-2. 用 **Cloudflare 验证方式**（去 Cloudflare 加一条 TXT 记录）或直接在 Pages 项目里选“通过 Cloudflare 验证”。
-3. 添加 `https://loomlinetravel.com/sitemap.xml` 提交。
+### Google Search Console ✅ 已完成
+1. 已添加 **Domain** 资源 `loomlinetravel.com`，通过 Cloudflare/DNS TXT 验证成功。
+2. 已提交 `https://loomlinetravel.com/sitemap.xml`。
+3. 可用 **URL Inspection** 对首页点“请求编入索引”加速收录。
 
-### Bing Webmaster Tools
-1. 导入 Google 验证记录，或手动加 `sitemap.xml`。
+### Bing Webmaster Tools ✅ 已完成
+1. 已添加 `https://loomlinetravel.com/`，通过 **CNAME 记录到 DNS**（`8f81…d02b4 → verify.bing.com`）验证成功。
 
 > 搜索引擎从收录到排上需要几天到几周，正常现象。
 
-### 统计分析
-- 推荐 **Cloudflare Web Analytics**（免费、无 cookie、注重隐私，适合海外访问者。EU 用户对 cookie 敏感，这个最省心）。在 Pages 项目里一键开启，无需改动代码。
+### 统计分析（待做）
+- 推荐 **Cloudflare Web Analytics**（免费、无 cookie、注重隐私，适合海外访问者）。在 Pages 项目里一键开启，无需改动代码。
 - 若想要更细的用户行为，可另加 **GA4**；但注意 GA4 用 cookie，海外站建议配合 EU 的 cookie 提示。
 
 ---
