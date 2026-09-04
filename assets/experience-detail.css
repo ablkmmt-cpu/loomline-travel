@@ -40,7 +40,7 @@ body{background:
 .facts b{color:var(--ink);font-weight:800}
 /* ---------- 版心（加宽留白） ---------- */
   .wrap{width:min(1040px,100%);margin:0 auto;padding:0 clamp(22px,5vw,72px)}
-section.wrap{padding:40px 0}
+section.wrap{padding:40px clamp(22px,5vw,72px)}
 .sec-head{display:flex;align-items:flex-start;gap:22px;margin-bottom:12px}
 .sec-head .t .k{color:#8f6b2e;font-size:11px;letter-spacing:.26em;text-transform:uppercase;font-weight:800}
 .sec-head .t h2{font-family:Georgia,'Songti SC',serif;font-size:clamp(28px,3.4vw,42px);color:var(--ink);font-weight:500;margin-top:10px;line-height:1.24;letter-spacing:.01em}
@@ -151,4 +151,67 @@ section.wrap{padding:40px 0}
   .experience-page .next-in p{
     font-size:16.5px;
   }
+}
+
+/* ============================================================
+   体验详情页 · 移动端适配
+   窄屏（≤860px）把多栏网格收敛为单栏、恢复版心留白，
+   避免内容溢出屏幕、贴边被裁切。
+   ============================================================ */
+@media (max-width: 860px) {
+  /* 版心：窄屏收窄横向留白，内容不再贴边 */
+  section.wrap{ padding: 40px clamp(18px, 4.6vw, 26px); }
+  .wrap{ padding: 0 clamp(18px, 4.6vw, 26px); }
+
+  /* ① Hero */
+  .hero{ min-height: 470px; }
+  .hero .in{ padding: 40px 22px 46px; }
+  .hero h1{ font-size: clamp(34px, 9.5vw, 54px); }
+  .hero .sub{ font-size: 16px; }
+  .hero .watermark{ font-size: clamp(24px, 8.5vw, 36px); right: 20px; bottom: 66px; }
+
+  /* ② 事实条 */
+  .facts{ padding: 24px 20px; font-size: 13.5px; gap: 10px 14px; }
+
+  /* ③ 收益点 */
+  .benefit{ grid-template-columns: 48px minmax(0, 1fr); gap: 16px; padding: 26px 0; }
+  .benefit .mark{ display: none; }
+  .benefit .no .ar{ font-size: 20px; }
+  .sec-head .t h2{ font-size: clamp(26px, 7.2vw, 34px); }
+
+  /* ⑤ 流程 → 单列 */
+  .timeline{ grid-template-columns: 1fr; gap: 0; margin-top: 34px; }
+  .timeline::before{ display: none; }
+  .tm{ display: grid; grid-template-columns: 40px minmax(0, 1fr); column-gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--hair); align-items: start; }
+  .tm:last-child{ border-bottom: 0; }
+  .tm .no{ width: 34px; height: 34px; font-size: 11px; }
+  .tm b{ grid-column: 2; margin-top: 2px; }
+  .tm p{ grid-column: 2; margin-top: 6px; }
+  .tm .take{ grid-column: 2; margin-top: 10px; }
+
+  /* ⑥ 包含与预订 → 单列 */
+  .include{ grid-template-columns: 1fr; gap: 32px; }
+
+  /* ⑦ 成都体验 → 单列 */
+  .spread{ grid-template-columns: 1fr; gap: 26px; margin-top: 30px; }
+  .spread ul{ margin-top: 6px; }
+
+  /* ⑧ Coming soon → 单列 */
+  .triptych{ grid-template-columns: 1fr; gap: 18px; margin-top: 30px; }
+  .tc{ aspect-ratio: 4 / 3; }
+
+  /* ⑨ 相关推荐 */
+  .pair-row{ font-size: 13.5px; }
+
+  /* ⑩ Next step */
+  .next-in{ flex-direction: column; align-items: flex-start; gap: 20px; padding: 40px 26px; }
+  .next-in .acts{ width: 100%; }
+  .next-in .acts .btn{ flex: 1; justify-content: center; }
+}
+
+@media (max-width: 520px) {
+  .hero .acts{ width: 100%; }
+  .hero .acts .btn{ flex: 1; justify-content: center; }
+  .next-in{ padding: 34px 20px; }
+  .tm .no{ width: 30px; height: 30px; }
 }
