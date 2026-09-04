@@ -181,7 +181,8 @@
   line-height: 1.6;
 }
 
-.contact-privacy-note button {
+.contact-privacy-note button,
+.contact-privacy-note a {
   padding: 0;
   border: 0;
   background: none;

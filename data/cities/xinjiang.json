@@ -1,0 +1,179 @@
+{
+  "slug": "xinjiang",
+  "name": "Xinjiang",
+  "meta": {
+    "title": "Xinjiang Travel Guide | Loomline Travel",
+    "description": "Explore Xinjiang with clear highlights, local flavors, practical advice, and a realistic 7–14-day route.",
+    "canonicalUrl": "https://loomlinetravel.com/destinations/xinjiang/",
+    "ogImage": "https://loomlinetravel.com/assets/destinations/xinjiang/hero-og.jpg"
+  },
+  "hero": {
+    "eyebrow": "Silk Road · Alpine lakes · Epic drives",
+    "summary": "Vast landscapes, Silk Road cities, grasslands, deserts, and food traditions across China’s far northwest.",
+    "image": "assets/destinations/xinjiang/hero.webp",
+    "mobileImage": "assets/destinations/xinjiang/hero-mobile.webp",
+    "alt": "A representative travel scene in Xinjiang"
+  },
+  "cta": {
+    "primary": {
+      "label": "Plan this city →",
+      "url": "contact.html?city=xinjiang"
+    },
+    "secondary": {
+      "label": "Ask on WhatsApp",
+      "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20visiting%20Xinjiang."
+    }
+  },
+  "facts": [
+    {
+      "label": "Best days",
+      "value": "7–14 days",
+      "detail": "Seven to ten days suit a focused northern circuit; combining north and south needs closer to two weeks."
+    },
+    {
+      "label": "Best season",
+      "value": "June–October",
+      "detail": "Mountain roads and grasslands are most accessible"
+    },
+    {
+      "label": "Best for",
+      "value": "Road trips · Landscapes · Food",
+      "detail": "Vast landscapes, Silk Road cities, grasslands, deserts, and food traditions across China’s far northwest."
+    },
+    {
+      "label": "Pairs with",
+      "value": "Beijing · Xi’an",
+      "detail": "Useful flight gateways"
+    }
+  ],
+  "intro": {
+    "eyebrow": "A continent within China",
+    "title": "Xinjiang, A Continent Within China",
+    "left": "Covering roughly one-sixth of China, Xinjiang holds snow mountains, grasslands, deserts, blue lakes, forests, and Silk Road cities within one immense region. The terrain can change completely in a single driving day, while the cultures and food reflect centuries of movement between East and Central Asia.",
+    "right": "Xinjiang rewards travelers who accept distance rather than fight it. Kanas, Sayram Lake, the Duku Highway, Nalati, Hemu, and Kashgar cannot all be treated like nearby attractions. A strong route follows the season and chooses either northern landscapes, southern Silk Road culture, or enough time to connect both properly."
+  },
+  "highlights": {
+    "eyebrow": "Start here",
+    "title": "Highlights",
+    "linkLabel": "All highlights →",
+    "linkUrl": "#city-detail-highlights-title",
+    "items": [
+      {
+        "image": "assets/destinations/xinjiang/01.webp",
+        "alt": "Kanas Lake in Xinjiang",
+        "title": "Kanas Lake",
+        "summary": "Forest, alpine water, and Xinjiang’s celebrated autumn color."
+      },
+      {
+        "image": "assets/destinations/xinjiang/02.webp",
+        "alt": "Sayram Lake in Xinjiang",
+        "title": "Sayram Lake",
+        "summary": "A vast blue lake framed by snow peaks and grassland."
+      },
+      {
+        "image": "assets/destinations/xinjiang/03.webp",
+        "alt": "Tianshan Tianchi in Xinjiang",
+        "title": "Tianshan Tianchi",
+        "summary": "An accessible alpine lake beneath the Tianshan range."
+      },
+      {
+        "image": "assets/destinations/xinjiang/04.webp",
+        "alt": "Duku Highway in Xinjiang",
+        "title": "Duku Highway",
+        "summary": "A seasonal mountain road crossing several climate zones."
+      },
+      {
+        "image": "assets/destinations/xinjiang/05.webp",
+        "alt": "Nalati Grassland in Xinjiang",
+        "title": "Nalati Grassland",
+        "summary": "Open valleys, horses, and long summer light."
+      },
+      {
+        "image": "assets/destinations/xinjiang/06.webp",
+        "alt": "Kashgar Old City in Xinjiang",
+        "title": "Kashgar Old City",
+        "summary": "A living Silk Road city with lanes, workshops, and markets."
+      }
+    ]
+  },
+  "flavors": {
+    "eyebrow": "Xinjiang flavors",
+    "title": "Taste Xinjiang.",
+    "summary": "Plan at least one local meal into the route — these flavors are part of understanding Xinjiang.",
+    "image": "assets/destinations/xinjiang/07.webp",
+    "imageAlt": "A table of local food from Xinjiang",
+    "items": [
+      {
+        "title": "Big plate chicken",
+        "summary": "Chicken, peppers, potatoes, and noodles for sharing"
+      },
+      {
+        "title": "Lamb skewers",
+        "summary": "Charcoal-grilled with cumin and chili"
+      },
+      {
+        "title": "Pilaf",
+        "summary": "Rice, carrot, and lamb cooked into a fragrant staple"
+      },
+      {
+        "title": "Baked samsa",
+        "summary": "Crisp pastry filled with seasoned meat"
+      },
+      {
+        "title": "Naan",
+        "summary": "Fresh bread from a traditional oven"
+      }
+    ]
+  },
+  "stay": {
+    "eyebrow": "Recommended time",
+    "title": "How long to stay",
+    "duration": "7–14",
+    "unit": "Days",
+    "summary": "Seven to ten days suit a focused northern circuit; combining north and south needs closer to two weeks.",
+    "plans": [
+      {
+        "label": "7 days",
+        "summary": "Choose one compact northern loop around Sayram Lake, Nalati, and seasonal road access.",
+        "status": "Coming soon",
+        "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%207%20days%20Xinjiang%20itinerary."
+      },
+      {
+        "label": "10 days",
+        "summary": "Add Kanas and Hemu with realistic driving days and weather flexibility.",
+        "status": "Coming soon"
+      },
+      {
+        "label": "14 days",
+        "summary": "Connect a northern landscape route with Kashgar and the south by flight instead of adding endless road time.",
+        "status": "Coming soon"
+      }
+    ]
+  },
+  "notes": {
+    "eyebrow": "Know before you go",
+    "title": "Practical notes",
+    "items": [
+      {
+        "label": "Getting there",
+        "summary": "Distances are immense. Most routes combine flights, trains, and long private-car days rather than one city base."
+      },
+      {
+        "label": "Getting around",
+        "summary": "Choose either northern or southern Xinjiang unless you have at least two weeks."
+      },
+      {
+        "label": "Where to stay",
+        "summary": "Weather varies sharply between mountains, deserts, and evenings. Pack adaptable layers."
+      },
+      {
+        "label": "Planning ahead",
+        "summary": "Some border and remote areas have additional access rules; confirm the route before booking transport."
+      }
+    ]
+  },
+  "conversion": {
+    "eyebrow": "Your Xinjiang, made clearer",
+    "summary": "Send us your dates and pace — we’ll fit Xinjiang into a smooth, realistic China route."
+  }
+}

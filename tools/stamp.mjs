@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * TripToChina 站点打标脚本（stamp.mjs）
+ * Loomline Travel 站点打标脚本（stamp.mjs）
  *
  * 作用：
  *  - （默认）打标：把 components/ 下的共享组件渲染回所有页面（组件 → 页面传播，幂等）。
@@ -8,20 +8,19 @@
  *  - --dry-run  只报告将发生的变化，不写文件。
  *  - --migrate  一次性迁移（旧版命令，已由类名推断替代，保留以防需要重跑）。
  *
- * 标记体系（三个，均幂等）：
+ * 标记体系（两个，均幂等）：
  *  - <!-- @@HEADER@@ -->   站点页头（components/header-main.html）
  *  - <!-- @@FOOTER@@ -->   站点页脚（components/footer-main.html）
- *  - <!-- @@PRIVACY@@ -->  隐私弹窗（components/privacy-modal.html）
  *
  * 设计要点：
  *  - 组件文件存在时以组件为唯一来源渲染回页面；不存在时从页面抽取生成。
  *  - 页头/页脚块按"标记后第一个 <kind class=...>...</kind>"匹配（非贪婪），
- *    因此页面正文中其它 <header>/<footer> 元素（如隐私弹窗内的 header、
- *    服务页正文的 section header）不会被误吞。
- *  - 隐私弹窗独立于页脚组件，通过自身标记插入，避免嵌套匹配问题。
+ *    因此页面正文中其它 <header>/<footer> 元素（如服务页正文的 section header）不会被误吞。
+ *  - 隐私政策已改为独立详情页（policies/），本脚本不再注入隐私弹窗，
+ *    而是清理全站遗留的 privacy-modal.js / @@PRIVACY@@ 标记（幂等）。
  *  - 变体由页面当前类名推断（site-header→main / shanghai-header→shanghai /
  *    tea-nav→tea；footer 同理），pages.json 的 header/footer 字段仅供记录。
- *  - {{BASE}} 占位符处理相对路径（首页 "" / 子页 "../../"），{{ARIA}} 处理品牌 aria 文案差异。
+ *  - {{BASE}} 占位符处理相对路径（首页 "" / 子页 "../../" / 政策页 "../"），{{ARIA}} 处理品牌 aria 文案差异。
  *
  * 用法：
  *   node tools/stamp.mjs            # 组件改动后同步到全站
@@ -47,7 +46,6 @@ const MODE = args.includes("--migrate")
 
 const HEADER_MARKER = "<!-- @@HEADER@@ -->";
 const FOOTER_MARKER = "<!-- @@FOOTER@@ -->";
-const PRIVACY_MARKER = "<!-- @@PRIVACY@@ -->";
 
 /* ---------- 工具 ---------- */
 
@@ -59,8 +57,7 @@ const canon = (html) =>
     .replace(/href="#/g, 'href="{{BASE}}index.html#')
     .replace(/src="\.\.\/\.\.\/assets\//g, 'src="{{BASE}}assets/')
     .replace(/src="assets\//g, 'src="{{BASE}}assets/')
-    .replace(/aria-label="TripToChina home"/g, 'aria-label="{{ARIA}}"')
-    .replace(/aria-label="Trip To China home"/g, 'aria-label="{{ARIA}}"');
+    .replace(/aria-label="Loomline Travel home"/g, 'aria-label="{{ARIA}}"');
 
 const render = (component, page) => {
   let out = component.replaceAll("{{ARIA}}", page.aria).replaceAll("{{BASE}}", page.base);
@@ -107,32 +104,21 @@ const replaceKind = (html, kind, page) => {
   return { html: html.replace(m[0], markerLine + render(content, page)), err: null };
 };
 
-// 隐私弹窗：清理历史遗留 → 确保标记 → 标记处渲染组件
-const ensurePrivacy = (html, page) => {
-  // 1) 移除所有既有弹窗块（无论是否带标记），直到 <script 或 </body> 之前
+// 隐私政策已改为独立详情页（policies/privacy-policy.html），页脚仅保留链接。
+// 此处清理全站遗留的隐私弹窗块 / privacy-modal.js 脚本 / @@PRIVACY@@ 标记（幂等）。
+const stripPrivacyModal = (html) => {
+  // 1) 移除 privacy-modal.js 脚本标签（含带目录前缀的相对路径引用）
+  html = html.replace(/\s*<script[^>]*src="[^"]*privacy-modal\.js[^"]*"[^>]*>\s*<\/script>/g, "");
+  // 2) 移除 @@PRIVACY@@ 标记及其后的隐私弹窗块（直到下一个 <script 或 </body>）
   html = html.replace(
-    /<div class="privacy-modal" data-privacy-modal[^>]*>[\s\S]*?(\n\s*)(?=<script|<\/body>)/,
-    (m, ws) => ws
+    /<!-- @@PRIVACY@@ -->\s*<div class="privacy-modal" data-privacy-modal[^>]*>[\s\S]*?(?=<script|<\/body>)/,
+    ""
   );
-  // 2) 无标记则插入（</body> 前）
-  if (!html.includes(PRIVACY_MARKER)) {
-    const bi = html.lastIndexOf("</body>");
-    if (bi === -1) return { html, err: `${page.file}: 找不到 </body>` };
-    const lineStart = html.lastIndexOf("\n", bi) + 1;
-    html = html.slice(0, lineStart) + `    ${PRIVACY_MARKER}\n` + html.slice(lineStart);
-  }
-  // 3) 标记处渲染组件（组件文件缺失时仅保留标记，不报错）
-  const cpath = join(COMPONENTS_DIR, "privacy-modal.html");
-  if (existsSync(cpath)) {
-    const content = readFileSync(cpath, "utf8");
-    html = html.replace(
-      new RegExp(`${escapeRe(PRIVACY_MARKER)}\\s*`),
-      `${PRIVACY_MARKER}\n${render(content, page)}\n`
-    );
-  }
+  // 3) 兜底：移除可能残留的标记
+  html = html.replace(/<!-- @@PRIVACY@@ -->\s*/g, "");
   // 4) 归一化连续空白行（≥3 个换行收敛为 2），保证幂等
   html = html.replace(/\n{3,}/g, "\n\n");
-  return { html, err: null };
+  return html;
 };
 /* ---------- 主流程 ---------- */
 
@@ -152,12 +138,7 @@ for (const page of PAGES) {
     html = r.html;
   }
 
-  const p = ensurePrivacy(html, page);
-  if (p.err) {
-    report.err.push(p.err);
-  } else {
-    html = p.html;
-  }
+  html = stripPrivacyModal(html);
 
   // 埋点槽（幂等）
   if (MODE === "stamp" || MODE === "dry-run" || MODE === "migrate") {
@@ -188,7 +169,7 @@ if (MODE === "verify") {
       const hasBlock = new RegExp(`<${kind} class="[^"]*"[^>]*>`).test(html);
       checks.push(`${kind}:${hasMarker && hasBlock ? "✓" : "✗"}`);
     }
-    checks.push(`privacy:${html.includes(PRIVACY_MARKER) && html.includes('class="privacy-modal"') ? "✓" : "✗"}`);
+    checks.push(`privacy:${!html.includes('class="privacy-modal"') ? "✓removed" : "✗modal"}`);
     checks.push(`analytics:${html.includes("@@ANALYTICS@@") ? "✓" : "✗"}`);
     console.log(`${checks.join("  ")}  ${page.file}`);
   }

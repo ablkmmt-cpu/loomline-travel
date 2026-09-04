@@ -24,8 +24,29 @@ if (heroSlides.length > 1 && !reduceMotion) {
 document.querySelectorAll("[data-destination-scroll]").forEach((scroller) => {
   const track = scroller.querySelector("[data-destination-track]");
   const arrows = scroller.querySelectorAll("[data-scroll-dir]");
+  const scrollStorageKey = "loomline.destinationScrollLeft";
 
   if (!track) return;
+
+  const saveScrollPosition = () => {
+    try {
+      window.sessionStorage.setItem(scrollStorageKey, String(track.scrollLeft));
+    } catch {
+      // The carousel still works when browser storage is unavailable.
+    }
+  };
+
+  const restoreScrollPosition = () => {
+    try {
+      const savedPosition = Number(window.sessionStorage.getItem(scrollStorageKey));
+      if (!Number.isFinite(savedPosition) || savedPosition <= 0) return;
+
+      const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth);
+      track.scrollLeft = Math.min(savedPosition, maxScroll);
+    } catch {
+      // Keep the default first-card position when browser storage is unavailable.
+    }
+  };
 
   const updateArrows = () => {
     const maxScroll = track.scrollWidth - track.clientWidth;
@@ -50,13 +71,51 @@ document.querySelectorAll("[data-destination-scroll]").forEach((scroller) => {
     });
   });
 
-  track.addEventListener("scroll", updateArrows, { passive: true });
+  track.addEventListener(
+    "scroll",
+    () => {
+      updateArrows();
+      saveScrollPosition();
+    },
+    { passive: true },
+  );
+  track.querySelectorAll(".destination-card").forEach((card) => {
+    card.addEventListener("click", saveScrollPosition);
+  });
+  window.addEventListener("pagehide", saveScrollPosition);
+  window.addEventListener("pageshow", () => {
+    window.requestAnimationFrame(() => {
+      restoreScrollPosition();
+      updateArrows();
+    });
+  });
   window.addEventListener("resize", updateArrows);
-  updateArrows();
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => {
+      restoreScrollPosition();
+      updateArrows();
+    });
+  });
 });
 
 const experienceFilters = document.querySelectorAll("[data-experience-filter]");
 const experienceCards = document.querySelectorAll("[data-experience-categories]");
+const experienceList = document.querySelector("[data-experience-list]");
+const experienceToggle = document.querySelector("[data-experience-toggle]");
+const experienceToggleLabel = document.querySelector("[data-experience-toggle-label]");
+let experiencesExpanded = false;
+
+const updateExperienceToggle = (activeFilter = "all") => {
+  if (!experienceList || !experienceToggle || !experienceToggleLabel) return;
+
+  const isAll = activeFilter === "all";
+  experienceList.classList.toggle("is-collapsed", isAll && !experiencesExpanded);
+  experienceToggle.hidden = !isAll;
+  experienceToggle.setAttribute("aria-expanded", String(experiencesExpanded));
+  experienceToggleLabel.textContent = experiencesExpanded
+    ? "Show fewer experiences"
+    : `View all ${experienceCards.length} experiences`;
+};
 
 experienceFilters.forEach((filterButton) => {
   filterButton.addEventListener("click", () => {
@@ -72,8 +131,17 @@ experienceFilters.forEach((filterButton) => {
 
       card.classList.toggle("is-hidden", !shouldShow);
     });
+
+    updateExperienceToggle(activeFilter);
   });
 });
+
+experienceToggle?.addEventListener("click", () => {
+  experiencesExpanded = !experiencesExpanded;
+  updateExperienceToggle("all");
+});
+
+updateExperienceToggle();
 
 // Reveal content as it enters the viewport without affecting card transforms.
 const revealGroups = [
@@ -177,7 +245,7 @@ const restartFeedbackCountdown = () => {
   feedbackClose.classList.add("is-counting");
 };
 
-const setFeedback = ({ type, kicker, title, message, brand = "TripToChina" }) => {
+const setFeedback = ({ type, kicker, title, message, brand = "Loomline Travel" }) => {
   if (!formFeedback) return;
 
   window.clearTimeout(feedbackTimer);
@@ -267,7 +335,7 @@ tripForm?.addEventListener("submit", async (event) => {
       type: "error",
       kicker: "Not sent",
       title: "Something went wrong.",
-      message: "Please try again, or email us directly at\nyourtriptocn@gmail.com.",
+      message: "Please try again, or email us directly at\nhello@loomlinetravel.com.",
     });
   } finally {
     formIsSubmitting = false;

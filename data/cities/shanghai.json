@@ -1,0 +1,179 @@
+{
+  "slug": "shanghai",
+  "name": "Shanghai",
+  "meta": {
+    "title": "Shanghai Travel Guide | Loomline Travel",
+    "description": "Explore Shanghai with clear highlights, local flavors, practical advice, and a realistic 4–5-day route.",
+    "canonicalUrl": "https://loomlinetravel.com/destinations/shanghai/",
+    "ogImage": "https://loomlinetravel.com/assets/destinations/shanghai/hero-og.jpg"
+  },
+  "hero": {
+    "eyebrow": "Skyline · Historic lanes · Easy arrival",
+    "summary": "A confident first step into China, where modern skylines, historic streets, and easy day trips meet.",
+    "image": "assets/destinations/shanghai/hero.webp",
+    "mobileImage": "assets/destinations/shanghai/hero-mobile.webp",
+    "alt": "A representative travel scene in Shanghai"
+  },
+  "cta": {
+    "primary": {
+      "label": "Plan this city →",
+      "url": "contact.html?city=shanghai"
+    },
+    "secondary": {
+      "label": "Ask on WhatsApp",
+      "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20visiting%20Shanghai."
+    }
+  },
+  "facts": [
+    {
+      "label": "Best days",
+      "value": "4–5 days",
+      "detail": "A comfortable first stay with room for both landmarks and local neighborhoods."
+    },
+    {
+      "label": "Best season",
+      "value": "Spring & autumn",
+      "detail": "Comfortable weather for long city walks"
+    },
+    {
+      "label": "Best for",
+      "value": "Design · Food · First arrivals",
+      "detail": "A confident first step into China, where modern skylines, historic streets, and easy day trips meet."
+    },
+    {
+      "label": "Pairs with",
+      "value": "Hangzhou · Suzhou",
+      "detail": "Ideal high-speed rail day trips"
+    }
+  ],
+  "intro": {
+    "eyebrow": "China's most international gateway",
+    "title": "Shanghai, China's Global Gateway",
+    "left": "On China’s eastern coast, Shanghai is where modern ambition meets old-world atmosphere. It is the country’s most outward-looking metropolis: polished and fast-moving, yet full of lane-house neighborhoods, local breakfast stalls, Art Deco facades, and quiet pockets of everyday life. Several eras sit side by side in one city.",
+    "right": "With direct connections to major cities worldwide and an easy international rhythm, Shanghai is one of the most comfortable places to begin a first trip to China. It feels familiar enough to settle in quickly, while Yu Garden, historic neighborhoods, local food, and life along the Huangpu River make the arrival unmistakably Chinese."
+  },
+  "highlights": {
+    "eyebrow": "Start here",
+    "title": "Highlights",
+    "linkLabel": "All highlights →",
+    "linkUrl": "#city-detail-highlights-title",
+    "items": [
+      {
+        "image": "assets/destinations/shanghai/bund.webp",
+        "alt": "The Bund waterfront in Shanghai at blue hour",
+        "title": "The Bund",
+        "summary": "Historic waterfront and essential skyline views after dark."
+      },
+      {
+        "image": "assets/destinations/shanghai/lujiazui.webp",
+        "alt": "Lujiazui skyline beside the Huangpu River",
+        "title": "Lujiazui",
+        "summary": "Skyscraper viewpoints from the heart of modern Shanghai."
+      },
+      {
+        "image": "assets/destinations/shanghai/yu-garden.webp",
+        "alt": "Traditional pavilions and pond inside Yu Garden",
+        "title": "Yu Garden",
+        "summary": "A classical Jiangnan garden beside the City God Temple."
+      },
+      {
+        "image": "assets/destinations/shanghai/nanjing-road.webp",
+        "alt": "Nanjing Road pedestrian street in the evening",
+        "title": "Nanjing Road",
+        "summary": "An iconic pedestrian avenue linking city lights and history."
+      },
+      {
+        "image": "assets/destinations/shanghai/wukang-road.webp",
+        "alt": "Leafy historic architecture along Wukang Road",
+        "title": "Wukang & Anfu Roads",
+        "summary": "Leafy streets, cafes, and former French Concession architecture."
+      },
+      {
+        "image": "assets/destinations/shanghai/disneyland.webp",
+        "alt": "Storybook castle at Shanghai Disneyland",
+        "title": "Shanghai Disneyland",
+        "summary": "A full-day theme park experience beyond the city center."
+      }
+    ]
+  },
+  "flavors": {
+    "eyebrow": "Shanghai flavors",
+    "title": "Taste Shanghai.",
+    "summary": "Plan at least one local meal into the route — these flavors are part of understanding Shanghai.",
+    "image": "assets/destinations/shanghai/food.webp",
+    "imageAlt": "A table of xiaolongbao, shengjianbao, scallion oil noodles, braised pork, and a meat mooncake",
+    "items": [
+      {
+        "title": "Xiaolongbao",
+        "summary": "The essential soup dumpling"
+      },
+      {
+        "title": "Shengjianbao",
+        "summary": "Pan-fried, crisp, and juicy"
+      },
+      {
+        "title": "Scallion oil noodles",
+        "summary": "Simple local comfort food"
+      },
+      {
+        "title": "Red-braised pork",
+        "summary": "Rich, savory, and slow-cooked"
+      },
+      {
+        "title": "Fresh meat mooncake",
+        "summary": "A flaky Shanghai specialty"
+      }
+    ]
+  },
+  "stay": {
+    "eyebrow": "Recommended time",
+    "title": "How long to stay",
+    "duration": "4–5",
+    "unit": "Days",
+    "summary": "A comfortable first stay with room for both landmarks and local neighborhoods.",
+    "plans": [
+      {
+        "label": "4 days",
+        "summary": "See the Bund and Lujiazui, explore Yu Garden, walk the former French Concession, and follow a local food route.",
+        "status": "Coming soon",
+        "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%204%20days%20Shanghai%20itinerary."
+      },
+      {
+        "label": "5 days",
+        "summary": "Add a museum or art district, then slow down for neighborhood cafes, markets, and an unhurried evening by the river.",
+        "status": "Coming soon"
+      },
+      {
+        "label": "Extra day",
+        "summary": "Set aside a full day for Shanghai Disneyland without compressing the city itself.",
+        "status": "Coming soon"
+      }
+    ]
+  },
+  "notes": {
+    "eyebrow": "Know before you go",
+    "title": "Practical notes",
+    "items": [
+      {
+        "label": "Getting there",
+        "summary": "Two international airports and Hongqiao’s high-speed rail hub make Shanghai China’s easiest arrival city."
+      },
+      {
+        "label": "Getting around",
+        "summary": "Metro and ride-hailing cover the city well. Avoid crossing the city repeatedly in one day."
+      },
+      {
+        "label": "Where to stay",
+        "summary": "The former French Concession suits neighborhood travel; the Bund and People’s Square are more central for landmarks."
+      },
+      {
+        "label": "Planning ahead",
+        "summary": "Reserve popular restaurants, observation decks, and Disneyland in advance, especially on weekends."
+      }
+    ]
+  },
+  "conversion": {
+    "eyebrow": "Your Shanghai, made clearer",
+    "summary": "Send us your dates and pace — we’ll fit Shanghai into a smooth, realistic China route."
+  }
+}

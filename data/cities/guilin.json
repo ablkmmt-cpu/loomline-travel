@@ -1,0 +1,179 @@
+{
+  "slug": "guilin",
+  "name": "Guilin",
+  "meta": {
+    "title": "Guilin Travel Guide | Loomline Travel",
+    "description": "Explore Guilin with clear highlights, local flavors, practical advice, and a realistic 3–5-day route.",
+    "canonicalUrl": "https://loomlinetravel.com/destinations/guilin/",
+    "ogImage": "https://loomlinetravel.com/assets/destinations/guilin/hero-og.jpg"
+  },
+  "hero": {
+    "eyebrow": "Karst peaks · Rivers · Countryside",
+    "summary": "Karst mountains, river journeys, village roads, and slow outdoor days across Guilin and Yangshuo.",
+    "image": "assets/destinations/guilin/hero.webp",
+    "mobileImage": "assets/destinations/guilin/hero-mobile.webp",
+    "alt": "A representative travel scene in Guilin"
+  },
+  "cta": {
+    "primary": {
+      "label": "Plan this city →",
+      "url": "contact.html?city=guilin"
+    },
+    "secondary": {
+      "label": "Ask on WhatsApp",
+      "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20visiting%20Guilin."
+    }
+  },
+  "facts": [
+    {
+      "label": "Best days",
+      "value": "3–5 days",
+      "detail": "Three or four days connect Guilin and Yangshuo; a fifth leaves room for the Longji terraces."
+    },
+    {
+      "label": "Best season",
+      "value": "April–October",
+      "detail": "Green landscapes and active river routes"
+    },
+    {
+      "label": "Best for",
+      "value": "Nature · Outdoors · Slow travel",
+      "detail": "Karst mountains, river journeys, village roads, and slow outdoor days across Guilin and Yangshuo."
+    },
+    {
+      "label": "Pairs with",
+      "value": "Guangzhou · Shanghai",
+      "detail": "Easy flight or rail connections"
+    }
+  ],
+  "intro": {
+    "eyebrow": "China's landscape in ink and water",
+    "title": "Guilin, Mountains Meet the River",
+    "left": "In southern China, the Li River winds between limestone peaks that rise almost vertically from the plain. The landscape has inspired Chinese painters and poets for centuries, creating the feeling of moving through a living ink-wash painting rather than a conventional scenic region.",
+    "right": "Guilin is best experienced outdoors: a river journey toward Yangshuo, cycling beside fields, bamboo rafting on the Yulong River, and walking through rice terraces or limestone caves. It suits travelers who want to slow down, leave the megacities behind, and let the landscape set the pace."
+  },
+  "highlights": {
+    "eyebrow": "Start here",
+    "title": "Highlights",
+    "linkLabel": "All highlights →",
+    "linkUrl": "#city-detail-highlights-title",
+    "items": [
+      {
+        "image": "assets/destinations/guilin/01.webp",
+        "alt": "Li River in Guilin",
+        "title": "Li River",
+        "summary": "Travel between karst peaks by cruise or carefully chosen raft section."
+      },
+      {
+        "image": "assets/destinations/guilin/02.webp",
+        "alt": "Yangshuo Countryside in Guilin",
+        "title": "Yangshuo Countryside",
+        "summary": "Cycle or drive through fields beneath dramatic limestone hills."
+      },
+      {
+        "image": "assets/destinations/guilin/03.webp",
+        "alt": "Elephant Trunk Hill in Guilin",
+        "title": "Elephant Trunk Hill",
+        "summary": "Guilin’s recognizable riverside landmark in the city center."
+      },
+      {
+        "image": "assets/destinations/guilin/04.webp",
+        "alt": "Longji Rice Terraces in Guilin",
+        "title": "Longji Rice Terraces",
+        "summary": "Layered mountain fields and village landscapes north of Guilin."
+      },
+      {
+        "image": "assets/destinations/guilin/05.webp",
+        "alt": "Yulong River in Guilin",
+        "title": "Yulong River",
+        "summary": "A quieter bamboo-raft experience through rural scenery."
+      },
+      {
+        "image": "assets/destinations/guilin/06.webp",
+        "alt": "Silver Cave in Guilin",
+        "title": "Silver Cave",
+        "summary": "Walk through illuminated limestone chambers near Yangshuo."
+      }
+    ]
+  },
+  "flavors": {
+    "eyebrow": "Guilin flavors",
+    "title": "Taste Guilin.",
+    "summary": "Plan at least one local meal into the route — these flavors are part of understanding Guilin.",
+    "image": "assets/destinations/guilin/07.webp",
+    "imageAlt": "A table of local food from Guilin",
+    "items": [
+      {
+        "title": "Guilin rice noodles",
+        "summary": "Dry-mixed or in broth, simple and essential"
+      },
+      {
+        "title": "Yangshuo beer fish",
+        "summary": "River fish cooked with beer, tomato, and peppers"
+      },
+      {
+        "title": "Stuffed river snails",
+        "summary": "A distinctive local specialty with rich filling"
+      },
+      {
+        "title": "Lipu taro pork",
+        "summary": "Layered taro and pork, slow-cooked until tender"
+      },
+      {
+        "title": "Osmanthus cake",
+        "summary": "A fragrant sweet linked to the city’s signature flower"
+      }
+    ]
+  },
+  "stay": {
+    "eyebrow": "Recommended time",
+    "title": "How long to stay",
+    "duration": "3–5",
+    "unit": "Days",
+    "summary": "Three or four days connect Guilin and Yangshuo; a fifth leaves room for the Longji terraces.",
+    "plans": [
+      {
+        "label": "3 days",
+        "summary": "See Guilin’s city landmarks, travel the Li River, and spend unhurried time in Yangshuo.",
+        "status": "Coming soon",
+        "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%203%20days%20Guilin%20itinerary."
+      },
+      {
+        "label": "4 days",
+        "summary": "Add Yulong River, countryside cycling, a cave, and a slower evening in Yangshuo.",
+        "status": "Coming soon"
+      },
+      {
+        "label": "5 days",
+        "summary": "Add the Longji Rice Terraces with an overnight or well-timed private transfer.",
+        "status": "Coming soon"
+      }
+    ]
+  },
+  "notes": {
+    "eyebrow": "Know before you go",
+    "title": "Practical notes",
+    "items": [
+      {
+        "label": "Getting there",
+        "summary": "Guilin has an airport and high-speed rail stations; Yangshuo is reached by rail or road transfer."
+      },
+      {
+        "label": "Getting around",
+        "summary": "Use Guilin for arrival and Yangshuo for countryside days. Transfers take longer than map distances suggest."
+      },
+      {
+        "label": "Where to stay",
+        "summary": "Stay near the Li River in Guilin, then move to Yangshuo rather than commuting every day."
+      },
+      {
+        "label": "Planning ahead",
+        "summary": "Rain creates atmospheric scenery but can affect river and mountain activities, so keep one flexible day."
+      }
+    ]
+  },
+  "conversion": {
+    "eyebrow": "Your Guilin, made clearer",
+    "summary": "Send us your dates and pace — we’ll fit Guilin into a smooth, realistic China route."
+  }
+}

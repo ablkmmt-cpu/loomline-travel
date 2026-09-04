@@ -5,5 +5,8 @@
 node_modules/
 .pnpm-store/
 
-# 过程文件与敏感内容（含 Google Apps Script 硬编码密钥，切勿提交/推公开仓库）
+# 开发/过程产物（不应进入公开站点或提交）
 tmp/
+output/
+outputs/
+previews/

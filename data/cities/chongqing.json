@@ -1,0 +1,179 @@
+{
+  "slug": "chongqing",
+  "name": "Chongqing",
+  "meta": {
+    "title": "Chongqing Travel Guide | Loomline Travel",
+    "description": "Explore Chongqing with clear highlights, local flavors, practical advice, and a realistic 3–5-day route.",
+    "canonicalUrl": "https://loomlinetravel.com/destinations/chongqing/",
+    "ogImage": "https://loomlinetravel.com/assets/destinations/chongqing/hero-og.jpg"
+  },
+  "hero": {
+    "eyebrow": "Mountain city · Hotpot · Night views",
+    "summary": "Layered streets, river crossings, bold food, and luminous nights in one of China’s most cinematic cities.",
+    "image": "assets/destinations/chongqing/hero.webp",
+    "mobileImage": "assets/destinations/chongqing/hero-mobile.webp",
+    "alt": "A representative travel scene in Chongqing"
+  },
+  "cta": {
+    "primary": {
+      "label": "Plan this city →",
+      "url": "contact.html?city=chongqing"
+    },
+    "secondary": {
+      "label": "Ask on WhatsApp",
+      "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20visiting%20Chongqing."
+    }
+  },
+  "facts": [
+    {
+      "label": "Best days",
+      "value": "3–5 days",
+      "detail": "Three days reveal the city core; four or five allow a major cultural or landscape day trip."
+    },
+    {
+      "label": "Best season",
+      "value": "Spring & autumn",
+      "detail": "Milder temperatures for steep city walks"
+    },
+    {
+      "label": "Best for",
+      "value": "Food · Night views · Photography",
+      "detail": "Layered streets, river crossings, bold food, and luminous nights in one of China’s most cinematic cities."
+    },
+    {
+      "label": "Pairs with",
+      "value": "Chengdu · Zhangjiajie",
+      "detail": "Fast rail west; nature routes east"
+    }
+  ],
+  "intro": {
+    "eyebrow": "China's city in layers",
+    "title": "Chongqing, A City in Layers",
+    "left": "Built across steep hills where the Yangtze and Jialing rivers meet, Chongqing is a city of stacked roads, rooftop entrances, bridges, cableways, and trains that pass through buildings. Its geography makes an ordinary walk feel cinematic and turns the skyline into part of daily life.",
+    "right": "The city’s night views have made it a global social-media phenomenon, but Chongqing is equally memorable at street level: old stairways, neighborhood markets, river fog, and the intense aroma of butter hotpot. Good route planning matters here because a short distance on a map may hide a major change in elevation."
+  },
+  "highlights": {
+    "eyebrow": "Start here",
+    "title": "Highlights",
+    "linkLabel": "All highlights →",
+    "linkUrl": "#city-detail-highlights-title",
+    "items": [
+      {
+        "image": "assets/destinations/chongqing/01.webp",
+        "alt": "Hongya Cave in Chongqing",
+        "title": "Hongya Cave",
+        "summary": "Layered riverside architecture that becomes dramatic after dark."
+      },
+      {
+        "image": "assets/destinations/chongqing/02.webp",
+        "alt": "Jiefangbei in Chongqing",
+        "title": "Jiefangbei",
+        "summary": "A central landmark surrounded by dense modern city life."
+      },
+      {
+        "image": "assets/destinations/chongqing/03.webp",
+        "alt": "Chaotianmen in Chongqing",
+        "title": "Chaotianmen",
+        "summary": "See Chongqing’s two great rivers meet below the skyline."
+      },
+      {
+        "image": "assets/destinations/chongqing/04.webp",
+        "alt": "Yangtze Cableway in Chongqing",
+        "title": "Yangtze Cableway",
+        "summary": "Cross the river above one of China’s most vertical cities."
+      },
+      {
+        "image": "assets/destinations/chongqing/05.webp",
+        "alt": "Liziba Station in Chongqing",
+        "title": "Liziba Station",
+        "summary": "Watch the monorail pass directly through a residential building."
+      },
+      {
+        "image": "assets/destinations/chongqing/06.webp",
+        "alt": "Mountain City Trail in Chongqing",
+        "title": "Mountain City Trail",
+        "summary": "Stone steps and old neighborhoods reveal the city’s real scale."
+      }
+    ]
+  },
+  "flavors": {
+    "eyebrow": "Chongqing flavors",
+    "title": "Taste Chongqing.",
+    "summary": "Plan at least one local meal into the route — these flavors are part of understanding Chongqing.",
+    "image": "assets/destinations/chongqing/07.webp",
+    "imageAlt": "A table of local food from Chongqing",
+    "items": [
+      {
+        "title": "Chongqing hotpot",
+        "summary": "Beef-tallow broth and a table built for sharing"
+      },
+      {
+        "title": "Chongqing xiaomian",
+        "summary": "Spicy noodles eaten from breakfast onward"
+      },
+      {
+        "title": "Hot-and-sour noodles",
+        "summary": "Silky sweet-potato noodles with sharp flavor"
+      },
+      {
+        "title": "Mao xue wang",
+        "summary": "A bold bubbling bowl of chili and mixed ingredients"
+      },
+      {
+        "title": "Grilled fish",
+        "summary": "Whole fish simmered with aromatics and vegetables"
+      }
+    ]
+  },
+  "stay": {
+    "eyebrow": "Recommended time",
+    "title": "How long to stay",
+    "duration": "3–5",
+    "unit": "Days",
+    "summary": "Three days reveal the city core; four or five allow a major cultural or landscape day trip.",
+    "plans": [
+      {
+        "label": "3 days",
+        "summary": "Connect Liziba, the cableway, Jiefangbei, old stairways, and Hongya Cave with realistic elevation changes.",
+        "status": "Coming soon",
+        "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%203%20days%20Chongqing%20itinerary."
+      },
+      {
+        "label": "4 days",
+        "summary": "Add Ciqikou, museums, slower food stops, and a better-paced evening skyline route.",
+        "status": "Coming soon"
+      },
+      {
+        "label": "5 days",
+        "summary": "Use a private car for Wulong Karst or the Dazu Rock Carvings without compressing the city.",
+        "status": "Coming soon"
+      }
+    ]
+  },
+  "notes": {
+    "eyebrow": "Know before you go",
+    "title": "Practical notes",
+    "items": [
+      {
+        "label": "Getting there",
+        "summary": "Jiangbei Airport and high-speed rail connect Chongqing with Chengdu and major Chinese cities."
+      },
+      {
+        "label": "Getting around",
+        "summary": "Maps can misread the city’s vertical layers. Use metro and ride-hailing, and confirm the correct building level."
+      },
+      {
+        "label": "Where to stay",
+        "summary": "Jiefangbei is convenient for a first stay; the south bank offers wider skyline views."
+      },
+      {
+        "label": "Planning ahead",
+        "summary": "Hotpot is intensely flavored. Ask for a divided broth or mild spice if needed."
+      }
+    ]
+  },
+  "conversion": {
+    "eyebrow": "Your Chongqing, made clearer",
+    "summary": "Send us your dates and pace — we’ll fit Chongqing into a smooth, realistic China route."
+  }
+}

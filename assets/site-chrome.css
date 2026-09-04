@@ -4,7 +4,7 @@
    加载方式：每个页面的 <head> 中，在本地样式表【之前】加载本文件
    （本地样式表仍可覆盖，服务页/首页的个性化 header 细节得以保留）。
 
-   注意：styles.css / shanghai.css / tea-culture.css / self-guided.css /
+   注意：styles.css / shanghai.css / tea-culture.css / standard-routes.css /
    custom-tour.css 中遗留的同名规则已不再维护，后续只改本文件。
    页面 markup 统一由 components/header-main.html 与
    components/footer-main.html（含隐私弹窗）经 tools/stamp.mjs 打标生成。
@@ -26,6 +26,7 @@
   border-bottom: 1px solid rgba(255, 248, 237, 0.08);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  font-family: "Inter", sans-serif;
 }
 
 .brand {
@@ -46,36 +47,168 @@
   min-width: 0;
 }
 
+/* The fan and horizontal wordmark have independent, uncropped proportions. */
+.site-header .brand .brand-emblem,
+.ttc-global-header .ttc-global-brand img:first-child {
+  width: 66px;
+  height: auto;
+  flex: 0 0 66px;
+  object-fit: contain;
+}
+
+.site-header .brand .brand-wordmark,
+.ttc-global-header .ttc-global-brand img:last-child {
+  width: 210px;
+  height: auto;
+  min-width: 0;
+  flex: 0 1 210px;
+  object-fit: contain;
+}
+
+@media (max-width: 760px) {
+  .site-header .brand .brand-emblem,
+  .ttc-global-header .ttc-global-brand img:first-child {
+    width: 42px;
+    flex-basis: 42px;
+  }
+
+  .site-header .brand .brand-wordmark,
+  .ttc-global-header .ttc-global-brand img:last-child {
+    width: 120px;
+    flex-basis: 120px;
+  }
+}
+
+@media (max-width: 360px) {
+  .site-header .brand,
+  .ttc-global-header .ttc-global-brand {
+    gap: 6px;
+  }
+
+  .site-header .brand .brand-emblem,
+  .ttc-global-header .ttc-global-brand img:first-child {
+    width: 34px;
+    flex-basis: 34px;
+  }
+
+  .site-header .brand .brand-wordmark,
+  .ttc-global-header .ttc-global-brand img:last-child {
+    width: 104px;
+    flex-basis: 104px;
+  }
+}
+
 .nav-links {
   display: flex;
   justify-content: center;
   gap: clamp(30px, 4.4vw, 68px);
   color: rgba(255, 248, 237, 0.76);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 800;
 }
 
 .nav-links a {
   color: inherit;
   text-decoration: none;
+  white-space: nowrap;
   transition: color 180ms ease;
 }
 
+@media (min-width: 761px) and (max-width: 1399px) {
+  .site-header {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    column-gap: 24px;
+  }
+
+  .site-header .nav-links {
+    gap: 24px;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .site-header.ttc-fixed-header {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    gap: 14px 24px;
+    padding: 16px 28px;
+  }
+
+  .site-header .brand {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .site-header .nav-links {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-content: center;
+    gap: 32px;
+    font-size: 14px;
+  }
+
+  .site-header > .ttc-nav-actions {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+  }
+
+  .site-header .nav-cta {
+    white-space: nowrap;
+  }
+}
+
 .nav-cta {
-  justify-self: end;
   padding: 12px 22px;
   color: rgba(255, 248, 237, 0.92);
   border: 1px solid rgba(255, 248, 237, 0.32);
   border-radius: 999px;
   background: rgba(255, 248, 237, 0.06);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 800;
+  text-decoration: none;
   transition:
     transform 180ms ease,
     color 180ms ease,
     background 180ms ease,
     border-color 180ms ease;
   touch-action: manipulation;
+}
+
+.ttc-nav-actions {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  justify-self: end;
+  gap: 9px;
+}
+
+.ttc-nav-whatsapp {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  display: grid;
+  place-items: center;
+  color: #e8c97d;
+  border: 1px solid rgba(232, 201, 125, 0.72);
+  border-radius: 50%;
+  background: rgba(232, 201, 125, 0.075);
+  box-shadow: inset 0 0 0 1px rgba(255, 248, 237, 0.025);
+  text-decoration: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.ttc-nav-whatsapp svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.ttc-nav-whatsapp:focus-visible {
+  outline: 2px solid #e1be6c;
+  outline-offset: 3px;
 }
 
 /* 目的地页：保持原 shanghai 模板的 sticky 深色条 */
@@ -144,7 +277,7 @@
     grid-row: 2;
     justify-content: center;
     gap: clamp(12px, 4vw, 22px);
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .nav-cta {
@@ -158,8 +291,41 @@
     white-space: nowrap;
     height: 34px;
     padding: 8px clamp(10px, 3vw, 14px);
-    font-size: clamp(9px, 2.45vw, 11px);
+    font-size: clamp(10px, 2.6vw, 12px);
     line-height: 1;
+  }
+
+  .ttc-nav-actions {
+    grid-column: 2;
+    grid-row: 1;
+    gap: 6px;
+  }
+
+  .ttc-nav-whatsapp {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
+
+  .ttc-nav-whatsapp svg {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+@media (max-width: 600px) {
+  .ttc-nav-actions { gap: 5px; }
+
+  .site-header .ttc-nav-whatsapp {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+  }
+
+  .site-header .ttc-nav-actions .nav-cta {
+    padding-right: 8px;
+    padding-left: 8px;
+    font-size: 8.5px;
   }
 }
 
@@ -170,6 +336,7 @@
   overflow: hidden;
   padding: clamp(72px, 7vw, 104px) clamp(24px, 6vw, 92px) 28px;
   color: rgba(255, 248, 237, 0.72);
+  font-family: "Inter", sans-serif;
   background:
     radial-gradient(circle at 12% 12%, rgba(185, 139, 66, 0.16), transparent 32%),
     radial-gradient(circle at 88% 72%, rgba(71, 119, 104, 0.18), transparent 34%),
@@ -200,7 +367,7 @@
 
 .footer-main {
   display: grid;
-  grid-template-columns: minmax(420px, 1.7fr) minmax(130px, 0.5fr) minmax(130px, 0.5fr) minmax(130px, 0.5fr);
+  grid-template-columns: minmax(300px, 1.5fr) minmax(112px, 0.5fr) minmax(112px, 0.5fr) minmax(175px, 0.65fr);
   gap: clamp(24px, 3vw, 48px);
   align-items: start;
   padding-bottom: clamp(58px, 6vw, 84px);
@@ -231,6 +398,35 @@
   object-fit: contain;
 }
 
+.site-footer .footer-brand {
+  max-width: 100%;
+}
+
+.site-footer .footer-brand img:first-child {
+  width: 64px;
+  height: auto;
+  flex: 0 0 64px;
+}
+
+.site-footer .footer-brand img:last-child {
+  width: 210px;
+  min-width: 0;
+  height: auto;
+  flex: 0 1 210px;
+}
+
+@media (max-width: 760px) {
+  .site-footer .footer-brand img:first-child {
+    width: 48px;
+    flex-basis: 48px;
+  }
+
+  .site-footer .footer-brand img:last-child {
+    width: 182px;
+    flex-basis: 182px;
+  }
+}
+
 .footer-tagline {
   max-width: 410px;
   margin: 26px 0 0;
@@ -244,7 +440,7 @@
 .footer-contact-label {
   margin: 26px 0 8px;
   color: #d6ad68;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -269,7 +465,7 @@
 .footer-policies > p {
   margin: 0 0 8px;
   color: #d6ad68;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -278,7 +474,7 @@
 .footer-navigation a,
 .footer-feedback-link {
   color: rgba(255, 248, 237, 0.72);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   line-height: 1.6;
   text-decoration: none;
@@ -387,10 +583,15 @@
 .footer-policies > p {
   margin: 0 0 8px;
   color: #d6ad68;
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+}
+
+/* 政策链接单行显示，避免长标签在窄列折行 */
+.footer-policies a {
+  white-space: nowrap;
 }
 
 .footer-bottom {
@@ -406,7 +607,7 @@
 .footer-bottom p {
   margin: 0;
   color: rgba(255, 248, 237, 0.46);
-  font-size: 12px;
+  font-size: 14px;
   line-height: 1.5;
 }
 
@@ -415,7 +616,7 @@
   align-items: center;
   gap: 9px;
   color: rgba(255, 248, 237, 0.7);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   text-decoration: none;
   transition: color 180ms ease;
@@ -431,7 +632,7 @@
   font-size: 16px;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 920px) {
   .site-footer {
     padding: 64px 22px 22px;
   }

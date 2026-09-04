@@ -2,154 +2,217 @@
   {
     "file": "index.html",
     "base": "",
-    "aria": "Trip To China home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "contact.html",
     "base": "",
-    "aria": "Trip To China home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "partner.html",
     "base": "",
-    "aria": "Trip To China home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "destinations/beijing/index.html",
     "base": "../../",
-    "aria": "TripToChina home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "destinations/chengdu/index.html",
     "base": "../../",
-    "aria": "TripToChina home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "destinations/chongqing/index.html",
     "base": "../../",
-    "aria": "TripToChina home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "destinations/guilin/index.html",
     "base": "../../",
-    "aria": "TripToChina home",
+    "aria": "Loomline Travel home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "destinations/northeast-china/index.html",
+    "base": "../../",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "destinations/shanghai/index.html",
     "base": "../../",
-    "aria": "TripToChina home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "destinations/tibet/index.html",
     "base": "../../",
-    "aria": "TripToChina home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "destinations/xian/index.html",
     "base": "../../",
-    "aria": "TripToChina home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "destinations/xinjiang/index.html",
     "base": "../../",
-    "aria": "TripToChina home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "destinations/yunnan/index.html",
     "base": "../../",
-    "aria": "TripToChina home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "destinations/zhangjiajie/index.html",
     "base": "../../",
-    "aria": "TripToChina home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "experiences/imperial-dinner-show/index.html",
     "base": "../../",
-    "aria": "Trip To China home",
+    "aria": "Loomline Travel home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "experiences/panda-volunteer/index.html",
+    "base": "../../",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "experiences/pottery-workshop/index.html",
     "base": "../../",
-    "aria": "Trip To China home",
+    "aria": "Loomline Travel home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "experiences/sichuan-cuisine-museum/index.html",
+    "base": "../../",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "experiences/seal-carving/index.html",
     "base": "../../",
-    "aria": "Trip To China home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "experiences/sichuan-mahjong/index.html",
     "base": "../../",
-    "aria": "Trip To China home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "experiences/tea-culture/index.html",
     "base": "../../",
-    "aria": "Trip To China home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "experiences/traditional-wellness/index.html",
     "base": "../../",
-    "aria": "Trip To China home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "experiences/yunnan-tie-dye/index.html",
     "base": "../../",
-    "aria": "Trip To China home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "services/custom-tour/index.html",
     "base": "../../",
-    "aria": "TripToChina home",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
-    "file": "services/self-guided/index.html",
+    "file": "services/standard-routes/index.html",
     "base": "../../",
-    "aria": "TripToChina home",
+    "aria": "Loomline Travel home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "services/standard-routes/encounter-aba-3-day/index.html",
+    "base": "../../../",
+    "aria": "Loomline Travel home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "services/standard-routes/jiuzhaigou-grand-loop-5-day/index.html",
+    "base": "../../../",
+    "aria": "Loomline Travel home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "policies/booking-service.html",
+    "base": "../",
+    "aria": "Loomline Travel home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "policies/pricing-cancellation.html",
+    "base": "../",
+    "aria": "Loomline Travel home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "policies/privacy-policy.html",
+    "base": "../",
+    "aria": "Loomline Travel home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
+    "file": "policies/customer-support.html",
+    "base": "../",
+    "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   }

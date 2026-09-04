@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Not Found | Loomline Travel</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#10231f" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/brand/loomline-favicon-32.png?v=4" />
+    <link rel="icon" type="image/png" sizes="64x64" href="assets/brand/loomline-favicon-64.png?v=4" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --deep-green: #10231f;
+        --deep-green-soft: #183a32;
+        --ink: #151515;
+        --white: #fff8ed;
+        --cinnabar: #572723;
+        --cinnabar-deep: #421b18;
+        --gold: #c9a24b;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", system-ui, -apple-system, sans-serif;
+        background: radial-gradient(circle at 50% 0%, #183a32 0%, #10231f 55%, #071612 100%);
+        color: var(--white);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .code {
+        font-family: "Cinzel", Georgia, serif;
+        font-weight: 700;
+        font-size: clamp(4.5rem, 18vw, 9rem);
+        line-height: 1;
+        letter-spacing: 0.06em;
+        color: var(--gold);
+        text-shadow: 0 2px 24px rgba(201, 162, 75, 0.25);
+      }
+
+      h1 {
+        font-family: "Cinzel", Georgia, serif;
+        font-weight: 600;
+        font-size: clamp(1.35rem, 4vw, 2rem);
+        margin: 1.25rem 0 0.75rem;
+        color: var(--white);
+      }
+
+      p {
+        font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+        max-width: 34rem;
+        line-height: 1.65;
+        color: rgba(255, 248, 237, 0.82);
+        font-weight: 500;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        justify-content: center;
+        margin-top: 2.25rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.8rem 1.4rem;
+        border-radius: 999px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn.primary {
+        background: var(--cinnabar);
+        color: #fff8ed;
+      }
+
+      .btn.primary:hover {
+        background: var(--cinnabar-deep);
+      }
+
+      .btn.ghost {
+        border: 1px solid rgba(255, 248, 237, 0.35);
+        color: var(--white);
+      }
+
+      .btn.ghost:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="code">404</div>
+    <h1>That page has wandered off</h1>
+    <p>
+      The page you're looking for doesn't exist or has moved. Let's get you back on the
+      road — a custom China journey is just a couple of clicks away.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="index.html">Back to Home</a>
+      <a class="btn ghost" href="contact.html">Plan a Trip</a>
+    </div>
+  </body>
+</html>

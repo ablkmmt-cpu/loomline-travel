@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.triptochina.com/sitemap.xml
+Sitemap: https://loomlinetravel.com/sitemap.xml

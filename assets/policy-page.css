@@ -1,0 +1,109 @@
+/* ============================================================
+   policy-page.css — 政策详情页（预订与服务说明 / 价格·付款与取消
+   / 隐私政策 / 客户支持）的独立页面样式。
+
+   复用 site-chrome.css 中隐私弹窗（.privacy-*）的视觉语言，
+   以「普通页面卡片」的形式呈现，因此四个政策详情页与既有
+   隐私政策的页面样式完全一致，只补充了页面级的容器与返回按钮。
+   依赖：site-chrome.css（页头/页脚、.privacy-* 弹窗样式）。
+   ============================================================ */
+
+/* 页面底色（卡片外的留白区域） */
+body.policy-page {
+  margin: 0;
+  color: #171713;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(185, 139, 66, 0.1), transparent 32%),
+    linear-gradient(180deg, #f6f1e8 0%, #efe9dd 100%);
+  font-family: "Inter", sans-serif;
+}
+
+body.policy-page *,
+body.policy-page *::before,
+body.policy-page *::after {
+  box-sizing: border-box;
+}
+
+body.policy-page img {
+  display: block;
+  max-width: 100%;
+}
+
+/* 卡片四周留白 */
+.policy-page-main {
+  padding: clamp(40px, 6vw, 72px) clamp(16px, 5vw, 72px) clamp(64px, 8vw, 104px);
+}
+
+/* 政策卡片：沿用隐私弹窗 .privacy-dialog 的观感（普通页面容器） */
+.policy-card {
+  width: min(860px, 100%);
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid rgba(185, 139, 66, 0.42);
+  border-radius: 20px;
+  color: #1c2823;
+  background:
+    radial-gradient(circle at 92% 0%, rgba(185, 139, 66, 0.14), transparent 30%),
+    linear-gradient(160deg, #fffdf8 0%, #f4eee4 100%);
+  box-shadow: 0 36px 100px rgba(0, 0, 0, 0.18);
+}
+
+/* 页面主标题沿用隐私弹窗 .privacy-header h2 的排版（页面用 h1） */
+.policy-card .privacy-header h1 {
+  margin: 0;
+  color: #14231e;
+  font-family: "Noto Serif SC", "Cinzel", serif;
+  font-size: clamp(30px, 4vw, 44px);
+  font-weight: 900;
+  line-height: 1.08;
+}
+
+/* 页面正文自然流动，不裁切、不出滚动条 */
+.policy-card .privacy-content {
+  overflow: visible;
+}
+
+/* 详情页中的编号流程与弹窗无序列表保持一致 */
+.policy-card .privacy-content ol {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+  padding-left: 22px;
+}
+
+/* 政策详情页统一使用适合整页阅读的正文字号 */
+.policy-page .privacy-content p,
+.policy-page .privacy-content li {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* 「返回」按钮沿用隐私弹窗 Close 按钮样式（页面以链接呈现） */
+.policy-card .privacy-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 24px;
+  border: 1px solid #183a32;
+  border-radius: 8px;
+  color: #fff8ed;
+  background: #183a32;
+  font-size: 12px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.policy-card .privacy-actions a:hover,
+.policy-card .privacy-actions a:focus-visible {
+  background: #10231f;
+  transform: translateY(-1px);
+}
+
+/* 小屏：与弹窗移动端排版保持一致 */
+@media (max-width: 560px) {
+  .policy-card .privacy-header h1 {
+    font-size: 30px;
+  }
+}

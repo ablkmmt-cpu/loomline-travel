@@ -343,6 +343,10 @@ body.is-privacy-open .ttc-whatsapp-float {
     bottom: calc(max(16px, env(safe-area-inset-bottom)) + 68px);
   }
 
+  body.has-mobile-booking .ttc-whatsapp-float {
+    bottom: calc(max(16px, env(safe-area-inset-bottom)) + 104px);
+  }
+
   .ttc-whatsapp-icon {
     width: 62px;
     height: 62px;

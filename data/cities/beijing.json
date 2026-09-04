@@ -1,0 +1,179 @@
+{
+  "slug": "beijing",
+  "name": "Beijing",
+  "meta": {
+    "title": "Beijing Travel Guide | Loomline Travel",
+    "description": "Explore Beijing with clear highlights, local flavors, practical advice, and a realistic 4–5-day route.",
+    "canonicalUrl": "https://loomlinetravel.com/destinations/beijing/",
+    "ogImage": "https://loomlinetravel.com/assets/destinations/beijing/hero-og.jpg"
+  },
+  "hero": {
+    "eyebrow": "Imperial China · Great Wall · Hutongs",
+    "summary": "Imperial landmarks, neighborhood lanes, and the Great Wall — China’s historic capital rewards a well-paced first visit.",
+    "image": "assets/destinations/beijing/hero.webp",
+    "mobileImage": "assets/destinations/beijing/hero-mobile.webp",
+    "alt": "A representative travel scene in Beijing"
+  },
+  "cta": {
+    "primary": {
+      "label": "Plan this city →",
+      "url": "contact.html?city=beijing"
+    },
+    "secondary": {
+      "label": "Ask on WhatsApp",
+      "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20visiting%20Beijing."
+    }
+  },
+  "facts": [
+    {
+      "label": "Best days",
+      "value": "4–5 days",
+      "detail": "Enough time for the imperial core, one Great Wall day, and a slower look at local neighborhoods."
+    },
+    {
+      "label": "Best season",
+      "value": "Spring & autumn",
+      "detail": "Clearer skies and comfortable walking weather"
+    },
+    {
+      "label": "Best for",
+      "value": "History · Culture · First-timers",
+      "detail": "Imperial landmarks, neighborhood lanes, and the Great Wall — China’s historic capital rewards a well-paced first visit."
+    },
+    {
+      "label": "Pairs with",
+      "value": "Xi’an · Shanghai",
+      "detail": "The classic first-time China route"
+    }
+  ],
+  "intro": {
+    "eyebrow": "China's imperial capital",
+    "title": "Beijing, China's Imperial Capital",
+    "left": "China’s capital brings more than three thousand years of urban history into one immense modern city. Red walls, golden roofs, ceremonial avenues, intimate hutongs, and new skylines coexist, giving first-time visitors a direct view into both China’s imperial past and its present-day rhythm.",
+    "right": "The Forbidden City, the Great Wall, neighborhood food, and daily life inside the old lanes make Beijing one of the country’s essential first stops. Distances are large and major sights reward advance planning, but a well-paced route turns the scale of the city into part of the experience rather than a burden."
+  },
+  "highlights": {
+    "eyebrow": "Start here",
+    "title": "Highlights",
+    "linkLabel": "All highlights →",
+    "linkUrl": "#city-detail-highlights-title",
+    "items": [
+      {
+        "image": "assets/destinations/beijing/01.webp",
+        "alt": "Forbidden City in Beijing",
+        "title": "Forbidden City",
+        "summary": "Palaces, courtyards, and the clearest introduction to imperial China."
+      },
+      {
+        "image": "assets/destinations/beijing/02.webp",
+        "alt": "The Great Wall in Beijing",
+        "title": "The Great Wall",
+        "summary": "Walk a mountain section at Mutianyu or another carefully chosen gateway."
+      },
+      {
+        "image": "assets/destinations/beijing/03.webp",
+        "alt": "Tiananmen Square in Beijing",
+        "title": "Tiananmen Square",
+        "summary": "A monumental civic space at the symbolic center of Beijing."
+      },
+      {
+        "image": "assets/destinations/beijing/04.webp",
+        "alt": "Temple of Heaven in Beijing",
+        "title": "Temple of Heaven",
+        "summary": "Ceremonial architecture set inside a lively local park."
+      },
+      {
+        "image": "assets/destinations/beijing/05.webp",
+        "alt": "Summer Palace in Beijing",
+        "title": "Summer Palace",
+        "summary": "Lakeside pavilions and royal gardens beyond the city center."
+      },
+      {
+        "image": "assets/destinations/beijing/06.webp",
+        "alt": "Beijing Hutongs in Beijing",
+        "title": "Beijing Hutongs",
+        "summary": "Old lanes, courtyard homes, and a more human scale of city life."
+      }
+    ]
+  },
+  "flavors": {
+    "eyebrow": "Beijing flavors",
+    "title": "Taste Beijing.",
+    "summary": "Plan at least one local meal into the route — these flavors are part of understanding Beijing.",
+    "image": "assets/destinations/beijing/07.webp",
+    "imageAlt": "A table of local food from Beijing",
+    "items": [
+      {
+        "title": "Peking duck",
+        "summary": "The city’s essential shared meal"
+      },
+      {
+        "title": "Copper hotpot",
+        "summary": "Thin-sliced lamb in a traditional charcoal pot"
+      },
+      {
+        "title": "Zhajiangmian",
+        "summary": "Wheat noodles with rich fermented bean sauce"
+      },
+      {
+        "title": "Mending meat pie",
+        "summary": "Crisp outside, juicy inside"
+      },
+      {
+        "title": "Pea flour cake",
+        "summary": "A delicate old Beijing sweet"
+      }
+    ]
+  },
+  "stay": {
+    "eyebrow": "Recommended time",
+    "title": "How long to stay",
+    "duration": "4–5",
+    "unit": "Days",
+    "summary": "Enough time for the imperial core, one Great Wall day, and a slower look at local neighborhoods.",
+    "plans": [
+      {
+        "label": "4 days",
+        "summary": "Cover the Forbidden City, Temple of Heaven, a Great Wall day, and one hutong neighborhood without rushing every stop.",
+        "status": "Coming soon",
+        "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%204%20days%20Beijing%20itinerary."
+      },
+      {
+        "label": "5 days",
+        "summary": "Add the Summer Palace, a museum, and a better local food route with more realistic transfer time.",
+        "status": "Coming soon"
+      },
+      {
+        "label": "Extra day",
+        "summary": "Go deeper into a quieter Great Wall section or add contemporary art and modern Beijing.",
+        "status": "Coming soon"
+      }
+    ]
+  },
+  "notes": {
+    "eyebrow": "Know before you go",
+    "title": "Practical notes",
+    "items": [
+      {
+        "label": "Getting there",
+        "summary": "Two airports and extensive high-speed rail links make Beijing an easy northern gateway."
+      },
+      {
+        "label": "Getting around",
+        "summary": "The metro is efficient, but distances are large. Group nearby sights and reserve time for security checks."
+      },
+      {
+        "label": "Where to stay",
+        "summary": "Stay around Dongcheng for easier access to the imperial core and hutong neighborhoods."
+      },
+      {
+        "label": "Planning ahead",
+        "summary": "Major sites often require timed reservations. Book the Forbidden City and Great Wall transport early."
+      }
+    ]
+  },
+  "conversion": {
+    "eyebrow": "Your Beijing, made clearer",
+    "summary": "Send us your dates and pace — we’ll fit Beijing into a smooth, realistic China route."
+  }
+}

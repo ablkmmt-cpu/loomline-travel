@@ -1,0 +1,179 @@
+{
+  "slug": "tibet",
+  "name": "Tibet",
+  "meta": {
+    "title": "Tibet Travel Guide | Loomline Travel",
+    "description": "Explore Tibet with clear highlights, local flavors, practical advice, and a realistic 5–10-day route.",
+    "canonicalUrl": "https://loomlinetravel.com/destinations/tibet/",
+    "ogImage": "https://loomlinetravel.com/assets/destinations/tibet/hero-og.jpg"
+  },
+  "hero": {
+    "eyebrow": "High plateau · Sacred culture · Guided routes",
+    "summary": "Sacred landmarks, Himalayan landscapes, and high-altitude journeys that require time, care, and advance planning.",
+    "image": "assets/destinations/tibet/hero.webp",
+    "mobileImage": "assets/destinations/tibet/hero-mobile.webp",
+    "alt": "A representative travel scene in Tibet"
+  },
+  "cta": {
+    "primary": {
+      "label": "Plan this city →",
+      "url": "contact.html?city=tibet"
+    },
+    "secondary": {
+      "label": "Ask on WhatsApp",
+      "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20visiting%20Tibet."
+    }
+  },
+  "facts": [
+    {
+      "label": "Best days",
+      "value": "5–10 days",
+      "detail": "Five to seven days suit Lhasa and nearby lakes; Everest or western routes require more time and slower altitude gain."
+    },
+    {
+      "label": "Best season",
+      "value": "May–October",
+      "detail": "Warmer roads and broader regional access"
+    },
+    {
+      "label": "Best for",
+      "value": "Culture · Highlands · Guided travel",
+      "detail": "Sacred landmarks, Himalayan landscapes, and high-altitude journeys that require time, care, and advance planning."
+    },
+    {
+      "label": "Pairs with",
+      "value": "Chengdu · Yunnan",
+      "detail": "Common gateways to the plateau"
+    }
+  ],
+  "intro": {
+    "eyebrow": "Journeys on the roof of the world",
+    "title": "Tibet, Landscape Meets Belief",
+    "left": "Across the Tibetan Plateau, monasteries, pilgrimage streets, turquoise lakes, and the world’s highest mountains create a journey unlike any other in China. Lhasa’s Potala Palace and Jokhang Temple are not simply monuments; they remain central landmarks in a living cultural and spiritual landscape.",
+    "right": "Altitude changes how the trip must be paced, and foreign passport holders generally need a Tibet Travel Permit arranged in advance through an authorized tour operator. Independent travel is not permitted under current requirements, so route design, acclimatization, and paperwork need to be handled together before booking transport."
+  },
+  "highlights": {
+    "eyebrow": "Start here",
+    "title": "Highlights",
+    "linkLabel": "All highlights →",
+    "linkUrl": "#city-detail-highlights-title",
+    "items": [
+      {
+        "image": "assets/destinations/tibet/01.webp",
+        "alt": "Potala Palace in Tibet",
+        "title": "Potala Palace",
+        "summary": "Lhasa’s defining landmark and a central symbol of Tibetan culture."
+      },
+      {
+        "image": "assets/destinations/tibet/02.webp",
+        "alt": "Jokhang Temple in Tibet",
+        "title": "Jokhang Temple",
+        "summary": "A sacred temple at the heart of the Barkhor pilgrimage circuit."
+      },
+      {
+        "image": "assets/destinations/tibet/03.webp",
+        "alt": "Namtso Lake in Tibet",
+        "title": "Namtso Lake",
+        "summary": "High-altitude blue water framed by distant snow mountains."
+      },
+      {
+        "image": "assets/destinations/tibet/04.webp",
+        "alt": "Yamdrok Lake in Tibet",
+        "title": "Yamdrok Lake",
+        "summary": "A winding turquoise lake on the road toward central Tibet."
+      },
+      {
+        "image": "assets/destinations/tibet/05.webp",
+        "alt": "Everest Base Camp in Tibet",
+        "title": "Everest Base Camp",
+        "summary": "A remote view of the world’s highest mountain from Tibet."
+      },
+      {
+        "image": "assets/destinations/tibet/06.webp",
+        "alt": "Tashilhunpo Monastery in Tibet",
+        "title": "Tashilhunpo Monastery",
+        "summary": "A major monastic complex in historic Shigatse."
+      }
+    ]
+  },
+  "flavors": {
+    "eyebrow": "Tibet flavors",
+    "title": "Taste Tibet.",
+    "summary": "Plan at least one local meal into the route — these flavors are part of understanding Tibet.",
+    "image": "assets/destinations/tibet/07.webp",
+    "imageAlt": "A table of local food from Tibet",
+    "items": [
+      {
+        "title": "Butter tea",
+        "summary": "Salty, warming, and central to local hospitality"
+      },
+      {
+        "title": "Yak hotpot",
+        "summary": "A rich shared meal for cold highland evenings"
+      },
+      {
+        "title": "Tsampa",
+        "summary": "Roasted barley flour mixed into a traditional staple"
+      },
+      {
+        "title": "Sweet tea",
+        "summary": "A milky Lhasa tea-house favorite"
+      },
+      {
+        "title": "Tibetan yogurt",
+        "summary": "Tangy, thick, and often lightly sweetened"
+      }
+    ]
+  },
+  "stay": {
+    "eyebrow": "Recommended time",
+    "title": "How long to stay",
+    "duration": "5–10",
+    "unit": "Days",
+    "summary": "Five to seven days suit Lhasa and nearby lakes; Everest or western routes require more time and slower altitude gain.",
+    "plans": [
+      {
+        "label": "5 days",
+        "summary": "Acclimatize in Lhasa, visit the Potala Palace and Jokhang Temple, then add one carefully paced lake journey.",
+        "status": "Coming soon",
+        "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%205%20days%20Tibet%20itinerary."
+      },
+      {
+        "label": "7 days",
+        "summary": "Continue through Gyantse and Shigatse while increasing altitude gradually.",
+        "status": "Coming soon"
+      },
+      {
+        "label": "10 days",
+        "summary": "Add Everest Base Camp or a longer western route with permit, guide, vehicle, and contingency time arranged together.",
+        "status": "Coming soon"
+      }
+    ]
+  },
+  "notes": {
+    "eyebrow": "Know before you go",
+    "title": "Practical notes",
+    "items": [
+      {
+        "label": "Getting there",
+        "summary": "International visitors need a Tibet Travel Permit arranged through a licensed agency and must follow an organized route."
+      },
+      {
+        "label": "Getting around",
+        "summary": "Arrive gently, rest on the first day, hydrate, and avoid an overfilled schedule while acclimatizing."
+      },
+      {
+        "label": "Where to stay",
+        "summary": "Lhasa is the essential first base. Longer routes to Everest or western Tibet require extra road days."
+      },
+      {
+        "label": "Planning ahead",
+        "summary": "Weather and road conditions change quickly. Build flexibility into all high-altitude plans."
+      }
+    ]
+  },
+  "conversion": {
+    "eyebrow": "Your Tibet, made clearer",
+    "summary": "Send us your dates and pace — we’ll fit Tibet into a smooth, realistic China route."
+  }
+}

@@ -13,7 +13,7 @@
   const params = new URLSearchParams(window.location.search);
 
   // 兴趣上下文：?interest=beijing → 预填 + 提示条
-  const interest = (params.get("interest") || "").trim();
+  const interest = (params.get("interest") || params.get("city") || "").trim();
   if (interest) {
     interestField.value = interest;
     const label = interest
@@ -35,7 +35,7 @@
       normalized.includes("custom") || normalized.includes("tailor")
         ? "Custom Tour Package"
         : normalized.includes("self") || normalized.includes("standard")
-          ? "Self-Guided Trip Support"
+          ? "Standard Routes"
           : null;
     if (value) select.value = value;
   }

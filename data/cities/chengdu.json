@@ -1,0 +1,164 @@
+{
+  "slug": "chengdu",
+  "name": "Chengdu",
+  "meta": {
+    "title": "Chengdu Travel Guide | Loomline Travel",
+    "description": "Explore Chengdu through pandas, tea houses, Sichuan food, nearby heritage sites, and a clear 3-5 day travel plan.",
+    "canonicalUrl": "https://loomlinetravel.com/destinations/chengdu/",
+    "ogImage": "https://loomlinetravel.com/assets/destinations/chengdu/hero-og.jpg"
+  },
+  "hero": {
+    "eyebrow": "Sichuan · Pandas · Food",
+    "summary": "Pandas, teahouses, spicy food, and an easy rhythm. A city that rewards slow travel.",
+    "image": "assets/destinations/chengdu/hero.webp",
+    "mobileImage": "assets/destinations/chengdu/hero-mobile.webp",
+    "alt": "A giant panda in a bamboo garden in Chengdu"
+  },
+  "cta": {
+    "primary": {
+      "label": "Plan this city →",
+      "url": "contact.html?city=chengdu"
+    },
+    "secondary": {
+      "label": "Ask on WhatsApp",
+      "url": "https://wa.me/message/CNMUYNRK4BKGJ1"
+    }
+  },
+  "facts": [
+    {
+      "label": "Best days",
+      "value": "3-5 days",
+      "detail": "Three for the city; five for nearby day trips"
+    },
+    {
+      "label": "Best season",
+      "value": "Spring & autumn",
+      "detail": "Mild weather and comfortable city walks"
+    },
+    {
+      "label": "Best for",
+      "value": "Food · Pandas · First-timers",
+      "detail": "Local life with an easy pace"
+    },
+    {
+      "label": "Pairs with",
+      "value": "Xi’an · Shanghai",
+      "detail": "A natural stop on a first China route"
+    }
+  ],
+  "intro": {
+    "eyebrow": "China's capital of slow living",
+    "title": "Chengdu, China at a Slower Pace",
+    "left": "Set inside the Sichuan Basin, Chengdu has remained on the same urban site for more than two thousand years. It is a gateway to ancient Shu culture, the world’s best-known panda conservation base, and a city where tea houses and neighborhood parks still shape the rhythm of daily life.",
+    "right": "Pandas may bring visitors here, but food, informal street life, and the city’s relaxed confidence make them stay longer. Chengdu feels less internationally polished than Shanghai, yet that is part of its appeal: it offers a softer and more everyday way into China."
+  },
+  "highlights": {
+    "eyebrow": "Start here",
+    "title": "Highlights",
+    "showLink": false,
+    "items": [
+      {
+        "title": "Panda Base",
+        "summary": "Morning visit, timed right",
+        "image": "assets/destinations/chengdu/01.webp",
+        "alt": "A giant panda at Chengdu Panda Base"
+      },
+      {
+        "title": "People’s Park Teahouse",
+        "summary": "Local life at a relaxed pace",
+        "image": "assets/destinations/chengdu/02.webp",
+        "alt": "A traditional teahouse in Chengdu"
+      },
+      {
+        "title": "Dujiangyan",
+        "summary": "Ancient engineering in the mountains",
+        "image": "assets/destinations/chengdu/05.webp",
+        "alt": "Dujiangyan and its surrounding mountains"
+      },
+      {
+        "title": "Wide & Narrow Alleys",
+        "summary": "Old lanes and present-day Chengdu",
+        "image": "assets/destinations/chengdu/04.webp",
+        "alt": "A historic lane in Chengdu"
+      },
+      {
+        "title": "Sanxingdui Museum",
+        "summary": "An ancient Shu civilization",
+        "image": "assets/destinations/chengdu/03.webp",
+        "alt": "A red wall and bamboo near a Chengdu heritage site"
+      },
+      {
+        "title": "Mount Qingcheng",
+        "summary": "A quieter Taoist day trip",
+        "image": "assets/destinations/chengdu/06.webp",
+        "alt": "A forest path at Mount Qingcheng"
+      }
+    ]
+  },
+  "flavors": {
+    "eyebrow": "Chengdu flavors",
+    "title": "Fiery, fragrant, and unforgettable.",
+    "summary": "Sichuan cuisine is bold, layered, and deeply satisfying. These are the dishes you shouldn’t miss.",
+    "image": "assets/destinations/chengdu/07.webp",
+    "imageAlt": "Sichuan hotpot with meat, vegetables, and a divided broth",
+    "items": [
+      {
+        "title": "Sichuan hotpot",
+        "summary": "Choose a divided broth if you need a gentler start"
+      },
+      {
+        "title": "Dan dan noodles",
+        "summary": "Savory, nutty, spicy, and unmistakably Chengdu"
+      },
+      {
+        "title": "Bobo chicken",
+        "summary": "Skewers served in a fragrant chili broth"
+      },
+      {
+        "title": "Chuan chuan",
+        "summary": "A casual local version of skewered hotpot"
+      },
+      {
+        "title": "Egg-baked cake",
+        "summary": "A small sweet-and-savory street snack"
+      }
+    ]
+  },
+  "featuredRouteCodes": [
+    "CD-STD-001",
+    "CD-STD-002"
+  ],
+  "stay": {
+    "eyebrow": "Recommended time",
+    "title": "How long to stay",
+    "duration": "3-5",
+    "unit": "Days",
+    "summary": "Allow 3-5 days for Chengdu itself. For a mountain journey beyond the city, start with our featured standard route."
+  },
+  "notes": {
+    "eyebrow": "Know before you go",
+    "title": "Practical notes",
+    "items": [
+      {
+        "label": "Getting there",
+        "summary": "Tianfu and Shuangliu airports serve the city; high-speed rail connects Chengdu with Xi’an, Chongqing, and other major stops."
+      },
+      {
+        "label": "Getting around",
+        "summary": "Metro and ride-hailing are easy to use. Leave early for the Panda Base and allow more time for mountain day trips."
+      },
+      {
+        "label": "When to stay",
+        "summary": "Spring and autumn are the most comfortable; central areas near Chunxi Road are convenient for a first visit."
+      },
+      {
+        "label": "Eating",
+        "summary": "Spice is the default. Ask for less spice if needed, and start with a divided hotpot broth."
+      }
+    ]
+  },
+  "conversion": {
+    "eyebrow": "Your Chengdu, made clearer",
+    "summary": "Send us your dates and pace. We’ll fit Chengdu into a smooth route with Xi’an, Shanghai, or anywhere else you’re going."
+  }
+}

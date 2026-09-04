@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{META_TITLE}}</title>
+    <meta name="description" content="{{META_DESCRIPTION}}" />
+
+    <meta property="og:title" content="{{META_TITLE}}" />
+    <meta property="og:description" content="{{META_DESCRIPTION}}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{CANONICAL_URL}}" />
+    <meta property="og:image" content="{{OG_IMAGE}}" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{META_TITLE}}" />
+    <meta name="twitter:description" content="{{META_DESCRIPTION}}" />
+    <link rel="canonical" href="{{CANONICAL_URL}}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{BASE}}assets/brand/loomline-favicon-32.png?v=4" />
+    <link rel="icon" type="image/png" sizes="64x64" href="{{BASE}}assets/brand/loomline-favicon-64.png?v=4" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{BASE}}assets/brand/loomline-apple-touch-icon.png?v=4" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{BASE}}assets/site-chrome.css?v=loomline-2" />
+    <link rel="stylesheet" href="{{BASE}}assets/city-detail-template.css?v=18" />
+    <!-- @@ANALYTICS@@ -->
+  </head>
+  <body class="city-detail-page" id="top">
+    <!-- @@HEADER@@ -->
+{{HEADER}}
+
+    <main>
+      <section class="city-detail-hero" aria-labelledby="city-detail-title">
+        <picture class="city-detail-hero-media">
+          <source media="(max-width: 760px)" srcset="{{HERO_MOBILE_IMAGE}}" />
+          <img src="{{HERO_IMAGE}}" alt="{{HERO_ALT}}" width="1536" height="760" />
+        </picture>
+        <div class="city-detail-hero-shade" aria-hidden="true"></div>
+        <div class="city-detail-hero-content city-detail-shell">
+          <p class="city-detail-hero-eyebrow">{{HERO_EYEBROW}}</p>
+          <h1 id="city-detail-title">{{CITY_NAME}}</h1>
+          <p class="city-detail-hero-summary">{{HERO_SUMMARY}}</p>
+          <div class="city-detail-actions" aria-label="Plan {{CITY_NAME}}">
+            <a class="city-detail-button city-detail-button-primary" href="{{PRIMARY_CTA_URL}}">{{PRIMARY_CTA_LABEL}}</a>
+            <a class="city-detail-button city-detail-button-secondary" href="{{SECONDARY_CTA_URL}}" target="_blank" rel="noreferrer">{{SECONDARY_CTA_LABEL}}</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="city-detail-facts city-detail-shell" aria-label="{{CITY_NAME}} at a glance">
+{{FACTS}}
+      </section>
+
+      <div class="city-detail-divider" aria-hidden="true"><span></span></div>
+
+      <section class="city-detail-intro city-detail-shell" aria-labelledby="city-detail-intro-title">
+        <p class="city-detail-eyebrow">{{INTRO_EYEBROW}}</p>
+        <h2 id="city-detail-intro-title">{{INTRO_TITLE}}</h2>
+        <div class="city-detail-intro-copy">
+          <p>{{INTRO_LEFT}}</p>
+          <p>{{INTRO_RIGHT}}</p>
+        </div>
+      </section>
+
+{{POST_INTRO_SECTION}}
+
+      <div class="city-detail-divider" aria-hidden="true"><span></span></div>
+
+      <section class="city-detail-highlights city-detail-shell" aria-labelledby="city-detail-highlights-title">
+        <header class="city-detail-numbered-heading">
+          <div>
+            <p class="city-detail-eyebrow">{{HIGHLIGHTS_EYEBROW}}</p>
+            <h2 id="city-detail-highlights-title">{{HIGHLIGHTS_TITLE}}</h2>
+          </div>
+        </header>
+        <div class="city-detail-highlight-grid">
+{{HIGHLIGHTS}}
+        </div>
+      </section>
+
+      <div class="city-detail-divider" aria-hidden="true"><span></span></div>
+
+      <section class="city-detail-flavors" aria-labelledby="city-detail-flavors-title">
+        <div class="city-detail-flavors-inner city-detail-shell">
+          <div class="city-detail-flavors-copy">
+            <header class="city-detail-numbered-heading city-detail-numbered-heading-on-dark">
+              <div>
+                <p class="city-detail-eyebrow city-detail-eyebrow-on-dark">{{FLAVORS_EYEBROW}}</p>
+                <h2 id="city-detail-flavors-title">{{FLAVORS_TITLE}}</h2>
+              </div>
+            </header>
+            <p>{{FLAVORS_SUMMARY}}</p>
+          </div>
+          <figure class="city-detail-flavors-media">
+            <img src="{{FLAVORS_IMAGE}}" alt="{{FLAVORS_IMAGE_ALT}}" loading="lazy" decoding="async" />
+          </figure>
+          <ol class="city-detail-flavor-list">
+{{FLAVORS}}
+          </ol>
+        </div>
+      </section>
+
+      <div class="city-detail-divider" aria-hidden="true"><span></span></div>
+
+      <section class="city-detail-notes city-detail-shell" aria-labelledby="city-detail-notes-title">
+        <header class="city-detail-numbered-heading">
+          <div>
+            <p class="city-detail-eyebrow">{{NOTES_EYEBROW}}</p>
+            <h2 id="city-detail-notes-title">{{NOTES_TITLE}}</h2>
+          </div>
+        </header>
+        <dl class="city-detail-note-list">
+{{NOTES}}
+        </dl>
+      </section>
+
+      <div class="city-detail-divider" aria-hidden="true"><span></span></div>
+
+      <section class="city-detail-conversion city-detail-shell" aria-labelledby="city-detail-conversion-title">
+        <div>
+          <p class="city-detail-eyebrow city-detail-eyebrow-on-dark">{{CONVERSION_EYEBROW}}</p>
+          <h2 id="city-detail-conversion-title">
+            <span>Make {{CITY_NAME}}</span>
+            <span>part of your China trip.</span>
+          </h2>
+          <p>{{CONVERSION_SUMMARY}}</p>
+        </div>
+        <div class="city-detail-actions">
+          <a class="city-detail-button city-detail-button-primary" href="{{PRIMARY_CTA_URL}}">{{PRIMARY_CTA_LABEL}}</a>
+          <a class="city-detail-button city-detail-button-secondary" href="{{SECONDARY_CTA_URL}}" target="_blank" rel="noreferrer">{{SECONDARY_CTA_LABEL}}</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- @@FOOTER@@ -->
+{{FOOTER}}
+
+    <script>
+      document.querySelectorAll(".city-detail-route-carousel").forEach((carousel) => {
+        const track = carousel.querySelector(".city-detail-route-track");
+        const cards = [...carousel.querySelectorAll(".city-detail-route-card")];
+        const dots = [...carousel.querySelectorAll("[data-route-dot]")];
+        if (!track || cards.length < 2 || dots.length !== cards.length) return;
+
+        let activeIndex = 0;
+        let scrollFrame = 0;
+
+        const setActive = (index) => {
+          activeIndex = Math.max(0, Math.min(cards.length - 1, index));
+          dots.forEach((dot, dotIndex) => {
+            const active = dotIndex === activeIndex;
+            dot.classList.toggle("is-active", active);
+            if (active) dot.setAttribute("aria-current", "true");
+            else dot.removeAttribute("aria-current");
+          });
+        };
+
+        const goTo = (index, behavior = "smooth") => {
+          const card = cards[index];
+          if (!card) return;
+          track.scrollTo({ left: card.offsetLeft - track.offsetLeft, behavior });
+          setActive(index);
+        };
+
+        dots.forEach((dot, index) => dot.addEventListener("click", () => goTo(index)));
+        track.addEventListener("scroll", () => {
+          cancelAnimationFrame(scrollFrame);
+          scrollFrame = requestAnimationFrame(() => {
+            const index = cards.reduce((best, card, index) => {
+              const distance = Math.abs(card.offsetLeft - track.offsetLeft - track.scrollLeft);
+              return distance < best.distance ? { index, distance } : best;
+            }, { index: 0, distance: Infinity }).index;
+            setActive(index);
+          });
+        }, { passive: true });
+        carousel.addEventListener("keydown", (event) => {
+          if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+          event.preventDefault();
+          goTo(activeIndex + (event.key === "ArrowRight" ? 1 : -1));
+        });
+      });
+    </script>
+    <script src="{{BASE}}whatsapp-float.js?v=loomline-6"></script>
+  </body>
+</html>

@@ -1,0 +1,179 @@
+{
+  "slug": "zhangjiajie",
+  "name": "Zhangjiajie",
+  "meta": {
+    "title": "Zhangjiajie Travel Guide | Loomline Travel",
+    "description": "Explore Zhangjiajie with clear highlights, local flavors, practical advice, and a realistic 4–6-day route.",
+    "canonicalUrl": "https://loomlinetravel.com/destinations/zhangjiajie/",
+    "ogImage": "https://loomlinetravel.com/assets/destinations/zhangjiajie/hero-og.jpg"
+  },
+  "hero": {
+    "eyebrow": "Sandstone peaks · Forest trails · Cableways",
+    "summary": "Vertical sandstone landscapes, forest walks, glass bridges, and mountain days unlike anywhere else in China.",
+    "image": "assets/destinations/zhangjiajie/hero.webp",
+    "mobileImage": "assets/destinations/zhangjiajie/hero-mobile.webp",
+    "alt": "A representative travel scene in Zhangjiajie"
+  },
+  "cta": {
+    "primary": {
+      "label": "Plan this city →",
+      "url": "contact.html?city=zhangjiajie"
+    },
+    "secondary": {
+      "label": "Ask on WhatsApp",
+      "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20visiting%20Zhangjiajie."
+    }
+  },
+  "facts": [
+    {
+      "label": "Best days",
+      "value": "4–6 days",
+      "detail": "Four or five days cover the forest park and Tianmen Mountain; a sixth makes room for the canyon or Fenghuang."
+    },
+    {
+      "label": "Best season",
+      "value": "April–October",
+      "detail": "Green scenery with the widest route access"
+    },
+    {
+      "label": "Best for",
+      "value": "Mountains · Hiking · Photography",
+      "detail": "Vertical sandstone landscapes, forest walks, glass bridges, and mountain days unlike anywhere else in China."
+    },
+    {
+      "label": "Pairs with",
+      "value": "Chongqing · Guilin",
+      "detail": "Strong nature-focused combinations"
+    }
+  ],
+  "intro": {
+    "eyebrow": "Sandstone peaks above the clouds",
+    "title": "Zhangjiajie, Peaks Beyond Scale",
+    "left": "In northwestern Hunan, more than three thousand quartz-sandstone pillars rise above deep ravines and subtropical forest. The formations are so distinctive that the landscape type itself carries the Zhangjiajie name, giving the national park a scale and silhouette unlike anywhere else in China.",
+    "right": "The area is often linked to the floating mountains of Avatar, but the real experience is grounded in changing weather, forest walks, cliff elevators, cableways, and viewpoints that appear and disappear through mist. Because the scenic zones are spread out, hotel location and daily sequencing matter as much as the list of sights."
+  },
+  "highlights": {
+    "eyebrow": "Start here",
+    "title": "Highlights",
+    "linkLabel": "All highlights →",
+    "linkUrl": "#city-detail-highlights-title",
+    "items": [
+      {
+        "image": "assets/destinations/zhangjiajie/01.webp",
+        "alt": "National Forest Park in Zhangjiajie",
+        "title": "National Forest Park",
+        "summary": "The essential core of Zhangjiajie’s sandstone landscape."
+      },
+      {
+        "image": "assets/destinations/zhangjiajie/02.webp",
+        "alt": "Yuanjiajie in Zhangjiajie",
+        "title": "Yuanjiajie",
+        "summary": "Towering pillars and the viewpoint associated with Avatar."
+      },
+      {
+        "image": "assets/destinations/zhangjiajie/03.webp",
+        "alt": "Tianzi Mountain in Zhangjiajie",
+        "title": "Tianzi Mountain",
+        "summary": "High ridges and shifting seas of cloud above the valleys."
+      },
+      {
+        "image": "assets/destinations/zhangjiajie/04.webp",
+        "alt": "Golden Whip Stream in Zhangjiajie",
+        "title": "Golden Whip Stream",
+        "summary": "A gentler forest walk beneath the vertical peaks."
+      },
+      {
+        "image": "assets/destinations/zhangjiajie/05.webp",
+        "alt": "Bailong Elevator in Zhangjiajie",
+        "title": "Bailong Elevator",
+        "summary": "A dramatic vertical connection built against the cliffs."
+      },
+      {
+        "image": "assets/destinations/zhangjiajie/06.webp",
+        "alt": "Tianmen Mountain in Zhangjiajie",
+        "title": "Tianmen Mountain",
+        "summary": "Cableway, mountain arch, glass walkways, and the famous road."
+      }
+    ]
+  },
+  "flavors": {
+    "eyebrow": "Zhangjiajie flavors",
+    "title": "Taste Zhangjiajie.",
+    "summary": "Plan at least one local meal into the route — these flavors are part of understanding Zhangjiajie.",
+    "image": "assets/destinations/zhangjiajie/07.webp",
+    "imageAlt": "A table of local food from Zhangjiajie",
+    "items": [
+      {
+        "title": "Tujia sanxiaguo",
+        "summary": "A warming mixed stew and the area’s signature dish"
+      },
+      {
+        "title": "Smoked pork",
+        "summary": "Cured mountain flavor served with local vegetables"
+      },
+      {
+        "title": "Rock-ear chicken soup",
+        "summary": "An earthy local fungus in a delicate broth"
+      },
+      {
+        "title": "Fern-root cakes",
+        "summary": "A rustic mountain staple often served with smoked meat"
+      },
+      {
+        "title": "Straw-hat noodles",
+        "summary": "A simple local noodle bowl after the trails"
+      }
+    ]
+  },
+  "stay": {
+    "eyebrow": "Recommended time",
+    "title": "How long to stay",
+    "duration": "4–6",
+    "unit": "Days",
+    "summary": "Four or five days cover the forest park and Tianmen Mountain; a sixth makes room for the canyon or Fenghuang.",
+    "plans": [
+      {
+        "label": "4 days",
+        "summary": "Spend two full days inside Wulingyuan, then visit Tianmen Mountain with realistic transfer and cableway timing.",
+        "status": "Coming soon",
+        "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%204%20days%20Zhangjiajie%20itinerary."
+      },
+      {
+        "label": "5 days",
+        "summary": "Add the Grand Canyon glass bridge or a slower forest day without stacking too many viewpoints together.",
+        "status": "Coming soon"
+      },
+      {
+        "label": "6 days",
+        "summary": "Connect Zhangjiajie with Fenghuang Ancient Town while keeping the national park unhurried.",
+        "status": "Coming soon"
+      }
+    ]
+  },
+  "notes": {
+    "eyebrow": "Know before you go",
+    "title": "Practical notes",
+    "items": [
+      {
+        "label": "Getting there",
+        "summary": "Zhangjiajie has an airport and rail links, but schedules are less frequent than in major cities."
+      },
+      {
+        "label": "Getting around",
+        "summary": "Stay in Wulingyuan for the national park and move closer to the city for Tianmen Mountain if useful."
+      },
+      {
+        "label": "Where to stay",
+        "summary": "The park is large and multi-level. Plan cableways, elevators, and walking sections before entering."
+      },
+      {
+        "label": "Planning ahead",
+        "summary": "Fog can be beautiful but may hide viewpoints. Keep the schedule flexible when possible."
+      }
+    ]
+  },
+  "conversion": {
+    "eyebrow": "Your Zhangjiajie, made clearer",
+    "summary": "Send us your dates and pace — we’ll fit Zhangjiajie into a smooth, realistic China route."
+  }
+}

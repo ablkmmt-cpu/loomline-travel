@@ -1,0 +1,179 @@
+{
+  "slug": "yunnan",
+  "name": "Yunnan",
+  "meta": {
+    "title": "Yunnan Travel Guide | Loomline Travel",
+    "description": "Explore Yunnan with clear highlights, local flavors, practical advice, and a realistic 7–14-day route.",
+    "canonicalUrl": "https://loomlinetravel.com/destinations/yunnan/",
+    "ogImage": "https://loomlinetravel.com/assets/destinations/yunnan/hero-og.jpg"
+  },
+  "hero": {
+    "eyebrow": "Highland lakes · Old towns · Many cultures",
+    "summary": "A varied regional journey through lakes, old towns, snow mountains, tropical forests, and living local traditions.",
+    "image": "assets/destinations/yunnan/hero.webp",
+    "mobileImage": "assets/destinations/yunnan/hero-mobile.webp",
+    "alt": "A representative travel scene in Yunnan"
+  },
+  "cta": {
+    "primary": {
+      "label": "Plan this city →",
+      "url": "contact.html?city=yunnan"
+    },
+    "secondary": {
+      "label": "Ask on WhatsApp",
+      "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20visiting%20Yunnan."
+    }
+  },
+  "facts": [
+    {
+      "label": "Best days",
+      "value": "7–14 days",
+      "detail": "Seven to ten days suit a classic northwest route; longer trips can add tropical or terrace regions without forcing the transfers."
+    },
+    {
+      "label": "Best season",
+      "value": "March–May · Sep–Nov",
+      "detail": "Clearer days across multiple elevations"
+    },
+    {
+      "label": "Best for",
+      "value": "Variety · Slow routes · Culture",
+      "detail": "A varied regional journey through lakes, old towns, snow mountains, tropical forests, and living local traditions."
+    },
+    {
+      "label": "Pairs with",
+      "value": "Chengdu · Shanghai",
+      "detail": "Useful domestic flight connections"
+    }
+  ],
+  "intro": {
+    "eyebrow": "One province, many landscapes",
+    "title": "Yunnan, China in Every Climate",
+    "left": "At China’s southwestern crossroads, Yunnan stretches from snow mountains and deep river gorges to highland lakes, limestone forests, rice terraces, and tropical rainforest. Twenty-six long-established ethnic groups add languages, architecture, food, and traditions that can change dramatically from one valley to the next.",
+    "right": "Yunnan is not a single-city break; it is a route. Dali, Lijiang, Shangri-La, Xishuangbanna, and Yuanyang each offer a different version of the province, so the most rewarding journey chooses one coherent direction instead of trying to collect every highlight in one rushed loop."
+  },
+  "highlights": {
+    "eyebrow": "Start here",
+    "title": "Highlights",
+    "linkLabel": "All highlights →",
+    "linkUrl": "#city-detail-highlights-title",
+    "items": [
+      {
+        "image": "assets/destinations/yunnan/01.webp",
+        "alt": "Dali in Yunnan",
+        "title": "Dali",
+        "summary": "Erhai Lake, Bai culture, old towns, and Cangshan views."
+      },
+      {
+        "image": "assets/destinations/yunnan/02.webp",
+        "alt": "Lijiang in Yunnan",
+        "title": "Lijiang",
+        "summary": "Historic lanes beneath Jade Dragon Snow Mountain."
+      },
+      {
+        "image": "assets/destinations/yunnan/03.webp",
+        "alt": "Shangri-La in Yunnan",
+        "title": "Shangri-La",
+        "summary": "Highland scenery, Tibetan culture, and Songzanlin Monastery."
+      },
+      {
+        "image": "assets/destinations/yunnan/04.webp",
+        "alt": "Tiger Leaping Gorge in Yunnan",
+        "title": "Tiger Leaping Gorge",
+        "summary": "A dramatic canyon route between Lijiang and Shangri-La."
+      },
+      {
+        "image": "assets/destinations/yunnan/05.webp",
+        "alt": "Xishuangbanna in Yunnan",
+        "title": "Xishuangbanna",
+        "summary": "Tropical rainforest and Dai cultural landscapes."
+      },
+      {
+        "image": "assets/destinations/yunnan/06.webp",
+        "alt": "Yuanyang Terraces in Yunnan",
+        "title": "Yuanyang Terraces",
+        "summary": "Water-filled rice terraces shaped across the mountains."
+      }
+    ]
+  },
+  "flavors": {
+    "eyebrow": "Yunnan flavors",
+    "title": "Taste Yunnan.",
+    "summary": "Plan at least one local meal into the route — these flavors are part of understanding Yunnan.",
+    "image": "assets/destinations/yunnan/07.webp",
+    "imageAlt": "A table of local food from Yunnan",
+    "items": [
+      {
+        "title": "Crossing-the-bridge noodles",
+        "summary": "A tableside rice-noodle ritual from Mengzi"
+      },
+      {
+        "title": "Wild mushroom hotpot",
+        "summary": "Seasonal Yunnan fungi cooked with careful guidance"
+      },
+      {
+        "title": "Steam-pot chicken",
+        "summary": "A clear broth slowly cooked in a clay vessel"
+      },
+      {
+        "title": "Flower cakes",
+        "summary": "Flaky pastries filled with fragrant rose petals"
+      },
+      {
+        "title": "Dai barbecue",
+        "summary": "Bright herbs, spice, and charcoal-grilled ingredients"
+      }
+    ]
+  },
+  "stay": {
+    "eyebrow": "Recommended time",
+    "title": "How long to stay",
+    "duration": "7–14",
+    "unit": "Days",
+    "summary": "Seven to ten days suit a classic northwest route; longer trips can add tropical or terrace regions without forcing the transfers.",
+    "plans": [
+      {
+        "label": "7 days",
+        "summary": "Connect Kunming, Dali, and Lijiang with enough time for lakes, old towns, and one mountain experience.",
+        "status": "Coming soon",
+        "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%207%20days%20Yunnan%20itinerary."
+      },
+      {
+        "label": "10 days",
+        "summary": "Extend through Tiger Leaping Gorge to Shangri-La while keeping altitude and transport days realistic.",
+        "status": "Coming soon"
+      },
+      {
+        "label": "14 days",
+        "summary": "Add Xishuangbanna or Yuanyang as a separate southern chapter rather than a rushed detour.",
+        "status": "Coming soon"
+      }
+    ]
+  },
+  "notes": {
+    "eyebrow": "Know before you go",
+    "title": "Practical notes",
+    "items": [
+      {
+        "label": "Getting there",
+        "summary": "Kunming is the main gateway; high-speed rail links Dali, Lijiang, and parts of southern Yunnan."
+      },
+      {
+        "label": "Getting around",
+        "summary": "Yunnan is a region, not one stop. Choose one geographic corridor to avoid losing days in transit."
+      },
+      {
+        "label": "Where to stay",
+        "summary": "Dali offers a relaxed base, while Lijiang and Shangri-La suit higher-altitude routes."
+      },
+      {
+        "label": "Planning ahead",
+        "summary": "Elevation and weather change quickly. Allow gradual acclimatization before Shangri-La or mountain days."
+      }
+    ]
+  },
+  "conversion": {
+    "eyebrow": "Your Yunnan, made clearer",
+    "summary": "Send us your dates and pace — we’ll fit Yunnan into a smooth, realistic China route."
+  }
+}

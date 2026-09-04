@@ -1,0 +1,178 @@
+{
+  "slug": "northeast-china",
+  "name": "Northeast China",
+  "meta": {
+    "title": "Northeast China Travel Guide | Loomline Travel",
+    "description": "Explore Northeast China through Harbin, Changbai Mountain, Shenyang, Dalian, winter culture, regional food, and a realistic 7–10 day route.",
+    "canonicalUrl": "https://loomlinetravel.com/destinations/northeast-china/",
+    "ogImage": "https://loomlinetravel.com/assets/destinations/northeast-china/hero-og.jpg"
+  },
+  "hero": {
+    "eyebrow": "Harbin · Changbai Mountain · Manchurian heritage",
+    "summary": "Ice architecture, volcanic mountains, historic cities, and hearty northern food across China’s far northeast.",
+    "image": "assets/destinations/northeast-china/hero.webp",
+    "mobileImage": "assets/destinations/northeast-china/hero-mobile.webp",
+    "alt": "Illuminated ice architecture in Harbin, Northeast China"
+  },
+  "cta": {
+    "primary": {
+      "label": "Plan this region →",
+      "url": "contact.html?city=northeast-china"
+    },
+    "secondary": {
+      "label": "Ask on WhatsApp",
+      "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20a%20Northeast%20China%20trip."
+    }
+  },
+  "facts": [
+    {
+      "label": "Best days",
+      "value": "7–10 days",
+      "detail": "Enough for two or three bases without rushing long transfers"
+    },
+    {
+      "label": "Best season",
+      "value": "Dec–Feb · Sep–Oct",
+      "detail": "Deep winter for ice and snow; autumn for forests and mountain color"
+    },
+    {
+      "label": "Best for",
+      "value": "Winter · Food · Regional history",
+      "detail": "A less familiar side of China with strong seasonal character"
+    },
+    {
+      "label": "Pairs with",
+      "value": "Beijing",
+      "detail": "The clearest gateway into a northern China route"
+    }
+  ],
+  "intro": {
+    "eyebrow": "China beyond the familiar route",
+    "title": "Northeast China, Season by Season",
+    "left": "Northeast China spans Liaoning, Jilin, and Heilongjiang. Its cities carry Manchurian history, industrial memory, Russian architectural influence, Korean cultural connections, and some of the country’s most distinctive winter traditions.",
+    "right": "This is not one compact destination. A good route chooses a clear seasonal story: Harbin and snow country in winter, Changbai Mountain and forest landscapes in autumn, or Shenyang and Dalian for heritage, coast, and city life. The distances make pacing more important than collecting stops."
+  },
+  "highlights": {
+    "eyebrow": "Build your route",
+    "title": "Highlights",
+    "linkLabel": "All highlights →",
+    "linkUrl": "#city-detail-highlights-title",
+    "items": [
+      {
+        "title": "Harbin Ice & Snow World",
+        "summary": "A monumental winter city built from illuminated ice",
+        "image": "assets/destinations/northeast-china/01.webp",
+        "alt": "Illuminated ice buildings at Harbin Ice and Snow World"
+      },
+      {
+        "title": "Saint Sophia Cathedral",
+        "summary": "Harbin’s layered architectural history in one landmark",
+        "image": "assets/destinations/northeast-china/02.webp",
+        "alt": "Saint Sophia Cathedral in snowy Harbin"
+      },
+      {
+        "title": "Changbai Mountain",
+        "summary": "Volcanic landscapes, forests, and the high crater lake",
+        "image": "assets/destinations/northeast-china/03.webp",
+        "alt": "Tianchi crater lake at Changbai Mountain"
+      },
+      {
+        "title": "Shenyang Imperial Palace",
+        "summary": "Early Qing history in a richly detailed palace complex",
+        "image": "assets/destinations/northeast-china/04.webp",
+        "alt": "Historic halls at Shenyang Imperial Palace"
+      },
+      {
+        "title": "Dalian Coast",
+        "summary": "Cliff roads, sea views, and a lighter coastal pace",
+        "image": "assets/destinations/northeast-china/05.webp",
+        "alt": "Coastal road and sea cliffs in Dalian"
+      },
+      {
+        "title": "Snow Country",
+        "summary": "Deep snow, wooden homes, and a carefully planned winter night",
+        "image": "assets/destinations/northeast-china/06.webp",
+        "alt": "Snow-covered wooden village homes in Northeast China"
+      }
+    ]
+  },
+  "flavors": {
+    "eyebrow": "Northeast flavors",
+    "title": "Generous, warming, and made to share.",
+    "summary": "Dongbei food suits the climate: substantial portions, pickled vegetables, slow stews, wheat-based staples, and distinctive city specialties.",
+    "image": "assets/destinations/northeast-china/07.webp",
+    "imageAlt": "A shared table of Northeast Chinese dishes",
+    "items": [
+      {
+        "title": "Guo bao rou",
+        "summary": "Crisp pork in a bright sweet-and-sour glaze"
+      },
+      {
+        "title": "Iron-pot stew",
+        "summary": "A slow-cooked shared meal made for cold evenings"
+      },
+      {
+        "title": "Northeast dumplings",
+        "summary": "Hearty fillings and a central place at the family table"
+      },
+      {
+        "title": "Harbin red sausage",
+        "summary": "A smoky local specialty shaped by the city’s history"
+      },
+      {
+        "title": "Korean-style cold noodles",
+        "summary": "A refreshing regional favorite with cross-border roots"
+      }
+    ]
+  },
+  "stay": {
+    "eyebrow": "Recommended time",
+    "title": "How long to stay",
+    "duration": "7–10",
+    "unit": "Days",
+    "summary": "Choose two or three bases and leave room for weather, long transfers, and full outdoor days.",
+    "plans": [
+      {
+        "label": "5 days",
+        "summary": "Focus on Harbin and one nearby winter area, with enough time for the city beyond the ice festival.",
+        "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%205-day%20Northeast%20China%20itinerary."
+      },
+      {
+        "label": "7 days",
+        "summary": "Combine Harbin with Changbai Mountain or Shenyang for a clearer contrast between nature and history.",
+        "status": "Ask for this route"
+      },
+      {
+        "label": "10 days",
+        "summary": "Connect Harbin, Changbai Mountain, Shenyang, and Dalian with realistic transfer days.",
+        "status": "Ask for this route"
+      }
+    ]
+  },
+  "notes": {
+    "eyebrow": "Know before you go",
+    "title": "Practical notes",
+    "items": [
+      {
+        "label": "Route scale",
+        "summary": "Northeast China is a large region. High-speed rail helps between major cities, while mountain and snow areas require road transfers."
+      },
+      {
+        "label": "Winter weather",
+        "summary": "Harbin can be extremely cold. Proper insulated boots, gloves, face protection, and spare phone batteries are essential."
+      },
+      {
+        "label": "Season matters",
+        "summary": "Ice attractions and snow villages are winter products; mountain access, color, and daylight vary significantly by month."
+      },
+      {
+        "label": "Where to begin",
+        "summary": "Use Harbin for a winter-first route, Shenyang for history, or Dalian for a milder coastal introduction."
+      }
+    ]
+  },
+  "conversion": {
+    "eyebrow": "Your Northeast route, made clearer",
+    "summary": "Tell us your season, dates, and priorities — we’ll connect the right cities without turning the trip into a chain of transfers."
+  }
+}

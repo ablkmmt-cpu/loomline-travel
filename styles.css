@@ -136,7 +136,7 @@ main h2 {
   max-width: min(820px, 92vw);
   margin: clamp(24px, 2.2vw, 32px) auto 0;
   color: var(--muted);
-  font-size: clamp(17px, 1.8vw, 29px);
+  font-size: clamp(20px, 2vw, 32px);
   font-weight: 600;
   line-height: 1.35;
   white-space: nowrap;
@@ -736,7 +736,7 @@ main h2 {
 .destination-info span,
 .destination-info em {
   color: rgba(255, 248, 234, 0.68);
-  font-size: 13px;
+  font-size: 14.5px;
   font-style: normal;
   font-weight: 800;
   line-height: 1.35;
@@ -785,7 +785,7 @@ main h2 {
   grid-column: 1 / -1;
   margin: 0;
   color: #d6ad68;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 750;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -825,6 +825,10 @@ main h2 {
   margin: 0 auto;
 }
 
+.experience-bento.is-collapsed .experience-card:nth-child(n + 5) {
+  display: none;
+}
+
 .experience-card {
   position: relative;
   grid-column: span 1;
@@ -857,6 +861,54 @@ main h2 {
 
 .experience-card.is-hidden {
   display: none;
+}
+
+.experiences-toggle {
+  min-height: 48px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 30px auto 0;
+  padding: 0 24px;
+  border: 1px solid rgba(218, 177, 101, 0.58);
+  border-radius: 999px;
+  color: #f4d58d;
+  background: rgba(255, 247, 233, 0.045);
+  font: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.experiences-toggle[hidden] {
+  display: none;
+}
+
+.experiences-toggle:hover,
+.experiences-toggle:focus-visible {
+  color: #17110a;
+  background: #d6ad68;
+}
+
+.experiences-toggle:active {
+  transform: translateY(1px);
+}
+
+.experiences-toggle-icon {
+  width: 8px;
+  height: 8px;
+  transform: translateY(-2px) rotate(45deg);
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transition: transform 180ms ease;
+}
+
+.experiences-toggle[aria-expanded="true"] .experiences-toggle-icon {
+  transform: translateY(2px) rotate(225deg);
 }
 
 .experience-card img {
@@ -930,7 +982,7 @@ main h2 {
 .experiences-cta p {
   margin: 0;
   color: rgba(255, 247, 233, 0.56);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 560;
 }
 
@@ -1206,7 +1258,7 @@ main h2 {
 .about-kicker {
   margin: 0 0 18px;
   color: rgba(121, 84, 26, 0.68);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 900;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1249,7 +1301,7 @@ main h2 {
 .founder-profile > p {
   margin: 0 0 18px;
   color: rgba(121, 84, 26, 0.72);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 850;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1333,7 +1385,7 @@ main h2 {
 .founder-profile span {
   margin-top: 8px;
   color: rgba(255, 248, 237, 0.78);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 740;
   line-height: 1.4;
 }
@@ -1343,7 +1395,7 @@ main h2 {
   margin-top: 13px;
   padding-left: 14px;
   color: rgba(224, 190, 121, 0.9);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   line-height: 1.4;
 }
@@ -1369,7 +1421,7 @@ main h2 {
 .about-social > p {
   margin: 0 0 18px;
   color: rgba(121, 84, 26, 0.72);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 850;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -1392,7 +1444,7 @@ main h2 {
   border-radius: 999px;
   color: rgba(21, 21, 21, 0.74);
   background: rgba(255, 255, 255, 0.5);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 760;
   white-space: nowrap;
   transition: color 180ms ease, border-color 180ms ease, background 180ms ease, transform 180ms ease;
@@ -1509,12 +1561,12 @@ main h2 {
 
   .founder-profile span {
     margin-top: 6px;
-    font-size: 12px;
+    font-size: 13.5px;
   }
 
   .founder-profile small {
     margin-top: 10px;
-    font-size: 10px;
+    font-size: 11.5px;
   }
 
   .about-social {
@@ -1540,7 +1592,7 @@ main h2 {
     border: 0;
     border-radius: 8px;
     background: transparent;
-    font-size: 12px;
+    font-size: 13.5px;
   }
 
   .about-social-links svg {
@@ -1612,7 +1664,7 @@ main h2 {
 .form-intro {
   margin: 16px 0 0;
   color: rgba(21, 21, 21, 0.52);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 650;
   line-height: 1.5;
 }
@@ -1655,7 +1707,7 @@ main h2 {
   margin-bottom: 8px;
   padding: 0;
   color: rgba(21, 21, 21, 0.74);
-  font-size: 12px;
+  font-size: 13.5px;
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1664,7 +1716,7 @@ main h2 {
 .whatsapp-field legend small {
   margin-left: 5px;
   color: rgba(21, 21, 21, 0.36);
-  font-size: 9px;
+  font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 0.06em;
 }
@@ -1682,7 +1734,7 @@ main h2 {
 
 .trip-form span {
   color: rgba(21, 21, 21, 0.74);
-  font-size: 12px;
+  font-size: 13.5px;
   font-weight: 900;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1696,7 +1748,7 @@ main h2 {
 .trip-form span small {
   margin-left: 5px;
   color: rgba(21, 21, 21, 0.36);
-  font-size: 9px;
+  font-size: 10.5px;
   font-weight: 800;
   letter-spacing: 0.06em;
 }
@@ -1710,7 +1762,7 @@ main h2 {
   color: var(--ink);
   background: rgba(250, 247, 240, 0.86);
   font: inherit;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 650;
   outline: 0;
 }
@@ -1770,7 +1822,7 @@ main h2 {
   min-width: 0;
   overflow: hidden;
   color: rgba(21, 21, 21, 0.32);
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 650;
   letter-spacing: 0;
   line-height: 1.4;
@@ -1900,7 +1952,7 @@ main h2 {
   min-width: 0;
   padding: 5px 0;
   color: rgba(28, 40, 35, 0.5);
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0;
   line-height: 1;
@@ -1924,7 +1976,7 @@ main h2 {
   color: rgba(28, 40, 35, 0.82);
   background: transparent;
   font: inherit;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 720;
   cursor: pointer;
   transition: color 140ms ease, background 140ms ease, transform 140ms ease;
@@ -2009,7 +2061,7 @@ main h2 {
 
 .trip-form .form-contact-divider span {
   color: rgba(21, 21, 21, 0.48);
-  font-size: 11px;
+  font-size: 12.5px;
   font-weight: 700;
   letter-spacing: 0;
   text-transform: none;
@@ -2025,7 +2077,7 @@ main h2 {
   border-radius: 999px;
   color: var(--deep-green);
   background: rgba(255, 253, 248, 0.34);
-  font-size: 14px;
+  font-size: 15.5px;
   font-weight: 800;
   transition:
     color 180ms ease,
@@ -2242,7 +2294,7 @@ main h2 {
 .form-feedback span {
   display: block;
   color: rgba(255, 248, 234, 0.82);
-  font-size: clamp(13px, 1.05vw, 15px);
+  font-size: clamp(15px, 1.2vw, 17px);
   font-weight: 650;
   line-height: 1.56;
   white-space: pre-line;
@@ -2255,7 +2307,7 @@ main h2 {
   margin-top: 8px;
   color: rgba(255, 248, 234, 0.94);
   font-family: "Cinzel", serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 800;
   letter-spacing: 0.08em;
 }
@@ -2272,7 +2324,7 @@ main h2 {
 .destinations-cta p {
   margin: 0;
   color: rgba(21, 21, 21, 0.52);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 680;
 }
 
@@ -2524,7 +2576,7 @@ main h2 {
 
   .subtitle {
     max-width: none;
-    font-size: clamp(10px, 2.7vw, 15px);
+    font-size: clamp(13px, 3.5vw, 18px);
     margin-top: 32px;
   }
 
@@ -2722,7 +2774,7 @@ main h2 {
 
   .destination-info span,
   .destination-info em {
-    font-size: 12px;
+    font-size: 13.5px;
   }
 
   .destinations-cta {
@@ -2756,7 +2808,7 @@ main h2 {
 
   .experiences-heading p {
     grid-column: auto;
-    font-size: 10px;
+    font-size: 11.5px;
   }
 
   .experiences-heading h2 {
@@ -2857,7 +2909,7 @@ main h2 {
   }
 
   .experience-copy p {
-    font-size: 13px;
+    font-size: 14.5px;
   }
 
   .experience-details {
@@ -2865,12 +2917,12 @@ main h2 {
   }
 
   .experience-details p {
-    font-size: 14px;
+    font-size: 15.5px;
   }
 
   .experience-details span,
   .experience-details em {
-    font-size: 12px;
+    font-size: 13.5px;
   }
 
   .experience-card:hover,
@@ -2906,6 +2958,11 @@ main h2 {
 
   .experiences-cta {
     margin-top: 30px;
+  }
+
+  .experiences-toggle {
+    width: min(310px, 100%);
+    margin-top: 24px;
   }
 
   .experiences-cta p {
@@ -3063,6 +3120,26 @@ main h2 {
 
   .form-feedback h3 {
     font-size: 28px;
+  }
+}
+
+/* Generated source photos run brighter than the legacy experience set. */
+.experience-card[data-experience-tone="muted"] img {
+  filter: saturate(0.76) contrast(1.06) brightness(0.72);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .experience-card[data-experience-tone="muted"]:hover img,
+  .experience-card[data-experience-tone="muted"]:focus-visible img {
+    filter: saturate(0.84) contrast(1.06) brightness(0.8);
+  }
+}
+
+@media (max-width: 760px) {
+  .experience-card[data-experience-tone="muted"] img,
+  .experience-card[data-experience-tone="muted"]:hover img,
+  .experience-card[data-experience-tone="muted"]:focus-visible img {
+    filter: saturate(0.78) contrast(1.06) brightness(0.76);
   }
 }
 
@@ -3766,7 +3843,7 @@ main h2 {
   color: #fff8ed;
   background:
     linear-gradient(90deg, rgba(8, 7, 6, 0.96) 0%, rgba(8, 7, 6, 0.88) 52%, rgba(8, 7, 6, 0.76) 100%),
-    url("assets/experience-tea-food.png") center / cover no-repeat;
+    url("assets/experiences/tea-culture/hero.webp") center / cover no-repeat;
 }
 
 .chengdu-preview-inner {
@@ -4184,7 +4261,7 @@ main h2 {
     padding: 76px 18px 82px;
     background:
       linear-gradient(180deg, rgba(8, 7, 6, 0.92), rgba(8, 7, 6, 0.96)),
-      url("assets/experience-tea-food.png") center / cover no-repeat;
+      url("assets/experiences/tea-culture/hero.webp") center / cover no-repeat;
   }
 
   .chengdu-preview-inner {
@@ -4354,7 +4431,7 @@ main h2 {
   gap: 18px;
   padding: 22px 26px;
   color: #10231f;
-  font-size: clamp(15px, 1.8vw, 17px);
+  font-size: clamp(16.5px, 1.9vw, 19px);
   font-weight: 750;
   line-height: 1.4;
   cursor: pointer;
@@ -4418,12 +4495,12 @@ main h2 {
 @media (max-width: 560px) {
   .faq-item summary {
     padding: 18px 18px;
-    font-size: 15px;
+    font-size: 16.5px;
   }
 
   .faq-answer {
     padding: 0 18px 20px;
-    font-size: 14px;
+    font-size: 15.5px;
   }
 
   .faq-item summary::after {
@@ -4435,6 +4512,63 @@ main h2 {
 .faq-heading h2,
 .faq-heading p {
   white-space: normal;
+}
+
+/* FAQ 支付教程跳转链接（YouTube Shorts） */
+.faq-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(12px, 2.5vw, 18px);
+  margin-top: 18px;
+}
+
+.faq-tutorial {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 18px 20px;
+  border: 1px solid rgba(21, 21, 21, 0.1);
+  border-radius: 16px;
+  background: #fffdf8;
+  box-shadow: 0 8px 22px rgba(35, 31, 24, 0.07);
+  text-decoration: none;
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.faq-tutorial:hover {
+  border-color: rgba(185, 139, 66, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(35, 31, 24, 0.1);
+}
+
+.faq-tutorial:focus-visible {
+  outline: 2px solid rgba(185, 139, 66, 0.55);
+  outline-offset: 2px;
+}
+
+.faq-tutorial-badge {
+  align-self: flex-start;
+  padding: 4px 11px;
+  border-radius: 999px;
+  color: #fff8ed;
+  background: #183a32;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.faq-tutorial-label {
+  color: rgba(28, 40, 35, 0.78);
+  font-size: 14.5px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .faq-links {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ============ Services 双产品卡（Preview 01 模板） ============ */
@@ -4457,20 +4591,78 @@ main h2 {
 }
 
 .product-head {
+  position: relative;
+  isolation: isolate;
+  min-height: 200px;
   padding: 26px 28px 22px;
   color: #fff;
+  overflow: hidden;
+}
+
+.product-custom {
+  --custom-cinnabar: #572723;
+  --custom-cinnabar-deep: #421b18;
 }
 
 .product-standard .product-head {
-  background: linear-gradient(135deg, #0e3b2e, #12382e);
+  background: #12382e;
 }
 
 .product-custom .product-head {
-  background: linear-gradient(135deg, #1a1a18, #242219);
+  background: var(--custom-cinnabar);
+}
+
+.product-head-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.82) contrast(1.04);
+}
+
+.product-custom .product-head-image {
+  object-position: 58% center;
+}
+
+.product-head::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.product-standard .product-head::before {
+  background: linear-gradient(
+    90deg,
+    rgba(14, 59, 46, 0.99) 0%,
+    rgba(14, 59, 46, 0.95) 34%,
+    rgba(14, 59, 46, 0.62) 58%,
+    rgba(14, 59, 46, 0.08) 100%
+  );
+}
+
+.product-custom .product-head::before {
+  background: linear-gradient(
+    90deg,
+    rgba(75, 30, 26, 0.99) 0%,
+    rgba(75, 30, 26, 0.95) 34%,
+    rgba(75, 30, 26, 0.62) 58%,
+    rgba(75, 30, 26, 0.08) 100%
+  );
+}
+
+.product-head-copy {
+  position: relative;
+  z-index: 2;
+  width: min(68%, 355px);
 }
 
 .product-kicker {
-  font-size: 11px;
+  font-size: 12.5px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   opacity: 0.75;
@@ -4485,7 +4677,7 @@ main h2 {
 }
 
 .product-sub {
-  font-size: 13.5px;
+  font-size: 15px;
   opacity: 0.85;
   margin-top: 8px;
   line-height: 1.5;
@@ -4507,9 +4699,13 @@ main h2 {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 12px 0;
+  padding: 15px 0;
   border-bottom: 1px dashed rgba(16, 35, 31, 0.14);
   text-decoration: none;
+}
+
+.route-coming-soon {
+  cursor: default;
 }
 
 .route:last-of-type {
@@ -4530,7 +4726,7 @@ main h2 {
 }
 
 .product-custom .route-pin {
-  background: #171512;
+  background: var(--custom-cinnabar-deep);
   color: #e7c672;
 }
 
@@ -4541,12 +4737,12 @@ main h2 {
 
 .route-info b {
   display: block;
-  font-size: 14.5px;
+  font-size: 16px;
   color: var(--ink);
 }
 
 .route-info > span {
-  font-size: 12.5px;
+  font-size: 14.5px;
   color: #6b6355;
 }
 
@@ -4556,22 +4752,45 @@ main h2 {
 }
 
 .route-price b {
-  font-size: 16px;
+  font-size: 17px;
   color: var(--ink);
 }
 
 .route-price small {
   display: block;
-  font-size: 10.5px;
+  font-size: 12.5px;
   color: #8a8172;
   letter-spacing: 0.04em;
+}
+
+.route-price-coming-soon b {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 9px;
+  color: #8b6522;
+  border: 1px solid rgba(139, 101, 34, 0.3);
+  border-radius: 999px;
+  background: rgba(184, 145, 75, 0.08);
+  font-size: 10.5px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.route-price-coming-soon small {
+  margin-top: 4px;
+  font-size: 10.5px;
+  text-transform: uppercase;
 }
 
 .route-tag {
   display: inline-block;
   background: #e7c672;
   color: #10231f;
-  font-size: 10.5px;
+  font-size: 12px;
   font-weight: 700;
   font-style: normal;
   padding: 3px 9px;
@@ -4579,8 +4798,12 @@ main h2 {
   margin-left: 6px;
 }
 
+.product-standard .route-tag {
+  margin-left: 0;
+}
+
 .cta-info {
-  font-size: 12.5px;
+  font-size: 14px;
   font-weight: 700;
   color: #6b6355;
   line-height: 1.6;
@@ -4603,7 +4826,7 @@ main h2 {
   padding: 14px 26px;
   border-radius: 12px;
   font-weight: 700;
-  font-size: 14.5px;
+  font-size: 16px;
 }
 
 .product-card .btn-solid {
@@ -4618,17 +4841,115 @@ main h2 {
 }
 
 .product-custom .btn-solid {
-  background: #171512;
+  background: var(--custom-cinnabar-deep);
   color: #f2e6cd;
 }
 
 .product-custom .btn-ghost {
-  border-color: rgba(23, 21, 18, 0.3);
-  color: #171512;
+  border-color: rgba(66, 27, 24, 0.3);
+  color: var(--custom-cinnabar-deep);
 }
 
 @media (max-width: 900px) {
   .product-cards {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .product-head {
+    min-height: 218px;
+    padding: 24px 22px 20px;
+  }
+
+  .product-head-copy {
+    width: min(78%, 355px);
+  }
+
+  .product-standard .product-head::before {
+    background: linear-gradient(
+      90deg,
+      rgba(14, 59, 46, 0.99) 0%,
+      rgba(14, 59, 46, 0.94) 50%,
+      rgba(14, 59, 46, 0.28) 100%
+    );
+  }
+
+  .product-custom .product-head::before {
+    background: linear-gradient(
+      90deg,
+      rgba(75, 30, 26, 0.99) 0%,
+      rgba(75, 30, 26, 0.94) 50%,
+      rgba(75, 30, 26, 0.28) 100%
+    );
+  }
+}
+
+/* ============ Homepage body type scale ============ */
+
+.home-page .subtitle {
+  font-size: 21px;
+  line-height: 1.5;
+}
+
+.home-page .section-heading p,
+.home-page .destinations-heading p,
+.home-page .experiences-heading span {
+  font-size: 18.5px;
+  line-height: 1.58;
+  white-space: normal;
+}
+
+.home-page .product-sub {
+  font-size: 17px;
+  line-height: 1.52;
+}
+
+.home-page .destination-info p,
+.home-page .destinations-cta p,
+.home-page .experiences-cta p,
+.home-page .faq-answer,
+.home-page .about-copy > p:not(.about-kicker),
+.home-page .trust-points p,
+.home-page .form-intro {
+  font-size: 17.5px;
+  line-height: 1.6;
+}
+
+.home-page .about-copy > p.about-lead {
+  font-size: 20.5px;
+  line-height: 1.58;
+}
+
+@media (max-width: 760px) {
+  .home-page .subtitle {
+    max-width: min(330px, 100%);
+    font-size: 19px;
+    line-height: 1.5;
+    white-space: normal;
+  }
+
+  .home-page .section-heading p,
+  .home-page .destinations-heading p,
+  .home-page .experiences-heading span,
+  .home-page .destination-info p,
+  .home-page .destinations-cta p,
+  .home-page .experiences-cta p,
+  .home-page .faq-answer,
+  .home-page .about-copy > p:not(.about-kicker),
+  .home-page .trust-points p,
+  .home-page .form-intro {
+    font-size: 16.5px;
+    line-height: 1.6;
+  }
+
+  .home-page .product-sub {
+    font-size: 15.5px;
+    line-height: 1.55;
+  }
+
+  .home-page .about-copy > p.about-lead {
+    font-size: 18.5px;
+    line-height: 1.6;
   }
 }

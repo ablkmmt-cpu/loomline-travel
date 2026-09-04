@@ -1,0 +1,179 @@
+{
+  "slug": "xian",
+  "name": "Xi’an",
+  "meta": {
+    "title": "Xi’an Travel Guide | Loomline Travel",
+    "description": "Explore Xi’an with clear highlights, local flavors, practical advice, and a realistic 3–4-day route.",
+    "canonicalUrl": "https://loomlinetravel.com/destinations/xian/",
+    "ogImage": "https://loomlinetravel.com/assets/destinations/xian/hero-og.jpg"
+  },
+  "hero": {
+    "eyebrow": "Ancient capital · Silk Road · Street food",
+    "summary": "Terracotta warriors, an intact city wall, Tang-era stories, and one of China’s most rewarding food scenes.",
+    "image": "assets/destinations/xian/hero.webp",
+    "mobileImage": "assets/destinations/xian/hero-mobile.webp",
+    "alt": "A representative travel scene in Xi’an"
+  },
+  "cta": {
+    "primary": {
+      "label": "Plan this city →",
+      "url": "contact.html?city=xian"
+    },
+    "secondary": {
+      "label": "Ask on WhatsApp",
+      "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20visiting%20Xi%E2%80%99an."
+    }
+  },
+  "facts": [
+    {
+      "label": "Best days",
+      "value": "3–4 days",
+      "detail": "A compact stay for the Terracotta Army, old city, Tang landmarks, and a proper food route."
+    },
+    {
+      "label": "Best season",
+      "value": "Spring & autumn",
+      "detail": "Comfortable weather for walls and ruins"
+    },
+    {
+      "label": "Best for",
+      "value": "Ancient history · Food · Short stays",
+      "detail": "Terracotta warriors, an intact city wall, Tang-era stories, and one of China’s most rewarding food scenes."
+    },
+    {
+      "label": "Pairs with",
+      "value": "Beijing · Chengdu",
+      "detail": "A natural high-speed rail stop"
+    }
+  ],
+  "intro": {
+    "eyebrow": "The eastern gateway of the Silk Road",
+    "title": "Xi’an, Gateway to the Silk Road",
+    "left": "Known historically as Chang’an, Xi’an served as the capital of thirteen dynasties and the eastern starting point of the Silk Road. The city compresses centuries of Chinese history into a remarkably approachable stop, from Qin burial armies to Tang-era pagodas and a complete Ming city wall.",
+    "right": "Xi’an is not frozen in the past. You can spend the morning with the Terracotta Army, cycle above the old city in the afternoon, then follow food stalls and illuminated Tang-style streets after dark. Its compact center makes deep history easier to experience without the scale of Beijing."
+  },
+  "highlights": {
+    "eyebrow": "Start here",
+    "title": "Highlights",
+    "linkLabel": "All highlights →",
+    "linkUrl": "#city-detail-highlights-title",
+    "items": [
+      {
+        "image": "assets/destinations/xian/01.webp",
+        "alt": "Terracotta Army in Xi’an",
+        "title": "Terracotta Army",
+        "summary": "Thousands of life-sized warriors guarding China’s first emperor."
+      },
+      {
+        "image": "assets/destinations/xian/02.webp",
+        "alt": "Ancient City Wall in Xi’an",
+        "title": "Ancient City Wall",
+        "summary": "Cycle or walk above one of China’s best-preserved city walls."
+      },
+      {
+        "image": "assets/destinations/xian/03.webp",
+        "alt": "Giant Wild Goose Pagoda in Xi’an",
+        "title": "Giant Wild Goose Pagoda",
+        "summary": "A Tang landmark connected to the history of Buddhism in China."
+      },
+      {
+        "image": "assets/destinations/xian/04.webp",
+        "alt": "Bell Tower in Xi’an",
+        "title": "Bell Tower",
+        "summary": "The illuminated centerpiece of Xi’an’s historic street plan."
+      },
+      {
+        "image": "assets/destinations/xian/05.webp",
+        "alt": "Drum Tower in Xi’an",
+        "title": "Drum Tower",
+        "summary": "A grand Ming structure beside some of the old city’s busiest lanes."
+      },
+      {
+        "image": "assets/destinations/xian/06.webp",
+        "alt": "Grand Tang Mall in Xi’an",
+        "title": "Grand Tang Mall",
+        "summary": "A theatrical evening promenade inspired by the Tang dynasty."
+      }
+    ]
+  },
+  "flavors": {
+    "eyebrow": "Xi’an flavors",
+    "title": "Taste Xi’an.",
+    "summary": "Plan at least one local meal into the route — these flavors are part of understanding Xi’an.",
+    "image": "assets/destinations/xian/07.webp",
+    "imageAlt": "A table of local food from Xi’an",
+    "items": [
+      {
+        "title": "Roujiamo",
+        "summary": "A crisp flatbread filled with slow-cooked meat"
+      },
+      {
+        "title": "Yangrou paomo",
+        "summary": "Flatbread broken into a rich lamb broth"
+      },
+      {
+        "title": "Liangpi",
+        "summary": "Cool noodles with chili, vinegar, and sesame"
+      },
+      {
+        "title": "Biangbiang noodles",
+        "summary": "Wide hand-pulled noodles with bold seasoning"
+      },
+      {
+        "title": "Persimmon cake",
+        "summary": "A soft, fragrant old-city snack"
+      }
+    ]
+  },
+  "stay": {
+    "eyebrow": "Recommended time",
+    "title": "How long to stay",
+    "duration": "3–4",
+    "unit": "Days",
+    "summary": "A compact stay for the Terracotta Army, old city, Tang landmarks, and a proper food route.",
+    "plans": [
+      {
+        "label": "3 days",
+        "summary": "Visit the Terracotta Army, walk or cycle the city wall, see the pagoda district, and explore the old city after dark.",
+        "status": "Coming soon",
+        "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%203%20days%20Xi%E2%80%99an%20itinerary."
+      },
+      {
+        "label": "4 days",
+        "summary": "Add the Shaanxi History Museum, quieter neighborhoods, and more time for local food without compressing the main sights.",
+        "status": "Coming soon"
+      },
+      {
+        "label": "Extra day",
+        "summary": "Add Mount Hua or another cultural stop outside the city with private transfer support.",
+        "status": "Coming soon"
+      }
+    ]
+  },
+  "notes": {
+    "eyebrow": "Know before you go",
+    "title": "Practical notes",
+    "items": [
+      {
+        "label": "Getting there",
+        "summary": "Xi’an is well connected by high-speed rail and has direct flights from many major Chinese cities."
+      },
+      {
+        "label": "Getting around",
+        "summary": "The metro covers central sights; the Terracotta Army requires a separate transfer outside the city."
+      },
+      {
+        "label": "Where to stay",
+        "summary": "Stay near the Bell Tower or inside the city wall for a compact first visit."
+      },
+      {
+        "label": "Planning ahead",
+        "summary": "The Muslim Quarter is busiest at night. Explore beyond the main lane for a calmer and broader food experience."
+      }
+    ]
+  },
+  "conversion": {
+    "eyebrow": "Your Xi’an, made clearer",
+    "summary": "Send us your dates and pace — we’ll fit Xi’an into a smooth, realistic China route."
+  }
+}
