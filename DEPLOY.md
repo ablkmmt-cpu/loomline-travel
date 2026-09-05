@@ -110,9 +110,10 @@ git push -u origin main
 
 > 搜索引擎从收录到排上需要几天到几周，正常现象。
 
-### 统计分析（待做）
-- 推荐 **Cloudflare Web Analytics**（免费、无 cookie、注重隐私，适合海外访问者）。在 Pages 项目里一键开启，无需改动代码。
-- 若想要更细的用户行为，可另加 **GA4**；但注意 GA4 用 cookie，海外站建议配合 EU 的 cookie 提示。
+### 统计分析 ✅ 已完成
+- **Cloudflare Web Analytics** 已开启（免费、无 cookie），用于基础流量趋势。
+- **Google Analytics 4** 已接入（`G-72QYM7PQST`），并用 **Consent Mode v2 + 同意横幅**处理欧盟 GDPR：访客点"接受"后才会真正采集。代码在 `assets/analytics.js`（全站注入，已同步进生成器/模板）。
+- 数据可在 GA4 后台（报告 → 实时）查看。
 
 ---
 
