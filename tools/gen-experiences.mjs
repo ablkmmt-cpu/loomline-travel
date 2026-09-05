@@ -624,6 +624,7 @@ ${comingSoonSection(e)}
 ${FOOTER}
 
     <script src="../../whatsapp-float.js?v=loomline-6"></script>
+    <script src="../../assets/analytics.js"></script>
   </body>
 </html>
 `;
