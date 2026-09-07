@@ -14,7 +14,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const WA = "https://wa.me/message/CNMUYNRK4BKGJ1";
+const WA = "https://api.whatsapp.com/send?phone=8615719582142";
 const A = (p) => join(ROOT, "experiences", p, "index.html");
 const renderComponent = (name) =>
   readFileSync(join(ROOT, "components", name), "utf8")
@@ -606,7 +606,7 @@ ${comingSoonSection(e)}
       <div class="sec-head">
         <div class="t"><p class="k">Pair it with</p><h2>${e.pairTitle || "More of Chengdu, one table at a time."}</h2></div>
       </div>
-      <div class="pair-row"><span class="lb">Try also in Chengdu</span>${e.pair.map((p, i) => `${i ? '<i>·</i>' : ''}<a href="${p[1] === "dest" ? "../../destinations/chengdu/index.html" : `../../experiences/${p[1]}/index.html`}">${p[0]}</a>`).join("")}</div>
+      <div class="pair-row"><span class="lb">Try also in Chengdu</span>${e.pair.map((p, i) => `${i ? '<i>·</i>' : ''}<a href="${p[1] === "dest" ? "../../destinations/chengdu/" : `../../experiences/${p[1]}/`}">${p[0]}</a>`).join("")}</div>
     </section>
 
     <!-- ⑩ Next step -->

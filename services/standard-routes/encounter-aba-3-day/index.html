@@ -1647,22 +1647,22 @@
 <body class="has-mobile-booking">
   <!-- @@HEADER@@ -->
   <header class="site-header">
-          <a class="brand" href="../../../index.html#top" aria-label="Loomline Travel home">
+          <a class="brand" href="../../../#top" aria-label="Loomline Travel home">
             <img class="brand-emblem" src="../../../assets/brand/loomline-emblem-gold-smooth.png?v=4" alt="" />
             <img class="brand-wordmark" src="../../../assets/brand/loomline-wordmark-ivory-smooth.png" alt="Loomline Travel" />
           </a>
 
           <nav class="nav-links" aria-label="Main navigation">
-            <a href="../../../index.html#services">Services</a>
-            <a href="../../../index.html#destinations">Destinations</a>
-            <a href="../../../index.html#experiences">Experiences</a>
-            <a href="../../../index.html#about">About Us</a>
+            <a href="../../../#services">Services</a>
+            <a href="../../../#destinations">Destinations</a>
+            <a href="../../../#experiences">Experiences</a>
+            <a href="../../../#about">About Us</a>
           </nav>
 
           <div class="ttc-nav-actions">
             <a
               class="ttc-nav-whatsapp"
-              href="https://wa.me/message/CNMUYNRK4BKGJ1"
+              href="https://api.whatsapp.com/send?phone=8615719582142"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Chat with Loomline Travel on WhatsApp"
@@ -1679,7 +1679,7 @@
     <section class="hero" aria-labelledby="routeTitle">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <a class="route-back" href="../../../destinations/chengdu/index.html">← Back to Chengdu</a>
+          <a class="route-back" href="../../../destinations/chengdu/">← Back to Chengdu</a>
           <p class="route-code" id="routeCode"></p>
           <h1 class="hero-title" id="routeTitle"></h1>
           <p class="hero-tagline" id="routeTagline"></p>
@@ -1809,7 +1809,7 @@
           <h2 id="relatedRoutesHeading"></h2>
           <p id="relatedRoutesIntro"></p>
         </div>
-        <a class="button button-light" id="allRoutesButton" href="../index.html">View all routes</a>
+        <a class="button button-light" id="allRoutesButton" href="../">View all routes</a>
       </div>
       <div class="related-grid" id="relatedRoutes"></div>
     </section>
@@ -1819,7 +1819,7 @@
   <footer class="site-footer" aria-label="Loomline Travel footer">
       <div class="footer-main">
         <div class="footer-identity">
-          <a class="footer-brand" href="../../../index.html#top" aria-label="Loomline Travel home">
+          <a class="footer-brand" href="../../../#top" aria-label="Loomline Travel home">
             <img src="../../../assets/brand/loomline-emblem-gold-smooth.png?v=4" alt="" />
             <img src="../../../assets/brand/loomline-wordmark-ivory-smooth.png" alt="Loomline Travel" />
           </a>
@@ -1829,7 +1829,7 @@
           <div class="footer-contact-links">
             <a
               class="footer-feedback-link footer-whatsapp"
-              href="https://wa.me/message/CNMUYNRK4BKGJ1"
+              href="https://api.whatsapp.com/send?phone=8615719582142"
               target="_blank"
               rel="noreferrer"
               aria-label="Chat with Loomline Travel on WhatsApp"
@@ -1844,11 +1844,11 @@
 
         <nav class="footer-navigation" aria-label="Footer navigation">
           <p>Explore</p>
-          <a href="../../../index.html#services">Services</a>
-          <a href="../../../index.html#destinations">Destinations</a>
-          <a href="../../../index.html#experiences">Experiences</a>
-          <a href="../../../index.html#about">About Us</a>
-          <a href="../../../index.html#faq">FAQ</a>
+          <a href="../../../#services">Services</a>
+          <a href="../../../#destinations">Destinations</a>
+          <a href="../../../#experiences">Experiences</a>
+          <a href="../../../#about">About Us</a>
+          <a href="../../../#faq">FAQ</a>
           <a href="../../../partner.html">Partnerships</a>
         </nav>
 
@@ -1857,7 +1857,7 @@
           <a class="footer-feedback-link footer-social-link" href="https://www.tiktok.com/@loomlinetravel" target="_blank" rel="noreferrer" aria-label="Loomline Travel on TikTok"><span>TikTok</span></a>
           <a class="footer-feedback-link footer-social-link" href="https://www.facebook.com/profile.php?id=61590883937688" target="_blank" rel="noreferrer" aria-label="Loomline Travel on Facebook"><span>Facebook</span></a>
           <a class="footer-feedback-link footer-social-link" href="https://www.instagram.com/loomlinetravel/" target="_blank" rel="noreferrer" aria-label="Loomline Travel on Instagram"><span>Instagram</span></a>
-          <a class="footer-feedback-link footer-social-link" href="https://www.youtube.com/@Trip2CN" target="_blank" rel="noreferrer" aria-label="Loomline Travel on YouTube"><span>YouTube</span></a>
+          <a class="footer-feedback-link footer-social-link" href="https://www.youtube.com/@LoomlineTravel" target="_blank" rel="noreferrer" aria-label="Loomline Travel on YouTube"><span>YouTube</span></a>
         </div>
 
         <div class="footer-policies">
@@ -1871,7 +1871,7 @@
 
       <div class="footer-bottom">
         <p>© 2026 Loomline Travel. Bespoke journeys in China.</p>
-        <a href="../../../index.html#top">Back to top <span aria-hidden="true">↑</span></a>
+        <a href="../../../#top">Back to top <span aria-hidden="true">↑</span></a>
       </div>
     </footer>
 
@@ -2066,7 +2066,7 @@
 
     function whatsappBookHref() {
       const message = `Hi Loomline Travel, I'd like to book the "${ROUTE_DATA.title}" standard route (${ROUTE_DATA.productCode}). Could you please help me with availability, pricing and the next steps?`;
-      return `https://wa.me/${ROUTE_DATA.whatsappNumber}?text=${encodeURIComponent(message)}`;
+      return `https://api.whatsapp.com/send?phone=${ROUTE_DATA.whatsappNumber}&text=${encodeURIComponent(message)}`;
     }
 
     function updateCurrency(selectId, outputId) {

@@ -21,7 +21,7 @@
     },
     "secondary": {
       "label": "Ask on WhatsApp",
-      "url": "https://wa.me/message/CNMUYNRK4BKGJ1"
+      "url": "https://api.whatsapp.com/send?phone=8615719582142"
     }
   },
   "facts": [

@@ -21,7 +21,7 @@
     },
     "secondary": {
       "label": "Ask on WhatsApp",
-      "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20visiting%20Yunnan."
+      "url": "https://api.whatsapp.com/send?phone=8615719582142&text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20visiting%20Yunnan."
     }
   },
   "facts": [
@@ -136,7 +136,7 @@
         "label": "7 days",
         "summary": "Connect Kunming, Dali, and Lijiang with enough time for lakes, old towns, and one mountain experience.",
         "status": "Coming soon",
-        "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%207%20days%20Yunnan%20itinerary."
+        "url": "https://api.whatsapp.com/send?phone=8615719582142&text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%207%20days%20Yunnan%20itinerary."
       },
       {
         "label": "10 days",

@@ -21,7 +21,7 @@
     },
     "secondary": {
       "label": "Ask on WhatsApp",
-      "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20visiting%20Xinjiang."
+      "url": "https://api.whatsapp.com/send?phone=8615719582142&text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20visiting%20Xinjiang."
     }
   },
   "facts": [
@@ -136,7 +136,7 @@
         "label": "7 days",
         "summary": "Choose one compact northern loop around Sayram Lake, Nalati, and seasonal road access.",
         "status": "Coming soon",
-        "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%207%20days%20Xinjiang%20itinerary."
+        "url": "https://api.whatsapp.com/send?phone=8615719582142&text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%207%20days%20Xinjiang%20itinerary."
       },
       {
         "label": "10 days",

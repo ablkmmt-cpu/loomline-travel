@@ -21,7 +21,7 @@
     },
     "secondary": {
       "label": "Ask on WhatsApp",
-      "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20visiting%20Shanghai."
+      "url": "https://api.whatsapp.com/send?phone=8615719582142&text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20visiting%20Shanghai."
     }
   },
   "facts": [
@@ -136,7 +136,7 @@
         "label": "4 days",
         "summary": "See the Bund and Lujiazui, explore Yu Garden, walk the former French Concession, and follow a local food route.",
         "status": "Coming soon",
-        "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%204%20days%20Shanghai%20itinerary."
+        "url": "https://api.whatsapp.com/send?phone=8615719582142&text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%204%20days%20Shanghai%20itinerary."
       },
       {
         "label": "5 days",

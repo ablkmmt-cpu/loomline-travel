@@ -63,12 +63,12 @@
   }
 
   var whatsappMessage = getPageMessage() + "\n\nReference: " + document.title;
-  var whatsappUrl = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(whatsappMessage);
+  var whatsappUrl = "https://api.whatsapp.com/send?phone=" + whatsappNumber + "&text=" + encodeURIComponent(whatsappMessage);
 
   function updateWhatsappLinks() {
     var links = document.querySelectorAll('a[href*="wa.me/"], a[href*="api.whatsapp.com"]');
     links.forEach(function (link) {
-      // 页头 / 页脚是统一组件：其 WhatsApp 链接保持组件里的统一预设（wa.me/message/<code>），
+      // 页头 / 页脚是统一组件：其 WhatsApp 链接保持组件里的统一预设（api.whatsapp.com/send?phone=…），
       // 不随页面替换为按页面变化的 ?text= 预设词（业务预设链接全站一致）。
       if (link.closest(".site-footer") || link.classList.contains("ttc-nav-whatsapp")) return;
       link.href = whatsappUrl;
@@ -97,7 +97,7 @@
   }
 
   function buildGlobalHeader() {
-    var homeUrl = new URL("index.html", siteRoot).href;
+    var homeUrl = new URL("./", siteRoot).href;
     var header = document.createElement("header");
     header.className = "ttc-global-header ttc-fixed-header";
     header.innerHTML =

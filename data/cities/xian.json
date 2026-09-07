@@ -21,7 +21,7 @@
     },
     "secondary": {
       "label": "Ask on WhatsApp",
-      "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20visiting%20Xi%27an."
+      "url": "https://api.whatsapp.com/send?phone=8615719582142&text=Hi%20Loomline%20Travel%2C%20I%20am%20interested%20in%20visiting%20Xi%27an."
     }
   },
   "facts": [
@@ -136,7 +136,7 @@
         "label": "3 days",
         "summary": "Visit the Terracotta Army, walk or cycle the city wall, see the pagoda district, and explore the old city after dark.",
         "status": "Coming soon",
-        "url": "https://wa.me/8615719582142?text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%203%20days%20Xi%27an%20itinerary."
+        "url": "https://api.whatsapp.com/send?phone=8615719582142&text=Hi%20Loomline%20Travel%2C%20I%20would%20like%20the%203%20days%20Xi%27an%20itinerary."
       },
       {
         "label": "4 days",

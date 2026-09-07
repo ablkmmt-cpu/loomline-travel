@@ -53,8 +53,8 @@ const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 const canon = (html) =>
   html
-    .replace(/href="\.\.\/\.\.\/index\.html#/g, 'href="{{BASE}}index.html#')
-    .replace(/href="#/g, 'href="{{BASE}}index.html#')
+    .replace(/href="\.\.\/\.\.\/index\.html#/g, 'href="{{BASE}}#')
+    .replace(/href="#/g, 'href="{{BASE}}#')
     .replace(/src="\.\.\/\.\.\/assets\//g, 'src="{{BASE}}assets/')
     .replace(/src="assets\//g, 'src="{{BASE}}assets/')
     .replace(/aria-label="Loomline Travel home"/g, 'aria-label="{{ARIA}}"');
