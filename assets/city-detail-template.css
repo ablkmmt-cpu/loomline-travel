@@ -309,7 +309,7 @@ body.city-detail-page .city-detail-button-secondary {
 }
 
 .city-detail-intro h2 {
-  max-width: 1040px;
+  max-width: var(--city-shell);
   margin: 14px 0 0;
   color: var(--city-green-deep);
   font-size: clamp(40px, 4.4vw, 64px);
