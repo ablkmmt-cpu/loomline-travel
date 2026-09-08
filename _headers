@@ -1,0 +1,17 @@
+# ============================================================
+# Loomline Travel — Cloudflare Pages 静态资源缓存
+# 说明：给 /assets/ 下的静态资源（图片 + 带版本号的 CSS/JS）
+# 设置一年 immutable 缓存，回头客/刷新直接走本地缓存，秒开。
+# 注：带 ?v= 的 CSS/JS 在版本号变化时会生成新 URL，安全。
+# ============================================================
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# analytics.js 未带版本号：改动后需重新校验，避免缓存旧脚本
+/assets/analytics.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+# 标准线路目录数据：会随线路新增而变化，避免缓存旧数据
+/assets/standard-routes-catalog.js
+  Cache-Control: public, max-age=0, must-revalidate
