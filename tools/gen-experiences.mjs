@@ -31,7 +31,7 @@ const EXPERIENCES = [
     desc: "A hands-on Chengdu tea session — brew with a gaiwan, read a teahouse like a local, and take home your own tea.",
     kicker: "Hands-on cultural experience · Chengdu",
     sub: "Not a lecture. A quiet seat at the tea table — learn to brew with a gaiwan and read the room like a local.",
-    heroImg: "experiences/tea-culture/hero.png",
+    heroImg: "experiences/tea-culture/hero.webp",
     bandImg: "experiences/tea-culture/session.webp",
     duration: "60 min",
     bestFor: "first-timers & tea lovers",
@@ -80,7 +80,7 @@ const EXPERIENCES = [
     desc: "A proper Chinese wellness session in Chengdu — tuina massage, cupping, or foot therapy, guided and explained.",
     kicker: "Recovery day · Chengdu",
     sub: "Not a spa day — a real Chinese reset. Tuina, cupping, or foot therapy, done the way locals do it and explained as we go.",
-    heroImg: "experiences/traditional-wellness/hero.png",
+    heroImg: "experiences/traditional-wellness/hero.webp",
     bandImg: "experiences/traditional-wellness/session.webp",
     duration: "60–90 min",
     bestFor: "recovery days & slow travelers",
@@ -128,7 +128,7 @@ const EXPERIENCES = [
     desc: "Make your own indigo tie-dye piece in a Chengdu workshop — a 2,000-year-old Sichuan craft, hands-on.",
     kicker: "Hands-on craft · Chengdu",
     sub: "Color, cloth, and a craft older than the Silk Road — make a piece you'll actually take home.",
-    heroImg: "experiences/yunnan-tie-dye/hero.png",
+    heroImg: "experiences/yunnan-tie-dye/hero.webp",
     bandImg: "experiences/yunnan-tie-dye/session.webp",
     duration: "90–120 min",
     bestFor: "families & craft lovers",
@@ -176,7 +176,7 @@ const EXPERIENCES = [
     desc: "Shape clay on a wheel in a Chengdu studio — a hands-on pottery session with an instructor, and a piece to take home.",
     kicker: "Hands-on craft · Chengdu",
     sub: "Sit at a wheel in a real Chengdu studio and shape clay into something only you could make.",
-    heroImg: "experiences/pottery-workshop/hero.png",
+    heroImg: "experiences/pottery-workshop/hero.webp",
     bandImg: "experiences/pottery-workshop/session.webp",
     duration: "90–120 min",
     bestFor: "makers & families",
@@ -224,7 +224,7 @@ const EXPERIENCES = [
     desc: "Carve your name in Chinese characters with a master — a traditional seal you keep forever.",
     kicker: "Traditional craft · Chengdu",
     sub: "Your name, cut into stone in Chinese characters — the way it's been done for centuries, guided by a master.",
-    heroImg: "experiences/seal-carving/hero.png",
+    heroImg: "experiences/seal-carving/hero.webp",
     bandImg: "experiences/seal-carving/session.webp",
     duration: "90–180 min",
     bestFor: "design & culture lovers",
@@ -272,7 +272,7 @@ const EXPERIENCES = [
     desc: "A Sichuan dinner and live face-changing opera in one evening — Chengdu's favorite way to end a day.",
     kicker: "Evening experience · Chengdu",
     sub: "A Sichuan feast and live face-changing opera in one evening — the city's favorite way to end a day.",
-    heroImg: "experiences/imperial-dinner-show/hero.png",
+    heroImg: "experiences/imperial-dinner-show/hero.webp",
     bandImg: "experiences/imperial-dinner-show/session.webp",
     duration: "120–150 min",
     bestFor: "couples & families",
@@ -319,7 +319,7 @@ const EXPERIENCES = [
     desc: "Learn Sichuan mahjong with locals in a Chengdu teahouse — the game that fills the city's afternoons.",
     kicker: "Table culture · Chengdu",
     sub: "Learn the game that fills Chengdu's teahouses — and play it with the people who live here.",
-    heroImg: "experiences/sichuan-mahjong/hero.png",
+    heroImg: "experiences/sichuan-mahjong/hero.webp",
     bandImg: "experiences/sichuan-mahjong/session.webp",
     duration: "120–150 min",
     bestFor: "curious social travelers",
@@ -367,8 +367,8 @@ const EXPERIENCES = [
     desc: "Join a supervised panda conservation volunteer experience near Chengdu, with bamboo preparation, habitat support, and keeper insight.",
     kicker: "Responsible wildlife experience · Greater Chengdu",
     sub: "Step behind the visitor route for a supervised conservation day built around care, preparation, and respect for the animals.",
-    heroImg: "experiences/panda-volunteer/hero.jpg",
-    bandImg: "experiences/panda-volunteer/session.jpg",
+    heroImg: "experiences/panda-volunteer/hero.webp",
+    bandImg: "experiences/panda-volunteer/session.webp",
     duration: "4-6 hours",
     bestFor: "wildlife lovers & responsible travelers",
     benefits: [
@@ -391,7 +391,7 @@ const EXPERIENCES = [
       "English-speaking coordination",
       "Program availability confirmed before booking",
     ],
-    chengduImg: "experiences/panda-volunteer/session.jpg",
+    chengduImg: "experiences/panda-volunteer/session.webp",
     chengduSpots: [
       ["A dedicated half day", "Allow travel time beyond central Chengdu and keep the rest of the day lightly planned."],
       ["Paired with Dujiangyan", "Combine the conservation program with a calm visit to the ancient irrigation landscape."],
@@ -412,8 +412,8 @@ const EXPERIENCES = [
     desc: "Visit the Sichuan Cuisine Museum near Chengdu and cook a Sichuan dish with a local chef using classic regional ingredients and wok techniques.",
     kicker: "Museum and cooking experience · Chengdu",
     sub: "Trace the story of Sichuan flavor, then step behind the wok and cook with the ingredients that give the cuisine its character.",
-    heroImg: "experiences/sichuan-cuisine-museum/hero.jpg",
-    bandImg: "experiences/sichuan-cuisine-museum/session.jpg",
+    heroImg: "experiences/sichuan-cuisine-museum/hero.webp",
+    bandImg: "experiences/sichuan-cuisine-museum/session.webp",
     duration: "3-4 hours",
     bestFor: "food lovers & hands-on travelers",
     benefits: [
@@ -436,7 +436,7 @@ const EXPERIENCES = [
       "Tasting of the dish you prepare",
       "English-speaking coordination",
     ],
-    chengduImg: "experiences/sichuan-cuisine-museum/session.jpg",
+    chengduImg: "experiences/sichuan-cuisine-museum/session.webp",
     chengduSpots: [
       ["A food-focused half day", "Give the museum and cooking session enough room instead of squeezing it between major sights."],
       ["Paired with a market stop", "See fresh ingredients first, then understand how they change at the wok."],
@@ -507,7 +507,6 @@ ${HEADER}
     <!-- ① Hero -->
     <section class="hero">
       <img src="../../assets/${e.heroImg}" alt="${e.name} experience in Chengdu" />
-      <div class="watermark kai">成都·Chengdu</div>
       <div class="in">
         <div class="title-zone">
           <p class="k">${e.kicker}</p>
