@@ -8,14 +8,14 @@
   },
   {
     "file": "contact.html",
-    "base": "",
+    "base": "./",
     "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
   },
   {
     "file": "partner.html",
-    "base": "",
+    "base": "./",
     "aria": "Loomline Travel home",
     "header": "main",
     "footer": "main"
