@@ -149,12 +149,19 @@
       padding-top: 20px;
     }
 
+    .route-backs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0 0 34px;
+    }
+
     .route-back {
       width: fit-content;
       min-height: 38px;
       display: inline-flex;
       align-items: center;
-      margin: 0 0 34px;
+      margin: 0;
       padding: 8px 13px;
       color: var(--green);
       border: 1px solid rgba(9, 57, 47, 0.24);
@@ -1429,11 +1436,16 @@
         padding: 0 12px 0 0;
       }
 
+      .route-backs {
+        gap: 6px;
+        margin-bottom: 38px;
+      }
+
       .route-back {
         width: fit-content;
         min-height: 34px;
         justify-content: center;
-        margin-bottom: 38px;
+        margin-bottom: 0;
         padding: 7px 10px;
         font-size: 11px;
       }
@@ -1679,7 +1691,10 @@
     <section class="hero" aria-labelledby="routeTitle">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <a class="route-back" href="../../../destinations/chengdu/">← Back to Chengdu</a>
+          <nav class="route-backs" aria-label="Route navigation">
+            <a class="route-back" href="../../../destinations/chengdu/">← Back to Chengdu</a>
+            <a class="route-back" href="../">← Back to standard routes</a>
+          </nav>
           <p class="route-code" id="routeCode"></p>
           <h1 class="hero-title" id="routeTitle"></h1>
           <p class="hero-tagline" id="routeTagline"></p>

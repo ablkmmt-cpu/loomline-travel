@@ -68,6 +68,30 @@ window.LOOMLINE_STANDARD_ROUTES = [
     "priceReady": false
   },
   {
+    "id": "std-route-db-std-001",
+    "code": "DB-STD-001",
+    "cityCode": "DB",
+    "citySlug": "northeast-china",
+    "cityName": "Northeast China",
+    "title": "Northeast Winter Wonderland",
+    "days": 7,
+    "nights": 6,
+    "summary": "Cross Heilongjiang and Jilin through snow villages, frozen lakes, Changbai Mountain and Songhua Lake on a premium winter small-group journey.",
+    "highlights": "Harbin · China Snow Town · Changbai Mountain · Yanji · Jilin",
+    "interests": [
+      "nature",
+      "culture",
+      "local"
+    ],
+    "recommended": false,
+    "detailReady": true,
+    "detailPath": "services/standard-routes/northeast-winter-7-day/",
+    "image": "assets/routes/northeast-winter-7-day/snow-town.jpg",
+    "imageAlt": "Snow-covered wooden houses and red lanterns in China Snow Town",
+    "priceCny": 4299,
+    "priceReady": true
+  },
+  {
     "id": "std-route-bj-std-001",
     "code": "BJ-STD-001",
     "cityCode": "BJ",

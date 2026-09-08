@@ -162,8 +162,15 @@ const stayAnswerMarkup = (city) => `          <div class="city-detail-stay-answe
             <p>${escapeHtml(city.stay.summary)}</p>
           </div>`;
 
+const featuredRouteCodesForCity = (city) => {
+  if (Array.isArray(city.featuredRouteCodes)) return city.featuredRouteCodes;
+  return STANDARD_ROUTES
+    .filter((route) => route.citySlug === city.slug && route.detailReady === true)
+    .map((route) => route.code);
+};
+
 const featuredRoutesMarkup = (city, base) => {
-  const routeCodes = Array.isArray(city.featuredRouteCodes) ? city.featuredRouteCodes : [];
+  const routeCodes = featuredRouteCodesForCity(city);
 
   if (!routeCodes.length) {
     return `              <article class="city-detail-route-card city-detail-route-card-placeholder" aria-label="${escapeHtml(city.name)} standard routes coming soon">
@@ -187,8 +194,9 @@ const featuredRoutesMarkup = (city, base) => {
                   <img src="${escapeHtml(withBase(base, route.image))}" alt="${escapeHtml(route.imageAlt)}" loading="lazy" decoding="async" />
                 </figure>
                 <div class="city-detail-route-card-copy">
-                  <p class="city-detail-route-card-code">Featured standard route · ${escapeHtml(route.code)} · ${escapeHtml(route.days)} Days / ${escapeHtml(route.nights)} Nights</p>
+                  <p class="city-detail-route-card-code">Standard route · ${escapeHtml(route.code)}</p>
                   <h3>${escapeHtml(route.title)}</h3>
+                  <p class="city-detail-route-card-days">${escapeHtml(route.days)} Days / ${escapeHtml(route.nights)} Nights</p>
                   <p>${escapeHtml(route.summary)}</p>
                   <span class="city-detail-route-card-action">View this route →</span>
                 </div>
@@ -198,7 +206,7 @@ const featuredRoutesMarkup = (city, base) => {
 };
 
 const featuredRouteDotsMarkup = (city) => {
-  const routeCodes = Array.isArray(city.featuredRouteCodes) ? city.featuredRouteCodes : [];
+  const routeCodes = featuredRouteCodesForCity(city);
   if (routeCodes.length < 2) return "";
 
   return `            <div class="city-detail-route-pagination" aria-label="Choose a recommended route">
