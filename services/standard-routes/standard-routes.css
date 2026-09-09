@@ -233,8 +233,18 @@ main { padding-bottom: 76px; }
 .recommended-card:not(.is-coming-soon):hover { border-color: #b8a688; transform: translateY(-2px); }
 .recommended-card.is-coming-soon,
 .route-card.is-coming-soon { cursor: default; }
-.recommended-media { height: 100%; overflow: hidden; }
-.recommended-media img { height: 100%; object-fit: cover; }
+.recommended-media {
+  position: relative;
+  min-height: 210px;
+  height: auto;
+  overflow: hidden;
+}
+.recommended-media img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  object-fit: cover;
+}
 .recommended-body {
   padding: 23px 28px;
   display: flex;
@@ -389,7 +399,7 @@ main { padding-bottom: 76px; }
   .show-routes { width: 100%; }
   .recommended-card { grid-template-columns: 38% minmax(0, 1fr); height: auto; min-height: 280px; }
   .recommended-side { grid-column: 2; border-left: 0; border-top: 1px solid var(--line); padding: 18px 30px 22px; display: grid; grid-template-columns: repeat(3, auto); align-items: end; justify-content: start; gap: 26px; }
-  .recommended-media { grid-row: 1 / span 2; height: 100%; min-height: 280px; }
+  .recommended-media { grid-row: 1 / span 2; height: auto; min-height: 280px; }
   .price-label, .price, .price-note, .text-link { margin-top: 0; }
   .price-note { display: none; }
   .route-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

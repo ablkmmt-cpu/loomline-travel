@@ -29,7 +29,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../assets/site-chrome.css?v=loomline-1" />
-    <link rel="stylesheet" href="standard-routes.css?v=6" />
+    <link rel="stylesheet" href="standard-routes.css?v=8" />
   <!-- @@ANALYTICS@@ -->
   </head>
   <body id="top">
@@ -122,7 +122,8 @@
 
       <section class="container section" aria-labelledby="recommendedHeading">
         <h2 class="section-heading" id="recommendedHeading">Recommended for a first visit</h2>
-        <div class="recommended-list" id="recommendedList"></div>
+        <div class="recommended-list" id="recommendedList" aria-label="Recommended routes"></div>
+        <div class="recommended-pagination" id="recommendedPagination" aria-label="Choose a recommended route"></div>
       </section>
 
       <section class="container section" id="allRoutes" aria-labelledby="allRoutesHeading">
@@ -319,11 +320,11 @@
         return `<span class="route-card-price price-coming-soon"><span>Pricing</span><strong>Coming soon</strong></span>`;
       }
 
-      function recommendedHtml(route) {
+      function recommendedHtml(route, index) {
         const hasDetails = routeHasDetails(route);
         const tag = hasDetails ? "a" : "article";
         const attributes = hasDetails ? `href="${routeHref(route)}" aria-label="View ${esc(route.title)}"` : `aria-disabled="true"`;
-        return `<${tag} class="recommended-card${hasDetails ? "" : " is-coming-soon"}" ${attributes}>
+        return `<${tag} class="recommended-card${hasDetails ? "" : " is-coming-soon"}" id="recommendedCard${index}" ${attributes}>
           <div class="recommended-media"><img src="${esc(route.image)}" alt="" /></div>
           <div class="recommended-body"><span class="route-code">${esc(route.code)}</span><h3 class="recommended-title">${esc(route.title)}</h3><p class="recommended-summary">${esc(route.summary)}</p><p class="recommended-highlights">${esc(route.highlights)}</p></div>
           <div class="recommended-side"><span class="duration">${durationLabel(route)}</span>${recommendedPriceHtml(route)}<span class="text-link">${hasDetails ? "View route" : "Details coming soon"}</span></div>
@@ -371,7 +372,44 @@
         if (options.scroll) document.getElementById("allRoutes").scrollIntoView({ behavior: "smooth", block: "start" });
       }
 
-      recommendedList.innerHTML = ROUTES.filter(route => route.recommended).map(recommendedHtml).join("");
+      const recommendedRoutes = ROUTES
+        .filter(route => route.recommended && routeHasDetails(route) && routeIsAvailable(route))
+        .slice(0, 3);
+      const recommendedPagination = document.getElementById("recommendedPagination");
+      recommendedList.innerHTML = recommendedRoutes.map(recommendedHtml).join("");
+      recommendedPagination.innerHTML = recommendedRoutes.length > 1
+        ? recommendedRoutes.map((route, index) => `<button type="button" data-recommended-dot="${index}" aria-label="Show ${esc(route.title)}" aria-controls="recommendedCard${index}"${index === 0 ? ' class="is-active" aria-current="true"' : ""}></button>`).join("")
+        : "";
+
+      let recommendedScrollFrame = 0;
+      function updateRecommendedPagination() {
+        const cards = [...recommendedList.querySelectorAll(".recommended-card")];
+        const dots = [...recommendedPagination.querySelectorAll("button")];
+        if (!cards.length || !dots.length) return;
+        const listLeft = recommendedList.getBoundingClientRect().left;
+        const activeIndex = cards.reduce((closest, card, index) => {
+          const distance = Math.abs(card.getBoundingClientRect().left - listLeft);
+          return distance < closest.distance ? { index, distance } : closest;
+        }, { index: 0, distance: Infinity }).index;
+        dots.forEach((dot, index) => {
+          const active = index === activeIndex;
+          dot.classList.toggle("is-active", active);
+          if (active) dot.setAttribute("aria-current", "true");
+          else dot.removeAttribute("aria-current");
+        });
+      }
+      recommendedList.addEventListener("scroll", () => {
+        cancelAnimationFrame(recommendedScrollFrame);
+        recommendedScrollFrame = requestAnimationFrame(updateRecommendedPagination);
+      }, { passive: true });
+      recommendedPagination.addEventListener("click", event => {
+        const dot = event.target.closest("[data-recommended-dot]");
+        if (!dot) return;
+        const card = document.getElementById(`recommendedCard${dot.dataset.recommendedDot}`);
+        card?.scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth", block: "nearest", inline: "start" });
+      });
+      window.addEventListener("resize", updateRecommendedPagination, { passive: true });
+      updateRecommendedPagination();
       renderRoutes();
       document.getElementById("routeFinder").addEventListener("submit", event => {
         event.preventDefault();
