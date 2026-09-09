@@ -318,6 +318,12 @@ body.city-detail-page .city-detail-button-secondary {
   letter-spacing: -0.035em;
 }
 
+.city-detail-intro h2.city-detail-intro-title-single-line {
+  max-width: none;
+  white-space: nowrap;
+  font-size: clamp(38px, 3.8vw, 58px);
+}
+
 .city-detail-intro-copy {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1137,6 +1143,10 @@ body.city-detail-page .city-detail-button-secondary {
 
   .city-detail-intro h2 {
     font-size: clamp(36px, 11vw, 52px);
+  }
+
+  .city-detail-intro h2.city-detail-intro-title-single-line {
+    font-size: clamp(20px, 5.3vw, 40px);
   }
 
   .city-detail-intro-copy {

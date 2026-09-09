@@ -267,6 +267,7 @@ const renderCity = (city, outputFile) => {
     FACTS: factsMarkup(city),
     INTRO_EYEBROW: escapeHtml(city.intro.eyebrow),
     INTRO_TITLE: escapeHtml(city.intro.title),
+    INTRO_TITLE_ATTRIBUTE: city.intro.singleLineTitle ? ' class="city-detail-intro-title-single-line"' : "",
     INTRO_LEFT: escapeHtml(city.intro.left),
     INTRO_RIGHT: escapeHtml(city.intro.right),
     HIGHLIGHTS_EYEBROW: escapeHtml(city.highlights.eyebrow),

@@ -1,5 +1,5 @@
 {
-  "version": "2026-09-02",
+  "version": "2026-09-09",
   "routes": [
     {
       "id": "std-route-cd-std-001",
@@ -47,18 +47,19 @@
       "cityCode": "CD",
       "citySlug": "chengdu",
       "cityName": "Chengdu",
-      "title": "Chengdu + Jiuzhaigou",
-      "days": 6,
-      "nights": 5,
-      "summary": "Combine Chengdu's pandas with Jiuzhaigou's alpine lakes.",
-      "highlights": "Panda Base · Jiuzhaigou · Huanglong",
-      "interests": ["nature", "local"],
-      "recommended": false,
-      "detailReady": false,
-      "image": "assets/destinations/chengdu/03.webp",
-      "imageAlt": "A Chengdu heritage wall framed by bamboo",
-      "priceCny": 5980,
-      "priceReady": false
+      "title": "Snow Mountain Jiuzhaigou",
+      "days": 4,
+      "nights": 3,
+      "summary": "Pair Jiuzhaigou and Huanglong with Dujiangyan, Panda Valley and Mount Siguniang on a four-day western Sichuan small-group journey.",
+      "highlights": "Jiuzhaigou · Huanglong · Dujiangyan · Panda Valley · Mount Siguniang",
+      "interests": ["nature", "culture"],
+      "recommended": true,
+      "detailReady": true,
+      "detailPath": "services/standard-routes/snow-mountain-jiuzhaigou-4-day/",
+      "image": "assets/routes/snow-mountain-jiuzhaigou-4-day/day-2-winter-jiuzhaigou.jpg",
+      "imageAlt": "An ice-blue lake, snowy forest and mountain peaks in winter Jiuzhaigou",
+      "priceCny": 1680,
+      "priceReady": true
     },
     {
       "id": "std-route-db-std-001",
