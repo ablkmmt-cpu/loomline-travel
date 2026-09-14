@@ -1908,7 +1908,7 @@
     </div>
   </aside>
 
-  <script src="../../../assets/standard-routes-catalog.js?v=20260902"></script>
+  <script src="../../../assets/standard-routes-catalog.js?v=20260915"></script>
   <script>
     /* Standard route data. Internal maintenance fields are not rendered publicly. */
     const ROUTE_META = (window.LOOMLINE_STANDARD_ROUTES || []).find(route => route.code === "CD-STD-002");
@@ -2074,7 +2074,7 @@
             title: "Encounter Aba",
             copy: "A compact three-day journey through Mount Siguniang, Bipenggou and Jiuzhaigou.",
             image: "../../../assets/routes/encounter-aba-3-day/mount-siguniang.webp",
-            priceCny: 1380,
+            priceCny: (window.LOOMLINE_STANDARD_ROUTES || []).find(route => route.code === "CD-STD-001")?.priceCny ?? 1480,
             href: "../encounter-aba-3-day/index.html"
           }
         ]

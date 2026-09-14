@@ -19,7 +19,7 @@ window.LOOMLINE_STANDARD_ROUTES = [
     "detailPath": "services/standard-routes/encounter-aba-3-day/",
     "image": "assets/routes/encounter-aba-3-day/mount-siguniang.webp",
     "imageAlt": "Snow peaks and alpine forest at Mount Siguniang",
-    "priceCny": 1380,
+    "priceCny": 1480,
     "priceReady": true
   },
   {
@@ -54,8 +54,8 @@ window.LOOMLINE_STANDARD_ROUTES = [
     "title": "Snow Mountain Jiuzhaigou",
     "days": 4,
     "nights": 3,
-    "summary": "Pair Jiuzhaigou and Huanglong with Dujiangyan, Panda Valley and Mount Siguniang on a four-day western Sichuan small-group journey.",
-    "highlights": "Jiuzhaigou · Huanglong · Dujiangyan · Panda Valley · Mount Siguniang",
+    "summary": "Discover Jiuzhaigou's alpine lakes, Huanglong's mineral pools and Mount Siguniang's snow peaks, with a Dujiangyan stop, on a four-day western Sichuan journey.",
+    "highlights": "Mount Siguniang · Jiuzhaigou · Huanglong · Dujiangyan",
     "interests": [
       "nature",
       "culture"
@@ -65,7 +65,7 @@ window.LOOMLINE_STANDARD_ROUTES = [
     "detailPath": "services/standard-routes/snow-mountain-jiuzhaigou-4-day/",
     "image": "assets/routes/snow-mountain-jiuzhaigou-4-day/day-2-winter-jiuzhaigou.jpg",
     "imageAlt": "An ice-blue lake, snowy forest and mountain peaks in winter Jiuzhaigou",
-    "priceCny": 1680,
+    "priceCny": 1780,
     "priceReady": true
   },
   {
