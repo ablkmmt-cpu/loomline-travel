@@ -27,7 +27,15 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@500;600;700;800&family=Noto+Serif+SC:wght@700;900&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@500;600;700;800&family=Noto+Serif+SC:wght@700;900&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
     <link rel="stylesheet" href="assets/site-chrome.css?v=loomline-1" />
     <link rel="stylesheet" href="styles.css?v=old-refine-69" />
     <script type="application/ld+json">
@@ -113,36 +121,50 @@
             class="hero-bg hero-slide is-active"
             fetchpriority="high"
             src="assets/home/hero-great-wall.webp"
+            width="1672"
+            height="941"
             alt=""
           />
           <img
             class="hero-bg hero-slide"
-            src="assets/home/city-beijing.webp"
+            data-src="assets/home/city-beijing.webp"
+            width="1672"
+            height="941"
             alt=""
           />
           <img
             class="hero-bg hero-slide"
-            src="assets/home/city-shanghai.webp"
+            data-src="assets/home/city-shanghai.webp"
+            width="1672"
+            height="941"
             alt=""
           />
           <img
             class="hero-bg hero-slide"
-            src="assets/home/city-chengdu.webp"
+            data-src="assets/home/city-chengdu.webp"
+            width="1672"
+            height="941"
             alt=""
           />
           <img
             class="hero-bg hero-slide"
-            src="assets/home/city-chongqing.webp"
+            data-src="assets/home/city-chongqing.webp"
+            width="1672"
+            height="941"
             alt=""
           />
           <img
             class="hero-bg hero-slide"
-            src="assets/home/city-guilin.webp"
+            data-src="assets/home/city-guilin.webp"
+            width="1672"
+            height="941"
             alt=""
           />
           <img
             class="hero-bg hero-slide"
-            src="assets/home/city-jiangnan.webp"
+            data-src="assets/home/city-jiangnan.webp"
+            width="1672"
+            height="941"
             alt=""
           />
         </div>
@@ -199,7 +221,7 @@
         <div class="product-cards">
           <article class="product-card product-standard">
             <header class="product-head">
-              <img class="product-head-image" src="assets/home/service-classic-journeys.webp" alt="" loading="lazy" aria-hidden="true" />
+              <img class="product-head-image" data-lazy-src="assets/home/service-classic-journeys.webp" alt="" loading="lazy" aria-hidden="true" />
               <div class="product-head-copy">
                 <p class="product-kicker">Standard · Ready-Made</p>
                 <h3>Standard Routes</h3>
@@ -228,7 +250,7 @@
 
           <article class="product-card product-custom">
             <header class="product-head">
-              <img class="product-head-image" src="assets/home/service-tailor-made.webp" alt="" loading="lazy" aria-hidden="true" />
+              <img class="product-head-image" data-lazy-src="assets/home/service-tailor-made.webp" alt="" loading="lazy" aria-hidden="true" />
               <div class="product-head-copy">
                 <p class="product-kicker">Custom · Built Around You</p>
                 <h3>Tailor-Made Trip</h3>
@@ -267,7 +289,7 @@
           <button class="destination-arrow destination-arrow-left" type="button" data-scroll-dir="-1" aria-label="Scroll destinations left">Left</button>
           <div class="destination-grid" aria-label="Destination cards" data-destination-track>
             <a class="destination-card" href="destinations/chengdu/">
-              <img src="assets/home/city-chengdu.webp" alt="Chengdu and Sichuan travel scene" loading="lazy" decoding="async" />
+              <img data-lazy-src="assets/home/city-chengdu.webp" alt="Chengdu and Sichuan travel scene" loading="lazy" decoding="async" />
               <div class="destination-card-body">
                 <h3>Chengdu</h3>
                 <div class="destination-info">
@@ -279,7 +301,7 @@
             </a>
 
             <a class="destination-card" href="destinations/chongqing/">
-              <img src="assets/home/city-chongqing.webp" alt="Chongqing city night view" loading="lazy" decoding="async" />
+              <img data-lazy-src="assets/home/city-chongqing.webp" alt="Chongqing city night view" loading="lazy" decoding="async" />
               <div class="destination-card-body">
                 <h3>Chongqing</h3>
                 <div class="destination-info">
@@ -291,7 +313,7 @@
             </a>
 
             <a class="destination-card" href="destinations/northeast-china/">
-              <img src="assets/destinations/northeast-china/hero.webp" alt="Illuminated ice architecture in Harbin, Northeast China" loading="lazy" decoding="async" />
+              <img data-lazy-src="assets/destinations/northeast-china/hero.webp" alt="Illuminated ice architecture in Harbin, Northeast China" loading="lazy" decoding="async" />
               <div class="destination-card-body">
                 <h3>Northeast China</h3>
                 <div class="destination-info">
@@ -303,7 +325,7 @@
             </a>
 
             <a class="destination-card" href="destinations/beijing/">
-              <img src="assets/home/hero-great-wall.webp" alt="Great Wall near Beijing" loading="lazy" decoding="async" />
+              <img data-lazy-src="assets/home/hero-great-wall.webp" alt="Great Wall near Beijing" loading="lazy" decoding="async" />
               <div class="destination-card-body">
                 <h3>Beijing</h3>
                 <div class="destination-info">
@@ -315,7 +337,7 @@
             </a>
 
             <a class="destination-card" href="destinations/shanghai/">
-              <img src="assets/home/city-shanghai.webp" alt="Shanghai city skyline" loading="lazy" decoding="async" />
+              <img data-lazy-src="assets/home/city-shanghai.webp" alt="Shanghai city skyline" loading="lazy" decoding="async" />
               <div class="destination-card-body">
                 <h3>Shanghai</h3>
                 <div class="destination-info">
@@ -327,7 +349,7 @@
             </a>
 
             <a class="destination-card" href="destinations/xian/">
-              <img src="assets/destinations/xian/01.webp" alt="Terracotta Army near Xi'an" loading="lazy" decoding="async" />
+              <img data-lazy-src="assets/destinations/xian/01.webp" alt="Terracotta Army near Xi'an" loading="lazy" decoding="async" />
               <div class="destination-card-body">
                 <h3>Xi'an</h3>
                 <div class="destination-info">
@@ -339,7 +361,7 @@
             </a>
 
             <a class="destination-card" href="destinations/guilin/">
-              <img src="assets/home/city-guilin.webp" alt="Karst mountains and river near Guilin" loading="lazy" decoding="async" />
+              <img data-lazy-src="assets/home/city-guilin.webp" alt="Karst mountains and river near Guilin" loading="lazy" decoding="async" />
               <div class="destination-card-body">
                 <h3>Guilin</h3>
                 <div class="destination-info">
@@ -351,7 +373,7 @@
             </a>
 
             <a class="destination-card" href="destinations/zhangjiajie/">
-              <img src="assets/destinations/zhangjiajie/01.webp" alt="Sandstone peaks in Zhangjiajie" loading="lazy" decoding="async" />
+              <img data-lazy-src="assets/destinations/zhangjiajie/01.webp" alt="Sandstone peaks in Zhangjiajie" loading="lazy" decoding="async" />
               <div class="destination-card-body">
                 <h3>Zhangjiajie</h3>
                 <div class="destination-info">
@@ -363,7 +385,7 @@
             </a>
 
             <a class="destination-card" href="destinations/yunnan/">
-              <img src="assets/destinations/yunnan/01.webp" alt="Dali and Erhai Lake in Yunnan" loading="lazy" decoding="async" />
+              <img data-lazy-src="assets/destinations/yunnan/01.webp" alt="Dali and Erhai Lake in Yunnan" loading="lazy" decoding="async" />
               <div class="destination-card-body">
                 <h3>Yunnan</h3>
                 <div class="destination-info">
@@ -375,7 +397,7 @@
             </a>
 
             <a class="destination-card" href="destinations/xinjiang/">
-              <img src="assets/destinations/xinjiang/01.webp" alt="Alpine landscape in Xinjiang" loading="lazy" decoding="async" />
+              <img data-lazy-src="assets/destinations/xinjiang/01.webp" alt="Alpine landscape in Xinjiang" loading="lazy" decoding="async" />
               <div class="destination-card-body">
                 <h3>Xinjiang</h3>
                 <div class="destination-info">
@@ -387,7 +409,7 @@
             </a>
 
             <a class="destination-card" href="destinations/tibet/">
-              <img src="assets/destinations/tibet/01.webp" alt="Potala Palace in Lhasa" loading="lazy" decoding="async" />
+              <img data-lazy-src="assets/destinations/tibet/01.webp" alt="Potala Palace in Lhasa" loading="lazy" decoding="async" />
               <div class="destination-card-body">
                 <h3>Tibet</h3>
                 <div class="destination-info">
@@ -425,7 +447,7 @@
 
         <div class="experience-bento is-collapsed" id="experience-list" data-experience-list>
           <a class="experience-card experience-card-large" href="experiences/tea-culture/" data-experience-categories="food-tea culture" aria-label="Explore the Tea Culture experience">
-            <img src="assets/experiences/tea-culture/hero.webp" alt="Tea and food culture in China" loading="lazy" />
+            <img data-lazy-src="assets/experiences/tea-culture/hero.webp" alt="Tea and food culture in China" loading="lazy" />
             <div class="experience-copy">
               <h3>Tea Culture</h3>
               <p>Gaiwan tea, teahouses, local snacks</p>
@@ -438,7 +460,7 @@
           </a>
 
           <a class="experience-card experience-card-tall" href="experiences/traditional-wellness/" data-experience-categories="wellness culture" aria-label="Explore the Traditional Wellness experience">
-            <img src="assets/experiences/traditional-wellness/hero.webp" alt="Traditional wellness experience in China" loading="lazy" />
+            <img data-lazy-src="assets/experiences/traditional-wellness/hero.webp" alt="Traditional wellness experience in China" loading="lazy" />
             <div class="experience-copy">
               <h3>Wellness</h3>
               <p>Local wellness session</p>
@@ -451,7 +473,7 @@
           </a>
 
           <a class="experience-card" href="experiences/panda-volunteer/" data-experience-categories="culture" data-experience-tone="muted" aria-label="Explore the Panda Volunteer experience">
-            <img src="assets/experiences/panda-volunteer/hero.webp" alt="Traveler preparing bamboo with a panda keeper at a Sichuan conservation base" loading="lazy" />
+            <img data-lazy-src="assets/experiences/panda-volunteer/hero.webp" alt="Traveler preparing bamboo with a panda keeper at a Sichuan conservation base" loading="lazy" />
             <div class="experience-copy">
               <h3>Panda Volunteer</h3>
               <p>Conservation, bamboo, keeper insight</p>
@@ -464,7 +486,7 @@
           </a>
 
           <a class="experience-card experience-card-wide" href="experiences/sichuan-cuisine-museum/" data-experience-categories="food-tea culture" data-experience-tone="muted" aria-label="Explore the Sichuan Cuisine Museum cooking experience">
-            <img src="assets/experiences/sichuan-cuisine-museum/hero.webp" alt="Traveler learning wok cooking from a Sichuan chef" loading="lazy" />
+            <img data-lazy-src="assets/experiences/sichuan-cuisine-museum/hero.webp" alt="Traveler learning wok cooking from a Sichuan chef" loading="lazy" />
             <div class="experience-copy">
               <h3>Sichuan Cooking</h3>
               <p>Museum, ingredients, hands-on wok</p>
@@ -477,7 +499,7 @@
           </a>
 
           <a class="experience-card" href="experiences/yunnan-tie-dye/" data-experience-categories="crafts culture" aria-label="Explore the Yunnan Tie-Dye experience">
-            <img src="assets/experiences/yunnan-tie-dye/hero.webp" alt="Yunnan tie dye workshop" loading="lazy" />
+            <img data-lazy-src="assets/experiences/yunnan-tie-dye/hero.webp" alt="Yunnan tie dye workshop" loading="lazy" />
             <div class="experience-copy">
               <h3>Tie-Dye</h3>
               <p>Color, cloth, hands-on craft</p>
@@ -490,7 +512,7 @@
           </a>
 
           <a class="experience-card" href="experiences/pottery-workshop/" data-experience-categories="crafts culture" aria-label="Explore the Chinese Pottery experience">
-            <img src="assets/experiences/pottery-workshop/hero.webp" alt="Chinese pottery workshop" loading="lazy" />
+            <img data-lazy-src="assets/experiences/pottery-workshop/hero.webp" alt="Chinese pottery workshop" loading="lazy" />
             <div class="experience-copy">
               <h3>Pottery</h3>
               <p>Clay, wheel, lasting memory</p>
@@ -503,7 +525,7 @@
           </a>
 
           <a class="experience-card" href="experiences/seal-carving/" data-experience-categories="crafts culture" aria-label="Explore the Seal Carving experience">
-            <img src="assets/experiences/seal-carving/hero.webp" alt="Seal carving and engraving craft" loading="lazy" />
+            <img data-lazy-src="assets/experiences/seal-carving/hero.webp" alt="Seal carving and engraving craft" loading="lazy" />
             <div class="experience-copy">
               <h3>Seal Craft</h3>
               <p>Traditional handcraft</p>
@@ -516,7 +538,7 @@
           </a>
 
           <a class="experience-card experience-card-wide" href="experiences/imperial-dinner-show/" data-experience-categories="shows food-tea culture" aria-label="Explore the Imperial Dinner Show experience">
-            <img src="assets/experiences/imperial-dinner-show/hero.webp" alt="Dinner shows and local performances" loading="lazy" />
+            <img data-lazy-src="assets/experiences/imperial-dinner-show/hero.webp" alt="Dinner shows and local performances" loading="lazy" />
             <div class="experience-copy">
               <h3>Dinner Show</h3>
               <p>Meal, theatre, evening atmosphere</p>
@@ -529,7 +551,7 @@
           </a>
 
           <a class="experience-card experience-card-small" href="experiences/sichuan-mahjong/" data-experience-categories="culture food-tea" aria-label="Explore the Sichuan Mahjong experience">
-            <img src="assets/experiences/sichuan-mahjong/hero.webp" alt="Sichuan mahjong class" loading="lazy" />
+            <img data-lazy-src="assets/experiences/sichuan-mahjong/hero.webp" alt="Sichuan mahjong class" loading="lazy" />
             <div class="experience-copy">
               <h3>Mahjong</h3>
               <p>Local table culture</p>
@@ -634,7 +656,7 @@
                 <p>Meet the Founder</p>
                 <div class="founder-profile-body">
                   <div class="founder-portrait">
-                    <img src="assets/people/stephen-chen-founder.webp" alt="Stephen Chen, founder of Loomline Travel, in the mountains" loading="lazy" />
+                    <img data-lazy-src="assets/people/stephen-chen-founder.webp" alt="Stephen Chen, founder of Loomline Travel, in the mountains" loading="lazy" />
                   </div>
                   <figcaption>
                     <strong>Stephen Chen</strong>
@@ -923,7 +945,7 @@
     
 
     <script src="title-fit.js?v=5"></script>
-    <script src="script.js?v=old-refine-13"></script>
+    <script src="script.js?v=performance-1"></script>
     <script src="form-date.js?v=2"></script>
     <script src="whatsapp-float.js?v=loomline-6"></script>
     <script src="assets/analytics.js"></script>

@@ -8,17 +8,69 @@ document.querySelectorAll("img[data-fallback]").forEach((image) => {
   );
 });
 
+const deferredImages = Array.from(document.querySelectorAll("img[data-lazy-src]"));
+
+const loadDeferredImage = (image) => {
+  if (!image?.dataset.lazySrc) return;
+  image.src = image.dataset.lazySrc;
+  delete image.dataset.lazySrc;
+};
+
+if ("IntersectionObserver" in window) {
+  const imageObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        loadDeferredImage(entry.target);
+        observer.unobserve(entry.target);
+      });
+    },
+    { rootMargin: "320px 0px" },
+  );
+
+  deferredImages.forEach((image) => imageObserver.observe(image));
+} else {
+  deferredImages.forEach(loadDeferredImage);
+}
+
 const heroSlides = Array.from(document.querySelectorAll(".hero-slide"));
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 if (heroSlides.length > 1 && !reduceMotion) {
   let activeIndex = 0;
+  const slideDuration = 5200;
+  const preloadLeadTime = 1400;
 
-  window.setInterval(() => {
-    heroSlides[activeIndex].classList.remove("is-active");
-    activeIndex = (activeIndex + 1) % heroSlides.length;
-    heroSlides[activeIndex].classList.add("is-active");
-  }, 5200);
+  const loadHeroSlide = (slide) => {
+    if (!slide?.dataset.src) return Promise.resolve();
+
+    return new Promise((resolve) => {
+      const finish = () => resolve();
+      slide.addEventListener("load", finish, { once: true });
+      slide.addEventListener("error", finish, { once: true });
+      slide.src = slide.dataset.src;
+      delete slide.dataset.src;
+
+      if (slide.complete) resolve();
+    });
+  };
+
+  const scheduleNextSlide = () => {
+    const nextIndex = (activeIndex + 1) % heroSlides.length;
+
+    window.setTimeout(async () => {
+      await loadHeroSlide(heroSlides[nextIndex]);
+
+      window.setTimeout(() => {
+        heroSlides[activeIndex].classList.remove("is-active");
+        activeIndex = nextIndex;
+        heroSlides[activeIndex].classList.add("is-active");
+        scheduleNextSlide();
+      }, preloadLeadTime);
+    }, slideDuration - preloadLeadTime);
+  };
+
+  scheduleNextSlide();
 }
 
 document.querySelectorAll("[data-destination-scroll]").forEach((scroller) => {
