@@ -58,7 +58,7 @@
     s.setAttribute("aria-label", "Cookie consent");
     s.innerHTML =
       '<div class="lt-consent-box">' +
-      '<p class="lt-consent-text">We use cookies to improve your experience and analyse our traffic. Read our <a href="' + privacyHref() + '">privacy policy</a>.</p>' +
+      '<p class="lt-consent-text">We use analytics cookies to improve this site. Read our <a href="' + privacyHref() + '">privacy policy</a>.</p>' +
       '<div class="lt-consent-actions">' +
       '<button class="lt-consent-reject">Necessary only</button>' +
       '<button class="lt-consent-accept">Accept analytics</button>' +

@@ -4857,13 +4857,78 @@ main h2 {
 }
 
 @media (max-width: 560px) {
+  .home-page {
+    overflow-x: clip;
+  }
+
+  .home-page .services-section {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .product-cards,
+  .product-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .product-cards {
+    gap: 20px;
+  }
+
   .product-head {
-    min-height: 218px;
-    padding: 24px 22px 20px;
+    min-height: 204px;
+    padding: 22px 20px 18px;
   }
 
   .product-head-copy {
-    width: min(78%, 355px);
+    width: min(86%, 355px);
+  }
+
+  .product-head h3 {
+    font-size: clamp(23px, 8vw, 27px);
+    line-height: 1.08;
+  }
+
+  .product-body {
+    padding: 18px 20px 22px;
+  }
+
+  .route {
+    align-items: flex-start;
+    gap: 10px;
+    padding: 13px 0;
+  }
+
+  .route-pin {
+    width: 36px;
+    height: 36px;
+    margin-top: 2px;
+  }
+
+  .route-info b {
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  .route-info > span {
+    display: block;
+    margin-top: 2px;
+    font-size: 13.5px;
+    line-height: 1.38;
+  }
+
+  .cta-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding-top: 16px;
+  }
+
+  .cta-row .btn {
+    width: 100%;
+    padding: 13px 16px;
+    font-size: 14px;
   }
 
   .product-standard .product-head::before {
@@ -4882,6 +4947,36 @@ main h2 {
       rgba(75, 30, 26, 0.94) 50%,
       rgba(75, 30, 26, 0.28) 100%
     );
+  }
+
+  #lt-consent-banner {
+    padding: 10px 12px !important;
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+  }
+
+  #lt-consent-banner .lt-consent-box {
+    gap: 8px !important;
+  }
+
+  #lt-consent-banner .lt-consent-text {
+    flex-basis: 100% !important;
+  }
+
+  #lt-consent-banner .lt-consent-actions {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8px !important;
+  }
+
+  #lt-consent-banner .lt-consent-actions button {
+    min-width: 0 !important;
+    min-height: 40px !important;
+    padding: 8px 9px !important;
+    font-size: 11.5px !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
   }
 }
 
