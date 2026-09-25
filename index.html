@@ -37,7 +37,7 @@
       />
     </noscript>
     <link rel="stylesheet" href="assets/site-chrome.css?v=loomline-1" />
-    <link rel="stylesheet" href="styles.css?v=mobile-cards-1" />
+    <link rel="stylesheet" href="styles.css?v=mobile-images-1" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -119,6 +119,7 @@
         <div class="hero-carousel" aria-hidden="true">
           <img
             class="hero-bg hero-slide is-active"
+            data-scene="great-wall"
             fetchpriority="high"
             src="assets/home/hero-great-wall.webp"
             width="1672"
@@ -127,6 +128,7 @@
           />
           <img
             class="hero-bg hero-slide"
+            data-scene="beijing"
             data-src="assets/home/city-beijing.webp"
             width="1672"
             height="941"
@@ -134,6 +136,7 @@
           />
           <img
             class="hero-bg hero-slide"
+            data-scene="shanghai"
             data-src="assets/home/city-shanghai.webp"
             width="1672"
             height="941"
@@ -141,6 +144,7 @@
           />
           <img
             class="hero-bg hero-slide"
+            data-scene="chengdu"
             data-src="assets/home/city-chengdu.webp"
             width="1672"
             height="941"
@@ -148,6 +152,7 @@
           />
           <img
             class="hero-bg hero-slide"
+            data-scene="chongqing"
             data-src="assets/home/city-chongqing.webp"
             width="1672"
             height="941"
@@ -155,6 +160,7 @@
           />
           <img
             class="hero-bg hero-slide"
+            data-scene="guilin"
             data-src="assets/home/city-guilin.webp"
             width="1672"
             height="941"
@@ -162,6 +168,7 @@
           />
           <img
             class="hero-bg hero-slide"
+            data-scene="jiangnan"
             data-src="assets/home/city-jiangnan.webp"
             width="1672"
             height="941"
@@ -288,7 +295,7 @@
         <div class="destination-scroll is-at-start" data-destination-scroll>
           <button class="destination-arrow destination-arrow-left" type="button" data-scroll-dir="-1" aria-label="Scroll destinations left">Left</button>
           <div class="destination-grid" aria-label="Destination cards" data-destination-track>
-            <a class="destination-card" href="destinations/chengdu/">
+            <a class="destination-card" data-destination="chengdu" href="destinations/chengdu/">
               <img data-lazy-src="assets/home/city-chengdu.webp" alt="Chengdu and Sichuan travel scene" loading="lazy" decoding="async" />
               <div class="destination-card-body">
                 <h3>Chengdu</h3>
@@ -312,7 +319,7 @@
               </div>
             </a>
 
-            <a class="destination-card" href="destinations/northeast-china/">
+            <a class="destination-card" data-destination="northeast" href="destinations/northeast-china/">
               <img data-lazy-src="assets/destinations/northeast-china/hero.webp" alt="Illuminated ice architecture in Harbin, Northeast China" loading="lazy" decoding="async" />
               <div class="destination-card-body">
                 <h3>Northeast China</h3>

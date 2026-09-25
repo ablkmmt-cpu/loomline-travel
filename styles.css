@@ -2550,6 +2550,28 @@ main h2 {
     filter: brightness(0.68) contrast(1.05) saturate(0.92);
   }
 
+  .hero-slide[data-scene="great-wall"],
+  .hero-slide[data-scene="beijing"] {
+    object-position: 50% center;
+  }
+
+  .hero-slide[data-scene="shanghai"] {
+    object-position: 48% center;
+  }
+
+  .hero-slide[data-scene="chengdu"] {
+    object-position: 23% center;
+  }
+
+  .hero-slide[data-scene="chongqing"],
+  .hero-slide[data-scene="guilin"] {
+    object-position: 55% center;
+  }
+
+  .hero-slide[data-scene="jiangnan"] {
+    object-position: 28% center;
+  }
+
   .hero-overlay {
     background:
       linear-gradient(180deg, rgba(7, 22, 18, 0.66) 0%, rgba(7, 22, 18, 0.14) 27%, rgba(7, 22, 18, 0.22) 58%, rgba(7, 22, 18, 0.7) 100%),
@@ -2720,6 +2742,14 @@ main h2 {
     min-height: 372px;
     scroll-snap-align: center;
     border-radius: 8px;
+  }
+
+  .destination-card[data-destination="chengdu"] img {
+    object-position: 32% center;
+  }
+
+  .destination-card[data-destination="northeast"] img {
+    object-position: 72% center;
   }
 
   .destination-arrow {
