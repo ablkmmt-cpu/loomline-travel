@@ -454,6 +454,11 @@ main { padding-bottom: 76px; }
   .criteria-value { display: none; }
   .section { padding-top: 40px; }
   .section-heading { font-size: 34px; }
+  #recommendedHeading {
+    font-size: clamp(20px, 6.3vw, 27px);
+    letter-spacing: -0.035em;
+    white-space: nowrap;
+  }
   .section-heading-row { align-items: baseline; margin-bottom: 18px; }
   .recommended-list {
     display: flex;
@@ -469,30 +474,53 @@ main { padding-bottom: 76px; }
   .recommended-list::-webkit-scrollbar { display: none; }
   .recommended-card {
     flex: 0 0 calc(100% - 40px);
+    min-width: 0;
     grid-template-columns: 1fr;
     min-height: 0;
     scroll-snap-align: start;
     scroll-snap-stop: always;
   }
   .recommended-media { grid-row: auto; min-height: 0; height: 176px; }
-  .recommended-body { min-height: 188px; padding: 20px 20px 16px; justify-content: flex-start; }
-  .recommended-title { margin-top: 6px; font-size: 26px; }
+  .recommended-body {
+    min-width: 0;
+    min-height: 0;
+    padding: 20px 20px 18px;
+    justify-content: flex-start;
+  }
+  .recommended-title {
+    margin-top: 6px;
+    font-size: clamp(23px, 6.7vw, 27px);
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
   .recommended-summary {
-    display: -webkit-box;
+    display: block;
     margin-top: 10px;
-    overflow: hidden;
+    overflow: visible;
     font-size: 15px;
     line-height: 1.5;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    overflow-wrap: anywhere;
+    -webkit-line-clamp: unset;
   }
   .recommended-highlights {
-    overflow: hidden;
     margin-top: 12px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    overflow: visible;
+    font-size: 14px;
+    line-height: 1.5;
+    text-overflow: clip;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
-  .recommended-side { grid-column: 1; min-height: 106px; padding: 15px 20px 18px; grid-template-columns: 1fr auto; align-items: center; justify-content: stretch; gap: 8px 16px; }
+  .recommended-side {
+    grid-column: 1;
+    min-width: 0;
+    min-height: 112px;
+    padding: 15px 20px 18px;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    justify-content: stretch;
+    gap: 8px 16px;
+  }
   .recommended-side .duration { grid-column: 1 / -1; color: var(--green); font-size: 15px; }
   .recommended-side .price-label { display: none; }
   .recommended-side .text-link { justify-self: end; }
