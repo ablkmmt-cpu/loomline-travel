@@ -970,41 +970,6 @@ main h2 {
   display: none;
 }
 
-.experiences-cta {
-  width: min(760px, 100%);
-  display: grid;
-  justify-items: center;
-  gap: 16px;
-  margin: clamp(40px, 5vw, 68px) auto 0;
-  text-align: center;
-}
-
-.experiences-cta p {
-  margin: 0;
-  color: rgba(255, 247, 233, 0.56);
-  font-size: 18px;
-  font-weight: 560;
-}
-
-.experiences-cta a {
-  display: inline-flex;
-  min-height: 52px;
-  align-items: center;
-  justify-content: center;
-  padding: 0 32px;
-  border: 1px solid rgba(218, 177, 101, 0.74);
-  border-radius: 999px;
-  color: #17110a;
-  background: linear-gradient(180deg, #e4c47f 0%, #bd9148 100%);
-  font-weight: 800;
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.22);
-  touch-action: manipulation;
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    background 180ms ease;
-}
-
 .city-page {
   color: var(--ink);
   background: #f8f3ea;
@@ -2471,11 +2436,6 @@ main h2 {
     box-shadow: 0 16px 34px rgba(21, 21, 21, 0.18);
   }
 
-  .experiences-cta a:hover {
-    transform: translateY(-2px);
-    background: linear-gradient(180deg, #efd28f 0%, #c79b50 100%);
-    box-shadow: 0 24px 58px rgba(0, 0, 0, 0.3);
-  }
 }
 
 @media (hover: none) {
@@ -2856,23 +2816,18 @@ main h2 {
   }
 
   .experience-filters {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 10px;
-    margin: 0 -18px 22px;
-    padding: 0 18px 4px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .experience-filters::-webkit-scrollbar {
-    display: none;
+    margin: 0 0 22px;
+    padding: 0;
+    overflow: visible;
   }
 
   .experience-filters button {
-    flex: 0 0 auto;
+    width: 100%;
     min-height: 38px;
-    padding: 0 15px;
+    padding: 0 8px;
     border: 1px solid rgba(218, 177, 101, 0.22);
     border-radius: 999px;
     color: rgba(255, 247, 233, 0.62);
@@ -2986,25 +2941,9 @@ main h2 {
     transform: none;
   }
 
-  .experiences-cta {
-    margin-top: 30px;
-  }
-
   .experiences-toggle {
     width: min(310px, 100%);
     margin-top: 24px;
-  }
-
-  .experiences-cta p {
-    color: rgba(255, 247, 233, 0.56);
-    font-size: 15px;
-  }
-
-  .experiences-cta a {
-    width: min(330px, 100%);
-    min-height: 52px;
-    padding: 0 24px;
-    text-align: center;
   }
 
   .city-hero {
@@ -4420,6 +4359,361 @@ main h2 {
   }
 }
 
+/* ============ Traveler Reviews（首页） ============ */
+
+.traveler-reviews {
+  scroll-margin-top: 96px;
+  padding: clamp(64px, 6.5vw, 88px) clamp(18px, 5vw, 72px);
+  color: #fffaf0;
+  background:
+    radial-gradient(circle at 88% 0%, rgba(205, 164, 91, 0.14), transparent 30%),
+    var(--deep-green);
+}
+
+.traveler-reviews-inner {
+  width: min(1060px, 100%);
+  margin: 0 auto;
+}
+
+.traveler-reviews-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "kicker score"
+    "title score"
+    "copy score";
+  align-items: center;
+  column-gap: 48px;
+}
+
+.traveler-reviews-kicker {
+  grid-area: kicker;
+  margin: 0 0 10px;
+  color: #d5ad68;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.traveler-reviews-intro h2 {
+  grid-area: title;
+  min-width: 0;
+  margin: 0;
+  color: #fffaf0;
+  font-family: "Noto Serif SC", "Cinzel", serif;
+  font-size: clamp(34px, 4vw, 52px);
+  font-weight: 500;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  white-space: nowrap;
+  text-wrap: nowrap;
+}
+
+.traveler-reviews-intro > p:not(.traveler-reviews-kicker) {
+  grid-area: copy;
+  max-width: 560px;
+  margin: 12px 0 0;
+  color: rgba(255, 250, 240, 0.68);
+  font-size: 15px;
+  line-height: 1.6;
+  white-space: nowrap;
+  text-wrap: nowrap;
+}
+
+.traveler-reviews-score {
+  grid-area: score;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-left: 40px;
+  border-left: 1px solid rgba(255, 250, 240, 0.15);
+}
+
+.traveler-reviews-score > strong {
+  color: #fffaf0;
+  font-family: "Noto Serif SC", "Cinzel", serif;
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.traveler-reviews-score > div {
+  display: grid;
+  gap: 7px;
+}
+
+.traveler-rating-bubbles {
+  display: flex;
+  gap: 5px;
+}
+
+.traveler-rating-bubbles i {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #35a86b;
+  box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.traveler-reviews-source {
+  color: rgba(255, 250, 240, 0.62);
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration-line: underline;
+  text-decoration-color: rgba(255, 250, 240, 0.42);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 180ms ease, text-decoration-color 180ms ease;
+}
+
+.traveler-reviews-source:hover {
+  color: #fffaf0;
+  text-decoration-color: #d5ad68;
+}
+
+.traveler-reviews-source:focus-visible {
+  outline: 2px solid rgba(213, 173, 104, 0.72);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.traveler-review-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  padding: 32px 38px 26px;
+  margin-top: 34px;
+  border: 1px solid rgba(213, 173, 104, 0.42);
+  border-radius: 22px;
+  background: #fbf7ee;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.16);
+}
+
+.traveler-review-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 130px;
+  height: 130px;
+  border-radius: 0 0 0 100%;
+  background: rgba(213, 173, 104, 0.1);
+  pointer-events: none;
+}
+
+.traveler-review-mark {
+  position: relative;
+  display: block;
+  grid-column: 1;
+  grid-row: 1;
+  height: 28px;
+  color: #b98b42;
+  font-family: Georgia, serif;
+  font-size: 58px;
+  line-height: 0.8;
+}
+
+.traveler-review-card blockquote {
+  position: relative;
+  grid-column: 2;
+  margin: 2px 0 28px;
+}
+
+.traveler-review-card blockquote p {
+  margin: 0;
+  color: #172621;
+  font-family: "Noto Serif SC", "Cinzel", serif;
+  font-size: clamp(21px, 2.2vw, 28px);
+  font-weight: 500;
+  line-height: 1.42;
+  letter-spacing: -0.02em;
+}
+
+.traveler-review-card footer {
+  position: relative;
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(16, 35, 31, 0.12);
+}
+
+.traveler-review-author {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.traveler-review-author > span {
+  flex: 0 0 auto;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fffaf0;
+  background: #183a32;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.traveler-review-author p {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+}
+
+.traveler-review-author strong {
+  color: #172621;
+  font-size: 13.5px;
+}
+
+.traveler-review-author small {
+  color: rgba(23, 38, 33, 0.58);
+  font-size: 12px;
+  font-weight: 550;
+}
+
+.traveler-review-card footer > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #7f5c29;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.traveler-review-card footer > a svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 180ms ease;
+}
+
+.traveler-review-card footer > a:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.traveler-review-card footer > a:focus-visible {
+  outline: 2px solid rgba(185, 139, 66, 0.55);
+  outline-offset: 5px;
+  border-radius: 3px;
+}
+
+@media (max-width: 700px) {
+  .traveler-reviews {
+    padding: 52px 18px 54px;
+  }
+
+  .traveler-reviews-intro {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "kicker"
+      "title"
+      "copy"
+      "score";
+    column-gap: 0;
+  }
+
+  .traveler-reviews-intro h2 {
+    font-size: clamp(24px, 6.65vw, 27px);
+    line-height: 1.06;
+  }
+
+  .traveler-reviews-intro > p:not(.traveler-reviews-kicker) {
+    margin-top: 8px;
+    font-size: clamp(8.8px, 2.5vw, 10px);
+    line-height: 1.45;
+    letter-spacing: -0.02em;
+  }
+
+  .traveler-reviews-score {
+    gap: 12px;
+    margin-top: 19px;
+    padding: 0;
+    border: 0;
+  }
+
+  .traveler-reviews-score > strong {
+    font-size: 26px;
+  }
+
+  .traveler-reviews-score > div {
+    gap: 4px;
+  }
+
+  .traveler-rating-bubbles i {
+    width: 10px;
+    height: 10px;
+  }
+
+  .traveler-review-card {
+    display: block;
+    margin-top: 24px;
+    padding: 23px 20px 20px;
+    border-radius: 18px;
+  }
+
+  .traveler-review-mark {
+    height: 22px;
+    font-size: 48px;
+  }
+
+  .traveler-review-card blockquote {
+    margin: 13px 0 20px;
+  }
+
+  .traveler-review-card blockquote p {
+    font-size: 18px;
+    line-height: 1.43;
+  }
+
+  .traveler-review-card footer {
+    align-items: center;
+    gap: 12px;
+    padding-top: 16px;
+  }
+
+  .traveler-review-author {
+    min-width: 0;
+    gap: 9px;
+  }
+
+  .traveler-review-author > span {
+    width: 34px;
+    height: 34px;
+  }
+
+  .traveler-review-author small {
+    font-size: 10.5px;
+  }
+
+  .traveler-review-card footer > a {
+    margin-left: auto;
+    font-size: 0;
+  }
+
+  .traveler-review-card footer > a::before {
+    content: "Full review";
+    font-size: 12px;
+  }
+
+  .traveler-review-card footer > a svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
 /* ============ FAQ 区（首页） ============ */
 
 .faq-section {
@@ -5032,7 +5326,6 @@ main h2 {
 
 .home-page .destination-info p,
 .home-page .destinations-cta p,
-.home-page .experiences-cta p,
 .home-page .faq-answer,
 .home-page .about-copy > p:not(.about-kicker),
 .home-page .trust-points p,
@@ -5048,10 +5341,10 @@ main h2 {
 
 @media (max-width: 760px) {
   .home-page .subtitle {
-    max-width: min(330px, 100%);
-    font-size: 19px;
-    line-height: 1.5;
-    white-space: normal;
+    max-width: 100%;
+    font-size: clamp(12px, 3.55vw, 14px);
+    line-height: 1.4;
+    white-space: nowrap;
   }
 
   .home-page .section-heading p,
@@ -5059,7 +5352,6 @@ main h2 {
   .home-page .experiences-heading span,
   .home-page .destination-info p,
   .home-page .destinations-cta p,
-  .home-page .experiences-cta p,
   .home-page .faq-answer,
   .home-page .about-copy > p:not(.about-kicker),
   .home-page .trust-points p,
