@@ -5212,7 +5212,7 @@ main h2 {
   }
 
   .product-head-copy {
-    width: min(86%, 355px);
+    width: min(78%, 355px);
   }
 
   .product-head h3 {
@@ -5264,18 +5264,20 @@ main h2 {
   .product-standard .product-head::before {
     background: linear-gradient(
       90deg,
-      rgba(14, 59, 46, 0.99) 0%,
-      rgba(14, 59, 46, 0.94) 50%,
-      rgba(14, 59, 46, 0.28) 100%
+      rgba(14, 59, 46, 0.98) 0%,
+      rgba(14, 59, 46, 0.9) 38%,
+      rgba(14, 59, 46, 0.18) 68%,
+      rgba(14, 59, 46, 0) 100%
     );
   }
 
   .product-custom .product-head::before {
     background: linear-gradient(
       90deg,
-      rgba(75, 30, 26, 0.99) 0%,
-      rgba(75, 30, 26, 0.94) 50%,
-      rgba(75, 30, 26, 0.28) 100%
+      rgba(75, 30, 26, 0.98) 0%,
+      rgba(75, 30, 26, 0.9) 38%,
+      rgba(75, 30, 26, 0.18) 68%,
+      rgba(75, 30, 26, 0) 100%
     );
   }
 
