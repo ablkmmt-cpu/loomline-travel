@@ -438,7 +438,13 @@ main { padding-bottom: 76px; }
 @media (max-width: 620px) {
   .container { width: min(calc(100% - 32px), var(--container)); }
   .page-hero { padding: 142px 0 30px; gap: 28px; }
-  .hero-title { margin-top: 13px; font-size: clamp(43px, 13vw, 58px); }
+  .hero-title {
+    max-width: none;
+    margin-top: 11px;
+    font-size: clamp(33px, 8.8vw, 36px);
+    line-height: 1.03;
+    letter-spacing: -0.035em;
+  }
   .hero-copy { margin-top: 18px; font-size: 16.5px; }
   .hero-deck { height: 256px; }
   .hero-card { width: calc(100% - 24px); height: 228px; padding: 6px; border-radius: 14px; }
@@ -455,7 +461,9 @@ main { padding-bottom: 76px; }
   .section { padding-top: 40px; }
   .section-heading { font-size: 34px; }
   #recommendedHeading {
-    font-size: clamp(20px, 6.3vw, 27px);
+    scroll-margin-top: 122px;
+    margin-bottom: 16px;
+    font-size: clamp(20px, 5.8vw, 25px);
     letter-spacing: -0.035em;
     white-space: nowrap;
   }
@@ -473,7 +481,8 @@ main { padding-bottom: 76px; }
   }
   .recommended-list::-webkit-scrollbar { display: none; }
   .recommended-card {
-    flex: 0 0 calc(100% - 40px);
+    position: relative;
+    flex: 0 0 calc(100% - 24px);
     min-width: 0;
     grid-template-columns: 1fr;
     min-height: 0;
@@ -481,49 +490,97 @@ main { padding-bottom: 76px; }
     scroll-snap-stop: always;
   }
   .recommended-media { grid-row: auto; min-height: 0; height: 176px; }
+  .recommended-media::after {
+    content: "";
+    position: absolute;
+    inset: 36% 0 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(7, 22, 18, 0) 0%, rgba(7, 22, 18, 0.76) 100%);
+    pointer-events: none;
+  }
   .recommended-body {
     min-width: 0;
     min-height: 0;
-    padding: 20px 20px 18px;
+    padding: 14px 16px 13px;
     justify-content: flex-start;
   }
+  .recommended-body .route-code {
+    position: absolute;
+    left: 16px;
+    top: 119px;
+    z-index: 2;
+    color: #f0ca79;
+    font-size: 10.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.48);
+  }
   .recommended-title {
-    margin-top: 6px;
-    font-size: clamp(23px, 6.7vw, 27px);
-    line-height: 1.12;
-    overflow-wrap: anywhere;
+    position: absolute;
+    left: 16px;
+    right: 16px;
+    top: 138px;
+    z-index: 2;
+    margin: 0;
+    color: #fffaf0;
+    font-size: clamp(20px, 5.4vw, 22px);
+    line-height: 1.08;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.62);
+    white-space: nowrap;
   }
   .recommended-summary {
     display: block;
-    margin-top: 10px;
+    margin-top: 0;
     overflow: visible;
-    font-size: 15px;
-    line-height: 1.5;
+    color: #625d55;
+    font-size: 13.5px;
+    font-weight: 480;
+    line-height: 1.42;
     overflow-wrap: anywhere;
     -webkit-line-clamp: unset;
   }
   .recommended-highlights {
-    margin-top: 12px;
+    margin-top: 8px;
+    padding: 0;
     overflow: visible;
-    font-size: 14px;
-    line-height: 1.5;
+    color: #214d42;
+    border: 0;
+    background: transparent;
+    font-size: 12px;
+    font-weight: 680;
+    line-height: 1.38;
     text-overflow: clip;
     white-space: normal;
     overflow-wrap: anywhere;
   }
+  .recommended-highlights::before {
+    content: "•";
+    margin-right: 6px;
+    color: var(--gold);
+    font-size: 14px;
+    line-height: 1;
+  }
   .recommended-side {
     grid-column: 1;
     min-width: 0;
-    min-height: 112px;
-    padding: 15px 20px 18px;
-    grid-template-columns: 1fr auto;
+    min-height: 84px;
+    padding: 11px 16px 13px;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
     justify-content: stretch;
-    gap: 8px 16px;
+    gap: 6px 5px;
   }
-  .recommended-side .duration { grid-column: 1 / -1; color: var(--green); font-size: 15px; }
-  .recommended-side .price-label { display: none; }
-  .recommended-side .text-link { justify-self: end; }
+  .recommended-side .duration { grid-column: 1 / -1; color: var(--green); font-size: 13px; }
+  .recommended-side .price-label {
+    grid-column: 1;
+    margin: 2px 1px 0 0;
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 720;
+    line-height: 1;
+  }
+  .recommended-side .price { grid-column: 2; margin-top: 0; font-size: 27px; }
+  .recommended-side .text-link { grid-column: 3; justify-self: end; margin-left: 9px; }
   .recommended-pagination {
     display: flex;
     min-height: 34px;

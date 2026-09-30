@@ -28,22 +28,22 @@
     {
       "label": "Best days",
       "value": "7–10 days",
-      "detail": "Enough for two or three bases without rushing long transfers"
+      "detail": "Two or three bases without rushed transfers."
     },
     {
       "label": "Best season",
       "value": "Dec–Feb · Sep–Oct",
-      "detail": "Deep winter for ice and snow; autumn for forests and mountain color"
+      "detail": "Winter snow or vivid autumn forests."
     },
     {
       "label": "Best for",
-      "value": "Winter · Food · Regional history",
-      "detail": "A less familiar side of China with strong seasonal character"
+      "value": "Winter · Food · History",
+      "detail": "A seasonal side of China few visitors see."
     },
     {
       "label": "Pairs with",
       "value": "Beijing",
-      "detail": "The clearest gateway into a northern China route"
+      "detail": "The clearest northern gateway."
     }
   ],
   "intro": {
@@ -102,7 +102,7 @@
   ],
   "flavors": {
     "eyebrow": "Northeast flavors",
-    "title": "Generous, warming, and made to share.",
+    "title": "Taste Northeast China.",
     "summary": "Dongbei food suits the climate: substantial portions, pickled vegetables, slow stews, wheat-based staples, and distinctive city specialties.",
     "image": "assets/destinations/northeast-china/07.webp",
     "imageAlt": "A shared table of Northeast Chinese dishes",

@@ -29,7 +29,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../../assets/site-chrome.css?v=loomline-1" />
-    <link rel="stylesheet" href="standard-routes.css?v=mobile-copy-1" />
+    <link rel="stylesheet" href="standard-routes.css?v=mobile-card-2" />
   <!-- @@ANALYTICS@@ -->
   </head>
   <body id="top">
@@ -303,7 +303,7 @@
       function routeHasDetails(route) { return route.detailReady === true; }
       function recommendedPriceHtml(route) {
         if (routeIsAvailable(route)) {
-          return `<span class="price-label">from</span><strong class="price">${formatPrice(route.price)}</strong><span class="price-note">per person</span>`;
+          return `<span class="price-label">From</span><strong class="price">${formatPrice(route.price)}</strong><span class="price-note">per person</span>`;
         }
         if (routeHasDetails(route)) {
           return `<span class="price-label">Pricing</span><strong class="price price-coming-soon">On request</strong><span class="price-note">Request a per-person quote</span>`;

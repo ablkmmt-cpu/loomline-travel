@@ -41,6 +41,9 @@
   font-size: clamp(34px, 5.4vw, 64px);
   font-weight: 900;
   line-height: 1.1;
+  white-space: normal;
+  text-wrap: balance;
+  overflow-wrap: normal;
 }
 
 .contact-subtitle {
@@ -312,8 +315,13 @@
 }
 
 .contact-social .about-social-links a {
-  width: 42px;
-  height: 42px;
+  width: auto;
+  height: auto;
+  min-height: 42px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 /* ---------- 响应式 ---------- */
@@ -339,8 +347,24 @@
 
 @media (max-width: 560px) {
   .contact-hero {
-    min-height: 300px;
-    padding-top: 104px;
+    min-height: 360px;
+    place-content: start center;
+    padding: 142px 20px 48px;
+  }
+
+  .contact-kicker {
+    margin-bottom: 15px;
+  }
+
+  .contact-hero h1 {
+    max-width: 10.5em;
+    font-size: clamp(34px, 9.6vw, 40px);
+    line-height: 1.08;
+  }
+
+  .contact-subtitle {
+    max-width: 34ch;
+    margin-top: 18px;
   }
 
   .contact-rail {

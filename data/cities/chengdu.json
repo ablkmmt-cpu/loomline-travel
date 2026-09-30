@@ -27,23 +27,23 @@
   "facts": [
     {
       "label": "Best days",
-      "value": "3-5 days",
-      "detail": "Three for the city; five for nearby day trips"
+      "value": "3–5 days",
+      "detail": "City highlights with time for one nearby day trip."
     },
     {
       "label": "Best season",
       "value": "Spring & autumn",
-      "detail": "Mild weather and comfortable city walks"
+      "detail": "Mild weather for relaxed city walks."
     },
     {
       "label": "Best for",
       "value": "Food · Pandas · First-timers",
-      "detail": "Local life with an easy pace"
+      "detail": "Tea houses, local life, and an easy pace."
     },
     {
       "label": "Pairs with",
       "value": "Xi’an · Shanghai",
-      "detail": "A natural stop on a first China route"
+      "detail": "A natural first-time China route."
     }
   ],
   "intro": {
@@ -97,7 +97,7 @@
   },
   "flavors": {
     "eyebrow": "Chengdu flavors",
-    "title": "Fiery, fragrant, and unforgettable.",
+    "title": "Taste Chengdu.",
     "summary": "Sichuan cuisine is bold, layered, and deeply satisfying. These are the dishes you shouldn’t miss.",
     "image": "assets/destinations/chengdu/07.webp",
     "imageAlt": "Sichuan hotpot with meat, vegetables, and a divided broth",

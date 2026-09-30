@@ -162,6 +162,13 @@ const stayAnswerMarkup = (city) => `          <div class="city-detail-stay-answe
             <p>${escapeHtml(city.stay.summary)}</p>
           </div>`;
 
+const flavorsTitleMarkup = (city) => {
+  const title = String(city.flavors.title);
+  const match = title.match(/^(Taste)\s+(.+)$/i);
+  if (!match) return escapeHtml(title);
+  return `<span>${escapeHtml(match[1])}</span> <span>${escapeHtml(match[2])}</span>`;
+};
+
 const featuredRouteCodesForCity = (city) => {
   if (Array.isArray(city.featuredRouteCodes)) return city.featuredRouteCodes;
   return STANDARD_ROUTES
@@ -178,8 +185,10 @@ const featuredRoutesMarkup = (city, base) => {
                   <img src="${escapeHtml(withBase(base, city.hero.image))}" alt="" loading="lazy" decoding="async" />
                 </figure>
                 <div class="city-detail-route-card-copy">
-                  <p class="city-detail-route-card-code">Standard routes</p>
-                  <h3>${escapeHtml(city.name)} journeys</h3>
+                  <div class="city-detail-route-card-heading">
+                    <p class="city-detail-route-card-code">Standard routes</p>
+                    <h3>${escapeHtml(city.name)} journeys</h3>
+                  </div>
                   <p>Our first standard route for ${escapeHtml(city.name)} is being prepared.</p>
                   <span class="city-detail-route-card-status">Coming soon</span>
                 </div>
@@ -194,9 +203,11 @@ const featuredRoutesMarkup = (city, base) => {
                   <img src="${escapeHtml(withBase(base, route.image))}" alt="${escapeHtml(route.imageAlt)}" loading="lazy" decoding="async" />
                 </figure>
                 <div class="city-detail-route-card-copy">
-                  <p class="city-detail-route-card-code">Standard route · ${escapeHtml(route.code)}</p>
-                  <h3>${escapeHtml(route.title)}</h3>
-                  <p class="city-detail-route-card-days">${escapeHtml(route.days)} Days / ${escapeHtml(route.nights)} Nights</p>
+                  <div class="city-detail-route-card-heading">
+                    <p class="city-detail-route-card-code">Standard route · ${escapeHtml(route.code)}</p>
+                    <h3>${escapeHtml(route.title)}</h3>
+                    <p class="city-detail-route-card-days">${escapeHtml(route.days)} Days / ${escapeHtml(route.nights)} Nights</p>
+                  </div>
                   <p>${escapeHtml(route.summary)}</p>
                   <span class="city-detail-route-card-action">View this route →</span>
                 </div>
@@ -274,7 +285,7 @@ const renderCity = (city, outputFile) => {
     HIGHLIGHTS_TITLE: escapeHtml(city.highlights.title),
     HIGHLIGHTS: highlightsMarkup(city, base),
     FLAVORS_EYEBROW: escapeHtml(city.flavors.eyebrow),
-    FLAVORS_TITLE: escapeHtml(city.flavors.title),
+    FLAVORS_TITLE: flavorsTitleMarkup(city),
     FLAVORS_SUMMARY: escapeHtml(city.flavors.summary),
     FLAVORS_IMAGE: escapeHtml(withBase(base, city.flavors.image)),
     FLAVORS_IMAGE_ALT: escapeHtml(city.flavors.imageAlt),

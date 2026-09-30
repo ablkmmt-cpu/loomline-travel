@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{{BASE}}assets/site-chrome.css?v=loomline-2" />
-    <link rel="stylesheet" href="{{BASE}}assets/city-detail-template.css?v=19" />
+    <link rel="stylesheet" href="{{BASE}}assets/city-detail-template.css?v=32" />
     <!-- @@ANALYTICS@@ -->
   </head>
   <body class="city-detail-page" id="top">
@@ -120,7 +120,7 @@
         <div>
           <p class="city-detail-eyebrow city-detail-eyebrow-on-dark">{{CONVERSION_EYEBROW}}</p>
           <h2 id="city-detail-conversion-title">
-            <span>Make {{CITY_NAME}}</span>
+            <span>Make <strong>{{CITY_NAME}}</strong></span>
             <span>part of your China trip.</span>
           </h2>
           <p>{{CONVERSION_SUMMARY}}</p>
@@ -180,6 +180,7 @@
         });
       });
     </script>
+    <script src="{{BASE}}assets/city-detail.js?v=1"></script>
     <script src="{{BASE}}whatsapp-float.js?v=loomline-6"></script>
     <script src="{{BASE}}assets/analytics.js"></script>
   </body>

@@ -2759,7 +2759,13 @@ main h2 {
   }
 
   .destination-info p {
-    font-size: 14px;
+    min-height: 2.76em;
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: 13.5px;
+    line-height: 1.38;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
 
   .destination-info span,
@@ -5350,7 +5356,6 @@ main h2 {
   .home-page .section-heading p,
   .home-page .destinations-heading p,
   .home-page .experiences-heading span,
-  .home-page .destination-info p,
   .home-page .destinations-cta p,
   .home-page .faq-answer,
   .home-page .about-copy > p:not(.about-kicker),
@@ -5358,6 +5363,16 @@ main h2 {
   .home-page .form-intro {
     font-size: 16.5px;
     line-height: 1.6;
+  }
+
+  .home-page .destination-info p {
+    min-height: 2.76em;
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: 13.5px;
+    line-height: 1.38;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
   }
 
   .home-page .product-sub {
