@@ -5348,6 +5348,14 @@ main h2 {
 }
 
 @media (max-width: 760px) {
+  .home-page .faq-section {
+    padding-bottom: 40px;
+  }
+
+  .home-page .about-section {
+    padding-top: 48px;
+  }
+
   .home-page .subtitle {
     max-width: 100%;
     font-size: clamp(12px, 3.55vw, 14px);

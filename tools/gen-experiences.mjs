@@ -494,7 +494,7 @@ const page = (e) => `<!doctype html>
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/brand/loomline-favicon-32.png?v=4" />
     <link rel="icon" type="image/png" sizes="64x64" href="../../assets/brand/loomline-favicon-64.png?v=4" />
     <link rel="apple-touch-icon" sizes="180x180" href="../../assets/brand/loomline-apple-touch-icon.png?v=4" />
-    <link rel="stylesheet" href="../../assets/site-chrome.css?v=products-nav-5" />
+    <link rel="stylesheet" href="../../assets/site-chrome.css?v=products-nav-11" />
     <link rel="stylesheet" href="../../assets/experience-detail.css?v=2" />
   <!-- @@ANALYTICS@@ -->
   </head>
