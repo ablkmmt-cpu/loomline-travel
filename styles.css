@@ -3455,10 +3455,10 @@ main h2 {
 
 .reveal-item {
   opacity: 0;
-  translate: 0 28px;
+  translate: 0 16px;
   transition:
-    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
-    translate 800ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+    opacity 420ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+    translate 480ms cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
   will-change: opacity, translate;
 }
 

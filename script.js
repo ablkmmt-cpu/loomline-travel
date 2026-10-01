@@ -13,6 +13,10 @@ const deferredImages = Array.from(document.querySelectorAll("img[data-lazy-src]"
 const loadDeferredImage = (image) => {
   if (!image?.dataset.lazySrc) return;
   image.src = image.dataset.lazySrc;
+  if (image.dataset.lazySrcset) {
+    image.srcset = image.dataset.lazySrcset;
+    delete image.dataset.lazySrcset;
+  }
   delete image.dataset.lazySrc;
 };
 
@@ -39,7 +43,6 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
 if (heroSlides.length > 1 && !reduceMotion) {
   let activeIndex = 0;
   const slideDuration = 5200;
-  const preloadLeadTime = 1400;
 
   const loadHeroSlide = (slide) => {
     if (!slide?.dataset.src) return Promise.resolve();
@@ -48,6 +51,10 @@ if (heroSlides.length > 1 && !reduceMotion) {
       const finish = () => resolve();
       slide.addEventListener("load", finish, { once: true });
       slide.addEventListener("error", finish, { once: true });
+      if (slide.dataset.srcset) {
+        slide.srcset = slide.dataset.srcset;
+        delete slide.dataset.srcset;
+      }
       slide.src = slide.dataset.src;
       delete slide.dataset.src;
 
@@ -60,17 +67,19 @@ if (heroSlides.length > 1 && !reduceMotion) {
 
     window.setTimeout(async () => {
       await loadHeroSlide(heroSlides[nextIndex]);
-
-      window.setTimeout(() => {
-        heroSlides[activeIndex].classList.remove("is-active");
-        activeIndex = nextIndex;
-        heroSlides[activeIndex].classList.add("is-active");
-        scheduleNextSlide();
-      }, preloadLeadTime);
-    }, slideDuration - preloadLeadTime);
+      heroSlides[activeIndex].classList.remove("is-active");
+      activeIndex = nextIndex;
+      heroSlides[activeIndex].classList.add("is-active");
+      scheduleNextSlide();
+    }, slideDuration);
   };
 
-  scheduleNextSlide();
+  // Let the first screen finish before the carousel asks for its next image.
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(scheduleNextSlide, { timeout: 3000 });
+  } else {
+    window.setTimeout(scheduleNextSlide, 1800);
+  }
 }
 
 document.querySelectorAll("[data-destination-scroll]").forEach((scroller) => {
@@ -223,7 +232,7 @@ if (reduceMotion || !("IntersectionObserver" in window)) {
         observer.unobserve(entry.target);
       });
     },
-    { threshold: 0.14, rootMargin: "0px 0px -7% 0px" },
+    { threshold: 0.06, rootMargin: "0px 0px 6% 0px" },
   );
 
   revealItems.forEach((item) => revealObserver.observe(item));

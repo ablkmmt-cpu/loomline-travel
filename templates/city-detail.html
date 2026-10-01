@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/local-fonts.css?v=1" />
     <title>{{META_TITLE}}</title>
     <meta name="description" content="{{META_DESCRIPTION}}" />
 
@@ -18,9 +19,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{BASE}}assets/brand/loomline-favicon-32.png?v=4" />
     <link rel="icon" type="image/png" sizes="64x64" href="{{BASE}}assets/brand/loomline-favicon-64.png?v=4" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{BASE}}assets/brand/loomline-apple-touch-icon.png?v=4" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{{BASE}}assets/site-chrome.css?v=products-nav-4" />
     <link rel="stylesheet" href="{{BASE}}assets/city-detail-template.css?v=32" />
     <!-- @@ANALYTICS@@ -->
@@ -33,7 +31,7 @@
       <section class="city-detail-hero" aria-labelledby="city-detail-title">
         <picture class="city-detail-hero-media">
           <source media="(max-width: 760px)" srcset="{{HERO_MOBILE_IMAGE}}" />
-          <img src="{{HERO_IMAGE}}" alt="{{HERO_ALT}}" width="1536" height="760" />
+          <img src="{{HERO_IMAGE}}" alt="{{HERO_ALT}}" width="1536" height="760" decoding="async" loading="lazy" />
         </picture>
         <div class="city-detail-hero-shade" aria-hidden="true"></div>
         <div class="city-detail-hero-content city-detail-shell">

@@ -1660,8 +1660,8 @@
   <!-- @@HEADER@@ -->
   <header class="site-header">
           <a class="brand" href="../../../#top" aria-label="Loomline Travel home">
-            <img class="brand-emblem" src="../../../assets/brand/loomline-emblem-gold-smooth.png?v=4" alt="" />
-            <img class="brand-wordmark" src="../../../assets/brand/loomline-wordmark-ivory-smooth.png" alt="Loomline Travel" />
+            <img class="brand-emblem" src="../../../assets/brand/loomline-emblem-gold-smooth.png?v=4" alt="" decoding="async" />
+            <img class="brand-wordmark" src="../../../assets/brand/loomline-wordmark-ivory-smooth.png" alt="Loomline Travel" decoding="async" />
           </a>
 
           <nav class="nav-links" aria-label="Main navigation">
@@ -1716,15 +1716,15 @@
 
         <div class="hero-media" aria-label="Ring Loop Jiuzhaigou route photography">
           <figure class="photo-card photo-card-main">
-            <img id="heroImage" src="../../../assets/routes/jiuzhaigou-grand-loop-5-day/dagu-glacier.webp" alt="" />
+            <img id="heroImage" src="../../../assets/routes/jiuzhaigou-grand-loop-5-day/dagu-glacier.webp" alt="" decoding="async" fetchpriority="high" srcset="../../../assets/routes/jiuzhaigou-grand-loop-5-day/dagu-glacier-640.webp 640w, ../../../assets/routes/jiuzhaigou-grand-loop-5-day/dagu-glacier.webp 1536w" sizes="(max-width: 720px) 46vw, 36vw" />
             <figcaption>Dagu Glacier</figcaption>
           </figure>
           <figure class="photo-card photo-card-bronze">
-            <img id="heroBronzeImage" src="../../../assets/routes/jiuzhaigou-grand-loop-5-day/huanglong.webp" alt="Travertine pools at Huanglong Scenic Area" />
+            <img id="heroBronzeImage" src="../../../assets/routes/jiuzhaigou-grand-loop-5-day/huanglong.webp" alt="Travertine pools at Huanglong Scenic Area" decoding="async" loading="lazy" srcset="../../../assets/routes/jiuzhaigou-grand-loop-5-day/huanglong-640.webp 640w, ../../../assets/routes/jiuzhaigou-grand-loop-5-day/huanglong.webp 1536w" sizes="(max-width: 720px) 36vw, 20vw" />
             <figcaption>Huanglong Scenic Area</figcaption>
           </figure>
           <figure class="photo-card photo-card-tea">
-            <img id="heroTeaImage" src="../../../assets/routes/encounter-aba-3-day/jiuzhaigou.webp" alt="Turquoise lakes and waterfalls in Jiuzhaigou" />
+            <img id="heroTeaImage" src="../../../assets/routes/encounter-aba-3-day/jiuzhaigou.webp" alt="Turquoise lakes and waterfalls in Jiuzhaigou" decoding="async" loading="lazy" srcset="../../../assets/routes/encounter-aba-3-day/jiuzhaigou-640.webp 640w, ../../../assets/routes/encounter-aba-3-day/jiuzhaigou.webp 1536w" sizes="(max-width: 720px) 36vw, 20vw" />
             <figcaption>Jiuzhaigou Valley</figcaption>
           </figure>
         </div>
@@ -1847,8 +1847,8 @@
       <div class="footer-main">
         <div class="footer-identity">
           <a class="footer-brand" href="../../../#top" aria-label="Loomline Travel home">
-            <img src="../../../assets/brand/loomline-emblem-gold-smooth.png?v=4" alt="" />
-            <img src="../../../assets/brand/loomline-wordmark-ivory-smooth.png" alt="Loomline Travel" />
+            <img src="../../../assets/brand/loomline-emblem-gold-smooth.png?v=4" alt="" decoding="async" />
+            <img src="../../../assets/brand/loomline-wordmark-ivory-smooth.png" alt="Loomline Travel" decoding="async" />
           </a>
           <p class="footer-tagline">See real China, skip the guesswork.</p>
           <!-- 公司地址（待补充）：如 Rm 502, No.12 Xinhua Avenue, Chengdu, Sichuan, China -->
@@ -2105,6 +2105,12 @@
       '"': "&quot;",
       "'": "&#039;"
     }[char]));
+    const responsiveSrcset = value => {
+      const image = String(value);
+      return image.endsWith(".webp")
+        ? `${escapeHtml(image.replace(/\.webp$/, "-640.webp"))} 640w, ${escapeHtml(image)} 1600w`
+        : "";
+    };
 
     function contactHref(intent) {
       return `../../../contact.html?${new URLSearchParams({
@@ -2137,10 +2143,13 @@
       const hasPrice = Number.isFinite(ROUTE_DATA.priceCny);
       document.title = `${ROUTE_DATA.title} | ${ROUTE_DATA.durationShort} | Loomline Travel`;
       document.querySelector('meta[name="description"]').setAttribute("content", `${ROUTE_DATA.title} - ${ROUTE_DATA.durationShort}. ${ROUTE_DATA.summary}`);
-      document.getElementById("heroImage").src = ROUTE_DATA.heroImage;
-      document.getElementById("heroImage").alt = ROUTE_DATA.heroAlt;
-      document.getElementById("heroBronzeImage").src = ROUTE_DATA.heroBronzeImage;
-      document.getElementById("heroTeaImage").src = ROUTE_DATA.heroTeaImage;
+      const heroImage = document.getElementById("heroImage");
+      const heroBronzeImage = document.getElementById("heroBronzeImage");
+      const heroTeaImage = document.getElementById("heroTeaImage");
+      if (heroImage.getAttribute("src") !== ROUTE_DATA.heroImage) heroImage.src = ROUTE_DATA.heroImage;
+      heroImage.alt = ROUTE_DATA.heroAlt;
+      if (heroBronzeImage.getAttribute("src") !== ROUTE_DATA.heroBronzeImage) heroBronzeImage.src = ROUTE_DATA.heroBronzeImage;
+      if (heroTeaImage.getAttribute("src") !== ROUTE_DATA.heroTeaImage) heroTeaImage.src = ROUTE_DATA.heroTeaImage;
       document.getElementById("routeCode").textContent = ROUTE_DATA.productCode;
       document.getElementById("routeTitle").textContent = ROUTE_DATA.title;
       document.getElementById("routeTagline").textContent = ROUTE_DATA.tagline;
@@ -2167,7 +2176,7 @@
 
       document.getElementById("highlightStrip").innerHTML = ROUTE_DATA.coreHighlights.map((item, index) => `
         <article class="highlight">
-          <img class="highlight-thumb" src="${escapeHtml(item.image)}" alt="" />
+          <img class="highlight-thumb" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-route-src="${escapeHtml(item.image)}" data-route-srcset="${responsiveSrcset(item.image)}" sizes="(max-width: 720px) 48vw, 25vw" alt="" decoding="async" loading="lazy" />
           <div class="highlight-copy" data-index="${String(index + 1).padStart(2, "0")}">
             <b>${escapeHtml(item.title)}</b>
             <span>${escapeHtml(item.copy)}</span>
@@ -2177,7 +2186,7 @@
 
       document.getElementById("full-itinerary").innerHTML = ROUTE_DATA.itinerary.map(item => `
         <article class="day" id="day-${item.day}">
-          <img class="day-image" src="${escapeHtml(item.image)}" alt="" />
+          <img class="day-image" src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-route-src="${escapeHtml(item.image)}" data-route-srcset="${responsiveSrcset(item.image)}" sizes="(max-width: 720px) 100vw, 50vw" alt="" decoding="async" loading="lazy" />
           <div class="day-body">
             <span class="day-kicker">Day ${item.day}</span>
             <h3 class="day-title">${escapeHtml(item.title)}</h3>
@@ -2212,7 +2221,7 @@
       if (ROUTE_DATA.recommendedRoutes.routes.length) {
         relatedRoutes.innerHTML = ROUTE_DATA.recommendedRoutes.routes.map(route => `
           <a class="related-card" href="${escapeHtml(route.href)}">
-            <img src="${escapeHtml(route.image)}" alt="" />
+            <img src="${escapeHtml(route.image)}" alt="" decoding="async" loading="lazy" />
             <div class="related-card-body">
               <span class="related-code">${escapeHtml(route.code)}</span>
               <h3>${escapeHtml(route.title)}</h3>
@@ -2260,6 +2269,7 @@
 
     renderRoute();
   </script>
+<script src="../../../assets/route-image-loader.js?v=2"></script>
 <script src="../../../assets/analytics.js"></script>
 </body>
 </html>

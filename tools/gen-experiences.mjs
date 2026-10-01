@@ -465,7 +465,7 @@ const comingSoonSection = (e) => e.comingSoon.length ? `    <section class="wrap
         </div>
       </div>
       <div class="triptych">
-        ${e.comingSoon.map((c) => `<div class="tc"><img src="../../assets/${c[2]}" alt="${e.name} experience in ${c[0]}" /><span class="badge">COMING SOON</span><div class="t"><b>${c[0]}</b><p>${c[1]}</p></div></div>`).join("\n        ")}
+        ${e.comingSoon.map((c) => `<div class="tc"><img src="../../assets/${c[2]}" alt="${e.name} experience in ${c[0]}" loading="lazy" decoding="async" /><span class="badge">COMING SOON</span><div class="t"><b>${c[0]}</b><p>${c[1]}</p></div></div>`).join("\n        ")}
       </div>
     </section>
 
@@ -478,6 +478,7 @@ const page = (e) => `<!doctype html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/local-fonts.css?v=1" />
     <title>${e.title}</title>
     <meta name="description" content="${e.desc}" />
     <meta property="og:title" content="${e.title}" />
@@ -493,9 +494,6 @@ const page = (e) => `<!doctype html>
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/brand/loomline-favicon-32.png?v=4" />
     <link rel="icon" type="image/png" sizes="64x64" href="../../assets/brand/loomline-favicon-64.png?v=4" />
     <link rel="apple-touch-icon" sizes="180x180" href="../../assets/brand/loomline-apple-touch-icon.png?v=4" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@500;600;700;800&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../../assets/site-chrome.css?v=products-nav-4" />
     <link rel="stylesheet" href="../../assets/experience-detail.css?v=2" />
   <!-- @@ANALYTICS@@ -->
@@ -506,7 +504,7 @@ ${HEADER}
 
     <!-- ① Hero -->
     <section class="hero">
-      <img src="../../assets/${e.heroImg}" alt="${e.name} experience in Chengdu" />
+      <img src="../../assets/${e.heroImg}" alt="${e.name} experience in Chengdu" decoding="async" fetchpriority="high" />
       <div class="in">
         <div class="title-zone">
           <p class="k">${e.kicker}</p>
@@ -543,7 +541,7 @@ ${HEADER}
           <span class="cn-mark">${e.mark}</span>
         </div>
       </div>
-      <div class="media"><img src="../../assets/${e.bandImg}" alt="${e.name} session in Chengdu" /></div>
+      <div class="media"><img src="../../assets/${e.bandImg}" alt="${e.name} session in Chengdu" loading="lazy" decoding="async" /></div>
     </section>
 
     <!-- ⑤ 流程 -->
@@ -588,7 +586,7 @@ ${HEADER}
         </div>
       </div>
       <div class="spread">
-        <div class="pic"><img src="../../assets/${e.chengduImg}" alt="${e.name} placed into a Chengdu travel day" /></div>
+        <div class="pic"><img src="../../assets/${e.chengduImg}" alt="${e.name} placed into a Chengdu travel day" loading="lazy" decoding="async" /></div>
         <div>
           <ul>
             ${e.chengduSpots.map((s) => `<li><div><b>${s[0]}</b><p>${s[1]}</p></div></li>`).join("\n            ")}

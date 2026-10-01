@@ -3,7 +3,7 @@
 optimize-images.py — 把 assets 下的照片型图片转换为 WebP，并可为社交分享图生成 JPEG。
 
 用途：上线前 / 每次新增行程产品图片后运行。
-- 品牌 logo、favicon、apple-touch-icon、线稿图 journey-line.png 会保留原格式。
+- 品牌 logo、favicon 和 apple-touch-icon 会保留原格式。
 - 默认把 jpg/png 照片转成 WebP（减少显示体积）；
 - 加 --og 会扫描各页面的 og:image/twitter:image，缺省时生成对应的 -og.jpg 分享图（社交平台全兼容）。
 
@@ -23,8 +23,8 @@ from PIL import Image
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS = os.path.join(ROOT, "assets")
 
-# 保留原格式的路径（品牌 logo / favicon / apple-touch-icon / 线稿图）
-KEEP = ("assets/brand/", "assets/products/tailor-made-trips/journey-line.png")
+# 保留原格式的路径（品牌 logo / favicon / apple-touch-icon）
+KEEP = ("assets/brand/",)
 
 
 def keep(path):

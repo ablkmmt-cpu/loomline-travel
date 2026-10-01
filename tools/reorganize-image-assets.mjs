@@ -28,7 +28,7 @@ const add = (from, to) => moves.set(`assets/${from}`, `assets/${to}`);
   ["service-classic-journeys.png", "home/service-classic-journeys.png"],
   ["service-tailor-made.png", "home/service-tailor-made.png"],
   ["custom-tour-planning.png", "products/tailor-made-trips/hero.png"],
-  ["custom-tour-journey-line.png", "products/tailor-made-trips/journey-line.png"],
+  ["custom-tour-journey-line.png", "products/tailor-made-trips/journey-line.webp"],
   ["self-guided-planning.jpg", "products/self-guided/planning.jpg"],
   ["experience-dinner-shows.png", "experiences/imperial-dinner-show/hero.png"],
   ["experience-mahjong.png", "experiences/sichuan-mahjong/hero.png"],

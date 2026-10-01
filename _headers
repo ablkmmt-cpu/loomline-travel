@@ -8,6 +8,39 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
+/styles.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/partner.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/whatsapp-float.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/script.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/form-date.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/contact.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/title-fit.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/whatsapp-float.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/products/tailor-made-trips/tailor-made-trips.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/products/standard-routes/standard-routes.css
+  Cache-Control: public, max-age=31536000, immutable
+
 # analytics.js 未带版本号：改动后需重新校验，避免缓存旧脚本
 /assets/analytics.js
   Cache-Control: public, max-age=0, must-revalidate
