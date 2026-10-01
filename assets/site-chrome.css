@@ -5,7 +5,7 @@
    （本地样式表仍可覆盖，服务页/首页的个性化 header 细节得以保留）。
 
    注意：styles.css / shanghai.css / tea-culture.css / standard-routes.css /
-   custom-tour.css 中遗留的同名规则已不再维护，后续只改本文件。
+   tailor-made-trips.css 中遗留的同名规则已不再维护，后续只改本文件。
    页面 markup 统一由 components/header-main.html 与
    components/footer-main.html（含隐私弹窗）经 tools/stamp.mjs 打标生成。
    ============================================================ */
@@ -107,11 +107,106 @@
   font-weight: 800;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-products summary {
   color: inherit;
   text-decoration: none;
   white-space: nowrap;
   transition: color 180ms ease;
+}
+
+.nav-products,
+.mobile-nav,
+.mobile-products {
+  position: relative;
+}
+
+.nav-products summary,
+.mobile-nav > summary,
+.mobile-products summary {
+  list-style: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-products summary::-webkit-details-marker,
+.mobile-nav > summary::-webkit-details-marker,
+.mobile-products summary::-webkit-details-marker {
+  display: none;
+}
+
+.nav-products > summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-products > summary span,
+.mobile-products > summary span {
+  transition: transform 160ms ease;
+}
+
+.nav-products[open] > summary span,
+.mobile-products[open] > summary span {
+  transform: rotate(180deg);
+}
+
+.nav-products-menu {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 50%;
+  width: 280px;
+  padding: 8px;
+  color: #173c33;
+  border: 1px solid rgba(184, 145, 75, 0.32);
+  border-radius: 12px;
+  background: #fffaf1;
+  box-shadow: 0 18px 40px rgba(5, 27, 22, 0.24);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -6px);
+  transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+}
+
+.nav-products[open] .nav-products-menu,
+.nav-products:focus-within .nav-products-menu,
+.nav-products:hover .nav-products-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.nav-products-menu a {
+  display: block;
+  padding: 12px 13px;
+  border-radius: 8px;
+}
+
+.nav-products-menu a:hover,
+.nav-products-menu a:focus-visible {
+  color: #173c33;
+  background: rgba(184, 145, 75, 0.12);
+  outline: none;
+}
+
+.nav-products-menu strong,
+.nav-products-menu small {
+  display: block;
+}
+
+.nav-products-menu strong {
+  font-size: 14px;
+}
+
+.nav-products-menu small {
+  margin-top: 3px;
+  color: #70695f;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.mobile-nav {
+  display: none;
 }
 
 @media (min-width: 761px) and (max-width: 1399px) {
@@ -225,6 +320,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .nav-links a:hover,
+  .nav-products > summary:hover,
   .nav-cta:hover {
     color: #fff8ed;
   }
@@ -250,6 +346,7 @@
     align-items: center;
     gap: 10px 14px;
     padding: 14px clamp(14px, 4.6vw, 20px) 12px;
+    background: rgba(7, 28, 23, 0.985);
   }
 
   .brand {
@@ -302,14 +399,23 @@
   }
 
   .ttc-nav-whatsapp {
-    width: 32px;
-    height: 32px;
-    flex-basis: 32px;
+    display: none;
   }
 
-  .ttc-nav-whatsapp svg {
-    width: 17px;
-    height: 17px;
+  .mobile-nav {
+    display: none;
+  }
+
+  .nav-products-menu {
+    top: calc(100% + 10px);
+    left: 0;
+    width: min(250px, calc(100vw - 28px));
+    transform: translate(0, -6px);
+  }
+
+  .nav-products[open] .nav-products-menu,
+  .nav-products:focus-within .nav-products-menu {
+    transform: translate(0, 0);
   }
 }
 
@@ -317,15 +423,13 @@
   .ttc-nav-actions { gap: 5px; }
 
   .site-header .ttc-nav-whatsapp {
-    width: 30px;
-    height: 30px;
-    flex-basis: 30px;
+    display: none;
   }
 
   .site-header .ttc-nav-actions .nav-cta {
-    padding-right: 8px;
-    padding-left: 8px;
-    font-size: 8.5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 10px;
   }
 }
 

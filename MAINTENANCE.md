@@ -60,7 +60,7 @@ data/cities/*.json  →  生成  destinations/<城市>/index.html
    node tools/publish-standard-routes.mjs
    ```
 
-4. **如果要给这条线路一个独立详情页**（`services/standard-routes/<线路>/index.html`）：
+4. **如果要给这条线路一个独立详情页**（`products/standard-routes/<线路>/index.html`）：
    - 复制一条现有详情页（如 `encounter-aba-3-day/index.html`）到新线路文件夹
    - 改 `<title>`、`<meta>`、途中行程、并把页面里引用的线路 `code` 改成新线路的 code（详情页靠 `code` 从目录取价格/信息）
    - 把新页面 URL 加进 `sitemap.xml`（SEO）
@@ -119,7 +119,7 @@ Cloudflare Pages 自动部署，约 1–2 分钟。
 
 **验证**：
 - 打开 `https://loomlinetravel.com` 对应页面看是否更新（必要时强制刷新/清缓存）。
-- 若是价格/线路改动，看集合页 `https://loomlinetravel.com/services/standard-routes/` 和对应城市页。
+- 若是价格/线路改动，看集合页 `https://loomlinetravel.com/products/standard-routes/` 和对应城市页。
 - 若改了图片，看 Web Analytics / PageSpeed 确认图片正常加载。
 
 ---

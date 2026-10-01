@@ -496,7 +496,7 @@ const page = (e) => `<!doctype html>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@500;600;700;800&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../../assets/site-chrome.css?v=loomline-1" />
+    <link rel="stylesheet" href="../../assets/site-chrome.css?v=products-nav-4" />
     <link rel="stylesheet" href="../../assets/experience-detail.css?v=2" />
   <!-- @@ANALYTICS@@ -->
   </head>
@@ -622,7 +622,7 @@ ${comingSoonSection(e)}
     <!-- @@FOOTER@@ -->
 ${FOOTER}
 
-    <script src="../../whatsapp-float.js?v=loomline-6"></script>
+    <script src="../../whatsapp-float.js?v=products-nav-1"></script>
     <script src="../../assets/analytics.js"></script>
   </body>
 </html>

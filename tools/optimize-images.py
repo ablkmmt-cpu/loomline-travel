@@ -24,7 +24,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS = os.path.join(ROOT, "assets")
 
 # 保留原格式的路径（品牌 logo / favicon / apple-touch-icon / 线稿图）
-KEEP = ("assets/brand/", "assets/services/custom-tour/journey-line.png")
+KEEP = ("assets/brand/", "assets/products/tailor-made-trips/journey-line.png")
 
 
 def keep(path):

@@ -35,7 +35,7 @@ const origin = (asset) => {
   if (/^assets\/experiences\/[^/]+\/(session|placed-in-day|beijing|chongqing|dali|guangzhou|hangzhou|jingdezhen|shanghai|xian)\.webp$/.test(asset)) return "AI-generated confirmed; OpenAI ImageGen; 2026-08-25";
   if (asset.startsWith("assets/home/") && asset.endsWith(".png")) return "AI-generated probable; original generation record unavailable";
   if (/^assets\/experiences\/[^/]+\/(hero|hands)\.png$/.test(asset)) return "AI-generated probable; original generation record unavailable";
-  if (asset.startsWith("assets/services/custom-tour/") && asset.endsWith(".png")) return "AI-generated probable; original generation record unavailable";
+  if (asset.startsWith("assets/products/tailor-made-trips/") && asset.endsWith(".png")) return "AI-generated probable; original generation record unavailable";
   if (asset.endsWith(".jpg") || asset.endsWith(".jpeg")) return "source unverified; treat as possible third-party material until licensed";
   return "source unverified";
 };

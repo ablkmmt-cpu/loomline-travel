@@ -1,5 +1,5 @@
 /* ============================================================
-   standard-routes.css — 标准线路纵览页（services/standard-routes/）
+   standard-routes.css — 标准线路纵览页（products/standard-routes/）
    来源：previews/15-standard-routes-overview.html（已批准设计稿）
    页头/页脚/隐私弹窗由 assets/site-chrome.css 提供；本文件仅页面主体样式。
    ============================================================ */
@@ -41,8 +41,6 @@ button, a, select { -webkit-tap-highlight-color: transparent; }
   position: sticky;
   top: 0;
   z-index: 30;
-  min-height: 78px;
-  padding-block: 16px;
   background: rgba(6, 49, 39, 0.97);
   border-bottom: 0;
   backdrop-filter: blur(14px);
@@ -425,14 +423,6 @@ main { padding-bottom: 76px; }
   .reassurance { grid-template-columns: repeat(2, 1fr); }
   .assurance-item:nth-child(3) { border-left: 0; border-top: 1px solid var(--line); }
   .assurance-item:nth-child(4) { border-top: 1px solid var(--line); }
-}
-
-@media (max-width: 760px) {
-  .site-header {
-    min-height: 102px;
-    padding: 14px clamp(14px, 4.6vw, 20px) 12px;
-  }
-  /* 导航与 CTA 的移动端样式由 assets/site-chrome.css 统一提供 */
 }
 
 @media (max-width: 620px) {

@@ -1,0 +1,6 @@
+/services/standard-routes /products/standard-routes/ 301
+/services/standard-routes/ /products/standard-routes/ 301
+/services/standard-routes/* /products/standard-routes/:splat 301
+/services/custom-tour /products/tailor-made-trips/ 301
+/services/custom-tour/ /products/tailor-made-trips/ 301
+/services/custom-tour/* /products/tailor-made-trips/:splat 301

@@ -33,7 +33,7 @@
     const normalized = supportType.toLowerCase();
     const value =
       normalized.includes("custom") || normalized.includes("tailor")
-        ? "Custom Tour Package"
+        ? "Tailor-Made Trip"
         : normalized.includes("self") || normalized.includes("standard")
           ? "Standard Routes"
           : null;

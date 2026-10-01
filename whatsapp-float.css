@@ -395,7 +395,6 @@ body.is-privacy-open .ttc-whatsapp-float {
 }
 
 @media (max-width: 900px) {
-  .site-header > .ttc-nav-actions,
   .tea-nav > .ttc-nav-actions,
   .shanghai-header-inner > .ttc-nav-actions {
     grid-column: 2;
@@ -461,19 +460,16 @@ body.is-privacy-open .ttc-whatsapp-float {
 }
 
 @media (max-width: 600px) {
-  .site-header.ttc-fixed-header,
   .tea-nav.ttc-fixed-header,
   .city-topbar.ttc-fixed-header {
     background: rgba(7, 28, 23, 0.985) !important;
   }
 
-  .site-header > .ttc-nav-actions,
   .tea-nav > .ttc-nav-actions,
   .shanghai-header-inner > .ttc-nav-actions {
     gap: 5px;
   }
 
-  .site-header .ttc-nav-whatsapp,
   .tea-nav .ttc-nav-whatsapp,
   .shanghai-header .ttc-nav-whatsapp,
   .city-topbar .ttc-nav-whatsapp {
@@ -482,7 +478,6 @@ body.is-privacy-open .ttc-whatsapp-float {
     flex-basis: 30px;
   }
 
-  .site-header .ttc-nav-actions .nav-cta,
   .tea-nav .ttc-nav-actions .tea-nav-cta,
   .shanghai-header .ttc-nav-actions .shanghai-nav-cta,
   .city-topbar .ttc-nav-actions .city-topbar-cta {
@@ -491,14 +486,12 @@ body.is-privacy-open .ttc-whatsapp-float {
     font-size: 8.5px;
   }
 
-  .site-header .brand-wordmark,
   .tea-nav .tea-brand-wordmark,
   .shanghai-header .shanghai-brand-wordmark,
   .city-topbar .city-brand img:last-child {
     width: 96px;
   }
 
-  .site-header .brand-emblem,
   .tea-nav .tea-brand-emblem,
   .shanghai-header .shanghai-brand-emblem,
   .city-topbar .city-brand img:first-child {
@@ -507,7 +500,6 @@ body.is-privacy-open .ttc-whatsapp-float {
   }
 
   .shanghai-header-inner,
-  .site-header,
   .tea-nav {
     column-gap: 8px !important;
   }
