@@ -304,7 +304,7 @@
         return String(value).replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
       }
       function formatPrice(value) { return `¥${value.toLocaleString("en-US")}`; }
-      function routeHref(route) { return route.href || `../../destinations/${route.slug}/index.html`; }
+      function routeHref(route) { return route.href || `../../destinations/${route.slug}/`; }
       function durationLabel(route) { return `${route.days} Days / ${route.nights} Nights`; }
       function routeIsAvailable(route) { return route.priceReady === true && Number.isFinite(route.price); }
       function routeHasDetails(route) { return route.detailReady === true; }
