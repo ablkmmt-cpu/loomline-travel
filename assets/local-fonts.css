@@ -31,3 +31,11 @@
   font-weight: 500 600;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Noto Serif SC Hero";
+  src: url("/assets/fonts/noto-serif-sc-latin-700-900.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 700 900;
+  font-display: swap;
+}
