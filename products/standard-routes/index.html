@@ -24,7 +24,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="../../assets/brand/loomline-favicon-64.png?v=4" />
     <link rel="apple-touch-icon" sizes="180x180" href="../../assets/brand/loomline-apple-touch-icon.png?v=4" />
     <link rel="stylesheet" href="../../assets/site-chrome.css?v=products-nav-11" />
-    <link rel="stylesheet" href="standard-routes.css?v=select-arrow-1" />
+    <link rel="stylesheet" href="standard-routes.css?v=catalog-groups-12" />
   <!-- @@ANALYTICS@@ -->
   </head>
   <body id="top">
@@ -72,75 +72,119 @@
 
     <main>
       <section class="container page-hero" aria-labelledby="pageTitle">
-        <div>
-          <p class="eyebrow">Standard routes</p>
-          <h1 class="hero-title" id="pageTitle">Choose the journey that fits you</h1>
-          <p class="hero-copy">Handpicked itineraries with local experts and flexible options. Explore the routes now; final pricing will be published soon.</p>
-        </div>
-        <button class="hero-deck" id="heroDeck" type="button" aria-label="Travel highlights. Click to show the next image.">
-          <span class="hero-card" data-pos="0">
-            <img src="../../assets/home/hero-great-wall.webp" alt="The Great Wall winding across mountains at sunrise" decoding="async" loading="lazy" srcset="../../assets/home/hero-great-wall-640.webp 640w, ../../assets/home/hero-great-wall.webp 1672w" sizes="(max-width: 720px) 100vw, 960px" />
-          </span>
-          <span class="hero-card" data-pos="1" aria-hidden="true">
-            <img src="../../assets/destinations/guilin/hero.webp" alt="Karst mountains beside the Li River in Guilin" decoding="async" fetchpriority="high" />
-          </span>
-          <span class="hero-card" data-pos="2" aria-hidden="true">
-            <img src="../../assets/destinations/chengdu/01.webp" alt="A giant panda in Chengdu" decoding="async" loading="lazy" />
-          </span>
-          <span class="hero-card" data-pos="3" aria-hidden="true">
-            <img src="../../assets/destinations/shanghai/hero.webp" alt="Shanghai skyline beside the Huangpu River" decoding="async" fetchpriority="high" />
-          </span>
-        </button>
+        <p class="eyebrow">Standard routes</p>
+        <h1 class="hero-title" id="pageTitle">Find your journey</h1>
+        <p class="hero-copy">Compare routes by destination, duration and style.</p>
       </section>
 
-      <section class="container route-finder" aria-label="Route finder">
-        <form id="routeFinder">
-          <div class="finder-grid">
-            <div class="field">
-              <label for="destinationFilter">Where do you want to go?</label>
-              <select id="destinationFilter" name="destination">
-                <option value="all">All destinations</option>
-                <option value="CD">Chengdu</option><option value="BJ">Beijing</option><option value="XA">Xi'an</option>
-                <option value="SH">Shanghai</option><option value="GL">Guilin</option><option value="ZJJ">Zhangjiajie</option>
-                <option value="CQ">Chongqing</option><option value="DB">Northeast China</option><option value="YN">Yunnan</option><option value="TB">Tibet</option><option value="XJ">Xinjiang</option>
+      <section class="catalog-tools" aria-label="Find a standard route">
+        <div class="container catalog-tools-inner">
+          <label class="search-field" for="routeSearch">
+            <span class="sr-only">Search routes or destinations</span>
+            <img src="../../assets/icons/search.svg" alt="" aria-hidden="true" />
+            <input id="routeSearch" type="search" autocomplete="off" placeholder="Search routes or destinations" />
+          </label>
+          <div class="desktop-filter-controls">
+            <label class="select-control">
+              <span class="sr-only">Duration</span>
+              <select id="durationFilter" aria-label="Filter by duration">
+                <option value="all">Any duration</option>
+                <option value="short">3–4 days</option>
+                <option value="medium">5–6 days</option>
+                <option value="long">7+ days</option>
               </select>
-            </div>
-            <div class="field">
-              <label for="durationFilter">How long do you have?</label>
-              <select id="durationFilter" name="duration">
-                <option value="all">Any duration</option><option value="short">3-4 days</option><option value="medium">5-6 days</option><option value="long">7+ days</option>
+            </label>
+            <label class="select-control">
+              <span class="sr-only">Travel style</span>
+              <select id="interestFilter" aria-label="Filter by travel style">
+                <option value="all">Any travel style</option>
+                <option value="first">First visit</option>
+                <option value="nature">Nature</option>
+                <option value="culture">Culture</option>
+                <option value="local">Local life</option>
               </select>
-            </div>
-            <div class="field">
-              <label for="interestFilter">What matters most?</label>
-              <select id="interestFilter" name="interest">
-                <option value="all">Any preference</option><option value="first">First visit essentials</option><option value="culture">Culture and history</option><option value="nature">Nature and scenery</option><option value="local">Food and local life</option>
-              </select>
-            </div>
-            <button class="show-routes" type="submit">Show routes</button>
+            </label>
+            <button class="clear-filters" type="button" id="clearFilters">Clear</button>
           </div>
-          <div class="active-criteria">
-            <strong>Active criteria:</strong>
-            <div class="criteria-value" id="criteriaValue" aria-live="polite"></div>
-            <button class="clear-filters" type="button" id="clearFilters">Clear all</button>
+          <div class="mobile-filter-controls">
+            <button type="button" id="openDestinations"><img class="control-leading-icon" src="../../assets/icons/map.svg" alt="" aria-hidden="true" /><span>Destinations</span><img class="control-chevron" src="../../assets/icons/chevron-down.svg" alt="" aria-hidden="true" /></button>
+            <button type="button" id="openFilters"><img class="control-leading-icon" src="../../assets/icons/adjustments.svg" alt="" aria-hidden="true" /><span>Filters <span id="filterBadge" hidden></span></span><img class="control-chevron" src="../../assets/icons/chevron-down.svg" alt="" aria-hidden="true" /></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="container catalog-shell" id="allRoutes" aria-label="Standard route catalogue">
+        <aside class="destination-rail" aria-label="Browse destinations">
+          <p class="rail-label">Destinations</p>
+          <div id="destinationRail"></div>
+          <button class="more-destinations" id="moreDestinations" type="button" hidden>More destinations</button>
+          <div class="trip-type-rail">
+            <p class="rail-label">Trip type</p>
+            <div id="tripTypeRail"></div>
+          </div>
+        </aside>
+
+        <div class="catalog-results">
+          <div class="results-toolbar">
+            <p id="routeCount" aria-live="polite"></p>
+            <label class="sort-control">Sort:
+              <select id="sortRoutes" aria-label="Sort routes">
+                <option value="recommended">Recommended</option>
+                <option value="shortest">Shortest first</option>
+                <option value="price">Lowest price</option>
+                <option value="title">Route name</option>
+              </select>
+            </label>
+          </div>
+          <div id="routeGroups"></div>
+        </div>
+      </section>
+
+      <dialog class="filter-sheet" id="filterSheet" aria-labelledby="filterSheetTitle">
+        <form method="dialog">
+          <div class="sheet-heading">
+            <div>
+              <p class="eyebrow">Refine routes</p>
+              <h2 id="filterSheetTitle">Find your match</h2>
+            </div>
+            <button class="sheet-close" value="cancel" aria-label="Close filters">Close</button>
+          </div>
+          <label class="sheet-field">Duration
+            <select id="sheetDuration">
+              <option value="all">Any duration</option>
+              <option value="short">3–4 days</option>
+              <option value="medium">5–6 days</option>
+              <option value="long">7+ days</option>
+            </select>
+          </label>
+          <label class="sheet-field">Travel style
+            <select id="sheetInterest">
+              <option value="all">Any travel style</option>
+              <option value="first">First visit</option>
+              <option value="nature">Nature</option>
+              <option value="culture">Culture</option>
+              <option value="local">Local life</option>
+            </select>
+          </label>
+          <div class="sheet-actions">
+            <button class="sheet-reset" id="sheetReset" type="button">Clear filters</button>
+            <button class="sheet-apply" id="sheetApply" value="default">Show routes</button>
           </div>
         </form>
-      </section>
+      </dialog>
 
-      <section class="container section" aria-labelledby="recommendedHeading">
-        <h2 class="section-heading" id="recommendedHeading">Recommended for a first visit</h2>
-        <div class="recommended-list" id="recommendedList" aria-label="Recommended routes"></div>
-        <div class="recommended-pagination" id="recommendedPagination" aria-label="Choose a recommended route"></div>
-      </section>
-
-      <section class="container section" id="allRoutes" aria-labelledby="allRoutesHeading">
-        <div class="section-heading-row">
-          <h2 class="section-heading" id="allRoutesHeading">Browse all routes</h2>
-          <span class="route-count" id="routeCount" aria-live="polite"></span>
-        </div>
-        <div class="route-grid" id="routeGrid"></div>
-        <div class="load-row"><button class="load-more" id="loadMore" type="button">Load more routes</button></div>
-      </section>
+      <dialog class="filter-sheet destination-sheet" id="destinationSheet" aria-labelledby="destinationSheetTitle">
+        <form method="dialog">
+          <div class="sheet-heading">
+            <div>
+              <p class="eyebrow">Browse by place</p>
+              <h2 id="destinationSheetTitle">Destinations</h2>
+            </div>
+            <button class="sheet-close" value="cancel" aria-label="Close destinations">Close</button>
+          </div>
+          <div id="destinationSheetList"></div>
+        </form>
+      </dialog>
 
       <section class="container reassurance" aria-label="Why book with Loomline Travel">
         <div class="assurance-item"><strong>Pricing updates</strong><span>Final route prices are being confirmed and will be published soon.</span></div>
@@ -213,68 +257,10 @@
     <script src="../../whatsapp-float.js?v=products-nav-1"></script>
     <script src="../../assets/standard-routes-catalog.js?v=20261001"></script>
     <script>
-      const heroDeck = document.getElementById("heroDeck");
-      const deckCards = Array.from(heroDeck.querySelectorAll(".hero-card"));
-      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      let deckOrder = [...deckCards];
-      let deckTimer = 0;
-      let deckAnimating = false;
-
-      function updateDeck() {
-        deckOrder.forEach((card, index) => {
-          card.dataset.pos = index;
-          card.setAttribute("aria-hidden", index === 0 ? "false" : "true");
-        });
-      }
-
-      function advanceDeck() {
-        if (deckAnimating) return;
-        const outgoing = deckOrder[0];
-        const finish = () => {
-          outgoing.classList.remove("is-leaving");
-          deckOrder.push(deckOrder.shift());
-          updateDeck();
-          deckAnimating = false;
-        };
-
-        deckAnimating = true;
-        if (reducedMotion.matches) {
-          finish();
-          return;
-        }
-        outgoing.classList.add("is-leaving");
-        window.setTimeout(finish, 640);
-      }
-
-      function stopDeck() {
-        window.clearInterval(deckTimer);
-        deckTimer = 0;
-      }
-
-      function startDeck() {
-        stopDeck();
-        const isPaused = heroDeck.matches(":hover") || document.activeElement === heroDeck;
-        if (!reducedMotion.matches && !document.hidden && !isPaused) {
-          deckTimer = window.setInterval(advanceDeck, 3200);
-        }
-      }
-
-      heroDeck.addEventListener("click", () => {
-        advanceDeck();
-        startDeck();
-      });
-      heroDeck.addEventListener("mouseenter", stopDeck);
-      heroDeck.addEventListener("mouseleave", startDeck);
-      heroDeck.addEventListener("focus", stopDeck);
-      heroDeck.addEventListener("blur", startDeck);
-      document.addEventListener("visibilitychange", () => document.hidden ? stopDeck() : startDeck());
-      reducedMotion.addEventListener("change", startDeck);
-      updateDeck();
-      startDeck();
-
       const ROUTES = (window.LOOMLINE_STANDARD_ROUTES || []).map(route => ({
         code: route.code,
         city: route.cityCode,
+        cityName: route.cityName,
         slug: route.citySlug,
         title: route.title,
         nights: route.nights,
@@ -283,68 +269,78 @@
         highlights: route.highlights,
         price: route.priceCny,
         priceReady: route.priceReady,
-        interests: route.interests,
+        interests: route.interests || [],
         recommended: route.recommended,
         detailReady: route.detailReady,
         href: route.detailReady ? route.detailPath.replace("products/standard-routes/", "") : undefined,
-        image: `../../${route.image}`
+        image: `../../${route.image}`,
+        imageAlt: route.imageAlt || ""
       }));
 
-      const labels = {
-        destination: { all: "All destinations", CD: "Chengdu", BJ: "Beijing", XA: "Xi'an", SH: "Shanghai", GL: "Guilin", ZJJ: "Zhangjiajie", CQ: "Chongqing", DB: "Northeast China", YN: "Yunnan", TB: "Tibet", XJ: "Xinjiang" },
-        duration: { all: "Any duration", short: "3-4 days", medium: "5-6 days", long: "7+ days" },
-        interest: { all: "Any preference", first: "First visit essentials", culture: "Culture and history", nature: "Nature and scenery", local: "Food and local life" }
+      const DESTINATIONS = [
+        { code: "CD", name: "Chengdu", description: "Snow peaks, alpine lakes and Tibetan culture across Chengdu and western Sichuan." },
+        { code: "DB", name: "Northeast China", description: "Pristine forests, frozen landscapes and distinctive northern culture." },
+        { code: "BJ", name: "Beijing", description: "Imperial landmarks, hutongs and the Great Wall." },
+        { code: "XA", name: "Xi'an", description: "Ancient capitals, city walls and Silk Road heritage." },
+        { code: "SH", name: "Shanghai", description: "Modern skylines, historic lanes and nearby water towns." },
+        { code: "GL", name: "Guilin", description: "Karst peaks, river journeys and relaxed countryside." },
+        { code: "ZJJ", name: "Zhangjiajie", description: "Sandstone pillars, glass bridges and mountain viewpoints." },
+        { code: "CQ", name: "Chongqing", description: "River views, layered streets and fiery local flavours." },
+        { code: "YN", name: "Yunnan", description: "Old towns, lake country and diverse mountain cultures." },
+        { code: "TB", name: "Tibet", description: "High-altitude landscapes, monasteries and Himalayan journeys." },
+        { code: "XJ", name: "Xinjiang", description: "Desert oases, bazaars and Silk Road history." }
+      ].filter(destination => ROUTES.some(route => route.city === destination.code));
+
+      const interestLabels = { first: "First visit", nature: "Nature", culture: "Culture", local: "Local life" };
+      const state = {
+        destination: "all",
+        duration: "all",
+        interest: "all",
+        search: "",
+        sort: "recommended",
+        moreDestinations: false,
+        openMobileDestinations: new Set(DESTINATIONS[0]?.code ? [DESTINATIONS[0].code] : []),
+        expandedGroups: new Set()
       };
-      const state = { destination: "all", duration: "all", interest: "all", expanded: false };
-      const routeGrid = document.getElementById("routeGrid");
-      const recommendedList = document.getElementById("recommendedList");
-      const loadMore = document.getElementById("loadMore");
+
+      const routeGroups = document.getElementById("routeGroups");
+      const destinationRail = document.getElementById("destinationRail");
+      const destinationSheetList = document.getElementById("destinationSheetList");
+      const tripTypeRail = document.getElementById("tripTypeRail");
+      const durationFilter = document.getElementById("durationFilter");
+      const interestFilter = document.getElementById("interestFilter");
+      const routeSearch = document.getElementById("routeSearch");
+      const sortRoutes = document.getElementById("sortRoutes");
+      const mobileQuery = window.matchMedia("(max-width: 720px)");
 
       function esc(value) {
         return String(value).replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
       }
+      function pluralRoutes(count) { return `${count} ${count === 1 ? "route" : "routes"}`; }
       function formatPrice(value) { return `¥${value.toLocaleString("en-US")}`; }
-      function routeHref(route) { return route.href || `../../destinations/${route.slug}/`; }
       function durationLabel(route) { return `${route.days} Days / ${route.nights} Nights`; }
+      function destinationFor(code) { return DESTINATIONS.find(destination => destination.code === code); }
+      function routeHref(route) { return route.href || `../../destinations/${route.slug}/`; }
       function routeIsAvailable(route) { return route.priceReady === true && Number.isFinite(route.price); }
-      function routeHasDetails(route) { return route.detailReady === true; }
-      function recommendedPriceHtml(route) {
-        if (routeIsAvailable(route)) {
-          return `<span class="price-label">From</span><strong class="price">${formatPrice(route.price)}</strong><span class="price-note">per person</span>`;
-        }
-        if (routeHasDetails(route)) {
-          return `<span class="price-label">Pricing</span><strong class="price price-coming-soon">On request</strong><span class="price-note">Request a per-person quote</span>`;
-        }
-        return `<span class="price-label">Pricing</span><strong class="price price-coming-soon">Coming soon</strong><span class="price-note">Details being finalized</span>`;
+      function priceHtml(route) {
+        if (routeIsAvailable(route)) return `<span>From</span><strong>${formatPrice(route.price)}</strong>`;
+        if (route.detailReady) return `<span>Pricing</span><strong class="price-status">On request</strong>`;
+        return `<span>Pricing</span><strong class="price-status">Coming soon</strong>`;
       }
-      function cardPriceHtml(route) {
-        if (routeIsAvailable(route)) {
-          return `<span class="route-card-price"><span>From</span><strong>${formatPrice(route.price)}</strong><span>per person</span></span>`;
-        }
-        if (routeHasDetails(route)) {
-          return `<span class="route-card-price price-coming-soon"><span>Pricing</span><strong>On request</strong></span>`;
-        }
-        return `<span class="route-card-price price-coming-soon"><span>Pricing</span><strong>Coming soon</strong></span>`;
-      }
-
-      function recommendedHtml(route, index) {
-        const hasDetails = routeHasDetails(route);
-        const tag = hasDetails ? "a" : "article";
-        const attributes = hasDetails ? `href="${routeHref(route)}" aria-label="View ${esc(route.title)}"` : `aria-disabled="true"`;
-        return `<${tag} class="recommended-card${hasDetails ? "" : " is-coming-soon"}" id="recommendedCard${index}" ${attributes}>
-          <div class="recommended-media"><img src="${esc(route.image)}" alt="" decoding="async" loading="lazy" /></div>
-          <div class="recommended-body"><span class="route-code">${esc(route.code)}</span><h3 class="recommended-title">${esc(route.title)}</h3><p class="recommended-summary">${esc(route.summary)}</p><p class="recommended-highlights">${esc(route.highlights)}</p></div>
-          <div class="recommended-side"><span class="duration">${durationLabel(route)}</span>${recommendedPriceHtml(route)}<span class="text-link">${hasDetails ? "View route" : "Details coming soon"}</span></div>
-        </${tag}>`;
-      }
-
-      function cardHtml(route) {
-        const hasDetails = routeHasDetails(route);
-        const tag = hasDetails ? "a" : "article";
-        const attributes = hasDetails ? `href="${routeHref(route)}" aria-label="View ${esc(route.title)}"` : `aria-disabled="true"`;
-        return `<${tag} class="route-card${hasDetails ? "" : " is-coming-soon"}" ${attributes}>
-          <div class="route-card-media"><img src="${esc(route.image)}" alt="" decoding="async" loading="lazy" /><span class="route-card-duration">${durationLabel(route)}</span></div>
-          <div class="route-card-body"><span class="route-code">${esc(route.code)}</span><h3 class="route-card-title">${esc(route.title)}</h3><p class="route-highlights">${esc(route.highlights)}</p><div class="route-card-footer">${cardPriceHtml(route)}<span class="route-card-link">${hasDetails ? 'View route <span aria-hidden="true">↗</span>' : "Details coming soon"}</span></div></div>
+      function routeCardHtml(route) {
+        const tag = route.detailReady ? "a" : "article";
+        const attributes = route.detailReady
+          ? `href="${esc(routeHref(route))}" aria-label="View ${esc(route.title)}"`
+          : `aria-disabled="true"`;
+        return `<${tag} class="route-card${route.detailReady ? "" : " is-coming-soon"}" ${attributes}>
+          <div class="route-card-media"><img src="${esc(route.image)}" alt="${esc(route.imageAlt)}" decoding="async" loading="lazy" /></div>
+          <div class="route-card-body">
+            <span class="route-code">${esc(route.code)}</span>
+            <h3>${esc(route.title)}</h3>
+            <p class="route-duration"><img src="../../assets/icons/calendar.svg" alt="" aria-hidden="true" />${durationLabel(route)}</p>
+            <p class="route-highlights">${esc(route.highlights)}</p>
+            <div class="route-card-footer"><span class="route-price">${priceHtml(route)}</span><span class="route-arrow"><span>${route.detailReady ? "View route" : "In preparation"}</span>${route.detailReady ? '<img class="route-arrow-desktop" src="../../assets/icons/arrow-up-right.svg" alt="" aria-hidden="true" /><img class="route-arrow-mobile" src="../../assets/icons/arrow-right.svg" alt="" aria-hidden="true" />' : ""}</span></div>
+          </div>
         </${tag}>`;
       }
 
@@ -355,83 +351,187 @@
         return true;
       }
       function filteredRoutes() {
+        const query = state.search.trim().toLowerCase();
         return ROUTES.filter(route => {
           const destinationMatch = state.destination === "all" || route.city === state.destination;
-          const interestMatch = state.interest === "all" || route.interests.includes(state.interest);
-          return destinationMatch && matchesDuration(route) && interestMatch;
+          const interestMatch = state.interest === "all" || route.interests.includes(state.interest) || (state.interest === "first" && route.recommended);
+          const searchMatch = !query || [route.title, route.cityName, route.highlights, route.summary, route.code].join(" ").toLowerCase().includes(query);
+          return destinationMatch && interestMatch && matchesDuration(route) && searchMatch;
         });
       }
-      function updateCriteria() {
-        document.getElementById("criteriaValue").innerHTML = [labels.destination[state.destination], labels.duration[state.duration], labels.interest[state.interest]].map(value => `<span>${esc(value)}</span>`).join("");
+      function sortedRoutes(routes) {
+        return [...routes].sort((a, b) => {
+          if (state.sort === "shortest") return a.days - b.days || a.title.localeCompare(b.title);
+          if (state.sort === "price") return (routeIsAvailable(a) ? a.price : Infinity) - (routeIsAvailable(b) ? b.price : Infinity) || a.title.localeCompare(b.title);
+          if (state.sort === "title") return a.title.localeCompare(b.title);
+          return Number(b.detailReady) - Number(a.detailReady) || Number(b.recommended) - Number(a.recommended) || a.title.localeCompare(b.title);
+        });
       }
-      function renderRoutes(options = {}) {
-        const matches = filteredRoutes();
-        const limit = state.expanded ? matches.length : 6;
-        document.getElementById("routeCount").textContent = `${matches.length} ${matches.length === 1 ? "route" : "routes"}`;
-        if (!matches.length) {
-          routeGrid.innerHTML = `<div class="empty-state"><strong>No exact match yet</strong>Try clearing one filter or ask us to customize a route.</div>`;
-          loadMore.hidden = true;
-        } else {
-          routeGrid.innerHTML = matches.slice(0, limit).map(cardHtml).join("");
-          loadMore.hidden = matches.length <= 6 || state.expanded;
+      function groupedMatches() {
+        const matches = sortedRoutes(filteredRoutes());
+        return DESTINATIONS.map(destination => ({
+          destination,
+          routes: matches.filter(route => route.city === destination.code)
+        })).filter(group => group.routes.length);
+      }
+
+      function renderDestinationControls() {
+        const visibleDestinations = state.moreDestinations ? DESTINATIONS : DESTINATIONS.slice(0, 6);
+        const buttonHtml = destination => {
+          const count = ROUTES.filter(route => route.city === destination.code).length;
+          const active = state.destination === destination.code;
+          return `<button type="button" class="destination-button${active ? " is-active" : ""}" data-destination="${destination.code}"${active ? ' aria-current="true"' : ""}><span>${esc(destination.name)}</span><strong>${count}</strong></button>`;
+        };
+        destinationRail.innerHTML = `<button type="button" class="destination-button${state.destination === "all" ? " is-active" : ""}" data-destination="all"${state.destination === "all" ? ' aria-current="true"' : ""}><span>All destinations</span><strong>${ROUTES.length}</strong></button>${visibleDestinations.map(buttonHtml).join("")}`;
+        destinationSheetList.innerHTML = `<button type="button" class="sheet-destination${state.destination === "all" ? " is-active" : ""}" data-destination="all"><span>All destinations</span><strong>${ROUTES.length}</strong></button>${DESTINATIONS.map(destination => buttonHtml(destination).replaceAll("destination-button", "sheet-destination")).join("")}`;
+        const moreButton = document.getElementById("moreDestinations");
+        moreButton.hidden = DESTINATIONS.length <= 6;
+        moreButton.textContent = state.moreDestinations ? "Fewer destinations" : `More destinations (${DESTINATIONS.length - 6})`;
+      }
+
+      function renderTripTypes() {
+        const types = ["first", "nature", "culture", "local"];
+        tripTypeRail.innerHTML = types.map(type => {
+          const active = state.interest === type;
+          return `<button type="button" class="trip-type-button${active ? " is-active" : ""}" data-interest="${type}" aria-pressed="${active}">${interestLabels[type]}</button>`;
+        }).join("");
+      }
+
+      function renderRouteGroups() {
+        const groups = groupedMatches();
+        const matches = groups.flatMap(group => group.routes);
+        const activeFilters = [state.duration !== "all", state.interest !== "all", Boolean(state.search.trim())].filter(Boolean).length;
+        document.getElementById("filterBadge").hidden = activeFilters === 0;
+        document.getElementById("filterBadge").textContent = activeFilters;
+        document.getElementById("routeCount").textContent = state.destination === "all"
+          ? `${pluralRoutes(matches.length)} across ${groups.length} ${groups.length === 1 ? "destination" : "destinations"}`
+          : `${pluralRoutes(matches.length)} in ${destinationFor(state.destination)?.name || "this destination"}`;
+
+        if (!groups.length) {
+          routeGroups.innerHTML = `<div class="empty-state"><strong>No exact match yet</strong><p>Try another destination or clear one of your filters.</p><button type="button" data-clear-all>Clear filters</button></div>`;
+          return;
         }
-        updateCriteria();
+
+        routeGroups.innerHTML = groups.map(group => {
+          const destination = group.destination;
+          const isAllView = state.destination === "all";
+          const isMobileOpen = state.openMobileDestinations.has(destination.code) || !mobileQuery.matches;
+          const showAllRoutes = state.expandedGroups.has(destination.code);
+          const previewLimit = isAllView
+            ? (showAllRoutes ? group.routes.length : (mobileQuery.matches ? 2 : 3))
+            : group.routes.length;
+          const previewPool = isAllView && mobileQuery.matches
+            ? [...group.routes].sort((a, b) => (routeIsAvailable(a) ? a.price : Infinity) - (routeIsAvailable(b) ? b.price : Infinity))
+            : group.routes;
+          const previewRoutes = previewPool.slice(0, previewLimit);
+          const hasMore = group.routes.length > previewRoutes.length;
+          return `<section class="destination-group${isMobileOpen ? " is-open" : ""}" data-group="${destination.code}">
+            <button type="button" class="destination-group-heading" data-toggle-group="${destination.code}" aria-expanded="${isMobileOpen}">
+              <span class="destination-group-main"><img class="destination-group-thumb" src="${esc(group.routes[0].image)}" alt="" loading="lazy" decoding="async" /><span class="destination-group-copy"><strong>${esc(destination.name)}</strong><small class="destination-description">${esc(destination.description)}</small><small class="destination-mobile-count">${pluralRoutes(group.routes.length)}</small></span></span>
+              <span class="destination-group-meta">${pluralRoutes(group.routes.length)}</span>
+              <img class="destination-chevron destination-chevron-down" src="../../assets/icons/chevron-down.svg" alt="" aria-hidden="true" />
+              <img class="destination-chevron destination-chevron-up" src="../../assets/icons/chevron-up.svg" alt="" aria-hidden="true" />
+            </button>
+            <div class="destination-group-content">
+              <div class="route-grid">${previewRoutes.map(routeCardHtml).join("")}</div>
+              ${hasMore ? `<button type="button" class="view-all-destination" data-view-destination="${destination.code}"><span>View all ${group.routes.length} ${esc(destination.name)} routes</span><img src="../../assets/icons/arrow-right.svg" alt="" aria-hidden="true" /></button>` : ""}
+            </div>
+          </section>`;
+        }).join("");
+      }
+
+      function render() {
+        renderDestinationControls();
+        renderTripTypes();
+        renderRouteGroups();
+        durationFilter.value = state.duration;
+        interestFilter.value = state.interest;
+        sortRoutes.value = state.sort;
+      }
+
+      function chooseDestination(code, options = {}) {
+        state.destination = code;
+        if (code !== "all") state.openMobileDestinations.add(code);
+        render();
+        document.getElementById("destinationSheet").close();
         if (options.scroll) document.getElementById("allRoutes").scrollIntoView({ behavior: "smooth", block: "start" });
       }
-
-      const recommendedRoutes = ROUTES
-        .filter(route => route.recommended && routeHasDetails(route) && routeIsAvailable(route))
-        .slice(0, 3);
-      const recommendedPagination = document.getElementById("recommendedPagination");
-      recommendedList.innerHTML = recommendedRoutes.map(recommendedHtml).join("");
-      recommendedPagination.innerHTML = recommendedRoutes.length > 1
-        ? recommendedRoutes.map((route, index) => `<button type="button" data-recommended-dot="${index}" aria-label="Show ${esc(route.title)}" aria-controls="recommendedCard${index}"${index === 0 ? ' class="is-active" aria-current="true"' : ""}></button>`).join("")
-        : "";
-
-      let recommendedScrollFrame = 0;
-      function updateRecommendedPagination() {
-        const cards = [...recommendedList.querySelectorAll(".recommended-card")];
-        const dots = [...recommendedPagination.querySelectorAll("button")];
-        if (!cards.length || !dots.length) return;
-        const listLeft = recommendedList.getBoundingClientRect().left;
-        const activeIndex = cards.reduce((closest, card, index) => {
-          const distance = Math.abs(card.getBoundingClientRect().left - listLeft);
-          return distance < closest.distance ? { index, distance } : closest;
-        }, { index: 0, distance: Infinity }).index;
-        dots.forEach((dot, index) => {
-          const active = index === activeIndex;
-          dot.classList.toggle("is-active", active);
-          if (active) dot.setAttribute("aria-current", "true");
-          else dot.removeAttribute("aria-current");
-        });
+      function clearAllFilters() {
+        state.destination = "all";
+        state.duration = "all";
+        state.interest = "all";
+        state.search = "";
+        state.sort = "recommended";
+        routeSearch.value = "";
+        render();
       }
-      recommendedList.addEventListener("scroll", () => {
-        cancelAnimationFrame(recommendedScrollFrame);
-        recommendedScrollFrame = requestAnimationFrame(updateRecommendedPagination);
-      }, { passive: true });
-      recommendedPagination.addEventListener("click", event => {
-        const dot = event.target.closest("[data-recommended-dot]");
-        if (!dot) return;
-        const card = document.getElementById(`recommendedCard${dot.dataset.recommendedDot}`);
-        card?.scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth", block: "nearest", inline: "start" });
+
+      document.addEventListener("click", event => {
+        const destinationButton = event.target.closest("[data-destination]");
+        if (destinationButton) chooseDestination(destinationButton.dataset.destination, { scroll: mobileQuery.matches });
+
+        const tripTypeButton = event.target.closest("[data-interest]");
+        if (tripTypeButton) {
+          state.interest = state.interest === tripTypeButton.dataset.interest ? "all" : tripTypeButton.dataset.interest;
+          render();
+        }
+
+        const viewAllButton = event.target.closest("[data-view-destination]");
+        if (viewAllButton) {
+          state.expandedGroups.add(viewAllButton.dataset.viewDestination);
+          renderRouteGroups();
+        }
+
+        const groupButton = event.target.closest("[data-toggle-group]");
+        if (groupButton && mobileQuery.matches) {
+          const code = groupButton.dataset.toggleGroup;
+          if (state.openMobileDestinations.has(code)) state.openMobileDestinations.delete(code);
+          else state.openMobileDestinations.add(code);
+          renderRouteGroups();
+        }
+
+        if (event.target.closest("[data-clear-all]")) clearAllFilters();
       });
-      window.addEventListener("resize", updateRecommendedPagination, { passive: true });
-      updateRecommendedPagination();
-      renderRoutes();
-      document.getElementById("routeFinder").addEventListener("submit", event => {
+
+      routeSearch.addEventListener("input", event => { state.search = event.target.value; renderRouteGroups(); });
+      durationFilter.addEventListener("change", event => { state.duration = event.target.value; render(); });
+      interestFilter.addEventListener("change", event => { state.interest = event.target.value; render(); });
+      sortRoutes.addEventListener("change", event => { state.sort = event.target.value; renderRouteGroups(); });
+      document.getElementById("clearFilters").addEventListener("click", clearAllFilters);
+      document.getElementById("moreDestinations").addEventListener("click", () => { state.moreDestinations = !state.moreDestinations; renderDestinationControls(); });
+
+      const filterSheet = document.getElementById("filterSheet");
+      const destinationSheet = document.getElementById("destinationSheet");
+      document.getElementById("openFilters").addEventListener("click", () => {
+        document.getElementById("sheetDuration").value = state.duration;
+        document.getElementById("sheetInterest").value = state.interest;
+        filterSheet.showModal();
+      });
+      document.getElementById("openDestinations").addEventListener("click", () => destinationSheet.showModal());
+      document.getElementById("sheetReset").addEventListener("click", () => {
+        document.getElementById("sheetDuration").value = "all";
+        document.getElementById("sheetInterest").value = "all";
+      });
+      document.getElementById("sheetApply").addEventListener("click", event => {
         event.preventDefault();
-        state.destination = document.getElementById("destinationFilter").value;
-        state.duration = document.getElementById("durationFilter").value;
-        state.interest = document.getElementById("interestFilter").value;
-        state.expanded = false;
-        renderRoutes({ scroll: true });
+        state.duration = document.getElementById("sheetDuration").value;
+        state.interest = document.getElementById("sheetInterest").value;
+        filterSheet.close();
+        render();
       });
-      document.getElementById("clearFilters").addEventListener("click", () => {
-        document.getElementById("routeFinder").reset();
-        state.destination = "all"; state.duration = "all"; state.interest = "all"; state.expanded = false;
-        renderRoutes();
+      [filterSheet, destinationSheet].forEach(dialog => dialog.addEventListener("click", event => {
+        if (event.target === dialog) dialog.close();
+      }));
+
+      let wasMobile = mobileQuery.matches;
+      mobileQuery.addEventListener("change", event => {
+        if (event.matches !== wasMobile) {
+          wasMobile = event.matches;
+          renderRouteGroups();
+        }
       });
-      loadMore.addEventListener("click", () => { state.expanded = true; renderRoutes(); });
+
+      render();
     </script>
   <script src="../../assets/analytics.js"></script>
 </body>
