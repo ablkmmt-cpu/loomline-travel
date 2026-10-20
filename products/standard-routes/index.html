@@ -24,7 +24,7 @@
     <link rel="icon" type="image/png" sizes="64x64" href="../../assets/brand/loomline-favicon-64.png?v=4" />
     <link rel="apple-touch-icon" sizes="180x180" href="../../assets/brand/loomline-apple-touch-icon.png?v=4" />
     <link rel="stylesheet" href="../../assets/site-chrome.css?v=products-nav-11" />
-    <link rel="stylesheet" href="standard-routes.css?v=catalog-groups-12" />
+    <link rel="stylesheet" href="standard-routes.css?v=catalog-groups-13" />
   <!-- @@ANALYTICS@@ -->
   </head>
   <body id="top">
@@ -271,6 +271,7 @@
         priceReady: route.priceReady,
         interests: route.interests || [],
         recommended: route.recommended,
+        promotionPriority: Number(route.promotionPriority) || 0,
         detailReady: route.detailReady,
         href: route.detailReady ? route.detailPath.replace("products/standard-routes/", "") : undefined,
         image: `../../${route.image}`,
@@ -364,7 +365,7 @@
           if (state.sort === "shortest") return a.days - b.days || a.title.localeCompare(b.title);
           if (state.sort === "price") return (routeIsAvailable(a) ? a.price : Infinity) - (routeIsAvailable(b) ? b.price : Infinity) || a.title.localeCompare(b.title);
           if (state.sort === "title") return a.title.localeCompare(b.title);
-          return Number(b.detailReady) - Number(a.detailReady) || Number(b.recommended) - Number(a.recommended) || a.title.localeCompare(b.title);
+          return Number(b.detailReady) - Number(a.detailReady) || b.promotionPriority - a.promotionPriority || Number(b.recommended) - Number(a.recommended) || a.title.localeCompare(b.title);
         });
       }
       function groupedMatches() {

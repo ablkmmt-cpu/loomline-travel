@@ -196,6 +196,13 @@
     "footer": "main"
   },
   {
+    "file": "products/standard-routes/snowy-mountains-3-day/index.html",
+    "base": "../../../",
+    "aria": "Loomline Travel home",
+    "header": "main",
+    "footer": "main"
+  },
+  {
     "file": "products/standard-routes/northeast-winter-7-day/index.html",
     "base": "../../../",
     "aria": "Loomline Travel home",

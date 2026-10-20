@@ -19,7 +19,7 @@ window.LOOMLINE_STANDARD_ROUTES = [
     "detailPath": "products/standard-routes/encounter-aba-3-day/",
     "image": "assets/routes/encounter-aba-3-day/mount-siguniang.webp",
     "imageAlt": "Snow peaks and alpine forest at Mount Siguniang",
-    "priceCny": 1480,
+    "priceCny": 1680,
     "priceReady": true
   },
   {
@@ -42,7 +42,7 @@ window.LOOMLINE_STANDARD_ROUTES = [
     "detailPath": "products/standard-routes/jiuzhaigou-grand-loop-5-day/",
     "image": "assets/routes/jiuzhaigou-grand-loop-5-day/dagu-glacier.webp",
     "imageAlt": "Snow-covered mountain ranges viewed from Dagu Glacier",
-    "priceCny": 2580,
+    "priceCny": 2780,
     "priceReady": true
   },
   {
@@ -65,6 +65,29 @@ window.LOOMLINE_STANDARD_ROUTES = [
     "detailPath": "products/standard-routes/snow-mountain-jiuzhaigou-4-day/",
     "image": "assets/routes/snow-mountain-jiuzhaigou-4-day/day-2-winter-jiuzhaigou.webp",
     "imageAlt": "An ice-blue lake, snowy forest and mountain peaks in winter Jiuzhaigou",
+    "priceCny": 2180,
+    "priceReady": true
+  },
+  {
+    "id": "std-route-cd-std-004",
+    "code": "CD-STD-004",
+    "cityCode": "CD",
+    "citySlug": "chengdu",
+    "cityName": "Chengdu",
+    "title": "Snowy Mountains",
+    "days": 3,
+    "nights": 2,
+    "summary": "Link Mount Siguniang, Bipenggou and Dagu Glacier on a compact three-day alpine journey from Chengdu.",
+    "highlights": "Mount Siguniang · Bipenggou · Dagu Glacier",
+    "interests": [
+      "nature"
+    ],
+    "recommended": true,
+    "promotionPriority": 100,
+    "detailReady": true,
+    "detailPath": "products/standard-routes/snowy-mountains-3-day/",
+    "image": "assets/routes/snowy-mountains-3-day/hero-mount-siguniang.webp",
+    "imageAlt": "Snow peaks and alpine forest in Mount Siguniang's Shuangqiao Valley",
     "priceCny": 1780,
     "priceReady": true
   },
