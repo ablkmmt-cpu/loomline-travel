@@ -437,6 +437,31 @@
       margin-top: 28px;
     }
 
+    .private-inquiry {
+      display: grid;
+      gap: 5px;
+      margin-top: 3px;
+      text-align: center;
+    }
+
+    .private-inquiry-prompt {
+      color: rgba(255, 249, 238, 0.72);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .private-inquiry-link {
+      color: var(--gold-soft);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.35;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .private-inquiry-link:hover { color: #fff0c7; }
+
     .button {
       min-height: 50px;
       display: inline-flex;
@@ -1660,7 +1685,7 @@
       .mobile-booking .mobile-fx-reference { font-size: 12px; white-space: normal; overflow-wrap: anywhere; }
     }
   </style>
-  <link rel="stylesheet" href="../../../assets/route-mobile-booking.css?v=3" />
+  <link rel="stylesheet" href="../../../assets/route-mobile-booking.css?v=4" />
   <!-- @@ANALYTICS@@ -->
 </head>
 <body class="has-mobile-booking">
@@ -1752,6 +1777,10 @@
           </div>
           <div class="booking-actions">
             <a class="button button-primary" id="bookButton" href="../../../contact.html">Book this route</a>
+            <div class="private-inquiry">
+              <span class="private-inquiry-prompt">Prefer to travel privately?</span>
+              <a class="private-inquiry-link" id="privateTourLink" href="../../../contact.html">Ask about a private journey →</a>
+            </div>
           </div>
         </aside>
       </div>
@@ -1917,6 +1946,7 @@
     </div>
     <div class="mobile-actions">
       <a class="button button-primary" id="mobileBookButton" href="../../../contact.html">Book this route</a>
+      <a class="mobile-private-link" id="mobilePrivateTourLink" href="../../../contact.html">Private journey? Ask us →</a>
     </div>
     <div class="mobile-fx-control">
         <span class="mobile-fx-chip">
@@ -2136,6 +2166,11 @@
       return `https://api.whatsapp.com/send?phone=${ROUTE_DATA.whatsappNumber}&text=${encodeURIComponent(message)}`;
     }
 
+    function whatsappPrivateHref() {
+      const message = `Hi Loomline Travel, I'm interested in taking the "${ROUTE_DATA.title}" route (${ROUTE_DATA.productCode}) as a private journey. Could you please help me with private-tour options and pricing?`;
+      return `https://api.whatsapp.com/send?phone=${ROUTE_DATA.whatsappNumber}&text=${encodeURIComponent(message)}`;
+    }
+
     function updateCurrency(selectId, outputId) {
       const currency = document.getElementById(selectId);
       const selected = ROUTE_DATA.currencyRates[currency.value];
@@ -2274,6 +2309,15 @@
         link.target = "_blank";
         link.rel = "noopener noreferrer";
         link.setAttribute("aria-label", `Book ${ROUTE_DATA.title} on WhatsApp`);
+      });
+
+      const privateHref = whatsappPrivateHref();
+      ["privateTourLink", "mobilePrivateTourLink"].forEach(id => {
+        const link = document.getElementById(id);
+        link.href = privateHref;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.setAttribute("aria-label", `Ask about a private ${ROUTE_DATA.title} journey on WhatsApp`);
       });
     }
 

@@ -2,7 +2,7 @@
    Include after page styles; preserve the mobilePrice, mobileBarCurrency,
    mobileFxReference and mobileBookButton IDs for the pricing/booking logic. */
 @media (max-width: 980px) {
-  body.has-mobile-booking { padding-bottom: calc(112px + env(safe-area-inset-bottom)); }
+  body.has-mobile-booking { padding-bottom: calc(132px + env(safe-area-inset-bottom)); }
   .mobile-booking {
     position: fixed;
     inset: auto 0 0;
@@ -112,7 +112,13 @@
     overflow-wrap: anywhere;
     font-variant-numeric: tabular-nums;
   }
-  .mobile-actions { grid-area: 1 / 3; display: grid; grid-template-columns: 1fr; min-width: 0; }
+  .mobile-actions {
+    grid-area: 1 / 3;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    min-width: 0;
+  }
   .mobile-actions .button {
     width: 100%;
     min-height: 50px;
@@ -128,6 +134,19 @@
   }
   .mobile-actions .button:hover { background: #8e211f; }
   .mobile-actions .button:focus-visible { outline: 2px solid #08392f; outline-offset: 3px; }
+  .mobile-private-link {
+    display: block;
+    color: #9a6b23;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  .mobile-private-link:hover { color: #6f4a16; }
+  .mobile-private-link:focus-visible { outline: 2px solid #08392f; outline-offset: 2px; }
 }
 @media (max-width: 399px) {
   .mobile-booking { gap: 8px; padding-inline: 10px; grid-template-columns: max-content minmax(0, 1fr) 33%; }
@@ -137,6 +156,7 @@
   .mobile-fx-control { padding-left: 7px; }
   .mobile-booking .mobile-fx-reference { font-size: 13px; }
   .mobile-actions .button { font-size: 12px; }
+  .mobile-private-link { font-size: 9px; }
 }
 @media (max-width: 359px) {
   .mobile-booking { gap: 6px; padding-inline: 8px; }
@@ -144,4 +164,5 @@
   .mobile-price small { font-size: 8px; }
   .mobile-fx-control { padding-left: 5px; }
   .mobile-actions .button { font-size: 11px; }
+  .mobile-private-link { font-size: 8px; }
 }
