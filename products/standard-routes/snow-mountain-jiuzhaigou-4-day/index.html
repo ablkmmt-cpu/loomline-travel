@@ -650,6 +650,11 @@
       font-size: 13px;
     }
 
+    .day-meta-note {
+      display: inline-flex;
+      gap: 22px;
+    }
+
     .side-panel {
       position: sticky;
       top: 112px;
@@ -1179,6 +1184,8 @@
         gap: 8px 12px;
         font-size: 12px;
       }
+
+      .day-meta-note { gap: 12px; }
 
       .side-panel {
         position: static;
@@ -2034,6 +2041,7 @@
           description: "Drive to Mount Siguniang’s Shuangqiao Valley and spend around four hours among snow peaks, open pastures, meadows and forest. Return through Wolong and Dujiangyan, with the tour ending in Chengdu in the late afternoon or evening depending on traffic.",
           stay: "Return to Chengdu",
           meals: "Hotel breakfast where available",
+          accommodationNote: "Tonight’s hotel in Chengdu is not included",
           image: "../../../assets/routes/snow-mountain-jiuzhaigou-4-day/day-4-mount-siguniang.webp"
         }
       ],
@@ -2188,6 +2196,7 @@
               <span>${escapeHtml(item.stay)}</span>
               <span>·</span>
               <span>${escapeHtml(item.meals)}</span>
+              ${item.accommodationNote ? `<span class="day-meta-note"><span>·</span><span>${escapeHtml(item.accommodationNote)}</span></span>` : ""}
             </div>
           </div>
         </article>

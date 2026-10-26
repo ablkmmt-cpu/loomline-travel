@@ -650,6 +650,11 @@
       font-size: 13px;
     }
 
+    .day-meta-note {
+      display: inline-flex;
+      gap: 22px;
+    }
+
     .side-panel {
       position: sticky;
       top: 112px;
@@ -1179,6 +1184,8 @@
         gap: 8px 12px;
         font-size: 12px;
       }
+
+      .day-meta-note { gap: 12px; }
 
       .side-panel {
         position: static;
@@ -2037,6 +2044,7 @@
           description: "Travel to the Maobiliang viewing platform for a first look at Mount Siguniang, then spend around four hours in Shuangqiao Valley among snow peaks, conifer forest and alpine streams. Return to Chengdu in the late afternoon and evening.",
           stay: "Return to Chengdu",
           meals: "Hotel breakfast where available",
+          accommodationNote: "Tonight’s hotel in Chengdu is not included",
           image: "../../../assets/routes/jiuzhaigou-grand-loop-5-day/mount-siguniang.webp"
         }
       ],
@@ -2196,6 +2204,7 @@
               <span>${escapeHtml(item.stay)}</span>
               <span>·</span>
               <span>${escapeHtml(item.meals)}</span>
+              ${item.accommodationNote ? `<span class="day-meta-note"><span>·</span><span>${escapeHtml(item.accommodationNote)}</span></span>` : ""}
             </div>
           </div>
         </article>

@@ -650,6 +650,11 @@
       font-size: 13px;
     }
 
+    .day-meta-note {
+      display: inline-flex;
+      gap: 22px;
+    }
+
     .side-panel {
       position: sticky;
       top: 112px;
@@ -1179,6 +1184,8 @@
         gap: 8px 12px;
         font-size: 12px;
       }
+
+      .day-meta-note { gap: 12px; }
 
       .side-panel {
         position: static;
@@ -2021,6 +2028,7 @@
           description: "Explore Dagu Glacier for around four hours, including the scenic-area transport and optional cable car to the high glacier summit. Return to Chengdu with drop-off near a metro station inside the 3rd Ring Road at around 19:00, subject to traffic and operating conditions.",
           stay: "Return to Chengdu",
           meals: "Meals at your own expense",
+          accommodationNote: "Tonight’s hotel in Chengdu is not included",
           image: "../../../assets/routes/snowy-mountains-3-day/day-3-dagu-glacier.webp"
         }
       ],
@@ -2197,6 +2205,7 @@
               <span>${escapeHtml(item.stay)}</span>
               <span>·</span>
               <span>${escapeHtml(item.meals)}</span>
+              ${item.accommodationNote ? `<span class="day-meta-note"><span>·</span><span>${escapeHtml(item.accommodationNote)}</span></span>` : ""}
             </div>
           </div>
         </article>
