@@ -44,6 +44,20 @@ catalog.routes.forEach((route, index) => {
   if (route.detailReady && !route.detailPath) {
     throw new Error(`routes.${index}.detailPath is required when detailReady is true`);
   }
+  if (route.detailReady) {
+    const detailFile = join(ROOT, route.detailPath, "index.html");
+    const detailHtml = readFileSync(detailFile, "utf8");
+    const requiredPrivateInquiryHooks = [
+      'id="privateTourLink"',
+      'id="mobilePrivateTourLink"',
+      "function whatsappPrivateHref()",
+    ];
+    requiredPrivateInquiryHooks.forEach((hook) => {
+      if (!detailHtml.includes(hook)) {
+        throw new Error(`${route.code} detail page is missing the standard private-journey inquiry hook: ${hook}`);
+      }
+    });
+  }
   codes.add(route.code);
   ids.add(route.id);
 });
