@@ -92,7 +92,7 @@ git push -u origin main
 - [x] 抽查首页、`destination`、`experience`、`service`、`contact` 页面都能打开、无 404
 - [x] 访问**不存在的地址**显示 `404.html`（如 `/xyz123` 返回 404）
 - [ ] **联系表单（Formspree）**：提交一次测试，确认能收到邮件。Formspree 免费版需在 [Formspree](https://formspree.io) 验证邮箱并确认 `/f/mkolnbzl` 是你的表单端点
-- [ ] **WhatsApp 浮动组件**：点开，确认跳转到 `wa.me/8615719582142` 且预填文案正确
+- [ ] **WhatsApp 浮动组件**：点开，确认跳转到 `wa.me/8618169157813` 且预填文案正确
 - [ ] **社交链接**：TikTok / Facebook / Instagram / YouTube 外链可点
 - [ ] 移动端（手机）逐页滚动检查排版，尤其首页 hero 与 whatsapp 浮动按钮不遮挡
 

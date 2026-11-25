@@ -14,7 +14,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
-const WA = "https://api.whatsapp.com/send?phone=8615719582142";
+const WA = "https://api.whatsapp.com/send?phone=8618169157813";
 const A = (p) => join(ROOT, "experiences", p, "index.html");
 const renderComponent = (name) =>
   readFileSync(join(ROOT, "components", name), "utf8")
@@ -620,7 +620,7 @@ ${comingSoonSection(e)}
     <!-- @@FOOTER@@ -->
 ${FOOTER}
 
-    <script src="../../whatsapp-float.js?v=products-nav-1"></script>
+    <script src="../../whatsapp-float.js?v=wa-contact-2"></script>
     <script src="../../assets/analytics.js"></script>
   </body>
 </html>
