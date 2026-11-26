@@ -620,7 +620,7 @@ ${comingSoonSection(e)}
     <!-- @@FOOTER@@ -->
 ${FOOTER}
 
-    <script src="../../whatsapp-float.js?v=wa-form-20261126"></script>
+    <script src="../../whatsapp-float.js?v=wa-header-source-1"></script>
     <script src="../../assets/analytics.js"></script>
   </body>
 </html>

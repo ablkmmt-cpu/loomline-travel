@@ -61,6 +61,8 @@ const canon = (html) =>
 
 const render = (component, page) => {
   let out = component.replaceAll("{{ARIA}}", page.aria).replaceAll("{{BASE}}", page.base);
+  const sourcePage = page.file === "index.html" ? "Home" : "/" + page.file.replace(/\/index\.html$/, "/");
+  out = out.replace(/&amp;text=Source%3A%20Header%20WhatsApp(?=")/g, "&amp;text=" + encodeURIComponent("Source: Header WhatsApp | " + sourcePage));
   // 仅首页（index.html）把 "index.html#" 还原为 "#top" 形式；根目录的其它页面
   //（如 contact.html）必须保留 "index.html#..." 才能跳回首页
   if (page.file === "index.html") out = out.replaceAll("index.html#", "#");

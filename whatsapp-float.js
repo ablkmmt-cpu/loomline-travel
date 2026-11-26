@@ -64,12 +64,14 @@
 
   var whatsappMessage = getPageMessage() + "\n\nReference: " + document.title;
   var whatsappUrl = "https://api.whatsapp.com/send?phone=" + whatsappNumber + "&text=" + encodeURIComponent(whatsappMessage);
+  var headerPath = window.location.pathname.replace(/\/index\.html$/, "/");
+  var headerWhatsappUrl = "https://api.whatsapp.com/send?phone=" + whatsappNumber +
+    "&text=" + encodeURIComponent("Source: Header WhatsApp | " + (headerPath === "/" ? "Home" : headerPath));
 
   function updateWhatsappLinks() {
     var links = document.querySelectorAll('a[href*="wa.me/"], a[href*="api.whatsapp.com"]');
     links.forEach(function (link) {
-      // 页头 / 页脚是统一组件：其 WhatsApp 链接保持组件里的统一预设（api.whatsapp.com/send?phone=…），
-      // 不随页面替换为按页面变化的 ?text= 预设词（业务预设链接全站一致）。
+      // 保留页头的来源标记和页脚原有链接，不替换为页面咨询文案。
       if (link.closest(".site-footer") || link.classList.contains("ttc-nav-whatsapp")) return;
       link.href = whatsappUrl;
       link.target = "_blank";
@@ -88,7 +90,7 @@
   function makeWhatsappLink(className, label) {
     var link = document.createElement("a");
     link.className = className;
-    link.href = whatsappUrl;
+    link.href = className === "ttc-nav-whatsapp" ? headerWhatsappUrl : whatsappUrl;
     link.target = "_blank";
     link.rel = "noopener noreferrer";
     link.setAttribute("aria-label", label);
@@ -112,7 +114,7 @@
         '<a href="' + homeUrl + '#about">About Us</a>' +
       '</nav>' +
       '<div class="ttc-nav-actions">' +
-        '<a class="ttc-nav-whatsapp" href="' + whatsappUrl + '" target="_blank" rel="noopener noreferrer" aria-label="Chat with Loomline Travel on WhatsApp">' + whatsappIcon + '</a>' +
+        '<a class="ttc-nav-whatsapp" href="' + headerWhatsappUrl + '" target="_blank" rel="noopener noreferrer" aria-label="Chat with Loomline Travel on WhatsApp">' + whatsappIcon + '</a>' +
         '<a class="ttc-global-header-cta" href="' + new URL("contact.html", siteRoot).href + '">Plan My Trip</a>' +
       '</div>';
     document.body.prepend(header);
