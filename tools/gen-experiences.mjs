@@ -491,8 +491,8 @@ const page = (e) => `<!doctype html>
     <meta name="twitter:description" content="${e.desc}" />
     <link rel="canonical" href="https://loomlinetravel.com/experiences/${e.slug}/" />
     <meta name="theme-color" content="#10231f" />
-    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/brand/loomline-favicon-32.png?v=5" />
-    <link rel="icon" type="image/png" sizes="64x64" href="../../assets/brand/loomline-favicon-64.png?v=5" />
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/brand/loomline-favicon-32.png?v=6" />
+    <link rel="icon" type="image/png" sizes="64x64" href="../../assets/brand/loomline-favicon-64.png?v=6" />
     <link rel="apple-touch-icon" sizes="180x180" href="../../assets/brand/loomline-apple-touch-icon.png?v=4" />
     <link rel="stylesheet" href="../../assets/site-chrome.css?v=products-nav-11" />
     <link rel="stylesheet" href="../../assets/experience-detail.css?v=2" />
